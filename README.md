@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **253 Wissenschaften** von Stephan Epp
+> **254 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -12,8 +12,9 @@
 | **II** | [Technologie & Engineering](#ii-technologie--engineering) | Hardware & Echtzeit · Prozessor- & Rechnerarchitektur · Elektronik · Fahrzeugtechnik · Luft- & Raumfahrt · Strömungsdynamik |
 | **III** | [Sicherheit & Kryptographie](#iii-sicherheit--kryptographie) | Kryptographie & Sicherheit |
 | **IV** | [Software & Systeme](#iv-software--systeme) | Software · Computergrafik · KI & Machine Learning |
-| **V** | [Natur- & Lebenswissenschaften](#v-natur---lebenswissenschaften) | Biologie, Gehirn & Medizin · Meeresbiologie · Theologie & Gesellschaft |
-| **VI** | [Synthesen & Transdisziplinarität](#vi-synthesen--transdisziplinarität) | Metaanalysen · Wissenschaftliche Synthesen · Interdisziplinäre Verbindungen · Sonstiges |
+| **V** | [Wirtschaft](#v-wirtschaft) | Wirtschaft |
+| **VI** | [Natur- & Lebenswissenschaften](#vi-natur---lebenswissenschaften) | Biologie, Gehirn & Medizin · Meeresbiologie · Theologie & Gesellschaft |
+| **VII** | [Synthesen & Transdisziplinarität](#vii-synthesen--transdisziplinarität) | Metaanalysen · Wissenschaftliche Synthesen · Interdisziplinäre Verbindungen · Sonstiges |
 
 ---
 
@@ -41,7 +42,6 @@
 | lsat/src | Learning SAT in Boolean Circuits — polynomielle Lösung via Subgraph Algorithmus (P = NP), Subgraph-SAT-Solver |
 | satpr | Wahrscheinlichkeitsverteilung und Laufzeitanalyse des Subgraph-SAT-Solvers |
 | systemth | Asymmetrische Matrixmultiplikation für dynamische Systeme — Boolean-Algebra bis zur kontinuierlichen Systemtheorie |
-| sysstate | Zustandsklassen dynamischer Systeme — Endlichkeit des Zustandsvektors und wirtschaftliche Implikationen |
 | depension | Depension: neue Theorie der mathematischen Abhängigkeitsmodellierung (Ersatz für „Regression") |
 | digi/src | Von der Diskretion — Warum diskrete statt kontinuierliche Beschreibung der Realität entspricht |
 | graphdenk | Graphenstrukturelles Denken als universelles kognitives Paradigma; Isomorphie zu neuronalen Netzen und LLMs |
@@ -81,7 +81,6 @@
 | P=NP | Formaler Beweis von P = NP |
 | paare *(Drive)* | Das Paar K₁,₁ als harmonische Grundstruktur — Harmoniemaß H(G), Axiomatisierung (5 Axiome), spektrale Symmetrie, Lotka-Volterra-Äquivalenz |
 | drohnenabwehr *(Drive)* | Formale Analyse eines Mobilfunknetz-basierten Drohnenabwehrsystems (Telekom/Rheinmetall) — 94 % Detektionsrate, AUC 0,987, SETH-optimal |
-| leco *(Drive)* | Dezentrale Wirtschaftszellen: Formale Analyse optimaler Entkopplung und systemischer Resilienz in modularen Wirtschaftsarchitekturen |
 | graphtheory *(Drive)* | Graphentheorie — Signatur-Methode, Bool-MM O(n²); Nachweise für DFS, BFS, Dijkstra, Floyd-Warshall; Färbung, Bäume |
 | vlsit *(Drive)* | VLSI-Testing via Subgraph Algorithmus — graphentheoretische Modellierung von Stuck-at-Faults; Vergleich mit BIST/LFSR; Validierung auf ISCAS-85-Benchmarks |
 | grammatik *(Drive)* | Formale Grammatiken und Chomsky-Hierarchie als Graphstrukturen — polynomielle Sprachklassenanalyse; Grammatik-Subgraph-Satz in O(n³); graphentheoretischer Beweis des Pumping-Lemmas |
@@ -338,11 +337,10 @@
 
 ### IV.3 KI & Machine Learning
 
-*Agrarökosysteme, Lithium-Ionen-Management, neuronale Netzwerk-Optimierung und Datenbanktheorie*
+*Lithium-Ionen-Management, neuronale Netzwerk-Optimierung und Datenbanktheorie*
 
 | Repository | Beschreibung |
 |---|---|
-| agrar | Agrarwirtschaftliches KI-Ökosystem (AGRI-GAIA): KI-Klassifikation von Kartoffelqualität, MILP-Optimierung (AUC = 0.964) |
 | liionp/src | KI-Power-Management-Modul (AI-PMM) für Lithium-Ionen-Akkumulatoren via Reinforcement Learning |
 | nngraphs | Formale Analyse des Kapazitätsgewinns durch gezielte Graphrestrukturierung in nahezu ausgelernten neuronalen Netzen |
 | logreg | Logistische Regression: vollständige Theorie mit Beweisen; Ausblick auf Federated Learning, Differential Privacy, LLMs |
@@ -355,9 +353,22 @@
 
 ---
 
-## V. Natur- & Lebenswissenschaften
+## V. Wirtschaft
 
-### V.1 Biologie, Gehirn & Medizin
+*Ökonomische, dezentrale und dynamische Wirtschaftssystemzustände, resiliente Wirtschaftsarchitekturen*
+
+| Repository | Beschreibung |
+|---|---|
+| sysstate | Zustandsklassen dynamischer Systeme — Endlichkeit des Zustandsvektors und wirtschaftliche Implikationen |
+| uncrtecos | Wirtschaftssysteme unter Unsicherheit: Zeithorizont-Degradation und Kundenvorhersagbarkeit |
+| leco *(Drive)* | Dezentrale Wirtschaftszellen: Formale Analyse optimaler Entkopplung und systemischer Resilienz in modularen Wirtschaftsarchitekturen |
+| agrar | Agrarwirtschaftliches KI-Ökosystem (AGRI-GAIA): KI-Klassifikation von Kartoffelqualität, MILP-Optimierung (AUC = 0.964) |
+
+---
+
+## VI. Natur- & Lebenswissenschaften
+
+### VI.1 Biologie, Gehirn & Medizin
 
 *DNA-Sequenzierung, Genomik, Virologie, Alzheimer-Forschung, Blutkrebs, neuromuskuläre und therapeutische Strategien*
 
@@ -396,7 +407,7 @@
 
 ---
 
-### V.2 Meeresbiologie
+### VI.2 Meeresbiologie
 
 *Ozean-Reinigung, Korallenriffe, Mikroplastik-Neutralisierung und Meeressäuger-Ethologie*
 
@@ -410,7 +421,7 @@
 
 ---
 
-### V.3 Theologie & Gesellschaft
+### VI.3 Theologie & Gesellschaft
 
 *Schöpfungsbericht, Vernunft, Naturgesetze als anthropologische Ordnungsinstanz und fundamentale Erfindungen der Zivilisation*
 
@@ -426,9 +437,9 @@
 
 ---
 
-## VI. Synthesen & Transdisziplinarität
+## VII. Synthesen & Transdisziplinarität
 
-### VI.1 Wissenschaftliche Synthesen & Neue Forschungsfelder
+### VII.1 Wissenschaftliche Synthesen & Neue Forschungsfelder
 
 *Transdisziplinäre Synthesearbeiten aus systematischer Kreuzanalyse aller 15 eigenständigen Forschungsdomänen*
 
@@ -440,7 +451,7 @@
 
 ---
 
-### VI.2 Sonstiges
+### VII.2 Sonstiges
 
 | Repository | Beschreibung |
 |---|---|
