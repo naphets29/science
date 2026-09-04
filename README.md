@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **255 Wissenschaften** von Stephan Epp
+> **256 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -286,6 +286,7 @@
 | wchiffre/src | Fenster-Chiffre (FC) — modulares kryptografisches Verfahren mit Dummy-Fenster-Fragmentierung und inverser Schlüsselstruktur; informationstheoretisch sichere Paketunterscheidung |
 | chatme | Ende-zu-Ende-verschlüsselte Messenger-App (Signatur-Chiffre Epp 2026) für Android via Capacitor + FastAPI |
 | lattice *(Drive)* | Gitterbasierte Kryptographie und Quanten-Fehlerkorrektur — SVP, LLL-Basisreduktion, GKP-Codes (NTRU, Ring-SIS), anonyme Reputationssysteme mit Zero-Knowledge-Beweisen |
+| aicybersec | KI-basierte Bedrohungen und moderne Cybersicherheit: Eine formale Analyse von Angriffsmodellen und Verteidigungsmechanismen mit Fallstudie IT-Dienstleister Bechtle |
 
 ---
 
