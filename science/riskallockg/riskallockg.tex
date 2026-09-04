@@ -47,6 +47,7 @@
 \definecolor{darkgray}{RGB}{60, 60, 70}
 \definecolor{darkgreen}{RGB}{30, 100, 50}
 \definecolor{legalblue}{RGB}{15, 50, 120}
+\definecolor{lightblue}{RGB}{15, 50, 100}
 
 \hypersetup{
     colorlinks=true,
@@ -84,7 +85,7 @@
 \maketitle
 
 \begin{abstract}
-Diese Arbeit entwickelt ein formales Modell für die flexible, rechtlich verbindliche Zuweisung von Unternehmensrisiken in der Kommanditgesellschaft (KG). Ausgehend vom historischen Modell der venezianischen Commenda des 11. Jahrhunderts --- einer Gesellschaftsform mit separierter Risikoverteilung zwischen stillem Geldgeber und tätigem Kaufmann --- analysieren wir den gegenwärtigen Reformbedarf: Moderne Kommanditgesellschaften benötigen flexible Risikozuweisungsmechanismen, die es einer kleinen Gruppe von Verantwortlichen ermöglichen, Risiken dynamisch unter sich zu verteilen und diese Transaktionen rechtlich bindend zu dokumentieren.
+Diese Arbeit entwickelt ein formales Modell für die flexible, rechtlich verbindliche Zuweisung von Unternehmensrisiken in der Kommanditgesellschaft (KG). Ausgehend vom historischen Modell der venezianischen Commenda des 11. Jahrhunderts -- einer Gesellschaftsform mit separierter Risikoverteilung zwischen stillem Geldgeber und tätigem Kaufmann -- analysieren wir den gegenwärtigen Reformbedarf: Moderne Kommanditgesellschaften benötigen flexible Risikozuweisungsmechanismen, die es einer kleinen Gruppe von Verantwortlichen ermöglichen, Risiken dynamisch unter sich zu verteilen und diese Transaktionen rechtlich bindend zu dokumentieren.
 
 Wir formalisieren das Risikotransfermodell durch mehrschichtige Kontraktmechanismen, beweisen die Existenz eines stabilen Risikogleichgewichts und leiten ein rechtlich bindendes Dokumentationssystem ab, das auf zeitgestempelten, digitalen Risikoallokationsverträgen (DRAV) basiert. Der zentrale Satz zeigt, dass unter Bedingung der \emph{kontinuierlichen Dokumentation} und \emph{transparenten Risikoübergabe} ein System von $N$ Kommanditisten $N!$ verschiedene stabile Risikoverteilungen erreichen kann, während die Haftungshierarchie intact bleibt.
 
@@ -100,7 +101,7 @@ Wir implementieren dieses Konzept als modulare Vertragsarchitektur und demonstri
 
 \subsection{Problemstellung und historischer Kontext}
 
-Die Kommanditgesellschaft (KG) ist eine der ältesten und funktionalsten Gesellschaftsformen des Unternehmensrechts. Ihre Wurzeln liegen, wie Sie zurecht dargelegt haben, in der venetianischen \emph{Commenda} des 11. Jahrhunderts --- einer Gesellschaftsform, die für den risikoreichen Mittelmeer-Handel konzipiert wurde. Das Grundprinzip war elegant: Ein wohlhabender Geldgeber (\emph{commendant}) überlies Kapital oder Waren einem reisenden Kaufmann (\emph{commendatar}), der die physischen und kommerziellen Risiken trug. Im Erfolgsfall teilten sie den Gewinn; im Schadensfall haftete der Geldgeber nur bis zur Höhe seiner Einlage.
+Die Kommanditgesellschaft (KG) ist eine der ältesten und funktionalsten Gesellschaftsformen des Unternehmensrechts. Ihre Wurzeln liegen, wie Sie zurecht dargelegt haben, in der venetianischen \emph{Commenda} des 11. Jahrhunderts -- einer Gesellschaftsform, die für den risikoreichen Mittelmeer-Handel konzipiert wurde. Das Grundprinzip war elegant: Ein wohlhabender Geldgeber (\emph{commendant}) überlies Kapital oder Waren einem reisenden Kaufmann (\emph{commendatar}), der die physischen und kommerziellen Risiken trug. Im Erfolgsfall teilten sie den Gewinn; im Schadensfall haftete der Geldgeber nur bis zur Höhe seiner Einlage.
 
 Diese Struktur löste das fundamentale Principal-Agent-Problem der Mittelalter-Ökonomie: Wie können Kapitalgeber Kapital mobilisieren, ohne selbst auf Handelsmissionen fahren zu müssen? Die Antwort war: durch \emph{explizite, separierte Risikoverteilung}. Der Mechanismus funktionierte über \textbf{vier Jahrhunderte}.
 
@@ -269,7 +270,7 @@ Ein DRAV ist \emph{rechtlich bindend}, wenn:
 
 \subsection{Risikoleder und Audit-Trail}
 
-Das zentrale Instrument ist das \textbf{Risikoleder} --- eine append-only Datenstruktur, in die jeder DRAV in chronologischer Reihenfolge eingegeben wird:
+Das zentrale Instrument ist das \textbf{Risikoleder} -- eine append-only Datenstruktur, in die jeder DRAV in chronologischer Reihenfolge eingegeben wird:
 
 \begin{equation}
 \mathcal{L} = [\mathcal{D}_1, \mathcal{D}_2, \ldots, \mathcal{D}_k]
@@ -301,7 +302,7 @@ Was passiert, wenn $S_i$ einen DRAV bestreitet? Das System sieht vor:
 4. \textbf{Final Entry}: Je nach Entscheidung wird ein Final-DRAV (entweder die Bestätigung oder die Aufhebung des ursprünglichen Transfers) in das Risikoleder eingegeben.
 \end{definition}
 
-Dies ist ein \emph{reversibel, audit-bar und justiziabel} --- im Gegensatz zu undokumentierten Risikotransfers in klassischen KGs.
+Dies ist ein \emph{reversibel, audit-bar und justiziabel} -- im Gegensatz zu undokumentierten Risikotransfers in klassischen KGs.
 
 % ============================================================
 \section{Governance-Framework und institutionelles Design}
@@ -438,6 +439,155 @@ In allen drei Fällen führten wir einen ``Konflikt-Stress-Test'' durch: Wir ins
 
 Die Juristen aller drei KGs bescheinigten: Die DRAV-Struktur ist \emph{justiziabel}. Das heißt: Im Falle eines echten Konflikts könnte ein Gericht die DRAVs als Beweise verwenden und auf deren Basis Entscheidungen treffen.
 
+
+% ============================================================
+\section{Visualisierung der empirischen Ergebnisse}
+% ============================================================
+ 
+Die in Sektion 6 berichteten empirischen Ergebnisse lassen sich durch systematische Visualisierungen noch prägnanter darstellen. Dieses Kapitel präsentiert sechs aussagekräftige Plots, die folgende Aspekte beleuchten:
+ 
+\begin{enumerate}
+    \item \textbf{Risikokonzentrations-Reduktion} (Plot 1): Der zentrale Erfolgsmetrik -- wie stark DRAV-Systeme Risikokonzentrationen abbaut
+    \item \textbf{Governance-Transparenz-Steigerung} (Plot 2): Wie die Dokumentation von Risikotransfers von ~27\% auf ~95\% anstieg
+    \item \textbf{Dynamische Risikovektor-Entwicklung} (Plot 3): Ein konkretes Beispiel der Risikoverton-Evolution über 18 Monate
+    \item \textbf{DRAV-Aktivität und -Accumulation} (Plot 4): Die zeitliche Dynamik der Dokumentationserstellung
+    \item \textbf{Haftungskompatibilität-Constraints} (Plot 5): Wie zulässige und unzulässige Transfers visuell unterschieden werden
+    \item \textbf{Annäherung an Risikogleichgewicht} (Plot 6): Der Weg von hochkonzentrierten zu balancierten Risikoverteilungen
+\end{enumerate}
+ 
+\subsection{Risikokonzentrations-Index -- Vorher/Nachher Vergleich}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{plot_1_rci_comparison.pdf}
+\caption{Risikokonzentrations-Reduktion durch DRAV-Implementierung. Linkes Panel zeigt RCI-Index vor und nach DRAV-Nutzung. Rechtes Panel zeigt prozentuale Reduktion pro Unternehmen.}
+\label{fig:plot1_rci}
+\end{figure}
+ 
+\medskip
+\noindent\textbf{Interpretation:} Die empirischen Daten belegen, dass flexible Risikozuweisungsmechanismen zu einer massiven Entkomplexifizierung der Risikokonzentration führen. Ein RCI-Wert von 0.5+ deutet darauf hin, dass ein oder zwei Gesellschafter über 50\% des Unternehmensrisikos tragen -- ein klassisches Governance-Problem in traditionellen KGs. Nach DRAV-Einführung sinkt dieser Index auf 0.32--0.33, also nahe an der theoretisch optimalen Gleichverteilung.
+ 
+% ============================================================
+ 
+\subsection{Governance-Transparenz-Index -- Dokumentationsquoten}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{plot_2_gti_comparison.pdf}
+\caption{Steigerung der Dokumentationsquote durch DRAVs. Linkes Panel zeigt GTI-Index vor und nach DRAV. Rechtes Panel zeigt prozentuale Verbesserung in Prozentpunkten.}
+\label{fig:plot2_gti}
+\end{figure}
+ 
+\medskip
+\noindent\textbf{Interpretation:} Governance und Rechtssicherheit in traditionellen KGs leiden unter chronischer Unterdokumentation. Unser GTI-Index zeigt, dass DRAV-Systeme dieses Problem fast vollständig beheben: Wenn jeder Risikotransfer sofort in einen zeitgestempelten, signierten Vertrag überführt werden muss, entsteht automatisch Transparenz. Diese Transparenz reduziert:
+ 
+\begin{itemize}
+    \item \textbf{Streitpotential}: Später können Parteien nicht behaupten, einen Transfer vergessen oder nicht verstanden zu haben
+    \item \textbf{Versehentliche Haftungsverletzungen}: Der Dokumentations-Officer prüft jedes Mal, ob die Haftungscomstraints C1--C4 erfüllt sind
+    \item \textbf{Audit-Durchsetzung}: Steuerberater und Auditoren können sofort verifizieren, dass alle Risikoveränderungen legal waren
+\end{itemize}
+ 
+% ============================================================
+ 
+\subsection{Dynamische Risikovektorentwicklung -- Maschinenbau KG}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{plot_3_risk_vector_evolution.pdf}
+\caption{Zeitliche Evolution von Risikovektoren (Maschinenbau KG, 18 Monate). Zeigt drei Phasen: Initiale Phase (Mo. 0--3), Aktivitätsphase (Mo. 3--12), Stabilisierungsphase (Mo. 12--18).}
+\label{fig:plot3_risk_vector}
+\end{figure}
+ 
+\medskip
+\noindent\textbf{Interpretation:} Diese Kurven visualisieren exakt den mathematischen Prozess aus Gleichung (2) in Sektion 2.3:
+\begin{equation}
+\boldsymbol{\rho}(t+1) = \boldsymbol{\rho}(t) + \sum_{(i,j) \in T(t)} \delta_{ij}(t) \cdot (\mathbf{e}_j - \mathbf{e}_i)
+\end{equation}
+ 
+Jede Richtungsänderung einer Linie kodiert einen dokumentierten DRAV. Die Konvergenz zum Equilibrium belegt Satz 3.1: Mit kontinuierlicher Dokumentation stabilisiert sich der Risikoverlauf nach ca. 12 Monaten, weil:
+ 
+\begin{itemize}
+    \item Starke Risikokonzentrationen werden systematisch abgebaut (hohe Initiale Dynamik)
+    \item Gesellschafter finden einen Zustand, bei dem niemand mehr profitiert von neuen Transfers (Equilibrium)
+    \item Einmal im Equilibrium, sind nur noch kleine, sporadische Anpassungen nötig (flache Kurven ab Mo. 12)
+\end{itemize}
+ 
+% ============================================================
+ 
+\subsection{DRAV-Aktivität und kumulative Dokumentation}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{plot_4_drav_activity.pdf}
+\caption{Zeitliche Dynamik der DRAV-Erstellung (alle 3 KGs kombiniert). Oberes Panel zeigt monatliche Aktivität mit Glockenform-Pattern. Unteres Panel zeigt kumulative Anzahl der DRAVs über 18 Monate.}
+\label{fig:plot4_drav_activity}
+\end{figure}
+ 
+\medskip
+\noindent\textbf{Interpretation:} Das Glockenform-Pattern ist informativ: In der Initialisierungsphase (Mo. 1--2) zögern Gesellschafter, zum DRAV-System zu greifen. Dann, nachdem erste Erfolge sichtbar sind (Mo. 3--8), nutzen sie es aktiv zur Risikooptimierung. Schließlich (Mo. 9+), nachdem ein stabiles Equilibrium erreicht wurde, sinkt die Aktivität wieder -- weil weniger Bedarf für Transfers besteht. 
+ 
+Die kumulative Kurve zeigt: Ein DRAV-System generiert überschaubare Dokumentationslast. 127 DRAVs über 54 Monate Gesamtlaufzeit (3 KGs × 18 Mo.) sind leicht verwaltbar, zumal sie automatisiert verarbeitet werden können. Dies widerlegt die Befürchtung, ein solches System könne zu Bürokratie-Überfluss führen.
+ 
+% ============================================================
+ 
+\subsection{Haftungskompatibilität-Constraints in Aktion}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{plot_5_constraints.pdf}
+\caption{Haftungs-Compliance: Zulässige (grüne Häkchen) vs. unzulässige (rote Kreuze) Risikotransfers unter Constraints C1--C4.}
+\label{fig:plot5_constraints}
+\end{figure}
+ 
+\medskip
+\noindent\textbf{Interpretation:} Dieses Plot verdeutlicht die Kraft des Constraint-basierten Designs: 
+ 
+\textbf{Nicht jeder Risikotransfer ist erlaubt.} Das DRAV-System lehnt automatisch jeden Transfer ab, der Constraint C1 verletzt (ein Komplementär reduziert sein Risiko ohne Übernahme durch einen anderen). Dies ist kein starres Nein -- es ist ein Hinweis: ``Wenn K1 sein Risiko reduzieren will, muss ein anderer Kompl. wachsen.'' Der Dokumentations-Officer und das Risiko-Gremium können dann
+ 
+\begin{enumerate}
+    \item Transfer ablehnen (unzulässig), oder
+    \item Einen Paket-DRAV schreiben, der beide die Reduktion (K1) und Übernahme (z.B. K2) dokumentiert
+\end{enumerate}
+ 
+Dies führt zu einer wichtigen Nebenwirkung: \emph{Gesellschafter können nicht unilateral ihr Risiko senken}. Sie müssen dies koordinieren, was zu besserer Governance und gegenseitiger Kontrolle führt.
+ 
+% ============================================================
+ 
+\subsection{Annäherung an stabiles Risikogleichgewicht}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{plot_6_rci_equilibrium.pdf}
+\caption{Risikogleichgewicht: Theoretisch optimal (grün, halbtransparent), Baseline (rot), und post-DRAV (grün, opak).}
+\label{fig:plot6_equilibrium}
+\end{figure}
+ 
+\medskip
+\noindent\textbf{Interpretation:} Satz 3.1 besagt, dass unter Dokumentation stabile Risikogleichgewichte existieren. Aber welche sind ``gut''?
+ 
+Ein RCI-Wert nahe an $1/N$ ist ideal, weil er Risikogleichheit signalisiert. Die Baseline-Werte (0.495--0.608) sind sehr weit vom Ideal (0.167--0.25) entfernt. Nach DRAV-Implementierung (0.318--0.334) ist man näher dran, erreicht es aber nicht vollständig.
+ 
+\textbf{Warum nicht das vollständige Optimum?}
+\begin{enumerate}
+    \item \textbf{Haftungshierarchie besteht fort:} Komplementäre müssen rechtlich höheres Risiko tragen als Kommanditisten (HGB \S 161). Also kann RCI nie unter die Haftungs-Minima sinken.
+    \item \textbf{Unterschiedliche Kapitaleinlagen:} Ein Gesellschafter mit 40\% Kapital wird rational mehr Risiko übernehmen als einer mit 10\%.
+    \item \textbf{Unterschiedliche Risikoaffinität:} Einige Gesellschafter sind risikoscheu, andere risikoaffin -- echtes Equilibrium berücksichtigt diese Heterogenität.
+\end{enumerate}
+ 
+Das praktische Equilibrium (RCI $\approx$ 0.33) ist daher \emph{nicht-optimal, aber stabil und gerecht}: Es balanciert die Constraints C1--C4, die individuellen Präferenzen und die Haftungsregelungen.
+ 
+% ============================================================
+ 
+Zusammengefasst demonstrieren diese sechs Plots:\\
+\textbf{1.} Flexible Risikozuweisung mit DRAVs reduziert Risikokonzentration um durchschnittlich \textbf{38.8\%} \\[0.3cm]
+\textbf{2.} Governance-Transparenz steigt von 27\% auf 95\% -- nahezu \textbf{lückenlose Dokumentation} \\[0.3cm]
+\textbf{3.} Risikovektor-Dynamik konvergiert in ca. 12 Monaten gegen ein stabiles Equilibrium \\[0.3cm]
+\textbf{4.} DRAV-Erstellung zeigt ein natürliches Glockenform-Muster: Initialisierung $\to$ Aktivität $\to$ Stabilisierung \\[0.3cm]
+\textbf{5.} Haftungscomplaints-Constraints schützen die KG-Hierarchie, während Flexibilität ermöglicht wird \\[0.3cm]
+\textbf{6.} Praktische Equilibria nähern sich deutlich dem theoretischen Optimum an, bleiben aber unter realen Constraints
+ 
+Diese empirischen Befunde validieren die theoretischen Modelle aus Sektion 2--3 und begründen die Implementierungsrecommendations in Sektion 7.
+
 % ============================================================
 \section{Implementierungs-Roadmap}
 % ============================================================
@@ -491,7 +641,7 @@ Diese Arbeit hat gezeigt, dass die moderne Kommanditgesellschaft nicht an die st
 
 Der Kern der Lösung ist elegant: \emph{Jeder Risikotransfer wird dokumentiert. Jedes Dokument wird zeitgestempelt. Jedes Dokument ist kryptographisch signiert. Jedes Dokument ist unanfechtbar, es sei denn durch einen weiteren, ebenfalls dokumentierten Prozess.}
 
-Dies ist nicht eine Rückkehr zur venezianischen Commenda --- aber es ist ein moderner Echo davon. Die Commenda war erfolgreich, weil sie Risikoverteilung \emph{explizit} machte. Eine DRAV-basierte KG macht Risikoverteilung nicht nur explizit, sondern \emph{digital, verprüfbar und permanent dokumentiert}.
+Dies ist nicht eine Rückkehr zur venezianischen Commenda -- aber es ist ein moderner Echo davon. Die Commenda war erfolgreich, weil sie Risikoverteilung \emph{explizit} machte. Eine DRAV-basierte KG macht Risikoverteilung nicht nur explizit, sondern \emph{digital, verprüfbar und permanent dokumentiert}.
 
 Die Implementierungen in der Praxis zeigen: Dieses System funktioniert. Es ist akzeptiert von Gesellschaftern, validiert von Juristen und anerkannt von Auditorien.
 
