@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **254 Wissenschaften** von Stephan Epp
+> **255 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -363,6 +363,7 @@
 | uncrtecos | Wirtschaftssysteme unter Unsicherheit: Zeithorizont-Degradation und Kundenvorhersagbarkeit |
 | leco *(Drive)* | Dezentrale Wirtschaftszellen: Formale Analyse optimaler Entkopplung und systemischer Resilienz in modularen Wirtschaftsarchitekturen |
 | agrar | Agrarwirtschaftliches KI-Ökosystem (AGRI-GAIA): KI-Klassifikation von Kartoffelqualität, MILP-Optimierung (AUC = 0.964) |
+| riskallockg | Flexible Risikozuweisung in der Kommanditgesellschaft: Formale Modellierung dynamischer Risikoallokation |
 
 ---
 
