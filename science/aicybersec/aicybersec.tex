@@ -143,7 +143,7 @@ Die zentralen Beiträge sind:
 	\item Eine formale Taxonomie von KI-Angriffsklassen, die von statistischen Angreifern bis zu adaptiv-adversarialen Angreifern reicht (Definition~\ref{def:ki_angriffsklasse}).
 	\item Formale Bedingungen, unter denen KI-Lernzahlen Angriffserfolgswahrscheinlichkeiten bestimmen (Satz~\ref{satz:ki_lernschranke}).
 	\item Beweis, dass Redundanz mit ausreichender Diversität gegen KI-Angreifer schützt, ähnlich wie gegen traditionelle Angreifer -- aber mit stärkeren Anforderungen (Satz~\ref{satz:ki_redundanzgarantie}).
-	\item Algorithmen zur Berechnung minimaler Diversitätsgrade für IT-Dienstleister (Algoritmus~\ref{alg:diversitaet}).
+	\item Algorithmen zur Berechnung minimaler Diversitätsgrade für IT-Dienstleister.
 \end{enumerate}
 
 % ============================================================
@@ -217,7 +217,7 @@ Ein Klasse 4-Angreifer würde zusätzlich sein Modell gegen bekannte Phishing-Er
 
 \subsection{Das Bernoulli-Lernmodell}
 
-Analogie zu Abschnitt 3 von redsec.tex: Dort wurde die Wahrscheinlichkeit $P_{\mathrm{Safety}}(n,p)$ berechnet, dass ein System mit $n$ redundanten Kanälen, von denen jeder mit Wahrscheinlichkeit $p$ kompromittiert ist, dennoch mehrheitskorrekt funktioniert. Hier entwickeln wir ein analoges Modell für KI-Angreifer.
+Analogie zu Abschnitt 3 von \cite{Epp26a}. Dort wurde die Wahrscheinlichkeit $P_{\mathrm{Safety}}(n,p)$ berechnet, dass ein System mit $n$ redundanten Kanälen, von denen jeder mit Wahrscheinlichkeit $p$ kompromittiert ist, dennoch mehrheitskorrekt funktioniert. Hier entwickeln wir ein analoges Modell für KI-Angreifer.
 
 \begin{definition}[Lernerfolgswahrscheinlichkeit]
 \label{def:lernwahrscheinlichkeit}
@@ -331,7 +331,7 @@ Die rote gestrichelte Linie zeigt eine akzeptable Fehlerrate von 5\%, die dunkel
 
 \subsection{Decoy-Injektions-Effekt (Satz 5.1)}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{fig3_decoy_injection.pdf}
 \caption{Satz 5.1: Decoy-Injektionen zur KI-Verwirrung.}
@@ -344,7 +344,7 @@ Die rote gestrichelte Linie zeigt eine akzeptable Fehlerrate von 5\%, die dunkel
 
 \subsection{Vergleich der Verteidigungsmechanismen}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{fig4_defense_comparison.pdf}
 \caption{Schrittweise Erhöhung der Verteidigungstiefe.}
@@ -397,7 +397,7 @@ Das Resultat ist eine Angriffserfolgsrate von $P_{\mathrm{Angriff}} \approx 10^{
 
 \subsection{Zeitliche Entwicklung von Angriffen}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{fig7_attack_timeline.pdf}
 \caption{Definition 2.2 visualisiert: Trainings- und Exploitierungsphase eines adaptiven KI-Angreifers.}
@@ -482,7 +482,7 @@ Insbesondere:
 \end{satz}
 
 \begin{proof}
-Der Beweis ist identisch mit dem Beweis aus redsec.tex (Satz 3.2), angewendet auf KI-Angreifer statt Hardwarefehler. Die zentrale Erkenntnis ist, dass \emph{unabhängige Kanäle} das gleiche mathematische Modell erfüllen, ob die Kompromittierung durch einen Random-Fehler (Safety) oder durch einen adaptiven KI-Angreifer (Security) hervorgerufen wird.
+Der Beweis ist identisch mit dem Beweis aus \cite{Epp26a} (Satz 3.2), angewendet auf KI-Angreifer statt Hardwarefehler. Die zentrale Erkenntnis ist, dass \emph{unabhängige Kanäle} das gleiche mathematische Modell erfüllen, ob die Kompromittierung durch einen Random-Fehler (Safety) oder durch einen adaptiven KI-Angreifer (Security) hervorgerufen wird.
 \end{proof}
 
 \begin{bemerkung}[Kritische Bedingung: Unabhängigkeit der Kanäle]
@@ -605,7 +605,7 @@ Für Bechtle sind folgende Angriffsziele mit KI relevant:
 
 Basierend auf den Sätzen dieser Arbeit empfehlen wir eine fünfschichtige Verteidigungsarchitektur:
 
-\begin{algorithm}[H]
+\begin{algorithm}[h]
 \caption{Redundante KI-resiliente Sicherheitsarchitektur für Bechtle}
 \label{alg:bechtle_defense}
 \begin{algorithmic}[1]
@@ -689,7 +689,7 @@ Dies ist eine praktisch unmögliche Erfolgswahrscheinlichkeit.
 \end{enumerate}
 
 % ============================================================
-\section{Diskussion: Grenzen und offene Fragen}
+\section{Diskussion}
 % ============================================================
 
 \subsection{Annahmen der Analyse}
