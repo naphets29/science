@@ -1,18 +1,21 @@
-﻿\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 
 % ============================================================
 %  Pakete
 % ============================================================
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+\DeclareUnicodeCharacter{2081}{\ensuremath{_1}}
+\DeclareUnicodeCharacter{2082}{\ensuremath{_2}}
+\DeclareUnicodeCharacter{2032}{\ensuremath{^\prime}}
+\usepackage[german]{babel}
+\usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{booktabs}
 \usepackage{physics}
-\usepackage{siunitx}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, decorations.pathmorphing, calc}
 \usepackage{pgfplots}
@@ -21,11 +24,36 @@
 \usepackage{subcaption}
 \usepackage{natbib}
 \usepackage{doi}
-% \usepackage{microtype}  % deaktiviert wegen Font-Expansion-Fehler
-% \usepackage{lmodern}  % optional, nicht verfügbar
+\usepackage{microtype}  % deaktiviert wegen Font-Expansion-Fehler
 
-\DeclareSIUnit\parsec{pc}
-\DeclareSIUnit\year{yr}
+\emergencystretch=4em
+
+% Lokale, paketfreie Einheitenformatierung für portable MiKTeX-Installationen.
+\providecommand{\SI}[2]{\ensuremath{#1\,#2}}
+\providecommand{\si}[1]{\ensuremath{#1}}
+\providecommand{\num}[1]{#1}
+\providecommand{\ang}[1]{\ensuremath{#1\,\mathrm{arcmin}}}
+\providecommand{\DeclareSIUnit}[2]{\providecommand{#1}{\mathrm{#2}}}
+\providecommand{\kilo}{\mathrm{k}}
+\providecommand{\hecto}{\mathrm{h}}
+\providecommand{\micro}{\mathrm{\mu}}
+\providecommand{\nano}{\mathrm{n}}
+\providecommand{\giga}{\mathrm{G}}
+\providecommand{\per}{/}
+\providecommand{\square}{\mathrm{square}}
+\providecommand{\squared}{2}
+\providecommand{\steradian}{\mathrm{sr}}
+\providecommand{\watt}{\mathrm{W}}
+\providecommand{\metre}{\mathrm{m}}
+\providecommand{\pascal}{\mathrm{Pa}}
+\providecommand{\kelvin}{\mathrm{K}}
+\providecommand{\radian}{\mathrm{rad}}
+\providecommand{\second}{\mathrm{s}}
+\providecommand{\minute}{\mathrm{min}}
+\providecommand{\bar}{\mathrm{bar}}
+\providecommand{\parsec}{\mathrm{pc}}
+\providecommand{\year}{\mathrm{yr}}
+\renewcommand{\year}{\mathrm{yr}}
 
 \definecolor{darkblue}{RGB}{0,0,102}
 \definecolor{midblue}{RGB}{0,51,153}
@@ -71,20 +99,20 @@
 % ============================================================
 Die Erde ist von mehreren konzentrischen Atmosphärenschichten umgeben,
 deren Brechungsindex mit zunehmender Höhe monoton abnimmt.
-Durchläuft Sonnenlicht diese Schichten unter flachem Einfallswinkel â€“
-wie es bei Sonnenauf- und -untergang der Fall ist â€“,
+Durchläuft Sonnenlicht diese Schichten unter flachem Einfallswinkel --
+wie es bei Sonnenauf- und -untergang der Fall ist --,
 so wird jeder einzelne Lichtstrahl gemäß dem Snellschen Brechungsgesetz
 stetig zur Erdkugel hin gekrümmt.
 Diese Arbeit zeigt mathematisch und physikalisch,
 dass (i) die Gesamtbrechung im Zenit wenige Bogensekunden beträgt,
-am Horizont jedoch nahezu $\SI{34}{\arcminute}$ erreicht,
+am Horizont jedoch nahezu $\ang{34}$ erreicht,
 (ii) die Krümmung der Strahltrajektorie durch den Brechungsindex-Gradienten
 $\dd n/\dd h$ vollständig beschrieben wird,
 (iii) die Sonne deshalb bereits sichtbar ist, wenn sie geometrisch
 noch knapp unter dem Horizont steht, und
 (iv) das von der gesamten Sonnenscheibe ausgesandte Lichtbündel
 durch die schichtweise differentielle Brechung derart aufgefächert wird,
-dass es sich â€“ vom Beobachter aus gesehen â€“ strahlenförmig
+dass es sich -- vom Beobachter aus gesehen -- strahlenförmig
 vom scheinbaren Sonnenmittelpunkt aus über den Horizont verteilt.
 Die analytische Herleitung wird durch numerische Integration
 der Strahlgleichung sowie durch ein sphärisches Atmosphärenmodell ergänzt.
@@ -92,8 +120,8 @@ der Strahlgleichung sowie durch ein sphärisches Atmosphärenmodell ergänzt.
 Betrachtet man die Sonne kurz nach Sonnenaufgang oder kurz vor
 Sonnenuntergang,
 so beobachtet man ein charakteristisches Muster:
-Von der glühenden Sonnenscheibe scheinen sich â€“ besonders bei
-leichter Dunstigkeit â€“ Lichtstrahlen strahlenförmig über den
+Von der glühenden Sonnenscheibe scheinen sich -- besonders bei
+leichter Dunstigkeit -- Lichtstrahlen strahlenförmig über den
 Himmel zu verteilen (\emph{krepuskuläre Strahlen}).
 Gleichzeitig befindet sich die Sonne scheinbar noch \emph{über} dem
 geometrischen Horizont, obwohl sie berechnet bereits darunter
@@ -123,6 +151,7 @@ Die vorliegende Arbeit ist wie folgt gegliedert:
 Abschnitt~\ref{sec:schichten} beschreibt den Aufbau der Atmosphäre.
 Abschnitt~\ref{sec:grundlagen} legt die optischen und physikalischen
 Grundlagen dar.
+Abschnitt~\ref{sec:dispersion} behandelt die wellenlängenabhängige Dispersion.
 Abschnitt~\ref{sec:strahglgn} leitet die Strahlgleichung in
 sphärischer Geometrie her.
 Abschnitt~\ref{sec:brechung_horizont} berechnet die
@@ -153,11 +182,11 @@ Ausblick acht weiterführende Forschungsdirektionen.
 \toprule
 Schicht & Höhe $h$ & $p\;[\si{\hecto\pascal}]$ & $T\;[\si{\kelvin}]$ & $(n-1)\times 10^{6}$ \\
 \midrule
-Troposphäre       & $0$â€“$\SI{12}{\kilo\metre}$   & 1013 â€“ 194  & 288 â€“ 217 & 293 â€“ 57  \\
+Troposphäre       & $0$--$\SI{12}{\kilo\metre}$   & 1013 -- 194  & 288 -- 217 & 293 -- 57  \\
 Tropopause        & $\approx\SI{12}{\kilo\metre}$ & 194         & 217       & 57        \\
-Stratosphäre      & $12$â€“$\SI{50}{\kilo\metre}$  & 194 â€“ 0.8   & 217 â€“ 271 & 57 â€“ 0.2  \\
-Mesosphäre        & $50$â€“$\SI{85}{\kilo\metre}$  & 0.8 â€“ 0.003 & 271 â€“ 185 & $<0.1$    \\
-Thermosphäre      & $85$â€“$\SI{600}{\kilo\metre}$ & $<$0.003    & 185â†‘      & $\approx 0$\\
+Stratosphäre      & $12$--$\SI{50}{\kilo\metre}$  & 194 -- 0.8   & 217 -- 271 & 57 -- 0.2  \\
+Mesosphäre        & $50$--$\SI{85}{\kilo\metre}$  & 0.8 -- 0.003 & 271 -- 185 & $<0.1$    \\
+Thermosphäre      & $85$--$\SI{600}{\kilo\metre}$ & $<$0.003    & 185$\uparrow$      & $\approx 0$\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -237,10 +266,10 @@ Integration der Strahlbahn~\citep{Smart1977}.
 \subsection{Einführung: Chromatische Brechung in der Atmosphäre}
 
 Die bisherige Analyse hat die Brechung des Lichts unter der Annahme
-einer einzigen Wellenlänge (λ ≈ 550 nm, grünes Licht) behandelt.
+einer einzigen Wellenlänge ($\lambda$ ≈ 550 nm, grünes Licht) behandelt.
 In Wirklichkeit ist weißes Sonnenlicht jedoch ein Kontinuum verschiedener
-Wellenlängen: von ultraviolett (λ ≈ 300 nm) über sichtbar
-(λ ≈ 380–700 nm) bis infrarot (λ ≈ 1000 nm und darüber).
+Wellenlängen: von ultraviolett ($\lambda$ ≈ 300 nm) über sichtbar
+($\lambda$ ≈ 380–700 nm) bis infrarot ($\lambda$ ≈ 1000 nm und darüber).
 
 Jede Wellenlänge wird von der Atmosphäre unterschiedlich stark gebrochen.
 Dieses Phänomen der chromatischen oder wellenlängenabhängigen Dispersion
@@ -283,7 +312,7 @@ gilt mit hoher Genauigkeit~\citep{Edlen1966}:
 	+ \frac{\SI{2949810e-8}{\,\micro\metre^{-4}}}{\lambda^4}
 	\label{eq:cauchy_luft}
 \end{equation}
-wobei $\lambda$ in Mikrometern (μm) einzusetzen ist.
+wobei $\lambda$ in Mikrometern ($\mu$m) einzusetzen ist.
 
 Die erste Potenz $\lambda^{-2}$ dominiert bei optischen Wellenlängen;
 der Term $\lambda^{-4}$ beschreibt die höherfrequente Struktur der
@@ -296,7 +325,7 @@ Für schnelle numerische Abschätzungen genügt oft die \emph{vereinfachte Cauch
 	\label{eq:cauchy_simp}
 \end{equation}
 wobei $n_0 - 1 \approx 2.93 \times 10^{-4}$ der Refraktivitätswert
-bei der Referenzwellenlänge λ₀ ≈ 589 nm (Natrium-D-Linie) ist.
+bei der Referenzwellenlänge $\lambda_0$ ≈ 589 nm (Natrium-D-Linie) ist.
 
 % ============================================================
 \subsection{Wellenlängenabhängiger Brechungsindex in der Atmosphäre}
@@ -354,7 +383,7 @@ unter Standardbedingungen ($p = \SI{1013}{\hecto\pascal}$, $T = \SI{288}{\kelvin
 	\label{tab:n_lambda}
 	\begin{tabular}{lrrl}
 		\toprule
-		Wellenlänge λ & Farbe/Region & $(n-1) \times 10^6$ & Relative\\
+		Wellenlänge $\lambda$ & Farbe/Region & $(n-1) \times 10^6$ & Relative\\
 		            & & & Dispersion \\
 		\midrule
 		\SI{300}{\nano\metre}  & UV         & 372.1  & 1.270 \\
@@ -386,7 +415,7 @@ Aus der Cauchy-Gleichung~\eqref{eq:cauchy_luft} folgt:
 	\label{eq:dn_dlambda}
 \end{equation}
 
-Bei λ = 550 nm erhalten wir:
+Bei $\lambda$ = 550 nm erhalten wir:
 \begin{equation}
 	\frac{\mathrm{d}n}{\mathrm{d}\lambda}\bigg|_{550\,\mathrm{nm}} \approx -\SI{7.43e-4}{\per\nano\metre},
 	\label{eq:dn_dlambda_550}
@@ -405,7 +434,7 @@ Ablenkungswinkel $R(\lambda_1)$ und $R(\lambda_2)$ erfahren.
 Die differentielle Refraktion ist:
 \begin{equation}
 	\Delta R := R(\lambda_1) - R(\lambda_2).
-	\label{eq:delta_R}
+	\label{eq:diff_R}
 \end{equation}
 
 Aus der allgemeinen Refraktionsformel~\eqref{eq:R_integral},
@@ -477,7 +506,7 @@ wobei die Koeffizienten $a$ und $b$ nur von der Höhe abhängen.
 
 Die Dispersion am Horizont ergibt sich durch Differentiation nach $\lambda$:
 \begin{equation}
-	\frac{\partial R}{\partial \lambda}\bigg|_{z=90°} = b(90°) \cdot \frac{\partial n_0}{\partial \lambda}.
+  \frac{\partial R}{\partial \lambda}\bigg|_{z=90^\circ} = b(90^\circ) \cdot \frac{\partial n_0}{\partial \lambda}.
 	\label{eq:R_horizont_disp}
 \end{equation}
 
@@ -487,15 +516,15 @@ Aus der Cauchy-Gleichung~\eqref{eq:cauchy_luft} folgt:
 	\label{eq:dn0_dlambda}
 \end{equation}
 
-Für typische Werte am Horizont (zenithaler Abstand $z = 90°$):
+Für typische Werte am Horizont (zenithaler Abstand $z = 90^\circ$):
 - Koeffizient: $b(90°) \approx 0.087$ (dimensionslos, abhängig von Temperatur- und Druckprofil)
-- Bei λ = 450 nm (Blau): $|\partial n_0/\partial \lambda| \approx 7.4 \times 10^{-4}$ nm$^{-1}$
-- Bei λ = 650 nm (Rot): $|\partial n_0/\partial \lambda| \approx 1.9 \times 10^{-4}$ nm$^{-1}$
+- Bei $\lambda$ = 450 nm (Blau): $|\partial n_0/\partial \lambda| \approx 7.4 \times 10^{-4}$ nm$^{-1}$
+- Bei $\lambda$ = 650 nm (Rot): $|\partial n_0/\partial \lambda| \approx 1.9 \times 10^{-4}$ nm$^{-1}$
 
 Dies ergibt für die Refraktionsdifferenz zwischen Blau (450 nm) und Rot (650 nm):
 \begin{equation}
-	\Delta R_{\mathrm{Blau-Rot}} = b(90°) \cdot \int_{650}^{450} \frac{\partial n_0}{\partial \lambda} \, \mathrm{d}\lambda
-	\approx 0.087 \times 2.8 \times 10^{-4} \approx \boxed{\SI{24}{\micro\radian} \approx \SI{5}{\arcsecond}}.
+  \Delta R_{\mathrm{Blau-Rot}} = b(90^\circ) \cdot \int_{650}^{450} \frac{\partial n_0}{\partial \lambda} \, \mathrm{d}\lambda
+	\approx 0.087 \times 2.8 \times 10^{-4} \approx \boxed{\SI{24}{\micro\radian} \approx \ang{5}}.
 	\label{eq:delta_R_br}
 \end{equation}
 
@@ -584,8 +613,8 @@ Luftmasse) definiert ist als:
 	\label{eq:airmass}
 \end{equation}
 
-Am Horizont ($z = 90°$) wird die Airmass sehr groß; eine genaue
-numerische Integration ergibt $\mathrm{AM}(90°) \approx 38$.
+Am Horizont ($z = 90^\circ$) wird die Airmass sehr groß; eine genaue
+numerische Integration ergibt $\mathrm{AM}(90^\circ) \approx 38$.
 
 Damit erhalten wir für die Transmissionskoeffizient en im Vergleich:
 \begin{equation}
@@ -595,7 +624,7 @@ Damit erhalten wir für die Transmissionskoeffizient en im Vergleich:
 \end{equation}
 
 Mit $\tau_0 \approx 0.12$ (für Rayleigh unter Standardbedingungen) und
-$\mathrm{AM}(90°) = 38$:
+$\mathrm{AM}(90^\circ) = 38$:
 \begin{equation}
 	\frac{T_{\mathrm{Blau}}}{T_{\mathrm{Rot}}} \approx \exp\left[-0.12 \cdot 38 \cdot 
 	\left(\frac{1}{450^4} - \frac{1}{650^4}\right) \times 10^{-12}\right]
@@ -651,7 +680,7 @@ Ein vollständiges numerisches Modell für wellenlängenabhängige Refraktion
 erfordert folgende Schritte:
 
 \begin{enumerate}
-	\item \textbf{Eingabe:} Wellenlänge λ, Zenitwinkeldistanz $z$,
+	\item \textbf{Eingabe:} Wellenlänge $\lambda$, Zenitwinkeldistanz $z$,
 	      Temperatur $T(h)$ und Druck $p(h)$ als Funktionen der Höhe.
 	
 	\item \textbf{Berechne Brechungsindex-Profil:}
@@ -699,7 +728,7 @@ Typische numerische Ergebnisse für die Refraktion am Horizont:
 	\label{eq:R_lambda_horz_beispiel}
 \end{equation}
 
-Die Differenz beträgt etwa $\SI{2}{\arcminute}$ zwischen Violett und Rot,
+Die Differenz beträgt etwa $\ang{2}$ zwischen Violett und Rot,
 was einer winzigen, aber kosmologisch wichtigen Dispersion entspricht.
 
 % ============================================================
@@ -776,22 +805,32 @@ Setzt man diese ein und nutzt die Taylor-Entwicklung $\delta_0(\lambda) \ll 1$, 
 \label{subsec:concrete_dispersion}
 % ============================================================
 
-Betrachten wir konkret die Dispersion zwischen Violett (λ₁ = 380 nm) und Rot (λ₂ = 700 nm)
-am Horizont ($z = 90°$).
+Betrachten wir konkret die Dispersion zwischen Violett ($\lambda$₁ = 380 nm) und Rot ($\lambda$₂ = 700 nm)
+am Horizont ($z = 90^\circ$).
 
 \textbf{Schritt 1: Berechne die Brechungsindizes nach Cauchy}
 
-Für λ = 380 nm:
+Für $\lambda$ = 380 nm:
 \begin{equation}
-	n(380\,\mathrm{nm}) - 1 = \frac{6432.8 \times 10^{-8}}{(0.380)^2} + \frac{2949810 \times 10^{-8}}{(0.380)^4}
-	= 4.453 \times 10^{-4} + 1.713 \times 10^{-4} = 6.166 \times 10^{-4}.
+  \begin{aligned}
+  n(380\,\mathrm{nm}) - 1
+  &= \frac{6432.8 \times 10^{-8}}{(0.380)^2}
+   + \frac{2949810 \times 10^{-8}}{(0.380)^4} \\
+  &= 4.453 \times 10^{-4} + 1.713 \times 10^{-4} \\
+  &= 6.166 \times 10^{-4}.
+  \end{aligned}
 	\label{eq:n_380}
 \end{equation}
 
-Für λ = 700 nm:
+Für $\lambda$ = 700 nm:
 \begin{equation}
-	n(700\,\mathrm{nm}) - 1 = \frac{6432.8 \times 10^{-8}}{(0.700)^2} + \frac{2949810 \times 10^{-8}}{(0.700)^4}
-	= 1.312 \times 10^{-4} + 8.609 \times 10^{-5} = 2.173 \times 10^{-4}.
+  \begin{aligned}
+  n(700\,\mathrm{nm}) - 1
+  &= \frac{6432.8 \times 10^{-8}}{(0.700)^2}
+   + \frac{2949810 \times 10^{-8}}{(0.700)^4} \\
+  &= 1.312 \times 10^{-4} + 8.609 \times 10^{-5} \\
+  &= 2.173 \times 10^{-4}.
+  \end{aligned}
 	\label{eq:n_700}
 \end{equation}
 
@@ -812,23 +851,27 @@ Das Verhältnis ist:
 Unter Verwendung der Näherungsformel für den Horizont (aus numerischer Integration
 der exakten Strahlgleichung):
 \begin{equation}
-	R(z=90°) \approx \frac{C}{\tan(z + d)} \quad \text{mit Korrektur},
+  R(z=90^\circ) \approx \frac{C}{\tan(z + d)} \quad \text{mit Korrektur},
 	\label{eq:refr_horizont_approx}
 \end{equation}
 wobei typischerweise $C \approx 34.5$ arcmin und $d \approx 0.06$ für mittlere Verhältnisse.
 
 Aus numerischen Rechnungen folgt:
 \begin{equation}
-	\begin{aligned}
-		R(\lambda = 380\,\mathrm{nm}, z=90°) &= 35.24\,\text{arcmin}\\
-		R(\lambda = 700\,\mathrm{nm}, z=90°) &= 33.18\,\text{arcmin}
+  \begin{aligned}
+    R(\lambda = 380\,\mathrm{nm}, z=90^\circ) &= 35.24\,\text{arcmin}\\
+    R(\lambda = 700\,\mathrm{nm}, z=90^\circ) &= 33.18\,\text{arcmin}
 	\end{aligned}
 	\label{eq:R_concrete}
 \end{equation}
 
 Die differentielle Refraktion ist:
 \begin{equation}
-	\Delta R = R(380) - R(700) = 35.24 - 33.18 = \boxed{2.06\,\text{arcmin}}.
+  \begin{aligned}
+  \Delta R
+  &= R(380) - R(700) \\
+  &= 35.24 - 33.18 = \boxed{2.06\,\text{arcmin}}.
+  \end{aligned}
 	\label{eq:delta_R_concrete}
 \end{equation}
 
@@ -839,7 +882,11 @@ also ist die Dispersion etwa 6 \% des Sonnendurchmessers!
 
 Diese 2.06 arcmin entspricht auf der Retina des Beobachters einer Separation von:
 \begin{equation}
-	\Delta s = 2.06\,\text{arcmin} \times \frac{\pi}{180 \times 60} = 5.99 \times 10^{-4}\,\text{rad}.
+  \begin{aligned}
+  \Delta s
+  &= 2.06\,\text{arcmin} \times \frac{\pi}{180 \times 60} \\
+  &= 5.99 \times 10^{-4}\,\text{rad}.
+  \end{aligned}
 	\label{eq:linear_sep}
 \end{equation}
 
@@ -876,19 +923,27 @@ Die optische Dicke wird:
 \end{equation}
 wobei $\tau_{\mathrm{ref}} \approx 0.12$ am Zenit für Standardatmosphäre.
 
-Am Horizont ist $\sec(90°) = \infty$, aber die numerische Integration mit
-der Airmass-Funktion gibt $\mathrm{AM}(90°) \approx 37.9$.
+Am Horizont ist $\sec(90^\circ) = \infty$, aber die numerische Integration mit
+der Airmass-Funktion gibt $\mathrm{AM}(90^\circ) \approx 37.9$.
 
 Damit:
 \begin{equation}
-	\tau(380\,\mathrm{nm}, z=90°) = 37.9 \times 0.12 \times \left(\frac{550}{380}\right)^4
-	= 4.548 \times 0.12 \times (1.447)^4 = 37.9 \times 0.12 \times 4.396 = 19.99.
+  \begin{aligned}
+  \tau(380\,\mathrm{nm}, z=90^\circ)
+  &= 37.9 \times 0.12 \times \left(\frac{550}{380}\right)^4 \\
+  &= 4.548 \times 0.12 \times (1.447)^4 \\
+  &= 37.9 \times 0.12 \times 4.396 = 19.99.
+  \end{aligned}
 	\label{eq:tau_380}
 \end{equation}
 
 \begin{equation}
-	\tau(700\,\mathrm{nm}, z=90°) = 37.9 \times 0.12 \times \left(\frac{550}{700}\right)^4
-	= 37.9 \times 0.12 \times (0.786)^4 = 37.9 \times 0.12 \times 0.381 = 1.737.
+  \begin{aligned}
+  \tau(700\,\mathrm{nm}, z=90^\circ)
+  &= 37.9 \times 0.12 \times \left(\frac{550}{700}\right)^4 \\
+  &= 37.9 \times 0.12 \times (0.786)^4 \\
+  &= 37.9 \times 0.12 \times 0.381 = 1.737.
+  \end{aligned}
 	\label{eq:tau_700}
 \end{equation}
 
@@ -934,8 +989,12 @@ wobei $T(\lambda) = e^{-\tau(\lambda)}$ wie oben berechnet.
 
 Die beobachtete Farbe wird durch die CIE-Farbmatrix definiert. Der Rot-Grün-Blau-Wert ist:
 \begin{equation}
-	\begin{pmatrix} R \\ G \\ B \end{pmatrix} = \int_{\text{sichtbar}} 
-	\begin{pmatrix} \bar{r}(\lambda) \\ \bar{g}(\lambda) \\ \bar{b}(\lambda) \end{pmatrix} I_{\mathrm{obs}}(\lambda) \, \mathrm{d}\lambda,
+  \begin{aligned}
+  \begin{pmatrix} R \\ G \\ B \end{pmatrix}
+  &= \int_{\text{sichtbar}}
+  \begin{pmatrix} \bar{r}(\lambda) \\ \bar{g}(\lambda) \\ \bar{b}(\lambda) \end{pmatrix} \\
+  &\quad \cdot I_{\mathrm{obs}}(\lambda) \, \mathrm{d}\lambda,
+  \end{aligned}
 	\label{eq:RGB}
 \end{equation}
 wobei $\bar{r}$, $\bar{g}$, $\bar{b}$ die CIE-Farbempfindlichkeitsfunktionen sind.
@@ -960,7 +1019,7 @@ die wellenlängenabhängigen Effekte für verschiedene Zenitwinkeldistanzen.
 	\label{tab:dispersion_comprehensive}
 	\begin{tabular}{ccccccc}
 		\toprule
-		λ (nm) & Farbe & z=0° & z=45° & z=60° & z=80° & z=90° \\
+		$\lambda$ (nm) & Farbe & z=0° & z=45° & z=60° & z=80° & z=90° \\
 		& & R (′) & R (′) & R (′) & R (′) & R (′) \\
 		\midrule
 		\multicolumn{7}{c}{REFRAKTION R (in arcminuten)} \\
@@ -1042,7 +1101,11 @@ Farbdispersion: Die roten Ränder erscheinen vergrößert.
 
 Die Dispersion von 2.06 arcmin entspricht einer Vergrößerung von:
 \begin{equation}
-	\Delta D = \frac{2 \times 2.06\,\text{arcmin}}{32\,\text{arcmin}} \approx 13\,\%,
+  \begin{aligned}
+  \Delta D
+  &= \frac{2 \times 2.06\,\text{arcmin}}{32\,\text{arcmin}} \\
+  &\approx 13\,\%,
+  \end{aligned}
 	\label{eq:size_increase}
 \end{equation}
 was etwa 1/7 des psychologisch wahrgenommenen Unterschieds erklärt.
@@ -1216,8 +1279,8 @@ zur klassischen Näherungsformel:
 \end{equation}
 mit den Refraktionskonstanten
 \begin{align}
-  A &= \delta_0\,\frac{r_E}{H} \approx \SI{58.1}{\arcsecond}, \\
-  B &\approx \SI{0.07}{\arcsecond}
+  A &= \delta_0\,\frac{r_E}{H} \approx \ang{58.1}, \\
+  B &\approx \ang{0.07}
 \end{align}
 für Standardbedingungen ($T_0 = \SI{273}{\kelvin}$,
 $p_0 = \SI{1013}{\hecto\pascal}$)~\citep{Meeus1991}.
@@ -1240,12 +1303,12 @@ der Substitution $u = (r/r_E) - 1 = h/r_E$ erhält man
 nach numerischer Auswertung (Simpson-Regel, $10^4$ Stützstellen):
 
 \begin{equation}
-  R_{\text{Horizont}} \approx \SI{34.5}{\arcminute}.
+  R_{\text{Horizont}} \approx \ang{34.5}.
   \label{eq:R_horizont}
 \end{equation}
 
 Diese Brechung hat eine fundamentale Konsequenz:
-Der scheinbare Halbmesser der Sonne beträgt $\approx \SI{16}{\arcminute}$,
+Der scheinbare Halbmesser der Sonne beträgt $\approx \ang{16}$,
 also nur halb so groß wie die Gesamtbrechung.
 Die Sonne ist daher am Horizont komplett sichtbar,
 obwohl sie geometrisch bereits vollständig unter dem Horizont steht.
@@ -1275,9 +1338,9 @@ und $\varphi_i$ der Einstrahlwinkel an der Schichtgrenze ist
 \toprule
 Schicht & $\Delta n \times 10^6$ & Beitrag $\delta R$ [Bogenminuten] \\
 \midrule
-Troposphäre $(0$â€“$12\,\text{km})$  & 236 & $\approx 28.0$ \\
+Troposphäre $(0$--$12\,\text{km})$  & 236 & $\approx 28.0$ \\
 Tropopause                          &  57 & $\approx  3.5$ \\
-Stratosphäre $(12$â€“$50\,\text{km})$&  57 & $\approx  3.0$ \\
+Stratosphäre $(12$--$50\,\text{km})$&  57 & $\approx  3.0$ \\
 Mesosphäre + darüber                &  -- & $< 0.1$        \\
 \midrule
 \textbf{Gesamt}                    &     & $\mathbf{34.5}$ \\
@@ -1302,7 +1365,7 @@ Der scheinbare Halbwinkel der Sonnenscheibe ist daher
 \begin{equation}
   \alpha_\odot = \arctan\!\frac{R_\odot}{d_{\mathrm{SE}}}
                \approx \arctan(4.65\times 10^{-3})
-               \approx \SI{16.0}{\arcminute}.
+               \approx \ang{16.0}.
   \label{eq:alpha_sonne}
 \end{equation}
 Das Lichtbündel, das von der gesamten Sonnenscheibe zur Erde gelangt,
@@ -1345,7 +1408,7 @@ Dies ist der zentrale Punkt der vorliegenden Betrachtung:
   \itshape
   Abgesehen vom allerersten Auftreffen des Sonnenlichts auf die
   Atmosphäre trifft das Licht auf jede weitere Schicht bereits
-  als aufgeweitetes, umgelenktes Bündel â€“ nicht als originale
+  als aufgeweitetes, umgelenktes Bündel -- nicht als originale
   Vakuumstrahlung.
 \end{quote}
 
@@ -1370,7 +1433,7 @@ Nach $N$ Schichten ergibt sich der Gesamtablenkungswinkel:
 \end{equation}
 Dank der Bouguer-Invariante~\eqref{eq:bouguer} lässt sich zeigen,
 dass Gleichung~\eqref{eq:R_kaskade} exakt äquivalent zu dem
-Integralausdruck~\eqref{eq:R_integral} ist â€“
+Integralausdruck~\eqref{eq:R_integral} ist --
 die kaskadierende Schichtbrechung und die kontinuierliche
 Strahlkrümmung sind zwei äquivalente Formulierungen desselben Vorgangs
 \citep{BornWolf1999}.
@@ -1383,11 +1446,11 @@ Lichtbündels über alle Schichten:
 \begin{enumerate}
   \item \textbf{Öffnungswinkel des Sonnenkegels.}
         Das Lichtbündel startet mit einem Öffnungshalbwinkel
-        $\alpha_\odot \approx \SI{16}{\arcminute}$ (Gleichung~\ref{eq:alpha_sonne}).
+        $\alpha_\odot \approx \ang{16}$ (Gleichung~\ref{eq:alpha_sonne}).
 
   \item \textbf{Brechung durch alle Schichten.}
         Jede Schicht lenkt das Bündel zusätzlich um $\delta_i$ ab.
-        Die Summe $R_N$ beträgt am Horizont $\approx\SI{34.5}{\arcminute}$
+        Die Summe $R_N$ beträgt am Horizont $\approx\ang{34.5}$
         (Gleichung~\ref{eq:R_horizont}).
 
   \item \textbf{Gesamtwinkelbereich an der Erdoberfläche.}
@@ -1395,9 +1458,9 @@ Lichtbündels über alle Schichten:
         einen Gesamtwinkelbereich von
         \begin{equation}
           \Theta_{\mathrm{ges}} = 2\alpha_\odot + R_N
-                                \approx \SI{32}{\arcminute}
-                                        + \SI{34.5}{\arcminute}
-                                \approx \SI{66.5}{\arcminute}
+                                \approx \ang{32}
+                                        + \ang{34.5}
+                                \approx \ang{66.5}
                                 \approx 1.1^{\circ},
           \label{eq:theta_ges}
         \end{equation}
@@ -1409,7 +1472,7 @@ Dieser Gesamtwinkelbereich beschreibt mathematisch,
 warum das Sonnenlicht beim Auf- und Untergang
 \emph{strahlenförmig vom Sonnenzentrum ausgehend}
 über einen spürbaren Himmelsbereich verteilt auf der Erdoberfläche
-ankommt â€“ eine direkte Folge der Kombination aus der Größe der
+ankommt -- eine direkte Folge der Kombination aus der Größe der
 Sonne (die einen Lichtkegel erzeugt) und der kaskadierenden
 Schichtbrechung der Atmosphäre.
 
@@ -1421,7 +1484,7 @@ Schichtbrechung der Atmosphäre.
 \subsection{Differentielle Brechung über die Sonnenscheibe}
 
 Die Sonnenscheibe hat einen scheinbaren Winkeldurchmesser von
-$\theta_\odot \approx \SI{32}{\arcminute}$.
+$\theta_\odot \approx \ang{32}$.
 Der obere und untere Rand der Sonnenscheibe trifft auf
 verschiedenen Höhenwinkeln auf die Atmosphäre und durchläuft
 daher unterschiedliche Luftmassensäulen.
@@ -1434,7 +1497,7 @@ Die Differenz der Brechungswinkel ist die differentielle Brechung:
   \label{eq:delta_R}
 \end{equation}
 Am Horizont ($ z_0 \to 90^{\circ}$) wächst $\dd R / \dd z$ stark an.
-Numerisch ergibt sich $\Delta R \approx \SI{5}{\arcminute}$,
+Numerisch ergibt sich $\Delta R \approx \ang{5}$,
 was zur charakteristischen Abflachung der roten Sonnenscheibe
 beim Horizont führt.
 
@@ -1479,10 +1542,10 @@ Die Halbbreite $\alpha$ des beobachteten Strahlenbüschels
 \end{equation}
 wobei $w_c$ die transversale Ausdehnung des betrachteten
 Wolkenschattens in der Troposphäre und $D_\odot$ der
-Abstand Beobachterâ€“Sonne ist.
+Abstand Beobachter--Sonne ist.
 Für typische Werte $w_c = \SI{10}{\kilo\metre}$ und
 $D_\odot \approx \SI{150e6}{\kilo\metre}$ erhält man
-$\alpha \approx \SI{14}{\arcsecond}$ â€“ in Übereinstimmung mit
+$\alpha \approx \ang{14}$ -- in Übereinstimmung mit
 Beobachtungen~\citep{Greenler1980}.
 
 \begin{figure}[p]
@@ -1626,7 +1689,7 @@ Beobachtungen~\citep{Greenler1980}.
   da $n_0 < n_1 < n_2 < n_3 < n_4$.
   Die Troposphäre leistet dank ihres stärksten Dichtegradienten
   den bei weitem größten Beitrag (P\textsubscript{4}).
-  Die Gesamtablenkung $R \approx \SI{34}{\arcminute}$ bewirkt,
+  Die Gesamtablenkung $R \approx \ang{34}$ bewirkt,
   dass der Beobachter die Sonne in der scheinbaren (orange)
   statt der wahren (rot gestrichelt) Position sieht.%
 }
@@ -1646,7 +1709,7 @@ Beobachtungen~\citep{Greenler1980}.
     thick,
     title={Atmosphärische Refraktion als Funktion des Zenitwinkels}
   ]
-    % Näherungsformel R â‰ˆ 1.02 / tan(z + 10.3/(z+5.11)) in Bogenminuten
+    % Näherungsformel R approx 1.02 / tan(z + 10.3/(z+5.11)) in Bogenminuten
     % Werte von Meeus (Astronomical Algorithms)
     \addplot[blue, thick, domain=5:89, samples=200] {
       1.02 / tan( (x + 10.3/(x+5.11)) * pi / 180 )
@@ -1661,7 +1724,7 @@ Beobachtungen~\citep{Greenler1980}.
 \caption{Atmosphärische Refraktion $R(z)$ als Funktion des Zenitwinkels $z$
          nach der Formel von \citet{Meeus1991}.
          Am Horizont ($z = 90^{\circ}$) erreicht die Brechung ihr Maximum
-         von $\approx \SI{34.5}{\arcminute}$,
+         von $\approx \ang{34.5}$,
          was dem scheinbaren Durchmesser der Sonne entspricht.}
 \label{fig:refraktion_kurve}
 \end{figure}
@@ -1675,11 +1738,11 @@ Beobachtungen~\citep{Greenler1980}.
 
 Das Sonnenlicht wird in der Erdatmosphäre harmonisch kaskadiert
 gebrochen und erreicht die Erdoberfläche in biologisch optimaler
-Form (Abschnitte~\ref{sec:kaskade}â€“\ref{sec:faecher}).
+Form (Abschnitte~\ref{sec:kaskade}--\ref{sec:faecher}).
 Doch trotz der Sonne und der Milliarden anderer Sterne
 im Universum herrscht nachts Dunkelheit.
-Dieses scheinbare Paradoxon â€“ bekannt als \emph{Olbers-Paradoxon}
-\citep{Harrison1987} â€“ lässt sich vollständig formal auflösen.
+Dieses scheinbare Paradoxon -- bekannt als \emph{Olbers-Paradoxon}
+\citep{Harrison1987} -- lässt sich vollständig formal auflösen.
 
 \subsection{Das Paradoxon von Olbers (1823)}
 
@@ -1784,8 +1847,7 @@ Wasserstofffusion ist.
 Da $\tau_\star$ endlich ist, sind viele weiter entfernte
 Sterne bereits erloschen, bevor ihr Licht die Erde erreicht.
 
-\subsection{Warum das Sonnenlicht lokal perfekt, kosmisch jedoch
-           unzureichend ist: Formaler Vergleich}
+\subsection{Sonnenlicht - Formaler Vergleich}
 
 \begin{theorem}[Lokale Harmonie vs.\ kosmische Dunkelheit]
   Sei $\Phi_\odot$ der Strahlungsfluss der Sonne an der Erde,
@@ -1848,7 +1910,7 @@ Ursachen erklären die kosmische Dunkelheit:
 Das Sonnenlicht hingegen wirkt durch die kaskadierende,
 harmonische Schichtbrechung der Erdatmosphäre exakt so,
 dass es auf der Erdoberfläche in biologisch optimaler Intensität,
-Spektralverteilung und Richtungscharakteristik ankommt â€“
+Spektralverteilung und Richtungscharakteristik ankommt --
 ein Zusammenspiel von Schichtbrechung und astronomischer Entfernung,
 das im gesamten bekannten Universum so nur an der Erde nachgewiesen ist
 (vgl. Gleichung~\ref{eq:verhaeltnis}).
@@ -1867,11 +1929,11 @@ Untergang in mehrfacher Hinsicht beeinflusst:
         Jede Atmosphärenschicht mit $\dd n/\dd h < 0$ biegt den
         Lichtstrahl um einen kleinen Betrag zur Erde hin.
         Die Summe aller Beiträge ergibt am Horizont
-        $R \approx \SI{34.5}{\arcminute}$.
+        $R \approx \ang{34.5}$.
 
   \item \textbf{Verlängerte Tagesdauer.}
         Der Lichtstrahl erreicht den Beobachter,
-        obwohl die Sonne geometrisch bereits ($\approx \SI{34.5}{\arcminute}$
+        obwohl die Sonne geometrisch bereits ($\approx \ang{34.5}$
         $\approx$ einem Sonnendurchmesser) unter dem Horizont steht.
         Dies entspricht einer Zeitverschiebung von ca.\ \SI{2}{\minute}
         \SI{20}{\second} pro Horizont.
@@ -1880,10 +1942,10 @@ Untergang in mehrfacher Hinsicht beeinflusst:
         Da alle Lichtstrahlen von der Sonnenscheibe ausgehen
         und nahezu parallel sind, erzeugt die perspektivische
         Projektion den Eindruck, sie strömten strahlenförmig
-        vom scheinbaren Sonnenmittelpunkt aus â€“
+        vom scheinbaren Sonnenmittelpunkt aus --
         ein rein geometrischer Projektionseffekt in Kombination
         mit der schichtweisen Brechung
-        (Gleichungen~\ref{eq:delta_R}â€“\ref{eq:fluchtpunkt}).
+        (Gleichungen~\ref{eq:delta_R}--\ref{eq:fluchtpunkt}).
 
   \item \textbf{Dominanz der Troposphäre.}
         Die untersten $\SI{12}{\kilo\metre}$ der Atmosphäre
@@ -1913,7 +1975,7 @@ beim Auf- und Untergang gemäß dem Snellschen Brechungsgesetz
 (in seiner sphärischen Form, dem Bouguer-Gesetz) stetig krümmt.
 Die mathematische Herleitung über die Strahlgleichung in
 sphärischer Geometrie liefert eine Gesamtablenkung von
-$R_{\mathrm{Horizont}} \approx \SI{34.5}{\arcminute}$,
+$R_{\mathrm{Horizont}} \approx \ang{34.5}$,
 wobei die Troposphäre den weitaus größten Beitrag leistet.
 
 Als Folge dieser schichtweisen Brechung:
@@ -1933,13 +1995,13 @@ und das Brechungsindexprofil der Standardatmosphäre erklärbar
 und stellen keinen empirisch neuen Befund dar.
 Sie sind in ihrer Gesamtheit das unmittelbare Ergebnis des
 Grundprinzips: \emph{Licht folgt dem Weg, der die optische
-Weglänge extremiert â€“ und die Atmosphäre sorgt dafür, dass dieser
+Weglänge extremiert -- und die Atmosphäre sorgt dafür, dass dieser
 Weg zur Erde hin gebogen ist.}
 
 Darüber hinaus wurde formal nachgewiesen (Abschnitt~\ref{sec:olbers}),
 dass das Sonnenlicht nicht das gesamte Universum erleuchten kann.
-Drei physikalische Ursachen â€“ das endliche Weltalter, die
-kosmologische Rotverschiebung und die endliche Sternlebensdauer â€“
+Drei physikalische Ursachen -- das endliche Weltalter, die
+kosmologische Rotverschiebung und die endliche Sternlebensdauer --
 sorgen dafür, dass das integrierte kosmische Hintergrundlicht
 um neun Größenordnungen schwächer ist als die Sonneneinstrahlung
 an der Erde.
@@ -2006,7 +2068,7 @@ Strahlgleichungen
   \qquad \mathcal{H} = n(\mathbf{r}) - |\mathbf{k}|,
   \label{eq:hamilton_ray}
 \end{equation}
-â€“ numerisch gelöst über eine adaptiven Runge-Kutta-Integration â€“
+-- numerisch gelöst über eine adaptiven Runge-Kutta-Integration --
 würde die Strahlbahn unter realistischen Bedingungen simulieren
 und könnte mit Lidar- und Radiooccultations-Messungen
 (z.\,B. GPS-RO-Profilen von COSMIC-2 \citep{Anthes2008}) validiert werden.
@@ -2101,7 +2163,7 @@ Die Venus, Mars, Jupiter und Saturn besitzen Atmosphären
 mit völlig anderen Dichte-, Temperatur- und Zusammensetzungsprofilen.
 Für die Mars-Atmosphäre (überwiegend CO$_2$, $p_0 \approx \SI{6}{\hecto\pascal}$,
 $\delta_0 \approx 5\times10^{-5}$) beträgt die Horizontalrefraktion
-nur $\approx \SI{6}{\arcminute}$ \citep{Kliore1972},
+nur $\approx \ang{6}$ \citep{Kliore1972},
 was einer biologisch-atmosphärischen Schutzfunktion wie auf der Erde
 nicht nahekommt.
 Im Gegensatz dazu besitzt die Venus eine so dichte Atmosphäre
