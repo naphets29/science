@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **257 Wissenschaften** von Stephan Epp
+> **258 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -366,6 +366,7 @@
 | agrar | Agrarwirtschaftliches KI-Ökosystem (AGRI-GAIA): KI-Klassifikation von Kartoffelqualität, MILP-Optimierung (AUC = 0.964) |
 | riskallockg | Flexible Risikozuweisung in der Kommanditgesellschaft: Formale Modellierung dynamischer Risikoallokation |
 | tidalecos | Ebbe und Flut als Unsicherheitsstruktur: Formale Ökonomie der Handlungsfreiheit im Tausch unter notwendiger Ungewissheit |
+| eco | Die zwei Hauptkräfte der Wirtschaft: Vollständige formale und mathematische Theorie anthropogener und natürlicher Periodizität |
 
 ---
 
