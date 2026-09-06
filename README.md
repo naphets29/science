@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **256 Wissenschaften** von Stephan Epp
+> **257 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -365,6 +365,7 @@
 | leco *(Drive)* | Dezentrale Wirtschaftszellen: Formale Analyse optimaler Entkopplung und systemischer Resilienz in modularen Wirtschaftsarchitekturen |
 | agrar | Agrarwirtschaftliches KI-Ökosystem (AGRI-GAIA): KI-Klassifikation von Kartoffelqualität, MILP-Optimierung (AUC = 0.964) |
 | riskallockg | Flexible Risikozuweisung in der Kommanditgesellschaft: Formale Modellierung dynamischer Risikoallokation |
+| tidalecos | Ebbe und Flut als Unsicherheitsstruktur: Formale Ökonomie der Handlungsfreiheit im Tausch unter notwendiger Ungewissheit |
 
 ---
 
