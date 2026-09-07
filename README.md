@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **258 Wissenschaften** von Stephan Epp
+> **259 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -360,6 +360,7 @@
 
 | Repository | Beschreibung |
 |---|---|
+| ecos | Band der Arbeiten zur Wirtschaft |
 | sysstate | Zustandsklassen dynamischer Systeme — Endlichkeit des Zustandsvektors und wirtschaftliche Implikationen |
 | uncrtecos | Wirtschaftssysteme unter Unsicherheit: Zeithorizont-Degradation und Kundenvorhersagbarkeit |
 | leco *(Drive)* | Dezentrale Wirtschaftszellen: Formale Analyse optimaler Entkopplung und systemischer Resilienz in modularen Wirtschaftsarchitekturen |
