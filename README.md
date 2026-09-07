@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **259 Wissenschaften** von Stephan Epp
+> **260 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -60,6 +60,7 @@
 | elevator | The Einstein-Elevator: Advanced Microgravity Research Infrastructure — Design, Analysis, and Optimization |
 | lightd | Lichtgeschwindigkeit in verschiedenen Medien - Formale Analyse der Abweichungen und Verteilungen |
 | mcfstoch | Stochastischer Mittlerer Krümmungsfluss: Theorie, Analyse und Evolutionsdynamik |
+| matrgraph | Äquivalenz durch Sicht: Graphische Deduktion und die fundamentale Überflüssigkeit der Matrix in algebraischen Beweisen |
 
 
 ---
