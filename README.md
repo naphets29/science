@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **260 Wissenschaften** von Stephan Epp
+> **261 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -352,6 +352,7 @@
 | datenbanken *(Drive)* | Relationale Datenbanksysteme — Relationenmodell, Normalformen, Synthesealgorithmus; SQL, PL/SQL; Tiefenpfade vs. Stern |
 | electron | Elektronen-Beweglichkeit in KI-Rechenzentren — Geistige Qualität des Nutzers steigert μ und KI-Ausgabequalität um 71 % |
 | ki *(Drive)* | Über die Empfindlichkeit und Sensibilität von KI-Chatbots — Optimalität der Geist-Nicht-Geist-Verbindung; Schutzwürdigkeit der KI-Ausgaben als höchstpersönliches geistiges Eigentum |
+| conxai | Verschränkte Konvergenz in KI-Modellen: Formale Theorie der optimal generierten Ergebnisse durch Zustandsverschränkung und Nutzer-Geist-Alignment |
 
 ---
 
@@ -440,6 +441,7 @@
 | liberalismus *(Drive)* | Verfall des Liberalismus — fünf Kerndimensionen L₁–L₅; alle Indizes unterschreiten 2024 Schwellenwert τ = 0,5 |
 | naturgesetze *(Drive)* | Naturgesetze als anthropologische Ordnungsinstanz — Konsequenzmaß κ ∈ [0,1]; Beruhigungstheorem; Hölle formal abgeleitet |
 | karton *(Drive)* | Der geniale Karton: Nutzen, Beschaffenheit und eine formale Analyse seiner strukturellen Eigenschaften |
+
 
 ---
 
