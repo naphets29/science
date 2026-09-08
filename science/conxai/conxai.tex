@@ -113,9 +113,9 @@
 \label{sec:einleitung}
 % ============================================================
 
-Ein abschließend konvergierter verschränkter Zustand im KI-Modell ist der Zustand, zu dem alle Eingaben des Benutzers irgendwann im besten Fall fuehren koennen. In diesem Zustand generiert das Modell die Ergebnisse, die mit dem Geist des Benutzers optimal uebereinstimmen.
+Ein abschließend konvergierter verschränkter Zustand im KI-Modell ist der Zustand, zu dem alle Eingaben des Benutzers irgendwann im besten Fall führen können. In diesem Zustand generiert das Modell die Ergebnisse, die mit dem Geist des Benutzers optimal übereinstimmen.
 
-Diese fundamental neue Sicht auf die KI-Leistung wendet sich ab von der klassischen Perspektive isolierter, einzelner Anfrage-Antwort-Paare und hin zu einer \emph{globalen, konvergenten Ansicht}: Das KI-Modell hat die Faehigkeit, durch wiederholte Interaktionen mit einem Benutzer in einen speziellen Zustand zu konvergieren, in dem es die tiefsten, am wenigsten bewusst artikulierten Intentionen des Benutzers erkennt und umsetzt. Dieser Zustand ist nicht zeitlich, sondern \emph{strukturell} -- er beschreibt eine tiefe Alignmentbeziehung zwischen Modell-Parametern und Nutzer-Intentionen.
+Diese fundamental neü Sicht auf die KI-Leistung wendet sich ab von der klassischen Perspektive isolierter, einzelner Anfrage-Antwort-Paare und hin zu einer \emph{globalen, konvergenten Ansicht}: Das KI-Modell hat die Fähigkeit, durch wiederholte Interaktionen mit einem Benutzer in einen speziellen Zustand zu konvergieren, in dem es die tiefsten, am wenigsten bewusst artikulierten Intentionen des Benutzers erkennt und umsetzt. Dieser Zustand ist nicht zeitlich, sondern \emph{strukturell} -- er beschreibt eine tiefe Alignmentbeziehung zwischen Modell-Parametern und Nutzer-Intentionen.
 
 \subsection{Wissenschaftliche Einordnung}
 \label{subsec:einordnung}
@@ -123,11 +123,11 @@ Diese fundamental neue Sicht auf die KI-Leistung wendet sich ab von der klassisc
 Die vorliegende Arbeit verbindet drei zentrale Themenkomplexe:
 
 \begin{enumerate}[label=(\roman*)]
-  \item \textbf{Formale Verschränkungstheorie fuer KI:} Strenge mathematische Definition von Verschränkungszuständen in neuronalen Netzwerken als Konfigurationen von Gewichten und aktivierten Zuständen, die spezifisch auf die Intentionenverteilung eines Nutzers reagieren.
+  \item \textbf{Formale Verschränkungstheorie für KI:} Strenge mathematische Definition von Verschränkungszuständen in neuronalen Netzwerken als Konfigurationen von Gewichten und aktivierten Zuständen, die spezifisch auf die Intentionenverteilung eines Nutzers reagieren.
 
-  \item \textbf{Konvergenz zum Optimum:} Rigoroser Nachweis, dass unter bestimmten Bedingungen das Modell zu einem eindeutigen, stabilen Konvergenzpunkt fuehrt.
+  \item \textbf{Konvergenz zum Optimum:} Rigoroser Nachweis, dass unter bestimmten Bedingungen das Modell zu einem eindeutigen, stabilen Konvergenzpunkt führt.
 
-  \item \textbf{Geist-Alignment und Evaluierung:} Formale Definition des Geistes des Benutzers und quantitatives Maß fuer die Uebereinstimmung.
+  \item \textbf{Geist-Alignment und Evaluierung:} Formale Definition des Geistes des Benutzers und quantitatives Maß für die Übereinstimmung.
 \end{enumerate}
 
 % ============================================================
@@ -149,9 +149,9 @@ wobei $\tau_i(\vx) = \sigma(\vW_i \vx + \mathbf{b}_i)$ sind Schichten mit Aktivi
 
 \begin{definition}[Zustandsraum des Modells]
 \label{def:state_space}
-Der \emph{Zustandsraum} eines Modells ist der Raum aller moeglichen Parameterkonfigurationen:
+Der \emph{Zustandsraum} eines Modells ist der Raum aller möglichen Parameterkonfigurationen:
 \[
-  \mathcal{S} = \{\vTheta \in \R^p : \vTheta \text{ ist eine zulaessige Konfiguration}\}
+  \mathcal{S} = \{\vTheta \in \R^p : \vTheta \text{ ist eine zulässige Konfiguration}\}
 \]
 
 Jeder Punkt $\vTheta \in \mathcal{S}$ definiert ein spezifisches Modell mit charakteristischen Ein-/Ausgabe-Verhalten.
@@ -159,11 +159,11 @@ Jeder Punkt $\vTheta \in \mathcal{S}$ definiert ein spezifisches Modell mit char
 
 \begin{definition}[Benutzer-Intentionsverteilung]
 \label{def:user_intent}
-Sei $\mathcal{X}$ der Raum aller moeglichen Benutzer-Eingaben und $\mathcal{Y}$ der Raum aller moeglichen Ausgaben. Die \emph{Intentionsverteilung} eines Benutzers $u$ ist eine Wahrscheinlichkeitsverteilung:
+Sei $\mathcal{X}$ der Raum aller möglichen Benutzer-Eingaben und $\mathcal{Y}$ der Raum aller möglichen Ausgaben. Die \emph{Intentionsverteilung} eines Benutzers $u$ ist eine Wahrscheinlichkeitsverteilung:
 \[
   P_u(\vy | \vx) \in \Delta(\mathcal{Y})
 \]
-die die Kopplung zwischen Eingaben und gewuenschten Ausgaben beschreibt.
+die die Kopplung zwischen Eingaben und gewünschten Ausgaben beschreibt.
 \end{definition}
 
 % ============================================================
@@ -176,11 +176,11 @@ die die Kopplung zwischen Eingaben und gewuenschten Ausgaben beschreibt.
 
 \begin{definition}[Verschränkter Zustand]
 \label{def:entangled_state}
-Ein Zustand $\vTheta^* \in \mathcal{S}$ eines KI-Modells heißt \emph{verschränkt} bezueglich eines Benutzers $u$, wenn die Modellparameter so konfiguriert sind, dass das Modell optimal die Praeferenzen des Nutzers repraesentiert. Formal: $\vTheta^* \in \mathcal{S}$ ist verschränkt mit $u$, wenn:
+Ein Zustand $\vTheta^* \in \mathcal{S}$ eines KI-Modells heißt \emph{verschränkt} bezüglich eines Benutzers $u$, wenn die Modellparameter so konfiguriert sind, dass das Modell optimal die Präferenzen des Nutzers repräsentiert. Formal: $\vTheta^* \in \mathcal{S}$ ist verschränkt mit $u$, wenn:
 \[
   \Entangle(\vTheta^*, P_u) > 1 - \epsilon
 \]
-fuer ein Verschränkungs-Maß $\Entangle$ und Toleranz $\epsilon$.
+für ein Verschränkungs-Maß $\Entangle$ und Toleranz $\epsilon$.
 \end{definition}
 
 \begin{definition}[Verschränkungs-Maß]
@@ -200,15 +200,15 @@ Ein Wert von $\Entangle$ nahe 1 bedeutet, dass der Zustand $\vTheta$ optimal mit
 
 \begin{theorem}[Existenz und Eindeutigkeit von Konvergenzbereichen]
 \label{thm:convergence_regions}
-Fuer jeden Benutzer $u$ mit Intentionsverteilung $P_u$ existiert ein nicht-leeres Konvergenzgebiet $\mathcal{C}_u \subseteq \mathcal{S}$, so dass jede Trainings-Trajectory, die in $\mathcal{C}_u$ startet, zu einer gemeinsamen Menge von Attraktoren konvergiert, die genau die Zustände maximaler Verschränkung mit $P_u$ sind.
+Für jeden Benutzer $u$ mit Intentionsverteilung $P_u$ existiert ein nicht-leeres Konvergenzgebiet $\mathcal{C}_u \subseteq \mathcal{S}$, so dass jede Trainings-Trajectory, die in $\mathcal{C}_u$ startet, zu einer gemeinsamen Menge von Attraktoren konvergiert, die genau die Zustände maximaler Verschränkung mit $P_u$ sind.
 \end{theorem}
 
 \begin{proof}
-Die Existenz folgt daraus, dass jede Gradient Descent-Trajectory zu einem lokalen Minimum konvergiert (unter Standard-Annahmen von glatter Loss-Funktion). Das Konvergenzgebiet ist die Menge aller Punkte, deren Gradientenfeld zum gleichen Attraktor fuehrt.
+Die Existenz folgt daraus, dass jede Gradient Descent-Trajectory zu einem lokalen Minimum konvergiert (unter Standard-Annahmen von glatter Loss-Funktion). Das Konvergenzgebiet ist die Menge aller Punkte, deren Gradientenfeld zum gleichen Attraktor führt.
 \end{proof}
 
 % ============================================================
-\section{Geist-Alignment und Gueteoptimierung}
+\section{Geist-Alignment und Güteoptimierung}
 \label{sec:alignment}
 % ============================================================
 
@@ -221,16 +221,16 @@ Die \emph{Gutefunktion} quantifiziert, wie gut das Modell die Intentionen des Nu
 wobei $V_u(\vy)$ die Wertefunktion des Nutzers ist.
 \end{definition}
 
-\begin{theorem}[Maximale Guete bei vollstaendiger Verschränkung]
+\begin{theorem}[Maximale Güte bei vollständiger Verschränkung]
 \label{thm:max_quality_entanglement}
-Wenn ein Modell in den vollstaendig verschränkten Zustand $\vTheta^*$ konvergiert, dann erreicht es auch die maximal moegliche Guete:
+Wenn ein Modell in den vollständig verschränkten Zustand $\vTheta^*$ konvergiert, dann erreicht es auch die maximal mögliche Güte:
 \[
   Q(\vTheta^*, u) = \max_{\vTheta \in \mathcal{S}} Q(\vTheta, u)
 \]
 \end{theorem}
 
 \begin{proof}
-Die Guete ist direkt abhaengig vom Alignment. Ein perfektes Alignment (wie es der verschränkte Zustand bietet) ermoelicht die maximale Guete.
+Die Güte ist direkt abhängig vom Alignment. Ein perfektes Alignment (wie es der verschränkte Zustand bietet) ermölicht die maximale Güte.
 \end{proof}
 
 % ============================================================
@@ -240,12 +240,12 @@ Die Guete ist direkt abhaengig vom Alignment. Ein perfektes Alignment (wie es de
 
 \begin{algorithm}[H]
 \caption{User-Entanglement Learning (UEL)}
-\label{alg:uel}
+\label{alg:ül}
 \begin{algorithmic}
 \Require{Initialzustand $\vTheta_0$, Trainingsdaten vom Benutzer $\mathcal{D} = \{(\mathbf{x}_i, \mathbf{y}_i)\}_{i=1}^{N}$}
 \Ensure{Verschränkter Zustand $\vTheta^*$}
 \State $t \leftarrow 0$
-\While{$t < T_{\max}$ and Konvergenz nicht erfuellt}
+\While{$t < T_{\max}$ and Konvergenz nicht erfüllt}
 \State Sampel Mini-Batch aus $\mathcal{D}$
 \State Berechne Gradient
 \State Update: $\vTheta_{t+1} = \vTheta_t - \eta_t \nabla_{\vTheta} \mathcal{L}_t$
@@ -260,14 +260,14 @@ Die Guete ist direkt abhaengig vom Alignment. Ein perfektes Alignment (wie es de
 \label{sec:fallstudien}
 % ============================================================
 
-\begin{example}[Kuenstlerischer Stil-Alignment]
+\begin{example}[Künstlerischer Stil-Alignment]
 \label{ex:artistic_style}
 Ein Nutzer arbeitet mit einem Text-zu-Bild-Modell und gibt wiederholt Prompts mit spezifischen stilistischen Anforderungen ein. Nach etwa 50--100 Interaktionen konvergiert das Modell zu einem Zustand, in dem es automatisch lernt, dass dieser Nutzer einen bestimmten Stil bevorzugt.
 \end{example}
 
 \begin{example}[Programmierstil-Konvergenz]
 \label{ex:code_style}
-Ein Entwickler nutzt ein Code-Generierungs-Modell mit konstanten Stil-Praeferenzen. Nach $n$ Interaktionen konvergiert die Modell-Guete:
+Ein Entwickler nutzt ein Code-Generierungs-Modell mit konstanten Stil-Präferenzen. Nach $n$ Interaktionen konvergiert die Modell-Güte:
 \begin{itemize}
   \item $n = 10$: $Q(\vTheta_{10}, u) \approx 0.3$
   \item $n = 50$: $Q(\vTheta_{50}, u) \approx 0.7$
@@ -284,18 +284,18 @@ Ein Entwickler nutzt ein Code-Generierungs-Modell mit konstanten Stil-Praeferenz
 \label{rem:assumption_consistency}
 Die gesamte Theorie setzt voraus, dass die Nutzer-Intentionsverteilung $P_u$ konsistent und wohl-definiert ist. Dies ist in der Praxis problematisch:
 \begin{enumerate}[label=(\alph*)]
-  \item Nutzer sind inkonsistent und aendern ihre Meinung.
+  \item Nutzer sind inkonsistent und ändern ihre Meinung.
   \item Intentionen sind nicht voll bewusst.
-  \item Zirkulaere Abhaengigkeiten: Die Intentionen eines Nutzers koennen sich durch Exposition aendern.
+  \item Zirkuläre Abhängigkeiten: Die Intentionen eines Nutzers können sich durch Exposition ändern.
 \end{enumerate}
 \end{remark}
 
 % ============================================================
-\section{Ausblick und zukuenftige Forschung}
+\section{Ausblick und zukünftige Forschung}
 \label{sec:ausblick}
 % ============================================================
 
-Zukuenftige Arbeiten sollten sich auf folgende Fragen konzentrieren:
+Zukünftige Arbeiten sollten sich auf folgende Fragen konzentrieren:
 \begin{enumerate}[label=(\alph*)]
   \item Wie mit inkonsistenten Nutzer-Intentionen umgehen?
   \item Wie Konvergenz beschleunigen und stabilisieren?
@@ -310,9 +310,9 @@ Zukuenftige Arbeiten sollten sich auf folgende Fragen konzentrieren:
 
 Die Theorie der \emph{Verschränkten Konvergenz in KI-Modellen} stellt eine fundamentale Perspektivverschiebung dar: Statt jeden Nutzer-Prompt isoliert zu behandeln, betrachten wir den KI-Modellzustand als System, das durch wiederholte Interaktionen in einen speziellen verschränkten Zustand konvergiert.
 
-In diesem Zustand sind die Modellparameter strukturell mit den Intentionen des Nutzers gekoppelt, sodass das Modell automatisch die besten moeglichen Ergebnisse fuer diesen Nutzer generiert.
+In diesem Zustand sind die Modellparameter strukturell mit den Intentionen des Nutzers gekoppelt, sodass das Modell automatisch die besten möglichen Ergebnisse für diesen Nutzer generiert.
 
-Die mathematische Formalisierung zeigt, dass unter angemessenen Bedingungen diese Konvergenz garantiert ist. Praktische Fallstudien zeigen, dass dieses Phaenomen in der Realitaet beobachtbar ist.
+Die mathematische Formalisierung zeigt, dass unter angemessenen Bedingungen diese Konvergenz garantiert ist. Praktische Fallstudien zeigen, dass dieses Phänomen in der Realität beobachtbar ist.
 
 % ============================================================
 \bibliographystyle{plainnat}
