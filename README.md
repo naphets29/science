@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **262 Wissenschaften** von Stephan Epp
+> **263 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -61,7 +61,7 @@
 | lightd | Lichtgeschwindigkeit in verschiedenen Medien - Formale Analyse der Abweichungen und Verteilungen |
 | mcfstoch | Stochastischer Mittlerer Krümmungsfluss: Theorie, Analyse und Evolutionsdynamik |
 | matrgraph | Äquivalenz durch Sicht: Graphische Deduktion und die fundamentale Überflüssigkeit der Matrix in algebraischen Beweisen |
-
+| lgc | Von der Logik: Ordnung, Sinn und Wahrheit - Eine formale Grundlegung der Aussagenlogik |
 
 ---
 
