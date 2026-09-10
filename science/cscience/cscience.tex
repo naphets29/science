@@ -1,5 +1,7 @@
 ﻿\documentclass[a4paper,12pt,twoside]{book}
+\usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
+\usepackage{lmodern}
 \usepackage[
   colorlinks=true,
   linkcolor=darkblue,
@@ -7,9 +9,6 @@
   citecolor=darkblue,
   filecolor=darkblue
 ]{hyperref}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{amsmath}
@@ -36,19 +35,6 @@
 \setlist[itemize,1]{label=--}
 \setlist[itemize,2]{label=--}
 \setlist[itemize,3]{label=--}
-
-\usepackage{tocloft}
-
-% Mehr Platz für die Kapitelnummern reservieren
-\setlength{\cftchapnumwidth}{2.5em}      % Breite für Kapitelnummern
-\setlength{\cftsecnumwidth}{3.5em}       % Breite für Section-Nummern  
-\setlength{\cftsubsecnumwidth}{4.5em}    % Breite für Subsection-Nummern
-\setlength{\cftsubsubsecnumwidth}{5.5em} % Breite für Subsubsection-Nummern
-
-% Zusätzlich: Einrückung anpassen, damit es nicht zu weit eingerückt wird
-\setlength{\cftsecindent}{2.5em}         % Section-Einrückung
-\setlength{\cftsubsecindent}{6em}        % Subsection-Einrückung  
-\setlength{\cftsubsubsecindent}{10.5em}  % Subsubsection-Einrückung
 
 \geometry{margin=2.5cm}
 \setlength{\headheight}{27.05pt}
@@ -9420,9 +9406,9 @@ Die Constraints (jede Stadt genau einmal, zu jedem Zeitpunkt genau eine Stadt, L
 		\State $\varphi \gets \Call{EncodeTSPAsSAT}{G, w, B, n}$ \Comment{$O(n^3)$ Klauseln}
 		\State
 		\State \Comment{Schritt 2: Löse SAT-Instanz}
-		\State $(erfüllbar, \alpha) \gets \Call{SolveSAT}{\varphi}$ \Comment{$O((n^3)^3) = O(n^9)$}
+		\State $(\text{erfüllbar}, \alpha) \gets \Call{SolveSAT}{\varphi}$ \Comment{$O((n^3)^3) = O(n^9)$}
 		\State
-		\If{$erfüllbar$}
+		\If{$\text{erfüllbar}$}
 		\State \Comment{Schritt 3: Extrahiere Tour aus Belegung}
 		\State $\tau \gets \Call{ExtractTour}{\alpha, n}$ \Comment{$O(n^2)$}
 		\State \Return (\texttt{WAHR}, $\tau$)
@@ -10118,9 +10104,9 @@ Die ILP-Entscheidungsvariante wird gelöst, indem jede ganzzahlige Variable als 
 		\State \Comment{$\varphi$ hat $O(n \log U)$ Variablen und $O(m \cdot n \log U)$ Klauseln}
 		\State
 		\State \Comment{Schritt 3: Löse SAT-Instanz}
-		\State $(erfüllbar, \alpha) \gets \Call{SolveSAT}{\varphi}$ \Comment{$O((m \cdot n \log U)^3)$}
+		\State $(\text{erfüllbar}, \alpha) \gets \Call{SolveSAT}{\varphi}$ \Comment{$O((m \cdot n \log U)^3)$}
 		\State
-		\If{$erfüllbar$}
+		\If{$\text{erfüllbar}$}
 		\State \Comment{Schritt 4: Extrahiere ganzzahlige Lösung}
 		\State $x^* \gets \Call{ExtractIntegerSolution}{\alpha, \{L_i, k_i\}, n}$ \Comment{$O(n \log U)$}
 		\State \Return (\texttt{WAHR}, $x^*$)
@@ -20059,7 +20045,7 @@ Basierend auf den theoretischen und experimentellen Erkenntnissen ergeben sich f
 	\textbf{3. Anwendungskontext}:
 	\begin{itemize}
 		\item[-] Einmalige Berechnung: Keine Strukturerkennung, direkte Berechnung
-		\item[-] Wiederholte Berechnungen ($>100Ã—$): Strukturerkennung einmalig, dann optimiert
+		\item[-] Wiederholte Berechnungen ($>100\times$): Strukturerkennung einmalig, dann optimiert
 		\item[-] Echtzeit: Spalten-priorisiert mit Pre-Kompilierung aktiver Spalten
 		\item[-] Batch-Processing: GPU-Parallelisierung
 	\end{itemize}
@@ -27056,7 +27042,7 @@ GitHub Repository, hjstephan86/subgraph, 2026.
 \bibitem{Epp2026cscience}
 S.~Epp,
 \textit{Computational Science: Boolean Matrixmultiplikation, Graphenalgorithmen und Systemtheorie},
-Universität Bielefeld, Technischer Bericht, 2026.
+Technischer Bericht, 2026.
 
 \bibitem{McKay1981}
 B.~D.~McKay,

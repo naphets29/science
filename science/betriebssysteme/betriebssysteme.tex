@@ -1,7 +1,7 @@
-﻿\documentclass[a4paper,12pt]{report}
+﻿\documentclass[a4paper,12pt,twoside]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{ae}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -15,7 +15,7 @@
 \usepackage{mathtools}
 \usepackage{booktabs}
 \usepackage{float}
-\usepackage{microtype}
+\usepackage[patch=none]{microtype}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{array}
@@ -24,7 +24,6 @@
 \usepackage{multirow}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
-\usepackage{tocloft}
 \usepackage{setspace}
 \usepackage{rotating}
 \usepackage{cleveref}
@@ -123,6 +122,7 @@
 % ---- Kopf-/Fusszeilen ----
 \pagestyle{fancy}
 \fancyhf{}
+\setlength{\headheight}{15pt}
 \fancyhead[LE,RO]{\thepage}
 \fancyhead[RE]{\nouppercase{\leftmark}}
 \fancyhead[LO]{\nouppercase{\rightmark}}
@@ -169,6 +169,7 @@
 % Optik / Physik
 \newcommand{\neff}{n_{\mathrm{eff}}}
 \newcommand{\matr}[1]{\mathbf{#1}}
+\newcommand{\vect}[1]{\mathbf{#1}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ordre}[1]{\mathcal{O}(#1)}
 \newcommand{\Realteil}{\mathrm{Re}}
@@ -194,14 +195,14 @@
 \centering
 \vspace*{3cm}
 {\LARGE\bfseries
-Betriebssysteme\\[0.4em]
-Prozesse, Echtzeit-Scheduling,\\[0.2em]
+Betriebssysteme, Prozesse, Echtzeit-Scheduling,\\[0.2em]
 Speicher, Dateisysteme\\[0.2em]
 und moderne Anwendungen
 \par}
 \vspace{1.5cm}
-{\large\bfseries Stephan Epp}\\[0.4em]
-{\normalsize Universit\"at Bielefeld}\\[2cm]
+{\large Stephan Epp}
+\\[0.2em]
+{\small \texttt{M.Sc.}}
 \vfill
 {\large 2026}
 \end{titlepage}
@@ -4932,7 +4933,7 @@ Subgraph Algorithmus diese Beziehung korrekt.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot1_latency.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot1_latency.png}
   \caption{Vergleich der typischen Ausführungslatenzen der untersuchten
            Synchronisationsmechanismen auf einem Linux\,x86-64-System
            (schematische Richtwerte in Nanosekunden).
@@ -4951,7 +4952,7 @@ benötigen im Mittel mehr Zeit pro Lock-/Unlock-Zyklus.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot2_complexity.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot2_complexity.png}
   \caption{Doppelt-logarithmische Darstellung der Laufzeitkomplexitäten.
            Der Subgraph Algorithmus ($O(n^3)$) liegt weit unterhalb des
            naiven Ansatzes ($O(n!\cdot n^2)$) und nur eine Größenordnung
@@ -4968,7 +4969,7 @@ $12^3 = 1728$ Operationen bewältigt -- ein Faktor von mehr als $10^{6}$.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot3_graph_match.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot3_graph_match.png}
   \caption{Links: Mutex-Ablaufgraph $G_{\mathrm{ML}}$ mit Zuständen
            \texttt{W} (wait), \texttt{L} (lock), \texttt{CS} (kritischer
            Abschnitt), \texttt{U} (unlock), \texttt{S} (signal).
@@ -4983,7 +4984,7 @@ $12^3 = 1728$ Operationen bewältigt -- ein Faktor von mehr als $10^{6}$.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot4_lcs_dp.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot4_lcs_dp.png}
   \caption{Dynamische Programmierungstabelle zur Berechnung der LCS
            der Signatur-Arrays $\sigma^{\mathrm{ML}} = [5, 18, 36, 48, 72]$
            und $\sigma^{\mathrm{BS}} = [5, 21, 36, 48, 80]$.
@@ -5000,7 +5001,7 @@ erzeugen Sprünge auf der Hauptdiagonale und liefern LCS\,$= 3$.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot5_scaling.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot5_scaling.png}
   \caption{Relativer CPU-Overhead von Spin-Lock, Mutex-Lock und
            POSIX-Semaphor über eine logarithmische Thread-Achse.
            Spin-Locks skalieren am schlechtesten, da ihr aktives Warten
@@ -5012,7 +5013,7 @@ erzeugen Sprünge auf der Hauptdiagonale und liefern LCS\,$= 3$.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot6_rotations_lcs.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot6_rotations_lcs.png}
   \caption{LCS-Länge über alle $n = 8$ Rotationsschritte für drei
            Paare von Synchronisationsgraphen. Die gestrichelte Linie markiert
            den Schwellwert LCS\,$= 2$. Alle drei Paare überschreiten den
@@ -6414,7 +6415,7 @@ Wir \"{u}bernehmen das DNA-Graph-Modell aus~\cite{epp_dna2026}:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig01_density.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig01_density.pdf}
     \caption{Speicherdichte-Vergleich verschiedener Speichermedien.
     DNA (nativ) \"{u}bertrifft Flash-Speicher um mehr als 14 Gr\"{o}\ss{}enordnungen.
     Durch Subgraph-basierte Komprimierung wird die effektive Dichte
@@ -6494,7 +6495,7 @@ Wir \"{u}bernehmen das DNA-Graph-Modell aus~\cite{epp_dna2026}:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig02_encoding.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig02_encoding.pdf}
     \caption{Quaternäres Kodierungsschema und Effizienzvergleich.
     \textbf{Links:} Bijektion zwischen Bit-Paaren und DNA-Basen.
     \textbf{Rechts:} Informationsdichte verschiedener Kodierungsstrategien ---
@@ -6569,7 +6570,7 @@ Wir \"{u}bernehmen das DNA-Graph-Modell aus~\cite{epp_dna2026}:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig03_addressing.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig03_addressing.pdf}
     \caption{Subgraph-Signatur als Adressierungsschema.
     \textbf{Links:} Schichtenmodell des DNA-Speichers: physikalischer
     Pool, Signatur-Index, Rotations-Map und Redundanz-Cache.
@@ -6604,7 +6605,7 @@ Wir \"{u}bernehmen das DNA-Graph-Modell aus~\cite{epp_dna2026}:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig04_pipeline.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig04_pipeline.pdf}
     \caption{Vollst\"{a}ndige Schreib-/Lese-Pipeline des DNA-Subgraph-Speichers.
     Die Schreib-Pipeline (oben, links nach rechts) transformiert bin\"{a}re
     Eingabedaten \"{u}ber Kodierung, Graphenmodellierung, Signaturberechnung
@@ -6698,7 +6699,7 @@ Wir \"{u}bernehmen das DNA-Graph-Modell aus~\cite{epp_dna2026}:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig06_compression.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig06_compression.pdf}
     \caption{Subgraph-Komprimierungsrate als Funktion des Redundanzgrades.
     \textbf{Links:} Bei 90\% Redundanz reduziert die Subgraph-Methode
     die Datenmenge auf 10\%, verglichen mit 40\% bei Huffman.
@@ -6790,7 +6791,7 @@ Wir \"{u}bernehmen das DNA-Graph-Modell aus~\cite{epp_dna2026}:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig05_errors.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig05_errors.pdf}
     \caption{Fehlermodell des DNA-Subgraph-Speichers.
     \textbf{Links:} Fehlerraten (Substitution, Insertion, Deletion) f\"{u}r
     verschiedene Sequenzierungstechnologien. Mit Subgraph-Fehlerkorrektur
@@ -6962,7 +6963,7 @@ Anfrage-Sequenz $S_Q$.\\
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig08_access.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig08_access.pdf}
     \caption{Zugriffszeit-Modell des DNA-Subgraph-Speichers.
     \textbf{Links:} DNA mit Subgraph-Index ($\sim 17$ Sekunden) verglichen
     mit rein sequenziellem Poolzugriff ($\sim 17$ Minuten) und anderen
@@ -6979,7 +6980,7 @@ Anfrage-Sequenz $S_Q$.\\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig09_capacity.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig09_capacity.pdf}
     \caption{Informationstheoretische Kapazit\"{a}tsanalyse.
     \textbf{Links:} Shannon-Kapazit\"{a}t des DNA-Kanals als Funktion
     der Fehlerrate; gr\"{u}ne Kurve zeigt den effektiven Kapazit\"{a}tsgewinn
@@ -7064,7 +7065,7 @@ Anfrage-Sequenz $S_Q$.\\
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig10_durability.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig10_durability.pdf}
     \caption{Datenhaltbarkeit und Langzeitstabilit\"{a}t.
     \textbf{Links:} Datenintegrität als Funktion der Zeit für verschiedene
     Medien. DNA (fossil) besitzt eine Halbwertszeit von $\sim$700\,000
@@ -7125,7 +7126,7 @@ Anfrage-Sequenz $S_Q$.\\
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig07_synth_cost.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig07_synth_cost.pdf}
     \caption{Synthese- und Sequenzierungskosten.
     \textbf{Links:} Kostenentwicklung 2010--2030 (historisch + Projektion);
     durch Subgraph-Komprimierung werden die effektiven Synthese\-kosten
@@ -7137,7 +7138,7 @@ Anfrage-Sequenz $S_Q$.\\
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig11_complexity.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig11_complexity.pdf}
     \caption{Komplexit\"{a}ts\"{u}bersicht aller Systemkomponenten.
     \textbf{Links:} Operationszahlen aller Teilprozesse in doppelt-log.
     Darstellung; der naive Permutationsansatz ($O(n! \cdot n^2)$) ist
@@ -7213,7 +7214,7 @@ Anfrage-Sequenz $S_Q$.\\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig12_architecture.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/fig12_architecture.pdf}
     \caption{Vollst\"{a}ndige System-Architektur des DNA-Subgraph-Speichers.
     Das System gliedert sich in vier Schichten: (1) Software-/Dateisystem-Interface,
     (2) Kodierungs- und Fehlerkorrekturschicht, (3) Subgraph-Index- und
@@ -8225,7 +8226,7 @@ Prozesse $> 100$\,MB):
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot6_statistics.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot6_statistics.png}
   \caption{Links: Bimodale Verteilung des Speicherbedarfs von $n=1000$
     Prozessen. Mittelwert (rot) und Median (grün) weichen voneinander ab
     -- ein Zeichen, dass eine Gleichverteilungsstrategie ($Z(p_i) = \bar{B}$)
@@ -8298,7 +8299,7 @@ minimaler Latenz, der den Bedarf erfüllt:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{plot5_hierarchy.png}
+\includegraphics[width=0.8\textwidth]{plots/plot5_hierarchy.png}
 \caption{Subgraph-Hierarchie der Synchronisationsmechanismen.
   Jeder Mechanismus baut auf dem nächst-einfacheren auf:
   das Fairness-Axiom ist die Basis, Spin-Lock und binäres Semaphor
@@ -8309,7 +8310,7 @@ minimaler Latenz, der den Bedarf erfüllt:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{plot1_fairness.png}
+\includegraphics[width=0.8\textwidth]{plots/plot1_fairness.png}
 \caption{Bedarfsorientierte vs.\ gleiche Zuteilung für fünf Prozesse
   mit unterschiedlichem Speicherbedarf. Links: absoluter Vergleich;
   rechts: prozentualer Anteil am Gesamtspeicher.}
@@ -8318,7 +8319,7 @@ minimaler Latenz, der den Bedarf erfüllt:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{plot2_dynamic.png}
+\includegraphics[width=0.8\textwidth]{plots/plot2_dynamic.png}
 \caption{Dynamische Speicherzuteilung über die Zeit für drei Prozesse.
   Die gestrichelten Linien zeigen den Instantbedarf, die
   durchgezogenen Linien die tatsächliche Zuteilung (gleitend
@@ -8329,7 +8330,7 @@ minimaler Latenz, der den Bedarf erfüllt:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{plot3_jain.png}
+\includegraphics[width=0.8\textwidth]{plots/plot3_jain.png}
 \caption{Jain's Fairness-Index für drei Zuteilungsstrategien.
   Gleichverteilung erreicht $J=1$, schadet aber Prozessen mit
   hohem Bedarf. Bedarfsorientiert liegt bei $J \approx 0{,}93$
@@ -8340,7 +8341,7 @@ minimaler Latenz, der den Bedarf erfüllt:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{plot4_timeslices.png}
+\includegraphics[width=0.8\textwidth]{plots/plot4_timeslices.png}
 \caption{CPU-Zeitscheiben: unfaire Zuteilung (links, $P_1$ erhält
   80\,\% der Zeitscheiben) vs.\ bedarfsorientierte Zuteilung (rechts).
   Die bedarfsorientierte Variante gewährleistet, dass $P_2$ seinen
@@ -8350,7 +8351,7 @@ minimaler Latenz, der den Bedarf erfüllt:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{plot7_waiting.png}
+\includegraphics[width=0.8\textwidth]{plots/plot7_waiting.png}
 \caption{Wartezeiten unter drei Scheduling-Politiken für $n=20$
   Prozesse. FCFS produziert stark variierende Wartezeiten;
   bedarfsorientierte Zuteilung minimiert den Mittelwert;
@@ -8727,7 +8728,7 @@ und Systemen:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot_eb1_waittime.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot_eb1_waittime.png}
   \caption{Erwartete Wartezeit $E[W_k] = \frac{2^k-1}{2}\cdot\tau$
     (blau, Satz~\ref{satz:erwartung_backoff}) und maximale Wartezeit
     $(2^k-1)\tau$ (rot gestrichelt) als Funktion des
@@ -8739,7 +8740,7 @@ und Systemen:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot_eb2_tcp_rto.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot_eb2_tcp_rto.png}
   \caption{Links: TCP RTO-Verlauf nach RFC 6298 -- stufenweise
     Verdopplung bis $\mathrm{RTO}_{\max} = 64\,\mathrm{s}$.
     Rechts: Kumulierte Wartezeit; nach 9 Versuchen
@@ -8750,7 +8751,7 @@ und Systemen:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot_eb3_csma.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot_eb3_csma.png}
   \caption{Links: Kollisionswahrscheinlichkeit für CSMA/CD bei
     verschiedenen Backoff-Intervallen. Ein größeres Intervall ($k=5$)
     senkt die Kollisionswahrscheinlichkeit drastisch -- auf Kosten
@@ -8762,7 +8763,7 @@ und Systemen:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot_eb4_stochastic.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot_eb4_stochastic.png}
   \caption{Links: Verteilung der ersten erfolgreichen Übertragung
     bei 4 konkurrierenden Sendern. Die meisten Erfolge treten
     bei $k = 1$ oder $k = 2$ ein (Geometrische Verteilung).
@@ -8773,7 +8774,7 @@ und Systemen:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot_eb5_jitter.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot_eb5_jitter.png}
   \caption{\textbf{Thundering Herd Problem}: Ohne Jitter
     synchronisieren sich 100 Clients, die gleichzeitig gestartet
     sind, auf exakt gleiche Backoff-Zeiten und stürmen den Server
@@ -8786,7 +8787,7 @@ und Systemen:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot_eb6_fairness.png}
+  \includegraphics[width=0.8\textwidth]{plots/plot_eb6_fairness.png}
   \caption{Verbindung zum Fairness-Axiom~\ref{ax:fairness}:
     Sender~A mit hoher Last kollidiert häufig
     und hat daher einen hohen Backoff-Index~$k_A$, was zu langen
@@ -10427,7 +10428,7 @@ gegenüber Materialparametern zu demonstrieren.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_01_physics.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_01_physics.pdf}
 	\caption{Physikalische Grundmodelle des IRF-Systems.
 		\textit{Links}: Kontaktwinkel $\theta(V)$ nach der Young-Lippmann-Gleichung (blau,
 		linke Achse) und gleichzeitig die Schaltenergie $E(V)$ einer $5\,\mu\text{m} \times 5\,\mu\text{m}$
@@ -10550,7 +10551,7 @@ geringerer Hydrophobie oder höherer Dielektrikumpermittivität nötig.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_02_transistor.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_02_transistor.pdf}
 	\caption{IoFET-Transistorkennlinien.
 		\textit{Links}: Übertragungskennlinie $I_{DS}(V_{GS})$ bei $V_{DS} = 50$\,mV
 		in halblogarithmischer Darstellung (blau, linke Achse) und linearer Darstellung
@@ -10649,7 +10650,7 @@ ein fundamentaler Unterschied zu CMOS, wo jede Gatteroperation Ladeenergie erfor
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_03_droplet.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_03_droplet.pdf}
 	\caption{Tropfendynamik und Verschmelzungsenergetik.
 		\textit{Links}: Laplace-Druck $\Delta P = 2\gamma/r$ als Funktion des
 		Tropfenradius (log-log-Darstellung) für drei Temperaturen: 25\, °C (blau),
@@ -10733,7 +10734,7 @@ thermodynamisch spontan.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_04_logic.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_04_logic.pdf}
 	\caption{Tropfenlogik -- Gatterübersicht.
 		\textit{Links}: Heatmap der Wahrheitstabellen aller sechs Zwei-Eingang-Gatter
 		(AND, OR, XOR, NAND, NOR, XNOR). Die Zeilen entsprechen den Gattertypen,
@@ -10814,7 +10815,7 @@ die gespeicherte Information.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_05_memory.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_05_memory.pdf}
 	\caption{IRF-Speichertechnologien.
 		\textit{Links}: Ionische Speicherzelle mit Hebbschem Lernprinzip:
 		Ionenkonzentration (blau) als Funktion des Zeitschritts, aufgeteilt in
@@ -10896,7 +10897,7 @@ Pitch liefert folgende charakteristische Kenndaten:
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_06_matrix.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_06_matrix.pdf}
 	\caption{Elektrodenmatrix -- Topologie und Skalierung.
 		\textit{Links}: Spannungsverteilung auf einer $10 \times 10$ Elektrodenmatrix
 		im Schachbrettmuster (Layer 0). Blaue Zellen sind aktiv ($V = 150$\,mV),
@@ -10948,7 +10949,7 @@ $Y_\text{ges} = 0{,}999 \times 0{,}995 \times 0{,}998 \times 0{,}99 \times 0{,}9
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_07_fabrication.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_07_fabrication.pdf}
 	\caption{Fertigungsprozess und Technologie-Roadmap.
 		\textit{Links}: Ausbeute pro Prozessschritt (Balken, farbkodiert: grün $> 99{,}5\,\%$,
 		orange $> 99{,}0\,\%$, rot $\leq 99{,}0\,\%$) und kumulative Gesamtausbeute
@@ -11018,7 +11019,7 @@ akut macht.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_08_architecture.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_08_architecture.pdf}
 	\caption{Systemarchitektur -- Von-Neumann-Analyse und Skalierungsgesetze.
 		\textit{Links}: Heatmap der Von-Neumann-Bottleneck-Ratio für eine Matrix
 		aus CPU-Frequenzen (1--5\,GHz, y-Achse) und Speicherbandbreiten (16--256\,GB/s,
@@ -11100,7 +11101,7 @@ ist 0\,aJ, da keine Tropfen auf aktiven Elektroden sitzen (Auslastung 0,0).
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_09_simulation.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_09_simulation.pdf}
 	\caption{Simulationszeitverlauf (6$\times$6-Matrix, 1\,s, 50\,Schritte).
 		\textit{Links}: Tropfenanzahl (blau, linke Achse, als Treppendiagramm) und
 		Verschmelzungen pro Zeitschritt (rot, rechte Achse, als Balkendiagramm)
@@ -11142,7 +11143,7 @@ Spannung ist gleichzeitig die Grundlage der Nichtflüchtigkeit des Speichers.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{plot_10_system_comparison.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/plot_10_system_comparison.pdf}
 	\caption{Umfassender Systemvergleich IRF vs.\ CMOS.
 		\textit{Links}: Normierter Technologievergleich IRF-4 (200\,nm Pitch, 3 Layer,
 		blau) gegen CMOS 3\,nm (rot) über fünf Dimensionen:
@@ -12777,7 +12778,7 @@ Zwischenwertsatz liefert Surjektivit\"at.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{plot1_iono_schaltung.pdf}
+\includegraphics[width=0.8\textwidth]{plots/plot1_iono_schaltung.pdf}
 \caption{Links: Ionotronischer Schaltkreis (IRF) in Analogie zur CMOS-Logik.
 Farbige Mikrokanalschichten kodieren verschiedene Funktionen.
 Rechts: Ionische Leitf\"ahigkeit $\kappa(c)$ nach Kohlrausch f\"ur NaCl
@@ -12915,7 +12916,7 @@ $f(x)$ enth\"alt.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{plot2_itm_band.pdf}
+\includegraphics[width=0.8\textwidth]{plots/plot2_itm_band.pdf}
 \caption{Links: Zustandsgraph der ITM mit 5 Zust\"anden.
 Rechts: Ionisches Band als Mikrokanalarray; Konzentrationsniveaus
 kodieren Bandsymbole.}
@@ -13058,7 +13059,7 @@ Damit ist NOT realisiert. \checkmark
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{plot3_logikgatter.pdf}
+\includegraphics[width=0.8\textwidth]{plots/plot3_logikgatter.pdf}
 \caption{Wahrheitstabellen der sechs ionischen Grundgatter.
 Farbige Zellen: Ausgang~1; helle Zellen: Ausgang~0.}
 \label{fig:logikgatter}
@@ -13277,7 +13278,7 @@ ist ohne zus\"atzliche Information nicht m\"oglich).
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{plot4_analog_digital.pdf}
+\includegraphics[width=0.8\textwidth]{plots/plot4_analog_digital.pdf}
 \caption{Analog vs. Digital in der Ionotronik.
 Oben links: Nernst-Potential als stetige Funktion.
 Oben rechts: Quantisierungsfehler verschiedener Bittiefen.
@@ -13374,7 +13375,7 @@ relativer Fehler $< 1\%$.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{plot5_ionoxoqtum.pdf}
+\includegraphics[width=0.8\textwidth]{plots/plot5_ionoxoqtum.pdf}
 \caption{Links: Plasmonen-Transmission f\"ur verschiedene NaCl-Konzentrationen.
 Rechts: F\"unfschichtige ionoxoqtum-Architektur.}
 \label{fig:ionoxoqtum}
@@ -13500,7 +13501,7 @@ Dies widerspricht dem klassischen Unentscheidbarkeits-Satz von Turing~\cite{turi
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{plot6_universalitaet.pdf}
+\includegraphics[width=0.8\textwidth]{plots/plot6_universalitaet.pdf}
 \caption{Berechnungsuniversalit\"at der ITM.
 Oben links: Busy-Beaver $BB(2)$ Simulation auf der ITM.
 Oben rechts: Berechnungsklassen-Hierarchie.
@@ -14671,7 +14672,7 @@ wobei $\mu_i$ die Beweglichkeit von Ion $i$ ist. Für KCl mit $\mu_{K^+} = 7.62 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp01_ionische_leitf_higkeit_kcl_-_c_und.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp01_ionische_leitf_higkeit_kcl_-_c_und.pdf}
 	\caption{Experiment 1: Ionische Leitfähigkeit und Debye-Längenskala.}
 	\label{fig:exp01}
 \end{figure}
@@ -14690,7 +14691,7 @@ wobei die Stokes-Reibung in einer Flüssigkeit mit dynamischer Viskosität $\eta
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp02_einstein-stokes-diffusion_d_t_und_.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp02_einstein-stokes-diffusion_d_t_und_.pdf}
 	\caption{Experiment 2: Einstein-Stokes-Diffusion und Relaxationszeit.}
 	\label{fig:exp02}
 \end{figure}
@@ -14709,7 +14710,7 @@ wobei $\sigma$ die Leitfähigkeit der Elektrolytlösung ist.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp03_ionischer_kanalwiderstand_r_c_l.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp03_ionischer_kanalwiderstand_r_c_l.pdf}
 	\caption{Experiment 3: Ionischer Kanalwiderstand und Ohmsches Verhalten.}
 	\label{fig:exp03}
 \end{figure}
@@ -14734,7 +14735,7 @@ wobei $\theta_0$ der Kontaktwinkel ohne Spannung ist, $\gamma$ die Oberflächens
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp04_ewod_young-lippmann_-_v_und_materi.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp04_ewod_young-lippmann_-_v_und_materi.pdf}
 	\caption{Experiment 4: EWOD Young-Lippmann und Materialvergleich.}
 	\label{fig:exp04}
 \end{figure}
@@ -14760,7 +14761,7 @@ Die Energie skaliert quadratisch mit der Elektrodengröße, da sowohl Kapazität
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp05_iofet-schaltenergie_vs_elektrodeng.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp05_iofet-schaltenergie_vs_elektrodeng.pdf}
 	\caption{Experiment 5: IoFET-Schaltenergie versus Elektrodengröße und CMOS-Vergleich.}
 	\label{fig:exp05}
 \end{figure}
@@ -14779,7 +14780,7 @@ wobei $\alpha$ der Temperaturkoeffizient ist. Dies würde zu einer starken Tempe
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp06_ewod-temperaturkompensation_-_t_un.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp06_ewod-temperaturkompensation_-_t_un.pdf}
 	\caption{Experiment 6: EWOD-Temperaturkompensation und dynamische Spannungsanpassung.}
 	\label{fig:exp06}
 \end{figure}
@@ -14801,7 +14802,7 @@ Das ausgezeichnete Subthreshold Swing resultiert aus der Temperaturabhängigkeit
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp07_iofet_kennlinien_-_transfer_und_au.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp07_iofet_kennlinien_-_transfer_und_au.pdf}
 	\caption{Experiment 7: IoFET-Kennlinien (Transfer und Ausgangskennlinienfeld).}
 	\label{fig:exp07}
 \end{figure}
@@ -14823,7 +14824,7 @@ Dies zeigt, dass IoFET-Systeme nicht als generischer Ersatz für CMOS dienen kö
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp08_iofet-transistordichte_vs_cmos-roa.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp08_iofet-transistordichte_vs_cmos-roa.pdf}
 	\caption{Experiment 8: IoFET-Transistordichte versus CMOS-Roadmap.}
 	\label{fig:exp08}
 \end{figure}
@@ -14848,7 +14849,7 @@ wobei $E_{\text{RG}}$ eine mögliche Energierückgewinnung durch Rückverstromun
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp09_iofet-energiebilanz_-_reibung_elek.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp09_iofet-energiebilanz_-_reibung_elek.pdf}
 	\caption{Experiment 9: IoFET-Energiebilanz (Reibung, Elektrostatik, Rückgewinnung).}
 	\label{fig:exp09}
 \end{figure}
@@ -14881,7 +14882,7 @@ Dies validiert das Konzept von Tropfen als natürliche Speicherelemente.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp10_tropfenverschmelzung_-_energiemini.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp10_tropfenverschmelzung_-_energiemini.pdf}
 	\caption{Experiment 10: Tropfenverschmelzung und Energieminimierung.}
 	\label{fig:exp10}
 \end{figure}
@@ -14904,7 +14905,7 @@ Dies validiert das Konzept von Tropfen als natürliche Speicherelemente.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp11_logikgatter-benchmark_und_nand-vol.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp11_logikgatter-benchmark_und_nand-vol.pdf}
 	\caption{Experiment 11: Logik-Gatter-Benchmark und NAND-Vollständigkeit.}
 	\label{fig:exp11}
 \end{figure}
@@ -14926,7 +14927,7 @@ Dies validiert das Konzept von Tropfen als natürliche Speicherelemente.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp12_irf-netzwerk_-_zustandskarte_und_s.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp12_irf-netzwerk_-_zustandskarte_und_s.pdf}
 	\caption{Experiment 12: IRF-Netzwerk (Zustandskarte und Speicherkapazität).}
 	\label{fig:exp12}
 \end{figure}
@@ -14963,7 +14964,7 @@ Dies zeigt, dass durch ionische Rekonfiguration des Hydrogels eine breitbandige 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp13_fp-reflexionsspektren_und_farbdurc.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp13_fp-reflexionsspektren_und_farbdurc.pdf}
 	\caption{Experiment 13: Fabry-Perot-Reflexionsspektren und Farbdurchstimmbarkeit.}
 	\label{fig:exp13}
 \end{figure}
@@ -14988,7 +14989,7 @@ wobei höhere Reflektivitäten zu schärferen Resonanzen führen.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp14_fp-finesse_und_cie-farbgamut.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp14_fp-finesse_und_cie-farbgamut.pdf}
 	\caption{Experiment 14: Fabry-Perot-Finesse und CIE-Farbgamut.}
 	\label{fig:exp14}
 \end{figure}
@@ -15013,7 +15014,7 @@ mit Reflektivität $R = |m_{21}/m_{11}|^2$ des Gesamtsystems.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp15_transfermatrix-methode_-_au_hydrog.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp15_transfermatrix-methode_-_au_hydrog.pdf}
 	\caption{Experiment 15: Transfer-Matrix-Methode für Au|Hydrogel|Au-Stack.}
 	\label{fig:exp15}
 \end{figure}
@@ -15037,7 +15038,7 @@ mit Reflektivität $R = |m_{21}/m_{11}|^2$ des Gesamtsystems.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp16_qm-analogie_der_tmm_-_photonische_.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp16_qm-analogie_der_tmm_-_photonische_.pdf}
 	\caption{Experiment 16: QM-Analogie der TMM und photonische Bandstruktur.}
 	\label{fig:exp16}
 \end{figure}
@@ -15068,7 +15069,7 @@ wobei die osmotische Komponente vom Flory-Huggins-Parameter $\chi$ abhängt, der
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp17_flory-rehner-gleichgewichtsquellun.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp17_flory-rehner-gleichgewichtsquellun.pdf}
 	\caption{Experiment 17: Flory-Rehner-Gleichgewichtsquellung.}
 	\label{fig:exp17}
 \end{figure}
@@ -15095,7 +15096,7 @@ Für dynamische Bildaktualisierung bei Videofrequenzen müssen Hydrogel-Schichte
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp18_quellungskinetik_h_und_videorate-k.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp18_quellungskinetik_h_und_videorate-k.pdf}
 	\caption{Experiment 18: Quellungskinetik und Videorate-Kompatibilität.}
 	\label{fig:exp18}
 \end{figure}
@@ -15121,7 +15122,7 @@ Für dynamische Bildaktualisierung bei Videofrequenzen müssen Hydrogel-Schichte
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp19_ebl-proximity-effekt_-_chang-psf_u.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp19_ebl-proximity-effekt_-_chang-psf_u.pdf}
 	\caption{Experiment 19: EBL-Proximity-Effekt (Chang-PSF und Faltung).}
 	\label{fig:exp19}
 \end{figure}
@@ -15143,7 +15144,7 @@ Für dynamische Bildaktualisierung bei Videofrequenzen müssen Hydrogel-Schichte
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp20_ebl-texturkodierung_h-buchstabe_-_.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp20_ebl-texturkodierung_h-buchstabe_-_.pdf}
 	\caption{Experiment 20: EBL-Texturkodierung (Dosis-Quellung-Farbe).}
 	\label{fig:exp20}
 \end{figure}
@@ -15175,7 +15176,7 @@ minimiert durch Gradient-Descent oder adjungierte Methoden.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp21_tarnfarben-optimierung_-_blatt-zie.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp21_tarnfarben-optimierung_-_blatt-zie.pdf}
 	\caption{Experiment 21: Tarnfarben-Optimierung (Blatt-Zielspektrum).}
 	\label{fig:exp21}
 \end{figure}
@@ -15201,7 +15202,7 @@ wobei jede Farbe eine separate Schichtdicke $d_i$ mit eigenem Zielspektrum $R_{\
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp22_multi-ziel-design_-_rgb-prim_rfarb.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp22_multi-ziel-design_-_rgb-prim_rfarb.pdf}
 	\caption{Experiment 22: Multi-Ziel-Design (RGB-Primärfarben).}
 	\label{fig:exp22}
 \end{figure}
@@ -15235,7 +15236,7 @@ Die IoFET-Leitfähigkeit steuert den Quellungsgrad des darunter liegenden Hydrog
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp23_iofet_fp-pixel_-_hydro-photonische.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp23_iofet_fp-pixel_-_hydro-photonische.pdf}
 	\caption{Experiment 23: IoFET+FP-Pixel (hydro-photonische Integrationsmatrix).}
 	\label{fig:exp23}
 \end{figure}
@@ -15264,7 +15265,7 @@ Diese Demonstration zeigt die Machbarkeit des Konzepts der hydro-photonischen Re
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp24_dreifache_simultaneit_t_-_leiter_s.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp24_dreifache_simultaneit_t_-_leiter_s.pdf}
 	\caption{Experiment 24: Dreifache Simultaneität (Leiter + Schalter + Speicher).}
 	\label{fig:exp24}
 \end{figure}
@@ -15311,7 +15312,7 @@ Diese Erkenntnisse rechtfertigen die Anwendung von IoFET in spezialisierten Bere
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{exp25_cmos_vs_irf_-_vollst_ndiger_system.pdf}
+	\includegraphics[width=0.8\textwidth]{plots/exp25_cmos_vs_irf_-_vollst_ndiger_system.pdf}
 	\caption{Experiment 25: CMOS versus IoFET (vollständiger Systemvergleich).}
 	\label{fig:exp25}
 \end{figure}
@@ -15876,42 +15877,42 @@ Parameter quantitativ.
 
 \begin{sidewaysfigure}
   \centering
-  \includegraphics[width=0.8\textwidth]{fig1_takt.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/fig1_takt.pdf}
   \caption{Taktfrequenzvergleich aller zwölf Mikrocontroller (logarithmische Skala).}
   \label{fig:takt}
 \end{sidewaysfigure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{fig2_speicher.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/fig2_speicher.pdf}
   \caption{Flash-RAM-Korrelation im doppelt-logarithmischen Koordinatensystem.}
   \label{fig:speicher}
 \end{figure}
 
 \begin{sidewaysfigure}
   \centering
-  \includegraphics[width=0.8\textwidth]{fig3_leistung.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/fig3_leistung.pdf}
   \caption{Typische Leistungsaufnahme im Aktivbetrieb (logarithmische Skala).}
   \label{fig:leistung}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}
   \centering
-  \includegraphics[width=0.8\textwidth]{fig4_preis_leistung.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/fig4_preis_leistung.pdf}
   \caption{Preis-Leistungs-Effizienz: Taktfrequenz in MHz pro Beschaffungs-USD.}
   \label{fig:preis_leistung}
 \end{sidewaysfigure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{fig5_heatmap.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/fig5_heatmap.pdf}
   \caption{Feature-Matrix: Konnektivitäts- und Fähigkeitsvergleich.}
   \label{fig:heatmap}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{fig8_effizienz.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/fig8_effizienz.pdf}
   \caption{Energieeffizienz: DMIPS pro Milliwatt Leistungsaufnahme.}
   \label{fig:effizienz}
 \end{figure}
@@ -16143,7 +16144,7 @@ zusammen mit dem MCU, der die jeweilige Eigenschaft vorbildet.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{fig6_radar.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/fig6_radar.pdf}
   \caption{Radar-Profil: OMCU (rot, ausgefüllt) gegen ESP32, Teensy\,4.1 und MSP430.
            Der OMCU erreicht in allen acht Dimensionen den Maximalwert\,1.}
   \label{fig:radar}
@@ -16151,7 +16152,7 @@ zusammen mit dem MCU, der die jeweilige Eigenschaft vorbildet.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{fig7_arch.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/fig7_arch.pdf}
   \caption{Blockdiagramm der OMCU-Systemarchitektur.}
   \label{fig:arch}
 \end{figure}
@@ -16858,7 +16859,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig1_load_timer.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig1_load_timer.pdf}
 		\caption{Linkes Bild: Erwartete Gesamtwartezeit $\E[W]$ unter optimiertem
 			Exp-Timer als Funktion der Ankunftsrate $\lambda$. Mittleres Bild:
 			Erwartete Batchgröße $\E[|B|]$ für NegBin-Timer mit $r \in \{1,2,4\}$.
@@ -16890,7 +16891,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig2_timer_pdfs.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig2_timer_pdfs.pdf}
 		\caption{Timer-Dichtefunktionen für die drei Lastregime von PYMCA-8.
 			Im Energiesparmodus (Pareto, gestrichelt) entsteht eine schwere
 			rechte Flanke für lange Akkumulationszeiten. Im Hochlast-Regime
@@ -16902,7 +16903,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig3_load_heatmap.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig3_load_heatmap.pdf}
 		\caption{Lastverteilung der 8 Kerne über die Zeit (Heatmap). Die
 			Farbskala von Grün (geringe Last) bis Rot (Vollast) zeigt die
 			inhomogene, zeitlich variierende Auslastung. Die weiße Strichlinie
@@ -16988,7 +16989,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig4_python_memory.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig4_python_memory.pdf}
 		\caption{Linkes Bild: Speedup-Kurven für Python-Threads unter GIL
 			(rot, stark sublinear durch Serialisierung) vs.\ GIL-freier Ausführung
 			durch PEP~703 / No-GIL-Mode (blau). Das schattierte Gebiet markiert
@@ -17081,7 +17082,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig5_energy.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig5_energy.pdf}
 		\caption{Linkes Bild: DVFS-Leistungsmodell eines einzelnen Kerns.
 			Die dynamische Leistung (rot) folgt $P_{\mathrm{dyn}} \propto f^3$,
 			der Leckstrom (orange) ist konstant. Das Gesamtleistungsminimum
@@ -17158,7 +17159,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig7_simulation.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig7_simulation.pdf}
 		\caption{Simulationsergebnisse der adaptiven Strategie $\mathcal{W}_{\mathrm{adapt}}$.
 			Oben links: Batchgröße $|B|$ über die Zeit mit eingezeichneten
 			Laständerungen. Bei $\lambda = 4.0$ (nach $t=150\,\mathrm{ms}$) entstehen
@@ -17180,7 +17181,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig6_competitive.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig6_competitive.pdf}
 		\caption{Linkes Bild: Kompetitivitätsverhältnis $\rho$ als Funktion von
 			$\mu/\lambda$. Bei $\mu/\lambda = 1$ (optimaler Betriebspunkt)
 			liegt $\rho \approx 2$, was die obere Schranke aus \cite{epp2026archiv}
@@ -17200,7 +17201,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig8_iofet_memory.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig8_iofet_memory.pdf}
 		\caption{Linkes Bild: Transfercharakteristik des IoFET (blau, Sigmoid)
 			vs.\ klassischem MOSFET (rot, Stufenfunktion). Die glatte IoFET-Kurve
 			motiviert die kontinuierliche DVFS-Abbildung in PYMCA-8: Anstatt
@@ -17615,7 +17616,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figC5_simd_critical.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/figC5_simd_critical.pdf}
 		\caption{Linkes Bild: Throughput-Speedup der C-Extension-Optimierungsstufen
 			auf PYMCA-8 (8 Kerne, Hochlast-Szenario). Die Kombination aus
 			SIMD~AVX-512, Hardware-Prefetching und GIL-freier Parallelausführung
@@ -17745,7 +17746,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figC1_dispatch.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/figC1_dispatch.pdf}
 		\caption{Linkes Bild: Taktzyklen pro Opcode-Dispatch für
 			\texttt{switch}-basiertes Dispatch (rot), Computed-Goto (blau)
 			und Specializing Adaptive Interpreter (grün) für die zehn
@@ -17887,7 +17888,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figC2_refcount_frames.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/figC2_refcount_frames.pdf}
 		\caption{Linkes Bild: Refcount-Overhead als Prozentsatz der CPU-Zeit
 			für verschiedene Allokationsraten und vier Optimierungsstufen.
 			Bei $\lambda = 10^7\,\mathrm{Obj/s}$ (typische Hochlast) reduziert
@@ -18111,7 +18112,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figC4_allocator.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/figC4_allocator.pdf}
 		\caption{Linkes Bild: Allokationslatenz als Funktion der
 			Objektgröße (log-log-Skala) für fünf Allokatoren.
 			\texttt{pymalloc} (rot) ist für kleine Objekte
@@ -18186,7 +18187,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figC3_gc_tuning.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/figC3_gc_tuning.pdf}
 		\caption{Linkes Bild: GC-Schwellwert-Tuning für Gen-0: Pausezeit (blau)
 			und Throughput-Penalty (rot, rechte Achse) als Funktion von $\theta_0$.
 			Das Optimum liegt bei $\theta_0^* \approx 3500$ (fünfmal höher als
@@ -18323,7 +18324,7 @@ Systeme -- ein Bereich, der in zukünftigen Arbeiten weiterverfolgt wird.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figC6_pgo_inlining.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/figC6_pgo_inlining.pdf}
 		\caption{Linkes Bild: Speedup (blau, linke Achse) und
 			I-Cache-Miss-Rate (rot, rechte Achse) als Funktion der Inlining-Tiefe.
 			Bei Tiefe 4 (grüne Strichlinie) ist das Optimum: Der I-Cache-Druck
@@ -19382,7 +19383,7 @@ vierte Dimension: die DNA-Eskalation.
   \textbf{Regime IV ($\ell < 0.10$):} Bei sehr niedriger Last
   dominiert $J_{\mathrm{DNA}}$: DNA-Synthese lohnt sich, weil der
   Pareto-Timer sehr lange stille Perioden erzeugt (Erwartungswert
-  $\E[T_\Pareto] = x_m \alpha /(\alpha - 1) \gg 1/\hat\lambda_i$),
+	$\E[T_{\Pareto}] = x_m \alpha /(\alpha - 1) \gg 1/\hat\lambda_i$),
   in denen die DNA-Synthese ohne Latenzkompetition ausgeführt wird.
   Die optimale Eskalation $\gamma^* = 1.0$ folgt aus Theorem~\ref{thm:twotarget}.
 
@@ -20814,7 +20815,7 @@ numerisch. Alle Plots wurden mit Matplotlib~\cite{matplotlib2007} erzeugt.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot1_complexity.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/plot1_complexity.pdf}
   \caption{%
     \textbf{Laufzeitkomplexität verschiedener Subgraph-Algorithmen} (log-Skala).
     Der Subgraph Algorithmus ($O(n^3)$, blau) ist gegenüber dem naiven Ansatz
@@ -20828,7 +20829,7 @@ numerisch. Alle Plots wurden mit Matplotlib~\cite{matplotlib2007} erzeugt.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot2_hypertrie.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/plot2_hypertrie.pdf}
   \caption{%
     \textbf{Hypertrie-Statistik der acht RDF-Beispieldaten} (aus dem TENTRIS-Folienvortrag).
     Links: Knotenanzahl je Hypertrie-Ebene. Die H(2)-Ebene zeigt die meisten eindeutigen
@@ -20841,7 +20842,7 @@ numerisch. Alle Plots wurden mit Matplotlib~\cite{matplotlib2007} erzeugt.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot3_sparql_tensor.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/plot3_sparql_tensor.pdf}
   \caption{%
     \textbf{Tensor-Operandgröße und Auswertungseffizienz} in Abhängigkeit von der
     Entitätsanzahl $N$ (log-log-Skala). Links: Die Matrix-Schnittoperatoren ($T[:,p,:]$,
@@ -20854,7 +20855,7 @@ numerisch. Alle Plots wurden mit Matplotlib~\cite{matplotlib2007} erzeugt.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot4_signatures.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/plot4_signatures.pdf}
   \caption{%
     \textbf{Signaturberechnung des Subgraph Algorithmus} für eine $5\times5$
     Adjazenzmatrix. Links: Die Adjazenzmatrix $A$ (zufällig, obere Dreiecksform).
@@ -20868,7 +20869,7 @@ numerisch. Alle Plots wurden mit Matplotlib~\cite{matplotlib2007} erzeugt.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot5_lcs_rotation.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/plot5_lcs_rotation.pdf}
   \caption{%
     \textbf{LCS-Analyse über alle zyklischen Rotationen} ($n=10$ Knoten).
     Links: Die LCS-Länge variiert stark mit dem Rotationsindex. Grüne Balken
@@ -20883,7 +20884,7 @@ numerisch. Alle Plots wurden mit Matplotlib~\cite{matplotlib2007} erzeugt.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot6_memory.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/plot6_memory.pdf}
   \caption{%
     \textbf{Speicher- und Skalierungsanalyse} von Adjazenzmatrix, Signatur-Array
     und Hypertrie. Links: Der Speicherbedarf der Adjazenzmatrix ($O(n^2)$) übersteigt
@@ -21266,7 +21267,7 @@ Die folgenden drei Abbildungen illustrieren das LRH-Verfahren.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot7_layered_memory.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/plot7_layered_memory.pdf}
   \caption{%
     \textbf{Speicherbedarf: Bignum vs.\ Layered-Ring-Hash.}
     Links: Für kleine $n$ ($\leq 64$) sind Bignum und LRH gleich effizient (ein
@@ -21281,7 +21282,7 @@ Die folgenden drei Abbildungen illustrieren das LRH-Verfahren.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot8_lrh_compare.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/plot8_lrh_compare.pdf}
   \caption{%
     \textbf{Vergleichsoperationen und Stack-Tiefe des LRH.}
     Links: Byteweise Bignum-Vergleiche (rot) wachsen linear in $n$, während
@@ -21295,7 +21296,7 @@ Die folgenden drei Abbildungen illustrieren das LRH-Verfahren.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plot9_carry.pdf}
+  \includegraphics[width=0.8\textwidth]{plots/plot9_carry.pdf}
   \caption{%
     \textbf{Carry-Propagation und Bit-Layout.}
     Demonstrationsbeispiel mit $n=8$, $j=3$, Spaltenvektor $[1,0,1,1,0,1,0,0]^T$.
@@ -21909,7 +21910,7 @@ kostet $O(L)$ statt $O(n^2)$ für naiven Matrixvergleich.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig1_gantt.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig1_gantt.pdf}
 		\caption{EDF$^+$-Schedule mit 5 Tasks. Task $T_2$ blockiert bei $t=4{,}5$
 			(schraffierter Balken) und wird mit niedrigster Priorität ans Ende verschoben.
 			Sofort wird ein neuer EDF-Schedule berechnet: $T_5$ wird vorgezogen.
@@ -22705,7 +22706,7 @@ kostet $O(L)$ statt $O(n^2)$ für naiven Matrixvergleich.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig2_geom.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig2_geom.pdf}
 		\caption{PMF (links) und CDF (rechts) der geometrischen Verteilung für
 			$p \in \{0{,}1;\, 0{,}2;\, 0{,}4;\, 0{,}6\}$. Für kleines $p$ treten
 			erste Blocking-Ereignisse spät auf. Die 95\%-Quantil-Linie zeigt, ab
@@ -22761,7 +22762,7 @@ kostet $O(L)$ statt $O(n^2)$ für naiven Matrixvergleich.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig3_erwartung.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig3_erwartung.pdf}
 		\caption{Links: Erwartungswert $E[X] = 1/p$ mit Standardabweichungsband.
 			Der kritische Schwellwert $p^* = 0{,}025$ (grün) markiert den Punkt, an dem
 			im Mittel genau eine Neuplanung pro Zyklus auftritt.
@@ -22840,7 +22841,7 @@ kostet $O(L)$ statt $O(n^2)$ für naiven Matrixvergleich.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig5_komplex.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig5_komplex.pdf}
 		\caption{Links: Laufzeitvergleich $O(n\log n)$ vs.\ $O(n^2)$ vs.\ $O(n)$.
 			EDF$^+$ verdoppelt bei Neuplanung die $O(n\log n)$-Kosten, bleibt aber weit
 			unter $O(n^2)$. Rechts: Erwartete Gesamtkosten $(1+Np)\cdot n\log n$ für
@@ -22884,7 +22885,7 @@ kostet $O(L)$ statt $O(n^2)$ für naiven Matrixvergleich.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig4_optimal.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig4_optimal.pdf}
 		\caption{Links: Deadline-Überschreitungsrate als Funktion der CPU-Auslastung
 			für EDF$^+$ (grün), RMS (rot gestrichelt) und FIFO (orange gepunktet).
 			EDF$^+$ ist konsistent besser. Rechts: Absolute Verbesserung von EDF$^+$
@@ -22894,7 +22895,7 @@ kostet $O(L)$ statt $O(n^2)$ für naiven Matrixvergleich.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig8_dominanz.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig8_dominanz.pdf}
 		\caption{Empirischer Nachweis der stochastischen Dominanz (5000 Simulationen,
 			$N=40$, $p=0{,}15$). Links: Histogramme. Rechts: Empirische CDFs --
 			EDF$^+$ (grün) liegt konsistent über RMS (rot) und FIFO (orange),
@@ -22972,7 +22973,7 @@ kostet $O(L)$ statt $O(n^2)$ für naiven Matrixvergleich.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig6_prio.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig6_prio.pdf}
 		\caption{Links: Positionen der Penalty-Events im EDF-Schedule. Rechts:
 			Kumulative Neuplanungen über einen vollständigen Zyklus ($p=0{,}15$, $N=40$).
 			Der Erwartungswert von $6$ Neuplanungen ($= 40 \times 0{,}15$) ist als
@@ -22982,7 +22983,7 @@ kostet $O(L)$ statt $O(n^2)$ für naiven Matrixvergleich.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{fig7_response.pdf}
+		\includegraphics[width=0.8\textwidth]{plots/fig7_response.pdf}
 		\caption{Links: Histogramme der Antwortzeit bei $N=40$ Tasks.
 			Für kleines $p$ (blau) ist die Antwortzeit enger und kleiner.
 			Rechts: Normierter WCET-Overhead durch Neuplanungen. Für $p=0{,}1$
