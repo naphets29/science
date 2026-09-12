@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **263 Wissenschaften** von Stephan Epp
+> **264 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -120,6 +120,7 @@
 | windenergie *(Drive)* | Optimierungsmodelle für Windenergieanlagen: Nabenhöhe, Rotorblattlänge, Blattanzahl und Dimensionierung von Windradfamilien |
 | druckwolken *(Drive)* | Energiegewinnung aus Druckdifferenzen in Wolken — formales Modell zur Nutzung atmosphärischer Druckgradienten in konvektiven Wolkensystemen |
 | erdmagnetfeld *(Drive)* | Energiegewinnung durch geomagnetische Induktion: Formale Analyse der säkularen Variation und geomagnetischer Stürme als Induktionsquellen |
+| lowp | Der Tiefpassfilter und die e-Funktion: Eine ausführliche Untersuchung der Differentialgleichung und der Reihenglied-Problematik |
 
 ---
 
