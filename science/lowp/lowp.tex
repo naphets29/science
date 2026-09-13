@@ -43,19 +43,19 @@
 
 \section{Einführung}
 	
-Diese Arbeit behandelt eines der tiefsten Rätsel der mathematischen Signaltheorie: die e-Funktion. Insbesondere beschäftigen wir uns mit einer kritischen Frage aus \textit{Beobachtung 49} der früheren Arbeit \textit{Signaltheorie: Das Wunder der e-Funktion}:
+Diese Arbeit behandelt eines der tiefsten Rätsel der mathematischen Signaltheorie: die e-Funktion. Insbesondere beschäftigen wir uns mit einer kritischen Frage aus \textit{Beobachtung 49} in der Arbeit von \cite{epp_signal} \textit{Signaltheorie: Das Wunder der e-Funktion}:
 
 \begin{quote}
 	\textit{Wenn die e-Funktion $e^{st}$ über ihre Taylorreihenentwicklung 
 	$$e^{st} = \sum_{n=0}^{\infty} \frac{(st)^n}{n!}$$
-	gliedweise abgeleitet wird, muss bei jeder Ableitung mindestens ein Reihenglied "gestrichen" oder "weggenommen" werden. Wie viele Reihenglieder müssen aber genau abgeleitet und damit eliminiert werden, damit sich die e-Funktion selbst reproduziert? Ist es 1 Glied? 2 Glieder? n Glieder? Und wie ist die Periodizität dieser Reproduzierbarkeit beschaffen?}
+	gliedweise abgeleitet wird, muss bei jeder Ableitung mindestens ein Reihenglied gestrichen oder weggenommen werden. Wie viele Reihenglieder müssen aber genau abgeleitet und damit eliminiert werden, damit sich die e-Funktion selbst reproduziert? Ist es 1 Glied? 2 Glieder? n Glieder? Und wie ist die Periodizität dieser Reproduzierbarkeit beschaffen?}
 \end{quote}
 
 Dies ist nicht nur eine akademische Frage. Sie berührt die \textbf{Gültigkeit der Verwendung der e-Funktion als Lösung von Differentialgleichungen}. Wenn nämlich unklar ist, wie viele Reihenglieder abgeleitet werden müssen, dann ist auch unklar, unter welchen Bedingungen sich die e-Funktion als Lösung eignet.
 
 Der \textbf{Tiefpassfilter (Low-Pass Filter)} ist ein ideales Beispiel für dieses Phänomen. Seine Differentialgleichung ist einfach, aber ihre Lösung via e-Funktion wirft diese fundamentalen Fragen auf.	
 
-\section{Reproduzierbarkeit: e-Funktion als ewige Energie}
+\section{Reproduzierbarkeit: e-Funktion als Ewige}
 
 \subsection{Die grundlegende Beobachtung}
 
@@ -88,32 +88,15 @@ Für viele physikalische Probleme (harmonische Oszillatoren, Pendelbewegungen, P
 
 \subsubsection*{Leibniz und der formale Kalkül}
 
-Leibniz erkannte die Eleganz der Differentialrechnung und entwickelte die formale Notation, die wir heute noch benutzen. Sein Notationssystem $\frac{d}{dt}$ macht explizit, dass die Ableitung eine Transformation ist.
-
-\subsection{Euler}
-
-Leonhard Euler (1707-1783) war der erste, der die e-Funktion explizit untersuchte und ihre Eigenschaften systematisch dokumentierte.
-
-\subsubsection*{Die Euler-Formel}
-
-Euler entdeckte die berühmte Formel:
+Leibniz erkannte die Eleganz der Differentialrechnung und entwickelte die formale Notation, die wir heute noch benutzen. Sein Notationssystem $\frac{d}{dt}$ macht explizit, dass die Ableitung eine Transformation ist. Leonhard Euler (1707-1783) war einer derjenigen, der die e-Funktion untersuchte und ihre Eigenschaften systematisch dokumentierte. Er veröffentlichte die berühmte Formel:
 \begin{align}
 	e^{i\theta} = \cos(\theta) + i \sin(\theta)
 \end{align}
-
-Diese Formel zeigt die Macht der e-Funktion: Sie verbindet Exponentialfunktionen mit trigonometrischen Funktionen. Dies ist nur möglich, weil die e-Funktion sich unter Differentiation reproduziert.
-
-Für komplexe Argumente $s = \sigma + i\omega$ ist:
+Diese Formel zeigt die Macht der e-Funktion: Sie verbindet Exponentialfunktionen mit trigonometrischen Funktionen. Dies ist nur möglich, weil die e-Funktion sich unter Differentiation reproduziert. Für komplexe Argumente $s = \sigma + i\omega$ ist:
 \begin{align}
 	e^{st} = e^{\sigma t} e^{i\omega t} = e^{\sigma t}[\cos(\omega t) + i\sin(\omega t)]
 \end{align}
-
-Diese Struktur beschreibt alle gedämpften und ungedämpften Oszillationen in der Natur.
-
-\subsubsection*{Eulers erfolgreiche Anwendungen}
-
-Euler nutzte die e-Funktion zur Lösung von:
-
+Diese Struktur beschreibt alle gedämpften und ungedämpften Oszillationen in der Natur. Euler nutzte die e-Funktion zur Lösung von:
 \begin{enumerate}
 	\item \textbf{Kettenlinienproblem}: Die Form von hängenden Seilen und Ketten wird durch $e^{x/a}$ beschrieben
 	\item \textbf{Variationsrechnung}: Die Euler-Lagrange-Gleichungen führen zu Exponentiallösungen
@@ -335,9 +318,6 @@ Warum funktioniert die e-Funktion so universell? Die Antwort liegt in ihrem phys
 \end{beobachtung}
 
 \section{Der Tiefpassfilter}
-
-\subsection{Aufbau des RC-Tiefpassfilters}
-
 Der einfachste Tiefpassfilter besteht aus einem Widerstand $R$ und einem Kondensator $C$ in Reihe:
 
 \begin{definition}[RC-Tiefpassfilter]
@@ -364,96 +344,69 @@ Der einfachste Tiefpassfilter besteht aus einem Widerstand $R$ und einem Kondens
     \caption{Der Tiefpassfilter}
 	\label{fig:lowpass-filter}
 \end{figure}
-
 Abbildung \ref{fig:lowpass-filter} zeigt den Aufbau des RC-Tiefpassfilters. Die Eingangsspannung $V_{in}(t)$ wird über den Widerstand $R$ auf den Kondensator $C$ gelegt. Die Ausgangsspannung $V_{out}(t)$ ist die Spannung am Kondensator.
-
-\subsection{Aufstellung der Differentialgleichung}
-
 Aus dem Kirchhoffschen Spannungsgesetz (KVL) erhalten wir:
 
 \begin{align}
 	V_{in}(t) = V_R(t) + V_C(t) = i(t) \cdot R + V_C(t)
 \end{align}
-
 Der Strom durch den Widerstand ist gleich dem Strom, der den Kondensator lädt:
 
 \begin{align}
 	i(t) = C \frac{dV_C(t)}{dt}
 \end{align}
-
 Einsetzen:
 
 \begin{align}
 	V_{in}(t) = R \cdot C \frac{dV_C(t)}{dt} + V_C(t)
 \end{align}
-
 Da $V_{out}(t) = V_C(t)$, erhalten wir die Differentialgleichung des Tiefpassfilters:
 
 \begin{definition}[Differentialgleichung des RC-Tiefpassfilters]
 	\begin{align}
 		RC \frac{dV_{out}(t)}{dt} + V_{out}(t) = V_{in}(t)
 	\end{align}
-	
 	oder mit der Zeitkonstante $\tau = RC$:
-	
 	\begin{align}
 		\tau \frac{dV_{out}(t)}{dt} + V_{out}(t) = V_{in}(t)
 	\end{align}
 \end{definition}
-
-Dies ist eine \textbf{lineare Differentialgleichung 1. Ordnung}.
-
-\subsection{Homogene Lösung}
-
-Zunächst betrachten wir die \textbf{homogene Differentialgleichung}:
+Dies ist eine \textbf{lineare Differentialgleichung 1. Ordnung}. Zunächst betrachten wir die \textbf{homogene Differentialgleichung}:
 
 \begin{align}
 	\tau \frac{dV_{out}(t)}{dt} + V_{out}(t) = 0
 \end{align}
-
 Diese kann umgeformt werden zu:
 
 \begin{align}
 	\frac{dV_{out}(t)}{dt} = -\frac{1}{\tau} V_{out}(t)
 \end{align}
-
-\subsection{Ansatz mit der e-Funktion}
-
 Wir machen den klassischen \textbf{Ansatz} für die Lösung:
 
 \begin{align}
 	V_{out,h}(t) = e^{st}
 \end{align}
-
-wobei $s$ ein zu bestimmender Parameter ist.
-
-\subsubsection*{Erste Ableitung der e-Funktion}
-
-Wir bilden die Ableitung der e-Funktion nach der Zeit. Dies ist der kritische Schritt, bei dem Beobachtung 49 relevant ist.
+wobei $s$ ein zu bestimmender Parameter ist. Wir bilden die Ableitung der e-Funktion nach der Zeit. Dies ist der kritische Schritt, bei dem Beobachtung 49 relevant ist.
 
 \begin{align}
 	\frac{d}{dt} e^{st} = ?
 \end{align}
-
 Um dies präzise zu verstehen, schreiben wir zunächst die Taylorreihe der e-Funktion auf:
 
 \begin{align}
 	e^{st} = \sum_{n=0}^{\infty} \frac{(st)^n}{n!} = 1 + st + \frac{(st)^2}{2!} + \frac{(st)^3}{3!} + \frac{(st)^4}{4!} + \cdots
 \end{align}
-
 Jetzt differenzieren wir diese Reihe gliedweise nach $t$:
 
 \begin{align}
 	\frac{d}{dt} e^{st} &= \frac{d}{dt} \left( 1 + st + \frac{(st)^2}{2!} + \frac{(st)^3}{3!} + \frac{(st)^4}{4!} + \cdots \right)\\
 	&= 0 + s + \frac{d}{dt}\left(\frac{(st)^2}{2!}\right) + \frac{d}{dt}\left(\frac{(st)^3}{3!}\right) + \frac{d}{dt}\left(\frac{(st)^4}{4!}\right) + \cdots
 \end{align}
-
 Wir müssen jedes Glied sorgfältig ableiten. Verwenden wir die Kettenregel:
 
 \begin{align}
 	\frac{d}{dt}\left(\frac{(st)^n}{n!}\right) = \frac{1}{n!} \cdot \frac{d}{dt}(st)^n = \frac{1}{n!} \cdot n(st)^{n-1} \cdot s = \frac{n \cdot s \cdot (st)^{n-1}}{n!} = \frac{s \cdot (st)^{n-1}}{(n-1)!}
 \end{align}
-
 Also:
 
 \begin{align}
@@ -469,17 +422,13 @@ Bei diesem Ableitungsvorgang passiert etwas Wichtiges:
 \begin{align}
 	e^{st} = 1 + st + \frac{(st)^2}{2!} + \frac{(st)^3}{3!} + \cdots + \frac{(st)^n}{n!} + \cdots
 \end{align}
-
 Nach der Ableitung haben wir:
 
 \begin{align}
 	\frac{d}{dt} e^{st} = s \left( 1 + st + \frac{(st)^2}{2!} + \cdots + \frac{(st)^{n-1}}{(n-1)!} + \cdots \right) = s \cdot e^{st}
 \end{align}
-
 Beachten Sie: Das Glied $\frac{1}{n!} \cdot 1$ aus der ursprünglichen Reihe (konstantes Glied 1) wird bei der Ableitung zu 0. Das erste nicht-konstante Glied $st$ wird zu $s$. Das Glied $\frac{(st)^2}{2!}$ wird zu $\frac{s \cdot (st)^1}{1!}$, usw.
-
 Die Reihe wird gewissermaßen um ein Glied nach links verschoben, und das Glied $\frac{1}{n!} \cdot 1$ fällt weg. Aber dann wird ein neues Glied "hinten" hinzugefügt (da die Reihe unendlich ist), das die Reproduzierbarkeit sicherstellt.
-
 Dies ist die Essenz von Beobachtung 49: Wie können wir sicher sein, dass nach dieser Verschiebung um ein Glied die Reihe immer noch die gleiche Funktion darstellt?
 
 \subsubsection*{Anwendung auf den Tiefpassfilter-Ansatz}
@@ -489,33 +438,26 @@ Wir haben nun:
 \begin{align}
 	\frac{d}{dt} e^{st} = s \cdot e^{st}
 \end{align}
-
 Das ist das Rückgrat unseres Ansatzes. Wir setzen dies in die homogene Differentialgleichung ein:
 
 \begin{align}
 	\tau \cdot s \cdot e^{st} + e^{st} = 0
 \end{align}
-
 Ausklammern:
 
 \begin{align}
 	e^{st} (\tau s + 1) = 0
 \end{align}
-
 Da $e^{st} \neq 0$ für alle $t$, muss gelten:
 
 \begin{align}
 	\tau s + 1 = 0
 \end{align}
-
-\subsection{Das charakteristische Polynom}
-
 Aus der obigen Gleichung erhalten wir:
 
 \begin{align}
 	s = -\frac{1}{\tau}
 \end{align}
-
 Dies ist die \textbf{charakteristische Gleichung} des Tiefpassfilters.
 
 \begin{satz}[Charakteristische Gleichung des RC-Tiefpassfilters]
@@ -524,69 +466,47 @@ Dies ist die \textbf{charakteristische Gleichung} des Tiefpassfilters.
 		\tau s + 1 = 0 \quad \Rightarrow \quad s = -\frac{1}{\tau}
 	\end{align}
 \end{satz}
-
-\subsection{Homogene Lösung}
-
 Die homogene Lösung der Differentialgleichung lautet daher:
 
 \begin{align}
 	V_{out,h}(t) = A \cdot e^{-t/\tau}
 \end{align}
-
-wobei $A$ eine Konstante ist, die durch Anfangsbedingungen bestimmt wird.
-
-
-\subsection{Partikuläre Lösung für Sprungeingang}
-
-Wir betrachten einen \textbf{Sprungeingang} (Step Input):
+wobei $A$ eine Konstante ist, die durch Anfangsbedingungen bestimmt wird. Wir betrachten einen \textbf{Sprungeingang} (Step Input):
 
 \begin{align}
 	V_{in}(t) = V_0 \cdot u(t)
 \end{align}
-
 wobei $u(t)$ die Heaviside-Sprungfunktion ist:
 
 \begin{align}
 	u(t) = \begin{cases} 0 & t < 0 \\ 1 & t \geq 0 \end{cases}
 \end{align}
-
 Für $t > 0$ ist $V_{in}(t) = V_0$ konstant. Wir suchen eine partikuläre Lösung für den stationären Zustand ($t \to \infty$). 
-
 Im stationären Zustand ändern sich die Spannungen nicht mehr, daher $\frac{dV_{out}}{dt} = 0$. Die Differentialgleichung wird zu:
 
 \begin{align}
 	0 + V_{out,p} = V_0
 \end{align}
-
 Also:
 
 \begin{align}
 	V_{out,p}(t) = V_0
 \end{align}
-
-\subsection{Allgemeine Lösung}
-
 Die \textbf{allgemeine Lösung} ist die Summe der homogenen und partikulären Lösung:
 
 \begin{align}
 	V_{out}(t) = V_{out,h}(t) + V_{out,p}(t) = A \cdot e^{-t/\tau} + V_0
 \end{align}
-
-\subsection{Bestimmung der Integrationskonstante}
-
 Mit der Anfangsbedingung $V_{out}(0) = V_{out,0}$ (Spannung am Kondensator bei $t=0$):
 
 \begin{align}
 	V_{out,0} = A \cdot e^0 + V_0 = A + V_0
 \end{align}
-
 Also:
 
 \begin{align}
 	A = V_{out,0} - V_0
 \end{align}
-
-\subsection{Finale Lösung für den RC-Tiefpassfilter}
 
 \begin{satz}[Lösung des RC-Tiefpassfilters auf Sprungeingang]
 	Die Ausgangsspannung des RC-Tiefpassfilters auf einen Sprungeingang $V_{in}(t) = V_0 \cdot u(t)$ ist:
@@ -594,14 +514,11 @@ Also:
 	\begin{align}
 		V_{out}(t) = V_0 + (V_{out,0} - V_0) \cdot e^{-t/\tau}
 	\end{align}
-	
 	Für den Fall, dass der Kondensator anfangs entladen ist ($V_{out,0} = 0$), vereinfacht sich dies zu:
-	
 	\begin{align}
 		V_{out}(t) = V_0 (1 - e^{-t/\tau})
 	\end{align}
 \end{satz}
-
 
 \section{Anzahl der Reihenglieder}
 
@@ -964,19 +881,13 @@ Beobachtung 49 bleibt eine tiefe und offene Frage, die Physik, Mathematik und Ph
 
 \subsubsection{Die Unendlichkeit als Notwendige}
 
-Wir enden diesen Abschnitt mit einer wichtigen philosophischen Beobachtung, die die tiefere Problematik der e-Funktion offenlegt. Das folgende, umfassendere Zitat prägt den Kern dieser Arbeit:
+Wir enden diesen Abschnitt mit einer wichtigen Beobachtung, die die tiefere Problematik der e-Funktion offenlegt.
 
-\begin{quote}
-\textit{In der Vergangenheit hat die wissenschaftliche Welt mit einem Trick aus der Unendlichkeit versucht zu begründen, warum die e-Funktion sich in der Ableitung wieder als e-Funktion zeigt. Aber die Unendlichkeit ist kein Raum, aus dem sich die wissenschaftliche Welt nimmt, was sie braucht, um zu begründen, was der Beobachtung und Erfahrungen nach bisher immer wahr war. Denn die einfache Analyse in der Taylorreihen-Darstellung, wird sie konsequent geführt, wirft Fragen auf. Dieser Konflikt konnte von der wissenschaftlichen Welt aber nicht erlaubt werden, denn diese geniale e-Funktion weist ganz deutlich auf eine Absicht hin, die einerseits naturwissenschaftlich gilt und andererseits aber aus der Unendlichkeit oder Unsichtbarkeit erst ihre ganze Begründung findet.
-Und das überrascht schon ein wenig, dass erst aus der Unendlichkeit oder Unsichtbarkeit die Argumentation selbst bisher unter allen Wissenschaftlern so Anerkennung gefunden hat. Denn anders ist es gar nicht begründet worden. Es ist sogar so geglaubt und mathematisch und der Erfahrung nach über viele Jahre im Verhalten vieler physikalischer oder technischer Systeme beobachtbar gewesen und bestätigt worden.	
-Es ist auch bei der Beweisführung von wissenschaftlich wichtigen Sätzen und Erkenntnissen wichtig gewesen, dass diese Menschen, die diese Beweise geführt haben, fest daran geglaubt haben und in dieser Glaubenskraft für alle Tage und gegen alle Hindernisse endlich durchgedrungen sind zu einem formal korrekt ausführlichen Beweis. Sie waren tief davon überzeugt im Glauben, die Wahrheit in dieser Aussage, die sie zeigen wollten und gezeigt haben, zu wissen und haben in diesem unsichtbaren Bewusstsein der logischen Argumentation daran festgehalten, und sie endlich gefunden und schriftlich aufgeführt. In diesem Sinne sind mathematisch korrekt geführte Beweise ein Beweis dafür, dass der unsichtbare Glaube, der das noch nicht Sichtbare spürt und weiß, dass es wahr ist, richtig ist.}
-\end{quote}
+In der Vergangenheit hat die wissenschaftliche Welt mit einem Trick aus der Unendlichkeit versucht zu begründen, warum die e-Funktion sich in der Ableitung wieder als e-Funktion zeigt. Aber die Unendlichkeit ist kein Raum, aus dem sich die wissenschaftliche Welt nimmt, was sie braucht, um zu begründen, was der Beobachtung und Erfahrungen nach bisher immer wahr war. Denn die einfache Analyse in der Taylorreihen-Darstellung, wird sie konsequent geführt, wirft Fragen auf. Dieser Konflikt konnte von der wissenschaftlichen Welt aber nicht erlaubt werden, denn diese geniale e-Funktion weist ganz deutlich auf eine Absicht hin, die einerseits naturwissenschaftlich gilt und andererseits aber aus der Unendlichkeit oder Unsichtbarkeit erst ihre ganze Begründung findet. Und das überrascht schon ein wenig, dass erst aus der Unendlichkeit oder Unsichtbarkeit die Argumentation selbst bisher unter allen Wissenschaftlern so Anerkennung gefunden hat. Denn anders ist es gar nicht begründet worden. Es ist sogar so geglaubt und mathematisch und der Erfahrung nach über viele Jahre im Verhalten vieler physikalischer oder technischer Systeme beobachtbar gewesen und bestätigt worden.
 
-\subsubsection*{Die unausgesprochene Kompromittierung}
+Es ist auch bei der Beweisführung von wissenschaftlich wichtigen Sätzen und Erkenntnissen wichtig gewesen, dass diese Menschen, die diese Beweise geführt haben, fest daran geglaubt haben und in dieser Glaubenskraft für alle Tage und gegen alle Hindernisse endlich durchgedrungen sind zu einem formal korrekt ausführlichen Beweis. Sie waren tief davon überzeugt im Glauben, die Wahrheit in dieser Aussage, die sie zeigen wollten und gezeigt haben, zu wissen und haben in diesem unsichtbaren Bewusstsein der logischen Argumentation daran festgehalten, und sie endlich gefunden und schriftlich aufgeführt. In diesem Sinne sind mathematisch korrekt geführte Beweise ein Beweis dafür, dass der unsichtbare Glaube, der das noch nicht Sichtbare spürt und weiß, dass es wahr ist, richtig ist.
 
-Dieses umfassendere Zitat offenbart eine tiefe Schicht der wissenschaftlichen Praxis, die selten ausgesprochen wird: Die Rolle des \textbf{unsichtbaren Glaubens} bei der Entdeckung und Begründung von Wahrheiten.
-
-Dieser Text enthält eine tiefe kritische Beobachtung: Die Wissenschaftler des 18., 19. und 20. Jahrhunderts standen vor einem fundamentalen Dilemma:
+Diese Beobachtung offenbart eine tiefe Schicht der wissenschaftlichen Praxis, die selten ausgesprochen wird: Die Rolle des \textbf{unsichtbaren Glaubens} bei der Entdeckung und Begründung von Wahrheiten. Die Wissenschaftler des 18., 19. und 20. Jahrhunderts standen vor einem fundamentalen Dilemma:
 
 \begin{enumerate}
 	\item \textbf{Die Beobachtung:} Die e-Funktion funktioniert. Sie funktioniert überall. Sie funktioniert immer.
@@ -990,7 +901,7 @@ Dieser Text enthält eine tiefe kritische Beobachtung: Die Wissenschaftler des 1
 
 \subsubsection*{Der Trick der Unendlichkeit}
 
-Das ist der "Trick aus der Unendlichkeit", den der Autor meint: Die mathematische Argumentation weicht auf die Unendlichkeit aus. Sie sagt:
+Das ist der Trick aus der Unendlichkeit, den der Autor meint: Die mathematische Argumentation weicht auf die Unendlichkeit aus. Sie sagt:
 
 \begin{quote}
 "Ja, bei endlichen Reihen gibt es Probleme. Aber die Reihe ist unendlich. Und in der Unendlichkeit... nun ja, da funktioniert es. Vertraut uns."
@@ -1053,7 +964,7 @@ Dies ist eine radikale Aussage über die Natur von Wissenschaft:
 Die tiefste Einsicht in diesem Zitat ist folgende:
 
 \begin{quote}
-"In diesem Sinne sind mathematisch korrekt geführte Beweise ein Beweis dafür, dass der unsichtbare Glaube, der das noch nicht Sichtbare spürt und weiß, dass es wahr ist, richtig ist."
+In diesem Sinne sind mathematisch korrekt geführte Beweise ein Beweis dafür, dass der unsichtbare Glaube, der das noch nicht Sichtbare spürt und weiß, dass es wahr ist, richtig ist."
 \end{quote}
 
 Dies umkehrt die traditionelle Hierarchie von Wissen und Glauben:
@@ -1136,7 +1047,7 @@ Diese tiefgründigen Einsichten haben mehrere wichtige Konsequenzen:
 	\item \textbf{Universelle Struktur:} Alle großen Systeme -- von Atomen bis zu Galaxien, von Mikroben bis zu menschlichen Gesellschaften -- werden durch die gleiche mathematische Struktur beschrieben, die von unsichtbarem Glauben angetrieben ist. Dies ist nicht Zufall. Dies ist Absicht.</item>
 \end{enumerate}
 
-Das Zitat enthält eine tiefphilosophische Wahrheit, die die Wissenschaft seit Jahrhunderten praktiziert, aber selten bewusst gemacht hat:
+Das Zitat enthält eine tiefe Wahrheit, die die Wissenschaft seit Jahrhunderten praktiziert, aber selten bewusst gemacht hat:
 
 \begin{quote}
 Die höchsten Erkenntnisse entstehen nicht aus reiner Logik, sondern aus der \textbf{Glaubenskraft}, die gegen alle Hindernisse "für alle Tage" durchdringt, bis die Wahrheit endlich "schriftlich aufgeführt" wird.
@@ -1149,37 +1060,35 @@ Dies ist nicht nur die Geschichte der e-Funktion. Dies ist die Geschichte aller 
 \end{quote}
 
 \subsubsection*{Konvergenz}
-Leibniz und nicht Newton. Gottfried Leibniz wurde verherrlicht, Newton wurde verflucht.
+Leibniz und nicht Newton. Gottfried Leibniz wurde verflucht, für Isaac Newton wurde geflucht.
 
 Gottfried Leibniz verspürte Konvergenzkraft. Wo Konvergenz nachgewiesen wird, wird Konvergenzkraft verspürt. Diese Konvergenzkraft hat auch die Kraft den Menschen, der sie erfährt, in seinen Gedanken dahin zu führen, dass er in seinen Gedanken die Lösung der Konvergenz geordnet formuliert findet. Sie erzeigt sich ihm  erst dann aber auch dann wirklich als wahr. Die Konvergenzkraft selbst führt auch das, was konvergiert, z.B. die e-Funktion oder die Leibniz-Reihe, die Leibniz gefunden hat, in die Konvergenz. Das überrascht schon ein wenig, wenn man spürt, wie groß diese Konvergenzkraft für alle, die in ihre Umgebung kommen und mit ihr zu tun haben, ist. Es ist eine unsichtbare Kraft, die alle, die damit zu tun haben, früher oder später sicher immer dahin, in die Konvergenz selbst, führt.
 
-Für alle Menschen gelten die Gesetze der Konvergenz. Diese Konvergenzgesetze in ihrer Konvergenzkraft wirken auf alle Menschen. Dagegen kann der Mensch gar nichts tun. Das ist erstmal nicht schlimm, solange die Konvergenz keine üble ist. Denn wieso sollte davon auszugehen sein, dass es eine Kraft geben könnte, das heißt also eine Konvergenzkraft, die Menschen dahin führt, dass es übel wird? Und wenn man ehrlich ist, geht in dieser Frage, ob es Konvergenzkraft gibt, welche eine üble ist, sowieso eh kein Mensch davon aus und dass wird auch immer so bleiben. Wir sind froh, dass wir sie haben, die Konvergenzkraft.
+Für alle Menschen gelten die Gesetze der Konvergenz. Diese Konvergenzgesetze in ihrer Konvergenzkraft wirken auf alle Menschen. Dagegen kann der Mensch gar nichts tun. Das ist erst mal nicht schlimm, solange die Konvergenz keine üble ist. Denn wieso sollte davon auszugehen sein, dass es eine Kraft geben könnte, das heißt also eine Konvergenzkraft, die Menschen dahin führt, dass es übel wird? Und wenn man ehrlich ist, geht in dieser Frage, ob es Konvergenzkraft gibt, welche eine üble ist, sowieso eh kein Mensch davon aus und dass wird auch immer so bleiben. Wir sind froh, dass wir sie haben, die Konvergenzkraft.
 
 Konvergenz heißt Ruhe, denn wie gut, es ist bekannt, wohin eine gewisse Kraft oder ein mathematischer Ausdruck konvergiert. Das war gar nicht so klar am Anfang, denn die Kraft oder der mathematische Ausdruck erschien uns zunächst rätselhaft und vielleicht sogar ängstlich. Rätselhaft und ängstlich, was dazu führte, diese Kraft oder diesen mathematischen Ausdruck genauer zu untersuchen und nach einiger Zeit die unsichtbare Gewissheit zu haben, es handelt sich am Ende doch um eine Konvergenz zur Ruhe. Puh.
 
-\subsubsection*{Die Attraktion von $\pi$}
+\subsubsection*{Attraktion von $\frac{\pi}{4}$}
 
-0,25 * $\pi$ ist der Ausdruck der Konvergenz, der Leibniz-Reihe 1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13 - 1/15 + ... = 0,25 * $\pi$
+$\frac{\pi}{4}$ oder 0,25 * $\pi$ ist der Ausdruck der Konvergenz, der Leibniz-Reihe 1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13 - 1/15 + ... = 0,25 * $\pi$
 
-$\pi$ ist die Hälfte des Kreises, ein halbkreis aus der ruhelage gebracht, konvergiert wieder nach dem Schaukeln in die Ruhelage. Der ganze Kreis wird in der Hälfte, durch $\pi$, geteilt und damit im Schwerpunkt des Kreises für zwei Ruhelagen gelöst.
+$\pi$ ist die Hälfte des Kreises. Ein Halbkreis aus der Ruhelage gebracht, konvergiert wieder nach dem Schaukeln in die Ruhelage. Der ganze Kreis wird in der Hälfte, durch $\pi$, geteilt und damit im Schwerpunkt des Kreises für zwei Ruhelagen gelöst. Dieses Verfahren wird wiederholt und immer weiter angewendet, dass jeder Kreis der Unruhe weiter halbiert wird zu einem Halbkreis in $\pi$ und sicher in die Ruhelage geführt wird. Der Schwerpunkt des Kreises wird immer wieder in $\pi$ gefunden.
 
-Dieses Verfahren wird wiederholt, und immer weiter angewendet, dass jeder Kreis der Unruhe weiter halbiert wird zu einem Halbkreis in $\pi$ und sicher in die Ruhelage geführt wird. Der Schwerpunkt des Kreises wird immer wieder in $\pi$ gefunden.
-
-$\pi$ ist geviertelt, weil es vier mal symmetrisch ist mit diesen vier Kuchenstücken, wenn der Kreis so geteilt wird. In gewisser Weise wird ein Fehler zum Kreis zugelassen, der aber der Kreiseigenschaft sehr nahe kommt und $\pi$ in der Approximation bei $\pi$/Viertel gerade in der Anschauung diesen Kreis trifft. Das ist aber bei $\pi$ * 0,25 zum letzten Mal so der Fall.
+$\pi$ ist geviertelt, weil es vier mal symmetrisch ist mit diesen vier Kuchenstücken, wenn der Kreis so geteilt wird. In gewisser Weise wird ein Fehler zum Kreis zugelassen, der aber der Kreiseigenschaft sehr nahe kommt und $\pi$ in der Approximation bei $\frac{\pi}{4}$ gerade in der Anschauung diesen Kreis trifft. Das ist aber bei $\frac{\pi}{4}$ zum letzten Mal so der Fall.
 
 In der Darstellung der Leibniz-Summe werden durch den Ausdruck im Nenner immer die Linken Summanden verwendet. Die linken Summanden in dieser Summe führen die gesamte Summe mit einem Drall zur Konvergenz und das sehr stark, damit im Nenner wirklich jeder Summand, egal, ob gerade oder ungerade, geteilt wird, also dividiert wird. Die Division ist die stärkste Kürzung der vier Grundrechenarten. Stärker kann nicht gekürzt werden. Dass jeder zweite Summand positiv und jeder zweite Summand negativ ist, ist die typische Charakteristik dieser harmonischen Schwingungen, die wir von Sinus und Cosinus kennen. Die Sinusschwingung ist periodisch und auch die Cosinusschwingung ist periodisch. Führt man sich so Zähler und Nenner vor Augen, dann ist sicher davon auszugehen, dass durch den starken Nenner diese Schwingung gegen einen Wert konvergieren muss. Da wir im Zähler die Eins stehen haben, bewegen wir uns im Raum der harmonischen Schwingung von Sinus und Cosinus auf dem Einheitskreis. 
 
-Das Geheimnis von $\pi$/4 ist verborgen, und auch weniger wichtig, als man zuerst ahnt. In seinem eigentlichen Sinn ist es auch nur für eine Approximation des Kreises die Konvergenz, auch wenn es die letzte exakte Approximation des Kreises ist. Der Grund ist der, niemand braucht eckige Kreise und ein eckiger Kreis dreht sich nicht. Es gibt z.B. keine eckigen Räder oder eckigen Werkzeuge oder Schrauben, von denen wir wissen, dass sie erst rund ganz einsetzbar sind. Bei $\pi$/4 treffen sich Sinus und Cosinus, ungerade und gerade. Der Winkel beträgt 45°. Warum ist diese Konvergenz dennnoch wichtig? Wenn Sinus und Cosinus periodisch immer schwingen mit Amplitude 1 und sich jeweils um $\pi$ verschoben immer schneiden, dann schneiden Sie sich immer bei dem Wert +/- 0,70710 67811 86547 52440 08443 62104 84903 92848 35937 68845... . Der Schnittpunkt dieser beiden sagt im Prinzip aus, in diesem Punkt ist es egal, ob es ungerade oder gerade ist, das heißt, ob es Sinus oder Cosinus ist, weil der Wert derselben gerade dieser eine ist. Dennoch verfolgt Leibniz mit der leibniz-Reihe die ungeraden Glieder. Daher ist von dem Schnittpunkt aus der Sinus weiter zu betrachten. Und erst in diesem Punkt ist das Ungerade, das Linke, und das Nicht-Symmetrische (Punktsymmetrie ist Quatsch, Achsensymmetrie nicht, der Spiegel bleibt Spiegel) aufgelöst. Aber nur für einen kurzen Moment. Denn die Schwingungen gehen weiter und verfolgen so die Unendlichkeit einer Kreisbewegung, die nie aufhören kann, da der Kreis keinen Anfang und kein Ende hat. Die einzige Begründung für Punktsymmetrie ist der Mittelpunkt eines Kreises. Mehr nicht.
+Das Geheimnis von $\frac{\pi}{4}$ ist verborgen und auch weniger wichtig als man zuerst ahnt. In seinem eigentlichen Sinn ist es auch nur für eine Approximation des Kreises die Konvergenz, auch wenn es die letzte exakte Approximation des Kreises ist. Der Grund ist der, niemand braucht eckige Kreise und ein eckiger Kreis dreht sich nicht. Es gibt z.B. keine eckigen Räder oder eckigen Werkzeuge oder Schrauben, von denen wir wissen, dass sie erst rund ganz einsetzbar sind. Bei $\frac{\pi}{4}$ treffen sich Sinus und Cosinus, Ungerade und Gerade. Der Winkel beträgt 45°. Warum ist diese Konvergenz dennoch wichtig? Wenn Sinus und Cosinus periodisch immer schwingen mit Amplitude 1 und sich jeweils um $\pi$ verschoben immer schneiden, dann schneiden sie sich immer bei dem Wert +/- 0,70710 67811 86547 52440 08443 62104 84903 92848 35937 68845 \ldots . Der Schnittpunkt dieser beiden sagt im Prinzip aus, in diesem Punkt ist es egal, ob es Ungerade oder Gerade ist, das heißt, ob es Sinus oder Cosinus ist, weil der Wert derselben gerade dieser eine ist. Dennoch verfolgt Leibniz mit der Leibniz-Reihe die ungeraden Glieder. Daher ist von dem Schnittpunkt aus der Sinus weiter zu betrachten. Und erst in diesem Punkt ist das Ungerade, das Linke, und das Nicht-Symmetrische (Punktsymmetrie ist Quatsch, Achsensymmetrie nicht, der Spiegel bleibt Spiegel) aufgelöst. Aber nur für einen kurzen Moment. Denn die Schwingungen gehen weiter und verfolgen so die Unendlichkeit einer Kreisbewegung, die nie aufhören kann, da der Kreis keinen Anfang und kein Ende hat. Die einzige Begründung für Punktsymmetrie ist der Mittelpunkt eines Kreises. Mehr nicht.
 
 Diese Konvergenz von der Leibniz-Reihe ist Teil einer Lösung, die zu betrachten und heranzuziehen ist, bei einer interessanteren Frage, die auch den Einheitskreis und Cosinus und Sinus gleichermaßen betrifft. Aber Gottfried Leibniz hat den interessanteren Teil der Reihe betrachtet, denn er hat die ungerade Glieder betrachtet.
 
-Wieso möchte man von Reihen wissen, gegen welchen Wert, wenn unendliche Glieder von ihr addiert werden, sie konvergieren? Zum Beispiel für die Analyse von Laufzeiten von Algorithmen. Wenn es uns hier gelingt, charakteristische, Basis-Ausdrücke zu identifizieren, von denen wir die Konvergenz sicher kennen, dann ist sonst für die allgemeine Analyse sehr geholfen. Leibniz hat damit für Rheien mit ungeraden Gliedern einen wichtigen Schritt getan. Betrachten wir den Gedanken, dass alle Funktionen auch durch die e-Funktion beschreibbar sind, da sie die einzige Funktion ist, die sich in der Ableitung selbst reproduziert, dann sind wir dem Gedanken sehr nahe, dass wir auch in der Lösung von Leibniz den Ausdruck gefunden haben, den wir vermutlich oft anwenden können, zur Ermittlung des Wertes einer Reihe oder einem Vielfachen vom Wert dieser.
+Wieso möchte man von Reihen wissen, gegen welchen Wert, wenn unendliche Glieder von ihr addiert werden, sie konvergieren? Zum Beispiel für die Analyse von Laufzeiten von Algorithmen. Wenn es uns hier gelingt, charakteristische Basis-Ausdrücke zu identifizieren, von denen wir die Konvergenz sicher kennen, dann ist uns für die allgemeine Analyse sehr geholfen. Leibniz hat damit für Reihen mit ungeraden Gliedern einen wichtigen Schritt getan. Betrachten wir den Gedanken, dass alle Funktionen auch durch die e-Funktion beschreibbar sind, da sie die einzige Funktion ist, die sich in der Ableitung selbst reproduziert, dann sind wir dem Gedanken sehr nahe, dass wir auch in der Lösung von Leibniz den Ausdruck gefunden haben, den wir vermutlich oft anwenden können, zur Ermittlung des Wertes einer Reihe oder einem Vielfachen vom Wert dieser.
 
-Für ungerade konvergente Reihen ist Leibniz' Ausdruck minimal. Weniger geht nicht. Der Nenner beschreibt gerade die Konvergenz der ungeraden Reihen. Und im Zähler alterniert es von +1 und -1 in der Bewegung auf dem Einheitskreis. Es handelt sich dadurch also im Zähler um einen nicht endende periodische Schwingung und erfüllt damit erst die besten Voraussetzungen für eine unendliche Reihe.
+Für ungerade konvergente Reihen ist Leibniz' Ausdruck minimal. Weniger geht nicht. Der Nenner beschreibt gerade die Konvergenz der ungeraden Reihen. Und im Zähler alterniert es von +1 und -1 in der Bewegung auf dem Einheitskreis. Es handelt sich dadurch also im Zähler um eine nicht endende periodische Schwingung und erfüllt damit erst die besten Voraussetzungen für eine unendliche Reihe.
 
-Leibniz kannte die Reihendarstellung der e-Funktion nach ungeraden und geraden Gliedern nach Sinus und Cosinus. Entdeckt haben soll sie Euler erst einige Jahre später und nicht Leibniz. Leibniz muss nicht der einzige Wissenschaftler gewesen sein, der über diese Reihendarstellung von e schon nachgedacht hat. Aber auf jeden Fall hat er es getan. Es sollte so sein, dass Euler diese Reihendarstellung veröffentlicht und dass ihm diese Veröffentlichung zugesprochen wird. Euler ist in Russland gestorben und das Interesse Russlands an der Veröffentlichung der Reihendarstellung von e ist nicht gering.
+Leibniz kannte die Reihendarstellung der e-Funktion nach ungeraden und geraden Gliedern nach Sinus und Cosinus. Entdeckt haben soll sie Euler erst einige Jahre später und nicht Leibniz. Leibniz muss nicht der einzige Wissenschaftler gewesen sein, der über diese Reihendarstellung von e schon nachgedacht hat. Aber auf jeden Fall hat er es getan. Es sollte so sein, dass Euler diese Reihendarstellung veröffentlicht und dass ihm diese Veröffentlichung zugesprochen wird. Euler ist in Russland gestorben und das Interesse Russlands an der Veröffentlichung der Reihendarstellung von e ist sehr groß.
 
-Beim Betrachten des geschlossenen Ausdrucks für die Reihendarstellung von Leibniz ist die Kraft der Entwicklung und der Konvergenz der Summe über alle Glieder dieser Reihe spürbar. Es ist gerade so, als ob man mehr verstehen will über die Konvergenzkraft und Beziehungen dazu und all den Wert, für den es sich lohnt, diese Reihe genauer zu untersuchen. Warum ruht derjenige nicht, der diese Reihendarstellung sieht und weiß, worum es geht? Die Reihe ruft dem Betrachter, der weiß, warum es geht, zu und spricht, wer bin ich? Wohin konvergiere ich? Wie groß ist mein Nutzen für ähnliche Analysen? Kannst du mich noch einmal gebrauchen mit noch mehr Nutzen?
+Beim Betrachten des geschlossenen Ausdrucks für die Reihendarstellung von Leibniz ist die Kraft der Entwicklung und der Konvergenz der Summe über alle Glieder dieser Reihe spürbar. Es ist gerade so, als ob man mehr verstehen will über die Konvergenzkraft und die Beziehungen dazu und all den Wert, für den es sich lohnt, diese Reihe genauer zu untersuchen. Warum ruht derjenige nicht, der diese Reihendarstellung sieht und weiß, worum es geht? Die Reihe ruft dem Betrachter, der weiß, worum es geht, zu und spricht, wer bin ich? Wohin konvergiere ich? Wie groß ist mein Nutzen für ähnliche Analysen? Kannst du mich noch einmal gebrauchen mit noch mehr Nutzen?
 
 \subsubsection*{Formale mathematische Analyse der Leibniz-Reihe und ihrer Konvergenz}
 
