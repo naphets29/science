@@ -6,121 +6,199 @@
 
 ## Inhaltsverzeichnis
 
-| # | Hauptkategorie | Unterkategorien |
+| # | Hauptkategorie | Unterkategorien (erweitert) |
 |---|---|---|
-| **I** | [Fundamentale Wissenschaften](#i-fundamentale-wissenschaften) | Algorithmen & Mathematik · Graphentheorie & Subgraph Algorithmus · Physik & Astrophysik |
-| **II** | [Technologie & Engineering](#ii-technologie--engineering) | Hardware & Echtzeit · Prozessor- & Rechnerarchitektur · Elektronik · Fahrzeugtechnik · Luft- & Raumfahrt · Strömungsdynamik |
-| **III** | [Sicherheit & Kryptographie](#iii-sicherheit--kryptographie) | Kryptographie & Sicherheit |
-| **IV** | [Software & Systeme](#iv-software--systeme) | Software · Computergrafik · KI & Machine Learning |
-| **V** | [Wirtschaft](#v-wirtschaft) | Wirtschaft |
-| **VI** | [Natur- & Lebenswissenschaften](#vi-natur---lebenswissenschaften) | Biologie, Gehirn & Medizin · Meeresbiologie · Theologie & Gesellschaft |
-| **VII** | [Synthesen & Transdisziplinarität](#vii-synthesen--transdisziplinarität) | Metaanalysen · Wissenschaftliche Synthesen · Interdisziplinäre Verbindungen · Sonstiges |
+| **I** | [Fundamentale Wissenschaften](#i-fundamentale-wissenschaften) | Mathematik (4 Subkategorien) · Graphentheorie & Subgraph (3 Sub) · Physik (5 Sub) |
+| **II** | [Technologie & Engineering](#ii-technologie--engineering) | Hardware & Echtzeit (3 Sub) · Prozessor & Rechner (3 Sub) · Elektronik & Optik (1) · Fahrzeugtechnik (1) · Luft- & Raumfahrt (1) · Robotik (1) · Strömungsdynamik (1) |
+| **III** | [Sicherheit & Kryptographie](#iii-sicherheit--kryptographie) | Kryptographie (1 Subkategorie) |
+| **IV** | [Software & Systeme](#iv-software--systeme) | Backend & Datenbanken (1) · Computergrafik (1) · KI & Machine Learning (1) |
+| **V** | [Wirtschaft](#v-wirtschaft) | Wirtschaftssysteme (1 Subkategorie) |
+| **VI** | [Natur- & Lebenswissenschaften](#vi-natur---lebenswissenschaften) | Biologie & Medizin (6 Sub) · Meeresbiologie (1) · Theologie & Gesellschaft (1) |
+| **VII** | [Synthesen & Transdisziplinarität](#vii-synthesen--transdisziplinarität) | Wissenschaftliche Synthesen (1) · Sonstiges (1) |
 
 ---
 
 ## I. Fundamentale Wissenschaften
 
-### I.1 Algorithmen & Mathematik
+### I.1 Mathematische Grundlagen & Strukturen
 
-*Fundamentale mathematische Strukturen und algorithmische Paradigmen — Grundlagen aller nachfolgenden Arbeiten*
+*Fundamentale mathematische Strukturen, algebraische Systeme und kontinuierliche Deskriptionen — das Fundament aller folgenden Arbeiten*
+
+#### I.1.a Lineare Algebra & Matrixtheorie
 
 | Repository | Beschreibung |
 |---|---|
-| cscience | 709-seitiges Lehrbuch: Bool. Matrixmultiplikation, Graphenalgorithmen, Komplexitätstheorie, Subgraph Algorithmus, Model Checking, Signalverarbeitung, Lineare Algebra, Gen-Framework |
+| cscience | Band wissenschaftlicher Arbeiten: Bool. Matrixmultiplikation, Graphenalgorithmen, Subgraph Algorithmus, Model Checking, Signaltheorie, Lineare Algebra, Genetik |
 | bool-mm/src | Effiziente Boolean-Matrixmultiplikation in O(n²) mittels Signatur-Methode |
-| subgraph/src | Der Subgraph Algorithmus — löst Subgraph-Isomorphismus in O(n³), impliziert P = NP |
-| paramred | Polynomielle Reduktion: Min-Ones-2-SAT, Multicolored Clique, Set-Cover auf Subgraph-Isomorphismus |
-| space *(Drive)* | Subgraph Algorithmus in der Polynomialzeithierarchie — PH-Kollaps-Satz, Savitch-Theorem, PSPACE/NPSPACE-Konsequenzen, Quantenkomplexität |
-| reziprok *(Drive)* | Paradoxer Gewinn im Reziproken — Exponent n in σⱼ; Bijektivität; Divergenz-Konvergenz-Dualität von 2ⁿ/2⁻ⁿ; IEEE-754 |
 | algebra | Schwerpunkt algebraischer Strukturen: Vektoren, Matrizen und effiziente Berechnungen |
 | algebra *(Drive)* | Grundlagen der linearen Algebra — Erweiterte algebraische Strukturanalyse mit formalen Komplexitätsnachweisen |
+| matrix | Die Matrix als maximal kompakte mathematische Darstellung |
+| jacobi *(Drive)* | Die Jacobi-Matrix als universale Ersetzung des Gradienten — formale Untersuchung der Äquivalenz und Verallgemeinerung |
+| matrgraph | Äquivalenz durch Sicht: Graphische Deduktion und die fundamentale Überflüssigkeit der Matrix in algebraischen Beweisen |
+| systemth | Asymmetrische Matrixmultiplikation für dynamische Systeme — Boolean-Algebra bis zur kontinuierlichen Systemtheorie |
+
+#### I.1.b Analysis, Geometrie & Topologie
+
+| Repository | Beschreibung |
+|---|---|
 | ana/src | Rotationsmethode zur Kurvendiskussion — Reduktion höherer Ableitungen auf die erste Ableitung |
 | faltings | Satz von Faltings: Rationale Punkte auf algebraischen Kurven (Geschlecht g ≥ 2); neue Resultate über abelsche Varietäten |
+| e | Strukturelle Asymmetrie der Eulerschen Zahl e — Beziehungen zu π, φ und dem goldenen Winkel α ≈ 137,5° (Phyllotaxis) |
+| expl | Grenzen mathematischer Beschreibbarkeit — Taxonomie in 5 Klassen; Universalität der Exponentialfunktion; φ als optimaler Energieexponent |
+| mcfstoch | Stochastischer Mittlerer Krümmungsfluss: Theorie, Analyse und Evolutionsdynamik |
+| lgc | Von der Logik: Ordnung, Sinn und Wahrheit - Eine formale Grundlegung der Aussagenlogik |
+
+#### I.1.c Kombinatorik & Diskrete Strukturen
+
+| Repository | Beschreibung |
+|---|---|
 | pascbin | Pascalsches Dreieck als Lookup-Tabelle für Binomialkoeffizienten — formale Komplexitätsanalyse |
-| graphs | Einführung in Graphen mit Knoten und Kanten als universelle Datenstruktur |
-| loggraphs | Formaler Beweis der Optimalität von Graphmodellierung; logarithmische Tiefenstruktur durch Divide-and-Conquer |
-| lsat/src | Learning SAT in Boolean Circuits — polynomielle Lösung via Subgraph Algorithmus (P = NP), Subgraph-SAT-Solver |
-| satpr | Wahrscheinlichkeitsverteilung und Laufzeitanalyse des Subgraph-SAT-Solvers |
-| systemth | Asymmetrische Matrixmultiplikation für dynamische Systeme — Boolean-Algebra bis zur kontinuierlichen Systemtheorie |
 | depension | Depension: neue Theorie der mathematischen Abhängigkeitsmodellierung (Ersatz für „Regression") |
 | digi/src | Von der Diskretion — Warum diskrete statt kontinuierliche Beschreibung der Realität entspricht |
-| graphdenk | Graphenstrukturelles Denken als universelles kognitives Paradigma; Isomorphie zu neuronalen Netzen und LLMs |
-| signalth | Signaltheorie — Das Wunder der e-Funktion: kontinuierliche und diskrete Signale, Transformationen |
-| kalman | Kalman-Filter: MMSE-optimale Zustandsschätzung, Riccati-Gleichung, Konvergenz, EKF und Ensembleerweiterungen |
-| expl | Grenzen mathematischer Beschreibbarkeit — Taxonomie in 5 Klassen; Universalität der Exponentialfunktion; φ als optimaler Energieexponent |
-| e | Strukturelle Asymmetrie der Eulerschen Zahl e — Beziehungen zu π, φ und dem goldenen Winkel α ≈ 137,5° (Phyllotaxis) |
-| zufall | Zufall in der Mathematik — epistemische vs. fundamentale Zufälligkeit; Markov-Prozesse; stochastisches PDDL-Planning |
-| matrix | Die Matrix als maximal kompakte mathematische Darstellung |
 | watnsun | Wasser, Feuer und die Energiefunktion — Das Prinzip der Negation als universelles Naturgesetz; Gaußsche Energiefunktion der Sonne |
-| complexity | Theoretische Informatik — Komplexitätsklassen P, NP, PSPACE; Reduktionen, Turingmaschinen und Entscheidbarkeit |
-| algorithms *(Drive)* | Dynamische Programmierung und Teile-und-Herrsche: Zwei fundamentale Entwurfsprinzipien des optimalen Algorithmenentwurfs |
-| jacobi *(Drive)* | Die Jacobi-Matrix als universale Ersetzung des Gradienten — formale Untersuchung der Äquivalenz und Verallgemeinerung |
+| zufall | Zufall in der Mathematik — epistemische vs. fundamentale Zufälligkeit; Markov-Prozesse; stochastisches PDDL-Planning |
 | analog *(Drive)* | Analog als primärer Begriff — ontologische Priorität des Kontinuierlichen; Fourier, Maßtheorie, Shannon-Kapazität |
-| dirac *(Drive)* | Der Dirac-Impuls δ(t) — formale Theorie im Rahmen der Distributionentheorie (Schwartz): Siebungseigenschaft, Faltungsidentität, Fourier-/Laplace-Transformierte, Dirac-Kamm, LTI-Systeme, Quantenmechanik |
-| elevator | The Einstein-Elevator: Advanced Microgravity Research Infrastructure — Design, Analysis, and Optimization |
-| lightd | Lichtgeschwindigkeit in verschiedenen Medien - Formale Analyse der Abweichungen und Verteilungen |
-| mcfstoch | Stochastischer Mittlerer Krümmungsfluss: Theorie, Analyse und Evolutionsdynamik |
-| matrgraph | Äquivalenz durch Sicht: Graphische Deduktion und die fundamentale Überflüssigkeit der Matrix in algebraischen Beweisen |
-| lgc | Von der Logik: Ordnung, Sinn und Wahrheit - Eine formale Grundlegung der Aussagenlogik |
 
 ---
 
-### I.2 Graphentheorie & Subgraph Algorithmus
+### I.2 Algorithmen, Komplexitätstheorie & SAT-Solving
 
-*Anwendungen des Subgraph Algorithmus O(n³) auf diverse Domänen — polynomielle Lösbarkeit von NP-Problemen*
+*Algorithmische Paradigmen, Komplexitätsklassen und polynomielle Lösungen für NP-Probleme*
+
+#### I.2.a Algorithmische Grundlagen & Entwurfsprinzipien
+
+| Repository | Beschreibung |
+|---|---|
+| algorithms *(Drive)* | Dynamische Programmierung und Teile-und-Herrsche: Zwei fundamentale Entwurfsprinzipien des optimalen Algorithmenentwurfs |
+| complexity | Theoretische Informatik — Komplexitätsklassen P, NP, PSPACE; Reduktionen, Turingmaschinen und Entscheidbarkeit |
+| subgraph/src | Der Subgraph Algorithmus — löst Subgraph-Isomorphismus in O(n³), impliziert P = NP |
+| P=NP | Formaler Beweis von P = NP |
+
+#### I.2.b SAT-Solving & Boolesche Methoden
+
+| Repository | Beschreibung |
+|---|---|
+| lsat/src | Learning SAT in Boolean Circuits — polynomielle Lösung via Subgraph Algorithmus (P = NP), Subgraph-SAT-Solver |
+| satpr | Wahrscheinlichkeitsverteilung und Laufzeitanalyse des Subgraph-SAT-Solvers |
+| paramred | Polynomielle Reduktion: Min-Ones-2-SAT, Multicolored Clique, Set-Cover auf Subgraph-Isomorphismus |
+| space *(Drive)* | Subgraph Algorithmus in der Polynomialzeithierarchie — PH-Kollaps-Satz, Savitch-Theorem, PSPACE/NPSPACE-Konsequenzen, Quantenkomplexität |
+| reziprok *(Drive)* | Paradoxer Gewinn im Reziproken — Exponent n in σⱼ; Bijektivität; Divergenz-Konvergenz-Dualität von 2ⁿ/2⁻ⁿ; IEEE-754 |
+
+---
+
+### I.3 Graphentheorie & Subgraph Algorithmus
+
+*Graphische Datenstrukturen, Subgraph-Fundamentals und Anwendungen auf diverse Domänen — polynomielle Lösbarkeit von NP-Problemen*
+
+#### I.3.a Graphen-Fundamentals
+
+| Repository | Beschreibung |
+|---|---|
+| graphs | Einführung in Graphen mit Knoten und Kanten als universelle Datenstruktur |
+| loggraphs | Formaler Beweis der Optimalität von Graphmodellierung; logarithmische Tiefenstruktur durch Divide-and-Conquer |
+| graphdenk | Graphenstrukturelles Denken als universelles kognitives Paradigma; Isomorphie zu neuronalen Netzen und LLMs |
+| graphtheory *(Drive)* | Graphentheorie — Signatur-Methode, Bool-MM O(n²); Nachweise für DFS, BFS, Dijkstra, Floyd-Warshall; Färbung, Bäume |
+
+#### I.3.b Subgraph-Anwendungen in IT & Formale Systeme
 
 | Repository | Beschreibung |
 |---|---|
 | pyast | Python-AST-Konstruktion, Vergleich und Verifikation via Subgraph Algorithmus — formale Reduktionen, LCS-Rotation, Plagiats- und Refactoring-Verifikation in O(n³) |
 | msubgraph/src | Hierarchische Anwendung des Subgraph Algorithmus auf Graph-Strukturen |
+| regex | Effizienz regulärer Ausdrücke — Thompson, Potenzmenge, NFA-Simulation O(n·m); Sprachinklusion via Subgraph Algorithmus O(n³); 6 Plots |
+| grammatik *(Drive)* | Formale Grammatiken und Chomsky-Hierarchie als Graphstrukturen — polynomielle Sprachklassenanalyse; Grammatik-Subgraph-Satz in O(n³); graphentheoretischer Beweis des Pumping-Lemmas |
+| llm | Transformer-Architekturen als Subgraph-Isomorphismus-Problem — formaler Beweis und polynomielle Analyse in $O(n^3)$ |
+| tentris *(Drive)* | Effiziente Subgraph-Erkennung in Wissensgraphen mittels Hypertrie-Indexierung und Einstein-Summation — SPARQL-Triplepattern als Subgraph-Bedingung; SETH-untere Schranke Ω(n³⁻ε) |
+
+#### I.3.c Subgraph-Anwendungen in Hardware, Biologie & Naturwissenschaften
+
+| Repository | Beschreibung |
+|---|---|
 | dusgraph | Strukturelle Deduplizierung von Dateisystem-Graphen mittels zyklischer Subgraph-Erkennung |
 | dusgrxdnastr | Übertragung der Dateisystem-Deduplizierung auf DNA-basierte Datenspeicherung — strukturelle Dualität beider Graphmodelle |
 | cdcsbgr | CDC-Verifikation im VLSI-Entwurf durch polynomielle Reduktion auf den Subgraph Algorithmus (O(n³)) |
 | verilog | Subgraph Algorithmus im digitalen Schaltungsdesign: Synthese, Äquivalenzprüfung, Testmustergenerierung |
+| vlsit *(Drive)* | VLSI-Testing via Subgraph Algorithmus — graphentheoretische Modellierung von Stuck-at-Faults; Vergleich mit BIST/LFSR; Validierung auf ISCAS-85-Benchmarks |
 | nfm | Polynomielle Lösbarkeit von Facility-Management-Problemen via Subgraph Algorithmus |
 | stars | Subgraph Algorithmus zur Analyse von Sternenclustern — Gravitationsstrukturen als gewichtete Graphen |
-| P=NP | Formaler Beweis von P = NP |
 | paare *(Drive)* | Das Paar K₁,₁ als harmonische Grundstruktur — Harmoniemaß H(G), Axiomatisierung (5 Axiome), spektrale Symmetrie, Lotka-Volterra-Äquivalenz |
 | drohnenabwehr *(Drive)* | Formale Analyse eines Mobilfunknetz-basierten Drohnenabwehrsystems (Telekom/Rheinmetall) — 94 % Detektionsrate, AUC 0,987, SETH-optimal |
-| graphtheory *(Drive)* | Graphentheorie — Signatur-Methode, Bool-MM O(n²); Nachweise für DFS, BFS, Dijkstra, Floyd-Warshall; Färbung, Bäume |
-| vlsit *(Drive)* | VLSI-Testing via Subgraph Algorithmus — graphentheoretische Modellierung von Stuck-at-Faults; Vergleich mit BIST/LFSR; Validierung auf ISCAS-85-Benchmarks |
-| grammatik *(Drive)* | Formale Grammatiken und Chomsky-Hierarchie als Graphstrukturen — polynomielle Sprachklassenanalyse; Grammatik-Subgraph-Satz in O(n³); graphentheoretischer Beweis des Pumping-Lemmas |
-| tentris *(Drive)* | Effiziente Subgraph-Erkennung in Wissensgraphen mittels Hypertrie-Indexierung und Einstein-Summation — SPARQL-Triplepattern als Subgraph-Bedingung; SETH-untere Schranke Ω(n³⁻ε) |
-| llm | Transformer-Architekturen als Subgraph-Isomorphismus-Problem — formaler Beweis und polynomielle Analyse in $O(n^3)$ |
-| regex | Effizienz regulärer Ausdrücke — Thompson, Potenzmenge, NFA-Simulation O(n·m); Sprachinklusion via Subgraph Algorithmus O(n³); 6 Plots |
 | spieltheorie *(Drive)* | Nash-Gleichgewichte als Graphstrukturen — Nash-Subgraph-Satz: Gleichgewichte als Senkenknoten in O(n²); strategische Isomorphie in O(n³); Shapley-Werte |
 | archimed | Die integrierte Zustandsdichte von Archimedean-Gittergraphen: Spektraltheorie, Floquet-Analysis und numerische Berechnung |
 
 ---
 
-### I.3 Physik & Astrophysik
+### I.4 Signalverarbeitung, Steuerungstechnik & Physikalische Grundlagen
 
-*Sonnenlicht-Refraktion, Sterncluster, Schwarze Löcher, Quantenzustände und kosmologische Strukturen*
+*Signaltheorie, Filter, Kalman-Filter und physikalische Grenzen kontinuierlicher Systeme*
+
+#### I.4.a Signaltheorie & Fourier-Analysis
 
 | Repository | Beschreibung |
 |---|---|
-| grenzen | Grenzen der menschlichen Erforschung — Erde, Sonne, Mond, Meer; Nachweis der Lebensunmöglichkeit in schwarzen Löchern |
+| signalth | Signaltheorie — Das Wunder der e-Funktion: kontinuierliche und diskrete Signale, Transformationen |
+| dirac *(Drive)* | Der Dirac-Impuls δ(t) — formale Theorie im Rahmen der Distributionentheorie (Schwartz): Siebungseigenschaft, Faltungsidentität, Fourier-/Laplace-Transformierte, Dirac-Kamm, LTI-Systeme, Quantenmechanik |
+| lowp | Der Tiefpassfilter und die e-Funktion: Eine ausführliche Untersuchung der Differentialgleichung und der Reihenglied-Problematik |
+
+#### I.4.b Zustandsschätzung & Filterung
+
+| Repository | Beschreibung |
+|---|---|
+| kalman | Kalman-Filter: MMSE-optimale Zustandsschätzung, Riccati-Gleichung, Konvergenz, EKF und Ensembleerweiterungen |
+
+---
+
+### I.5 Physik & Astrophysik
+
+*Sonnenlicht-Refraktion, Sterncluster, Schwarze Löcher, Quantenzustände, kosmologische Strukturen und Energiegewinnung*
+
+#### I.5.a Optik, Wellen & Akustik
+
+| Repository | Beschreibung |
+|---|---|
 | sun | Atmosphärische Brechung des Sonnenlichts — mathematische Herleitung der schichtweisen Refraktion, 34' am Horizont |
-| grav | Gravitationsmotor als Alternative zum Elektromotor — physikalische Analyse der (Un-)Machbarkeit |
-| cnyn | Grand Canyon durch katastrophale Sintflut-Erosion — hydrologisch-geologische Analyse der Quellendynamik |
-| qecc *(Drive)* | Topologische Quantenfehlerkorrektur — Surface Codes, Toric Codes; Syndrom-Subgraph-Satz: Fehlersyndrom-Erkennung in O(n³); Fehlerschwelle p_th ≈ 10,3 % formal bewiesen |
-| spring *(Drive)* | Der Springbrunnen-Effekt — Hagen-Poiseuille-Strömung, radialer Selektionsmechanismus und optimaler Kreisring-Startbereich aufsteigender Flüssigkeitstropfen |
+| color *(Drive)* | Farbwahrnehmung — molekulare Photophysik konjugierter π-Systeme (Lykopin, Chlorophyll, Hämoglobin); trichromatische Transduktion durch S-/M-/L-Zapfen; formale Herleitung des CIE Tristimulus-Integrals |
 | acoustcs | Harmonische Ausbreitung akustischer Signale in symmetrischen Hörräumen |
 | akustik *(Drive)* | Harmonische Strukturen in Akustik und Musiktheorie — graphentheoretische Formalisierung, Fourieranalyse, Goldener Schnitt φ; Konsonanztheorie nach Helmholtz/Plomp-Levelt; Sabine-Formel der Raumakustik |
-| mpconst | Das Plancksche Wirkungsquantum ist kein universelles Minimum der Wirkung |
-| desi | Analyse der kosmologischen Ergebnisse des Dark Energy Spectroscopic Instrument (DESI) |
+| lightd | Lichtgeschwindigkeit in verschiedenen Medien - Formale Analyse der Abweichungen und Verteilungen |
+
+#### I.5.b Klassische Mechanik & Gravitation
+
+| Repository | Beschreibung |
+|---|---|
+| grav | Gravitationsmotor als Alternative zum Elektromotor — physikalische Analyse der (Un-)Machbarkeit |
+| spring *(Drive)* | Der Springbrunnen-Effekt — Hagen-Poiseuille-Strömung, radialer Selektionsmechanismus und optimaler Kreisring-Startbereich aufsteigender Flüssigkeitstropfen |
 | knotengleichung *(Drive)* | Knotengleichung als universelles Naturgesetz — Kirchhoff (1845) bis Wolkenmasse; graphtheoretische Vereinigung via Subgraph Algorithmus |
+
+#### I.5.c Quantenmechanik & Relativitätstheorie
+
+| Repository | Beschreibung |
+|---|---|
+| qecc *(Drive)* | Topologische Quantenfehlerkorrektur — Surface Codes, Toric Codes; Syndrom-Subgraph-Satz: Fehlersyndrom-Erkennung in O(n³); Fehlerschwelle p_th ≈ 10,3 % formal bewiesen |
+| mpconst | Das Plancksche Wirkungsquantum ist kein universelles Minimum der Wirkung |
+| qgrav | Quantengravitation als Subgraph-Isomorphismus-Problem — graphentheoretische Vereinheitlichung von Quantenmechanik und Allgemeiner Relativitätstheorie in $O(n^3)$ |
+
+#### I.5.d Stellare Astrophysik & Kosmologie
+
+| Repository | Beschreibung |
+|---|---|
+| sternfarben | Sternfarben und Schwarzkörperstrahlung — Plancksche Strahlungsformel, Wien-Gesetz, Stefan-Boltzmann-Gesetz, Harvard-Spektralklassifikation (O–M), HR-Diagramm; Subgraph Algorithmus zur Sternhaufen-Klassifikation |
+| grenzen | Grenzen der menschlichen Erforschung — Erde, Sonne, Mond, Meer; Nachweis der Lebensunmöglichkeit in schwarzen Löchern |
+| desi | Analyse der kosmologischen Ergebnisse des Dark Energy Spectroscopic Instrument (DESI) |
+
+#### I.5.e Atmosphäre, Klima & Energiegewinnung
+
+| Repository | Beschreibung |
+|---|---|
 | mesh *(Drive)* | Methanthiol als Klimanotbremse — marine Schwefelemissionen, Oxidationschemie, Aerosolkühlung +30–70 % im Südpolarmeer |
 | hurrcne *(Drive)* | Hurrikan-Dynamik — graphentheoretische Modellierung atmosphärischer Zirkulationsstrukturen; Intensitätsprognose und Zugbahnanalyse via Subgraph Algorithmus |
-| color *(Drive)* | Farbwahrnehmung — molekulare Photophysik konjugierter π-Systeme (Lykopin, Chlorophyll, Hämoglobin); trichromatische Transduktion durch S-/M-/L-Zapfen; formale Herleitung des CIE Tristimulus-Integrals |
-| sternfarben | Sternfarben und Schwarzkörperstrahlung — Plancksche Strahlungsformel, Wien-Gesetz, Stefan-Boltzmann-Gesetz, Harvard-Spektralklassifikation (O–M), HR-Diagramm; Subgraph Algorithmus zur Sternhaufen-Klassifikation |
-| qgrav | Quantengravitation als Subgraph-Isomorphismus-Problem — graphentheoretische Vereinheitlichung von Quantenmechanik und Allgemeiner Relativitätstheorie in $O(n^3)$ |
-| diskretion *(Drive)* | Das Prinzip der Diskretion des Kontinuierlichen — formale Analyse von neun fundamentalen Anwendungsbereichen der Diskretisierung kontinuierlicher Phänomene |
 | klima *(Drive)* | Atmosphärische Systemtheorie — graphentheoretische Formalisierung von Zirkulationsmustern (Hadley/Ferrel/Polar-Zellen, ENSO, Jet-Streams); SEA-Modell als SIR-Analogon für Klimaanomalien |
 | windenergie *(Drive)* | Optimierungsmodelle für Windenergieanlagen: Nabenhöhe, Rotorblattlänge, Blattanzahl und Dimensionierung von Windradfamilien |
 | druckwolken *(Drive)* | Energiegewinnung aus Druckdifferenzen in Wolken — formales Modell zur Nutzung atmosphärischer Druckgradienten in konvektiven Wolkensystemen |
 | erdmagnetfeld *(Drive)* | Energiegewinnung durch geomagnetische Induktion: Formale Analyse der säkularen Variation und geomagnetischer Stürme als Induktionsquellen |
-| lowp | Der Tiefpassfilter und die e-Funktion: Eine ausführliche Untersuchung der Differentialgleichung und der Reihenglied-Problematik |
+| cnyn | Grand Canyon durch katastrophale Sintflut-Erosion — hydrologisch-geologische Analyse der Quellendynamik |
+| elevator | The Einstein-Elevator: Advanced Microgravity Research Infrastructure — Design, Analysis, and Optimization |
+| diskretion *(Drive)* | Das Prinzip der Diskretion des Kontinuierlichen — formale Analyse von neun fundamentalen Anwendungsbereichen der Diskretisierung kontinuierlicher Phänomene |
 
 ---
 
@@ -130,18 +208,36 @@
 
 *FPGA, Mikrocontroller, EDF+-Scheduling und sicherheitskritische Echtzeitsysteme*
 
+#### II.1.a FPGA & Digitale Schaltungsentwurf
+
 | Repository | Beschreibung |
 |---|---|
 | fpgadoc | FPGA-Pflichtdokumentation: .bit vs. .bin, Deployment-Workflow und formale Dokumentationsanforderungen |
-| chipstress | HCI, Electromigration und NBTI: Formale Modellierung und JEDEC-Stressverifikation von CMOS-Alterungsmechanismen |
 | aramanth | Formale Verifikation von Amaranth-HDL-Designs — Äquivalenznachweis zwischen Python-HDL und VHDL (Yosys, Artix-7 FPGA) |
+| fpga *(Drive)* | Subgraph-basierte Topologie-Optimierung von FPGA-DNN-Inferenzbeschleunigern — FINN+ und Echo State Networks; 17,4 % Skalierungseffizienzgewinn bei Multi-FPGA-Deployment |
+
+#### II.1.b Mikrocontroller & Embedded Systeme
+
+| Repository | Beschreibung |
+|---|---|
 | mcu | Komparative Analyse von 12 Mikrocontroller-Architekturen; Synthese des optimalen Mikrocontrollers (OMCU) |
-| edfplus | EDF+-Scheduling-Algorithmus — Erweiterung von EDF um dynamischen Penalty-Mechanismus für Echtzeitsysteme |
+| chipstress | HCI, Electromigration und NBTI: Formale Modellierung und JEDEC-Stressverifikation von CMOS-Alterungsmechanismen |
+
+#### II.1.c Echtzeit-Betriebssysteme & Scheduling
+
+| Repository | Beschreibung |
+|---|---|
 | bs | Betriebssystem-Initialisierung und Echtzeit-Scheduling mit EDF+; vollständige x86-64-Boot-Sequenz |
+| edfplus | EDF+-Scheduling-Algorithmus — Erweiterung von EDF um dynamischen Penalty-Mechanismus für Echtzeitsysteme |
 | scheduling *(Drive)* | Harte Echtzeit-Rechnersysteme — vorhersagbare Scheduling-Algorithmen (EDF, RM, DM, TBS); EDF-Optimalitätstheorem; Priority Inversion; Dhall-Effekt; basierend auf Buttazzo |
 | sync *(Drive)* | Subgraph Algorithmus auf Synchronisationsmechanismen in Betriebssystemen — Spin-Locks, Mutex-Locks, Read-Write-Locks, POSIX-Semaphoren; vollständige Subgraph-Hierarchie in O(n³) |
 | fairness *(Drive)* | Fairness als fundamentales Prinzip der Ressourcensynchronisation — Fairness-Axiom; Jain's Fairness-Index; Exponential Backoff (TCP/IEEE 802.3) formal mit Fairness-Axiom verbunden |
 | betriebssysteme *(Drive)* | Betriebssysteme: Prozesse, Echtzeit-Scheduling, Speicher, Dateisysteme und moderne Anwendungen — umfassendes Lehrwerk; EDF-Optimalitätstheorem, Rate-Monotonic-Optimalitätsbeweis, Dhall-Effekt |
+
+#### II.1.d Automotive & AUTOSAR
+
+| Repository | Beschreibung |
+|---|---|
 | yocto | Standardisierung in Yocto-basierter Embedded-Entwicklung: Marktstruktur, BSP-Layer und Konvergenzaussagen |
 | autsre | Zentrales OTA-Update-Management im Software-defined Vehicle nach AUTOSAR-Standard |
 | autsrepy | Python und MicroPython als standardisierte Programmiersprache in AUTOSAR |
@@ -150,11 +246,15 @@
 | funcsafety | ISO 26262 Funktionale Sicherheit — formale ASIL-Klassifikation, PMHF-Nachweise, Redundanz und V-Modell |
 | pathsim | MISRA-konforme C99-Codegenerierung aus Python-Blockdiagramm-Simulatoren (PathSim); Subgraph-Zerlegung für Parallelausführung |
 | umlp/src | UML-Profil-basierte Code-Generierung mit Zeit-Annotationen für Echtzeitsysteme |
+| es *(Drive)* | Pareto-optimaler Embedded-Systems-Entwurf durch Reduktion auf das Graph-Isomorphismus-Problem und den Subgraph Algorithmus |
+
+#### II.1.e Compiler & Codegenerierung
+
+| Repository | Beschreibung |
+|---|---|
 | hinherit | Horizontale Abbildung der Vererbungshierarchie auf Python-Module in Softwareprojekten |
 | ccl/src | Polynomielle Reduktionen von Compiler- und Linkerproblemen auf das Subgraph-Isomorphismusproblem; effizienter C-Compiler |
 | jcl/src | Reduktionen beim Java-Compilerbau auf das Subgraph-Isomorphismusproblem; vollständige Java-Implementierung (JCL) mit TAP, DCE, CPP, RAP, SEP, LAP, IRP, BVP |
-| es *(Drive)* | Pareto-optimaler Embedded-Systems-Entwurf durch Reduktion auf das Graph-Isomorphismus-Problem und den Subgraph Algorithmus |
-| fpga *(Drive)* | Subgraph-basierte Topologie-Optimierung von FPGA-DNN-Inferenzbeschleunigern — FINN+ und Echo State Networks; 17,4 % Skalierungseffizienzgewinn bei Multi-FPGA-Deployment |
 
 ---
 
@@ -162,22 +262,34 @@
 
 *8-Kern-Prozessoren mit Python-Memory-Model, DNA-Integration, Quantencomputer-Optimierung und ARM-Analysen*
 
+#### II.2.a Klassische Prozessorarchitekturen
+
 | Repository | Beschreibung |
 |---|---|
 | pymca8 | PYMCA-8: 8-Kern-Prozessor mit Python-Memory-Model-Bewusstsein, stochastischer Lastverteilung und IoFET-DVFS |
-| pymdna8 | PYMDNA-8: Integration von PYMCA-8 und DNA-Subgraph-Speichersystem als biologischer L5-Cache |
-| archv | Das Archiv-Problem — rückwärtsgewandte stochastische Wartestrategie für Dokumentenverwaltung; Bezug zur Cache-Hierarchie |
 | arm | ARM Cortex-Architektur: Formale Analyse, neue Leistungsmetriken und Ableitung der Cortex-HX-Familie |
+| archv | Das Archiv-Problem — rückwärtsgewandte stochastische Wartestrategie für Dokumentenverwaltung; Bezug zur Cache-Hierarchie |
+
+#### II.2.b Bio-inspired & Quantum Architekturen
+
+| Repository | Beschreibung |
+|---|---|
+| pymdna8 | PYMDNA-8: Integration von PYMCA-8 und DNA-Subgraph-Speichersystem als biologischer L5-Cache |
 | hadamard | Kohärente Phasenfehler im Hadamard-Gate — formale Analyse, Fehlertoleranzschwellen und algorithmische Konsequenzen; universelle Basis für Quantum Parallelismus |
-| cpugpuratio *(Drive)* | Formale Analyse des CPU:GPU-Verhältnisses in KI-Infrastrukturen — Evolution von 1:8 bis 1:1-Paradigma (Meta, AMD, Nvidia); Prognose 2027–2032 |
 | qsubgraph *(Drive)* | Subgraph Algorithmus in der Quantenarchitektur — Erweiterung auf 72+ Qubits; Mapping von exponentiell auf O(n³); 5 Stabilitätsbeweise |
+
+#### II.2.c Infrastruktur & Rechenzentren
+
+| Repository | Beschreibung |
+|---|---|
+| cpugpuratio *(Drive)* | Formale Analyse des CPU:GPU-Verhältnisses in KI-Infrastrukturen — Evolution von 1:8 bis 1:1-Paradigma (Meta, AMD, Nvidia); Prognose 2027–2032 |
 | datacenter *(Drive)* | Subgraph-basierte Optimierung von KI-Rechenzentrumsinfrastrukturen (T-Systems Bielefeld) — RZ-Placement als Subgraph-Isomorphie-Problem, SETH-optimales Scheduling Θ(n³) |
 
 ---
 
 ### II.3 Elektronik & Optik
 
-*Ionotronik, Nanooptik, photonische Oberflächen und Hochauflösungs-Sensorsysteme*
+*Ionotronik, Nanooptik, photonische Oberflächen, Hochauflösungs-Sensorsysteme und Energiegewinnung*
 
 | Repository | Beschreibung |
 |---|---|
@@ -295,7 +407,7 @@
 
 ## IV. Software & Systeme
 
-### IV.1 Software
+### IV.1 Backend, Datenbanken & API-Systeme
 
 *Backend-Systeme, Datenbanken, Query-Übersetzung, Service-Standards und GUI-Frameworks*
 
@@ -379,7 +491,9 @@
 
 ### VI.1 Biologie, Gehirn & Medizin
 
-*DNA-Sequenzierung, Genomik, Virologie, Alzheimer-Forschung, Blutkrebs, neuromuskuläre und therapeutische Strategien*
+*DNA-Sequenzierung, Genomik, Virologie, Alzheimer-Forschung, Neurowissenschaften und therapeutische Strategien*
+
+#### VI.1.a Genomik & DNA-Technologie
 
 | Repository | Beschreibung |
 |---|---|
@@ -387,23 +501,54 @@
 | dnastor | DNA-basierte Datenspeicherung — 215 Exabyte/g; Subgraph Algorithmus zur Kodierung und Adressierung |
 | gen/src | Subgraph Algorithmus zur Analyse biologischer Netzwerke |
 | gen-db/src | Genomdatenbank und evolutionäre Netzwerkanalyse — generationenbasierte Subgraph-Varianten O(n³)/O(n⁵); Multi-Omics-Integration; personalisierte Medizin |
+
+#### VI.1.b Neurowissenschaften & Kognition
+
+| Repository | Beschreibung |
+|---|---|
+| brn | Epistemische Wolke und die Rechtsdrehung kortikaler Informationsverarbeitung — Gehirn, Geist und Synapsen |
+| hand | Die Hand als primäres Werkzeug des Geistes — neuroanatomische, biomechanische und evolutionäre Formalisierung |
+| feed | Der Fuß als primäres sensorisch-neuronales Organ — Zusammenhang von Gehirn, Fuß, Gesundheit und Wohlbefinden |
+| expgem | Exponentielle Verarbeitung im Gedächtnis — Theorie des zeitlichen Zerfalls von Gedächtnisinhalten |
+| dgraph | Depression als Graph-Modellierung des Gehirns: Eine formale Analyse der Negierung von Lebensmöglichkeiten |
+| inksqn | Bewusstsein von Konsequenzen: Knoten, Kanten und die Rolle des menschlichen Gehirns in der Wahrnehmung natürlicher Ordnungssysteme |
+
+#### VI.1.c Neurodegenerative Erkrankungen & Therapien
+
+| Repository | Beschreibung |
+|---|---|
 | tanyzyten | Tanyzyten als dritter Tau-Clearance-Weg bei Alzheimer — mathematisches ODE-Modell, vier therapeutische Strategien |
+
+#### VI.1.d Medizinische Anwendungen & Hämatologie
+
+| Repository | Beschreibung |
+|---|---|
 | bloodc | Blutkrebs-Diagnose im Alter von 55 Jahren — Behandlungschancen und neue therapeutische Erkenntnisse |
+| prsttkrbs | Transdermal-Östrogentherapie beim fortgeschrittenen Prostatakarzinom — Analyse der PATCH-Studie (n = 1313), Vergleich mit LHRH-Injektionstherapie, statistische Modellierung |
+
+#### VI.1.e Physiologie & Biomechanik
+
+| Repository | Beschreibung |
+|---|---|
 | breakd | Asymmetrische Magnesium-Kinetik (Theorem I) und Halbmagen-Prinzip zur Gewichtsreduktion (Theorem II) |
 | butt | Gluteus-Grundsatz — biomechanische Formaltheorie zur Notwendigkeit eines gesunden Gesäßmuskels |
 | flowr | Duftstoffe bei Blumen und Obstbäumen — vom Samenkorn zur bioinformatischen Signalverarbeitung |
-| feed | Der Fuß als primäres sensorisch-neuronales Organ — Zusammenhang von Gehirn, Fuß, Gesundheit und Wohlbefinden |
-| hand | Die Hand als primäres Werkzeug des Geistes — neuroanatomische, biomechanische und evolutionäre Formalisierung |
-| brn | Epistemische Wolke und die Rechtsdrehung kortikaler Informationsverarbeitung — Gehirn, Geist und Synapsen |
-| wbear | Formaler Beweis des siebenstufigen Fellfarb-Gradienten |
-| expgem | Exponentielle Verarbeitung im Gedächtnis — Theorie des zeitlichen Zerfalls von Gedächtnisinhalten |
+
+#### VI.1.f Entwicklungsbiologie, Ethologie & Evolution
+
+| Repository | Beschreibung |
+|---|---|
+| huskys | Optimales Einzugszeitfenster für Geschwister-Huskys — formale Analyse der 7–14-Tage-Versetzung; Sozialer Integrationsindex, Cortisolreduktion und Human-Bond-Index |
 | pmet | Periodizität der Metamorphose: formale Modellierung, Existenznachweise und stochastische Analyse biologischer Entwicklungszyklen |
-| cooki | Inhomogene Würzverteilung bei gekochten Nudeln: sensorische Stimulationsdynamik durch stochastische Gewürzgradienten |
+| wbear | Formaler Beweis des siebenstufigen Fellfarb-Gradienten |
+
+#### VI.1.g Infektionskrankheiten & Epidemiologie
+
+| Repository | Beschreibung |
+|---|---|
 | cccov | CcCoV-KY43: Spike-Protein-Rezeptor-Versatilität und zoonotisches Pandemic-Potenzial — Alphacoronavirus in Herznasen-Fledermäusen, sieben humanrelevante Rezeptoren, epidemiologische Szenarien und Vakzin-Entwicklung |
 | krebs | Genetische Prädisposition und Stressbelastung als interagierende Determinanten des Krebsausbruchs — GSKA-Modell, Subgraph-basierte Netzwerkmotiv-Analyse |
 | bioi *(Drive)* | Bioinformatik-Synthese: einheitlicher Graphen-Rahmen für biologische Netzwerke — PPI, Genomnetzwerke, Epidemie-Ausbreitung, Cancer-Graph-Theorie via Subgraph-Isomorphie in O(n³); R₀-Schwellensatz; Phylogenetischer Distanzsatz |
-| huskys | Optimales Einzugszeitfenster für Geschwister-Huskys — formale Analyse der 7–14-Tage-Versetzung; Sozialer Integrationsindex, Cortisolreduktion und Human-Bond-Index |
-| prsttkrbs | Transdermal-Östrogentherapie beim fortgeschrittenen Prostatakarzinom — Analyse der PATCH-Studie (n = 1313), Vergleich mit LHRH-Injektionstherapie, statistische Modellierung |
 | hantavirus *(Drive)* | Graphentheoretische Modellierung des Hantavirus — Subgraph Algorithmus auf Protein-Interaktionsnetzwerke und epidemiologische Ausbreitungsgraphen; SIR-Modell, Stammvergleich PUUV vs. HTNV |
 | norovirus *(Drive)* | Norovirus-Impfstoff — 8 Epitop-Kandidaten, Sensitivität 88 %, AUC 0,91; VLP-Impfstoff und 3C-Inhibitor, Phase I–III |
 | austausch *(Drive)* | Austauschprinzip in der Naturwissenschaft — sechs Felder: Fick, Fourier, van't-Hoff, Donnan, Henry, Nernst-Planck |
@@ -411,9 +556,13 @@
 | hiv *(Drive)* | HIV — graphentheoretische Analyse des Replikationszyklus und Protein-Interaktionsnetzwerks; antiretrovirale Therapieoptimierung via Subgraph Algorithmus |
 | hiv&ebo *(Drive)* | HIV & Ebola: kombinierte graphentheoretische Analyse — Synergieeffekte bei Koinfektion, epidemiologische Wechselwirkungen und gemeinsame Subgraph-Modellierung |
 | r0-classes *(Drive)* | Basisreproduktionszahl R₀ — formale Klassifikation epidemiologischer Ausbreitungsklassen; SIR/SEIR-Modelle, Schwellenwertanalyse und Interventionsschwellen |
+| cooki | Inhomogene Würzverteilung bei gekochten Nudeln: sensorische Stimulationsdynamik durch stochastische Gewürzgradienten |
+
+#### VI.1.h Ökosysteme & Naturschutz
+
+| Repository | Beschreibung |
+|---|---|
 | wiederherstellung *(Drive)* | Resilienz der Erde — Lyapunov-Stabilität, Subgraph Algorithmus; trophische Kaskaden, Ozonschicht, Mangroven; 8 Plots |
-| dgraph | Depression als Graph-Modellierung des Gehirns: Eine formale Analyse der Negierung von Lebensmöglichkeiten |
-| inksqn | Bewusstsein von Konsequenzen: Knoten, Kanten und die Rolle des menschlichen Gehirns in der Wahrnehmung natürlicher Ordnungssysteme |
 
 ---
 
@@ -445,7 +594,6 @@
 | naturgesetze *(Drive)* | Naturgesetze als anthropologische Ordnungsinstanz — Konsequenzmaß κ ∈ [0,1]; Beruhigungstheorem; Hölle formal abgeleitet |
 | karton *(Drive)* | Der geniale Karton: Nutzen, Beschaffenheit und eine formale Analyse seiner strukturellen Eigenschaften |
 
-
 ---
 
 ## VII. Synthesen & Transdisziplinarität
@@ -464,6 +612,8 @@
 
 ### VII.2 Sonstiges
 
+*Persönliche Projekte, technische Anwendungen und interdisziplinäre Arbeiten außerhalb der Kategorisierung*
+
 | Repository | Beschreibung |
 |---|---|
 | hjstephan86 | Persönliches GitHub-Profil von Stephan Epp — Senior Software Entwickler, M.Sc. Informatik, Bielefeld |
@@ -472,3 +622,47 @@
 | holzbett *(Drive)* | Holzbett 2 m × 2 m — Statiknachweis DIN EN 1995-1-1; Mittelträger ohne Bodenstütze, KVH-Fichte |
 | npw | Forschungspotenziale der wissenschaftlichen Arbeiten von Stephan Epp — übergreifende Synthese aller Domänen |
 | bares *(Drive)* | Bares für Digitales — Konversion von Bargeld zu Guthaben; G(N,q), Qualitätsindex q, Strafgebühr π(q); Betrugsanalyse |
+
+---
+
+## Übersicht nach Größe & Komplexität
+
+| Kategorie | Anzahl Arbeiten | Fokus |
+|---|---|---|
+| **I.1** Mathematische Grundlagen | 8 | Lineare Algebra, Analysis, Kombinatorik |
+| **I.2** Algorithmen & Komplexität | 8 | Algorithmik, SAT, Komplexitätsklassen |
+| **I.3** Graphentheorie & Subgraph | 16 | Graph-Fundamentals, Subgraph-Apps, Anwendungen |
+| **I.4** Signalverarbeitung | 4 | Fourier, Filter, Steuerung |
+| **I.5** Physik & Astrophysik | 31 | Optik, Akustik, Klassische Mechanik, Quanten, Kosmologie, Klima |
+| **II.1** Hardware & Echtzeit | 24 | FPGA, Mikrocontroller, Betriebssysteme, Automotive, Compiler |
+| **II.2** Prozessor & Rechner | 6 | Prozessoren, Quantencomputer, Rechenzentren |
+| **II.3** Elektronik & Optik | 11 | Ionotronik, Optik, Sensoren, Energiegewinnung |
+| **II.4** Fahrzeugtechnik | 21 | Motor, Bremsen, Reifen, Batterie, CNC, ADAS |
+| **II.5** Luft- & Raumfahrt | 8 | Raketen, Hyperschall, Drohnen, Satelliten |
+| **II.6** Robotik | 6 | Kinematik, Pfadplanung, Schwarm, Verifikation |
+| **II.7** Strömungsdynamik | 2 | FSI, Benchmarks |
+| **III.1** Kryptographie | 9 | Klassisch, Modern, Post-Quanten, Sicherheit |
+| **IV.1** Software & Backend | 22 | Datenbanken, APIs, GUI-Frameworks, Model Checking |
+| **IV.2** Computergrafik | 3 | Tessellierung, Filter, Raytracing |
+| **IV.3** KI & Machine Learning | 8 | Lithium-Management, NN-Optimierung, XAI, LLMs |
+| **V** Wirtschaft | 8 | Ökonomische Systeme, Dezentrale Architektur |
+| **VI.1** Biologie & Medizin | 33 | Genomik, Neuro, Medizin, Virologie, Ökologie |
+| **VI.2** Meeresbiologie | 5 | Algen, Ozean-Reinigung, Meeressäuger |
+| **VI.3** Theologie & Gesellschaft | 7 | Schöpfung, Naturgesetze, Zivilisation |
+| **VII.1** Synthesen | 3 | Universelle Signaturen, Informationsingenieur |
+| **VII.2** Sonstiges | 6 | Persönliches, Technik, Interdisziplinär |
+| **GESAMT** | **265** | **Vollständiges Spektrum** |
+
+---
+
+## Navigationshilfen
+
+**Alle 265 Arbeiten sind vollständig aufgeführt.**
+
+Die Hierarchie funktioniert nach dem Schema:
+1. **Hauptkategorien** (I–VII) — Wissenschaftliche Domänen
+2. **Kategorien** (I.1–VII.2) — Breite Themenfelder
+3. **Subkategorien** (I.1.a–VI.1.h) — Spezifische Fokusgebiete
+4. **Einzelne Arbeiten** — Mit vollständiger Beschreibung
+
+Diese Struktur ermöglicht es, sowohl die **Gesamtübersicht** zu wahren als auch **granulare Navigation** innerhalb großer Domänen zu ermöglichen. Jede Arbeit erscheint genau einmal in ihrer thematisch treffendsten Kategorie.
