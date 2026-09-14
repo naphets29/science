@@ -50,7 +50,6 @@
 \newpage
 
 \section{Einführung}
-	
 Diese Arbeit behandelt eines der tiefsten Rätsel der mathematischen Signaltheorie: die e-Funktion. Insbesondere beschäftigen wir uns mit einer kritischen Frage aus \textit{Beobachtung 49} in der Arbeit von \cite{epp_signal} \textit{Signaltheorie: Das Wunder der e-Funktion}:
 
 \begin{quote}
@@ -61,8 +60,67 @@ Diese Arbeit behandelt eines der tiefsten Rätsel der mathematischen Signaltheor
 
 Dies ist nicht nur eine akademische Frage. Sie berührt die \textbf{Gültigkeit der Verwendung der e-Funktion als Lösung von Differentialgleichungen}. Wenn nämlich unklar ist, wie viele Reihenglieder abgeleitet werden müssen, dann ist auch unklar, unter welchen Bedingungen sich die e-Funktion als Lösung eignet.
 
-Der \textbf{Tiefpassfilter (Low-Pass Filter)} ist ein ideales Beispiel für dieses Phänomen. Seine Differentialgleichung ist einfach, aber ihre Lösung via e-Funktion wirft diese fundamentalen Fragen auf.	
+Die vorliegende Arbeit untersucht eine zentrale Frage der mathematischen Analyse und der Signaltheorie: Warum reproduziert sich die Exponentialfunktion unter Differentiation, und welche Konsequenzen ergeben sich daraus für die Lösung linearer Differentialgleichungen? Dieses scheinbar einfache Phänomen ist in Wahrheit eines der grundlegenden Prinzipien der modernen Naturwissenschaften. Es ist nicht nur eine formale Eigenschaft der Funktion $e^{st}$, sondern die mathematische Grundstruktur, auf der viele technische, physikalische und technische Modellierungen beruhen. Die e-Funktion ist nicht bloß eine beliebige Kurve, sondern ein universelles Werkzeug, das in der Elektrotechnik, in der Physik, in der Regelungstechnik, in der Quantenmechanik und in der Signalverarbeitung eine tiefgreifende Rolle spielt.
 
+Die Ausgangsfrage dieser Arbeit lässt sich in einer kurzen, aber präzisen Form ausdrücken: Wenn die Funktion
+
+\begin{align}
+    e^{st} = \sum_{n=0}^{\infty} \frac{(st)^n}{n!}
+\end{align}
+
+über ihre Taylorreihe definiert ist, dann wird beim gliedweisen Ableiten dieser Reihe offenbar ein bestimmtes Verhalten sichtbar. Bei jeder Ableitung verschiebt sich die Reihenstruktur, und dabei scheint ein Glied zu verschwinden, während die übrigen Glieder in eine neue Form übergehen. Es stellt sich daher die Frage, auf welche Weise die e-Funktion ihre Gestalt bewahrt und bei der Ableitung wieder dieselbe Funktion aufweist. Ist das Erscheinen der selben Funktion nach der Ableitung nur eine formale Eigenschaft, die durch den unendlichen Reihenausdruck garantiert wird? Oder verbirgt sich darin ein tieferes Prinzip, das grundlegend für alle linearen Differentialgleichungen ist?
+
+Diese Frage ist nicht eine rein akademische Spielerei. Sie betrifft die mathematische Berechtigung eines Standardverfahrens in der Analysis und Technik: den Ansatz der Form $y(t) = e^{st}$ zur Lösung von Differentialgleichungen. In nahezu allen Bereichen der Physik und Elektrotechnik wird dieser Ansatz verwendet, weil die e-Funktion unter Differentiation eigenständig bleibt. Genau diese Eigenschaft ist es, die den Übergang von einer Differentialgleichung zu einer algebraischen Charakteristik erlaubt. Ohne eine klare Vorstellung davon, wie die Reproduzierbarkeit der Exponentialfunktion mathematisch zu verstehen ist, bleiben viele Standardmethoden der Lösung linearer Systeme nur formales Rechenschema ohne tiefe inhaltliche Grundlage.
+
+Die Bedeutung dieser Fragestellung wird besonders deutlich, wenn man das einfache RC-Glied betrachtet, den klassischen \textbf{Tiefpassfilter}. Er ist ein Modell, das in Physik und Technik als Ausgangspunkt für die Untersuchung von Dynamik, Stabilität und Frequenzverhalten dient. Der Tiefpassfilter wird durch die Differentialgleichung
+
+\begin{align}
+    \tau \frac{dV_{out}(t)}{dt} + V_{out}(t) = V_{in}(t)
+\end{align}
+
+beschrieben, wobei $\tau = RC$ die Zeitkonstante ist. Die Lösung dieses Systems wird üblicherweise durch den Ansatz
+
+\begin{align}
+    V_{out}(t) = e^{st}
+\end{align}
+
+gefunden. Dabei führt die Ableitung zur Gleichung
+
+\begin{align}
+    \frac{d}{dt} e^{st} = s e^{st},
+\end{align}
+
+welche unmittelbar zeigt, warum die Exponentialfunktion als Lösung geeignet ist. Das Problem entsteht aber, sobald man genauer fragt, wie diese Regel aus der Taylorreihe entsteht. Denn die Reihe enthält unendlich viele Glieder, und bei jeder Ableitung scheint ein bestimmtes Glied zu verschwinden. Die richtige Frage lautet daher nicht nur, warum die Ableitung von $e^{st}$ gleich $s e^{st}$ ist, sondern auch, wie die unendliche Reihenstruktur diese Gleichheit überhaupt zulässt.
+
+Diese Arbeit verfolgt genau diese Idee. Sie behandelt die Exponentialfunktion nicht bloß als nützliche Rechenfunktion, sondern als mathematisches Objekt, dessen Verhalten unter Differentiation, Reihenerweiterung und Stabilitätsanalyse ein tiefes Verständnis der Dynamik linearer Systeme ermöglicht. Dabei wird eine zentrale These entwickelt: Die e-Funktion ist nicht nur wegen ihrer Unendlichkeit und ihrer Reihendarstellung bemerkenswert, sondern weil sie die mathematische Form der Selbstähnlichkeit unter Differentiation verkörpert. Jede Ableitung erzeugt denselben strukturellen Typ, nur mit einem beliebigen Faktor $s$ bzw. $s^n$. Diese Eigenschaft ist das, was die e-Funktion in der Physik und Elektrotechnik so wertvoll macht.
+
+Die Motivation dieser Arbeit entsteht aus einer Spannung zwischen zwei Sichtweisen. Auf der einen Seite steht die klassische Analysis, die die e-Funktion als eine Funktion mit der Eigenschaft $f'(x)=f(x)$ oder allgemeiner $f'(t)=s f(t)$ definiert. Auf der anderen Seite steht der Eindruck, dass die Taylorreihe bei jeder Differentiation gewisse Summanden „verliert“, indem das konstante Glied verschwindet, das lineare Glied zu einer Konstanten wird und die Reihenfolge der Terme verschoben wird. Genau diese Spannung bildet den Kern des Verständnisses: Die Eindeutigkeit und Stabilität der Exponentialfunktion wird nicht durch eine endliche Anzahl von Reihengliedern erzeugt, sondern durch die unendliche Struktur der Reihe selbst. Die Reproduzierbarkeit ist also keine Ausnahme, sondern eine Konsequenz aus der unendlichen Wiederholbarkeit der Differentiationsregel innerhalb der Reihendarstellung.
+
+Diese Arbeit ist daher in zweifacher Hinsicht konzeptionell motiviert. Erstens geht es um eine mathematische Klärung der Frage, wie die e-Funktion aus ihrer Taylorentwicklung ihre Eigenart bewahrt. Zweitens wird gezeigt, welche Folgen diese Eigenschaft für reale dynamische Systeme hat, insbesondere für den Tiefpassfilter. Der Tiefpassfilter ist deshalb kein bloßes Beispiel im Rahmen der Technik, sondern ein prototypisches System, in dem die mathematische Struktur der Exponentialfunktion direkt in ein physikalisches Verhalten übersetzt wird: ein verzögertes Ansteigen, eine gedämpfte Reaktion und eine charakteristische Zeitkonstante $\tau$.
+
+Der historische Hintergrund dieser Frage ist ebenfalls von Bedeutung. Die Entwicklung der Differentialrechnung durch Leibniz, Newton und Euler legte die Grundlage für das Verständnis der Exponentialfunktion. In der Folge wurde die e-Funktion nicht nur in der reinen Analysis, sondern auch in der Physik, in der Technik und in den Naturwissenschaften unverzichtbar. Aus der Lösung der Wärmeleitungsgleichung, der Schwingungsdifferentialgleichungen, der Bewegungsgleichungen und später der Elektrotechnik erwuchs die Überzeugung, dass Exponentialfunktionen die natürliche Sprache dynamischer Systeme sind. Die e-Funktion beschreibt nicht nur mathematische Verläufe, sondern auch die Art und Weise, wie Prozesse in der Natur auf Störungen reagieren.
+
+Im Zentrum der Arbeit steht daher ein Grundsatz: Systeme, deren Verhalten durch lineare Differentialgleichungen beschrieben wird, können in der Regel durch Superposition von Exponentialansätzen charakterisiert werden. Der Tiefpassfilter ist das einfachste und zugleich anschaulichste Beispiel dafür. Er kombiniert die mathematische Grundidee der e-Funktion mit einem technisch relevanten realen Verhalten. Die Berechnung der Übertragungsfunktion
+
+\begin{align}
+    H(i\omega) = \frac{1}{1+i\omega\tau}
+\end{align}
+
+zeigt, dass das System hohe Frequenzen abschwächt und niedrige Frequenzen passieren lässt. Diese Eigenschaft ist exakt das, was man als Tiefpassverhalten bezeichnet. Damit wird die mathematische Theorie der e-Funktion unmittelbar mit der technischen Realität eines Filters verbunden.
+
+Die vorliegende Arbeit gliedert sich deshalb in mehrere Schritte. Zunächst wird die grundlegende Reproduzierbarkeit der Exponentialfunktion untersucht. Danach wird der Tiefpassfilter als exemplarisches lineares System eingeführt und aus der Differentialgleichung hergeleitet. Anschließend wird die zentrale Frage zur Anzahl der abgeleiteten Reihenglieder und zur Periodizität der Reproduzierbarkeit präzisiert. Auf dieser Grundlage wird die Verbindung zwischen der mathematischen Struktur der e-Funktion und dem technischen Verhalten eines RC-Filters deutlich. Ziel ist es, nicht nur die klassische Lösung zu präsentieren, sondern auch das tiefer liegende Verständnis zu entwickeln, warum diese Lösung so fundamental und so verbreitet ist.
+
+Es ist genau diese Kombination aus mathematischer Eleganz und Anwendungsperspektive, die die e-Funktion so besonders macht. Sie ist auf der einen Seite ein rein analytisches Objekt, auf der anderen Seite aber ein Werkzeug, das in Sensoren, Schaltungen, Regelungssystemen und digitalen Signalverarbeitungsprozessen eine entscheidende Rolle spielt. Die vorliegende Arbeit zeigt, dass die scheinbar einfache Formel
+
+\begin{align}
+    \frac{d}{dt} e^{st} = s e^{st}
+\end{align}
+
+nicht bloß eine Berechnungsvorschrift ist, sondern die mathematische Wurzel eines ganzen Denkmodells über Dynamik, Stabilität und lineare Systeme.
+
+Aus diesem Grund ist das Verständnis der Exponentialfunktion für die Analyse des Tiefpassfilters von unmittelbarer Bedeutung. Der Filter ist nicht einfach ein elektrisches Schaltbild, sondern ein mathematisches Modell, das die generelle Logik der natürlichen Dynamik sichtbar macht: Signale werden nicht abrupt übertragen, sondern in ihrer zeitlichen Struktur transformiert. Die Exponentialfunktion beschreibt genau diese zeitliche Trägheit. Ihre Reproduzierbarkeit ist der Grund, warum Differentialgleichungen mit exponentiellen Ansätzen so elegant lösbar werden. Das ist der eigentliche Grund, warum die e-Funktion in der Signaltheorie und der Elektrotechnik eine so zentrale Stellung einnimmt.
+
+Die vorliegende Arbeit setzt an dieser Stelle an und versucht, die gesamte Problematik in einem klaren und ausführlichen Zusammenhang zu entfalten. Sie zeigt, warum die Exponentialfunktion in der Differentialgleichung nicht nur mathematisch erscheint, sondern physikalisch und technisch unverzichtbar ist. Die zentrale Frage der Arbeit bleibt dabei die gleiche wie am Anfang: Wie genau reproduziert sich die e-Funktion bei der Ableitung, und wodurch wird diese Reproduzierbarkeit in der Differentialgleichung des Tiefpassfilters wirksam? Die Antwort auf diese Frage bildet das Herzstück der weiteren Untersuchung.
 \section{Reproduzierbarkeit: e-Funktion als Ewige}
 
 \subsection{Die grundlegende Beobachtung}
@@ -2261,7 +2319,7 @@ Diese Bedingungen sind exakt die Negationen der Stabilitätsbedingungen aus \cit
 
 \subsection{Anwendungsbeispiele: Historische wirtschaftliche Zyklen}
 
-\subsubsection{Beispiel 1: Der mittelalterliche Agrar-Zyklus (800-1400 n.Chr.)}
+\subsubsection{Beispiel 1: Mittelalterlicher Agrar-Zyklus (800-1400 n.Chr.)}
 
 Die mittelalterliche europäische Agrarwirtschaft unterlag periodischen Hungerkrise-Zyklen mit Periode etwa $T \approx 10-20$ Jahre (große Klimaschwankungen, mangelnde Lagerhaltung). Die Reaktionsgeschwindigkeit war $\alpha \approx 0.03$ Jahr$^{-1}$ (etwa 1 Monat für Marktreaktion auf Ernten).
 
@@ -3083,7 +3141,7 @@ Diese drei Konstanten sind nicht zufällig verwandt. Sie sind Manifestationen ei
 
 In diesem Kapitel werden wir zeigen, dass diese Konstanten **mathematisch gebunden** sind und dass ihre Kombination einen \textbf{Resonanzbereich} definiert, in dem wirtschaftliche Systeme -- ja alle Systeme -- ihre \textbf{maximale Kraft und Stabilität} entfalten.
 
-\subsection{Teil I: Mathematische Grundlagen}
+\subsection{Mathematische Grundlagen}
 
 \subsubsection{Definition 1: Der Goldene Schnitt und seine Eigenschaften}
 
@@ -3244,7 +3302,7 @@ Numerisch: $\approx 0.796181$
 
 \end{proof}
 
-\subsection{Teil II: Der Optimale Resonanzbereich}
+\subsection{Der Optimale Resonanzbereich}
 
 \subsubsection{Definition 3: Das Resonanzfenster für wirtschaftliche Systeme}
 
@@ -3418,7 +3476,7 @@ Im Resonanzfenster ist $1 - \Omega > 0$, daher ist $\lambda_{\text{max}} < 0$, w
 
 \end{proof}
 
-\subsection{Teil III: Wirtschaftliche Anwendungen}
+\subsection{Wirtschaftliche Anwendungen}
 
 \subsubsection*{Theorem 3: Der Bereich des kräftigen Wirtschaftens}
 
@@ -3658,7 +3716,7 @@ Dies korrespondiert zu einem Unsicherheitsindex im Fenster.
 
 \end{proof}
 
-\subsection{Teil IV: Mathematisch-Philosophische Implikationen}
+\subsection{Mathematisch-Philosophische Implikationen}
 
 \subsubsection*{Theorem 5: Die Metaphysik der Trigonometrischen Harmonie}
 
