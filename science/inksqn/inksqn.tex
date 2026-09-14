@@ -1,23 +1,31 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{lmodern}
 \usepackage[margin=2cm]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{float}
-\usepackage{hyperref}
+\usepackage{enumitem}
 \usepackage{cite}
+\usepackage[hidelinks]{hyperref}
 \usepackage{setspace}
+\usepackage{microtype}
 
-\onehalfspacing
+\emergencystretch=4em
+\geometry{margin=2.5cm}
 
-\title{\Large Bewusstsein von Konsequenzen:\\
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black,citecolor=blue!60!black}
+\setlist[itemize,1]{label=--}
+
+\title{\Large \textbf{Bewusstsein von Konsequenzen}\\
 \textit{Knoten, Kanten und die Rolle des menschlichen Gehirns\\
 in der Wahrnehmung natürlicher Ordnungssysteme}}
 
-\author{Verfasser}
-\date{\today}
+\author{Stephan Epp}
+\date{14. September 2026}
 
 \begin{document}
 
@@ -26,6 +34,10 @@ in der Wahrnehmung natürlicher Ordnungssysteme}}
 \begin{abstract}
 Diese Arbeit untersucht die zentrale These, dass Menschen durch mangelndes Bewusstsein ihrer Handlungskonsequenzen ihrer eigenen Entwicklung im Weg stehen. Unter Anwendung von Graphentheorie (Knoten und Kanten), Neurowissenschaften und Philosophie wird argumentiert, dass die Natur durch konstante Systeme (Sonne, Gravitation, feste Bodenordnung) permanente Konsequenzmechanismen demonstriert. Das menschliche Gehirn, konzeptualisiert als Zustandsübergangsmaschine, wird analysiert, um zu verstehen, wie Bewusstseinsdefizite und mangelnde Konsequenzbewusstheit zu suboptimalem Handeln und zur Selbstblockade führen. Die zentrale Erkenntnis der Arbeit ist, dass der Mensch sich selbst im Wege steht, nicht weil die Konsequenzen seines Handelns verborgen sind, sondern weil er sich ihrer nicht bewusst ist oder sie nicht bewusst wahrnehmen möchte.
 \end{abstract}
+
+\tableofcontents
+
+\newpage
 
 \section{Einleitung}
 
@@ -39,7 +51,7 @@ Das zentrale Argument dieser Arbeit lautet: \textit{Wo die Natur konstante Konse
 
 Die vorliegende Arbeit ist strukturiert als eine systematische Untersuchung dieser These. Sie beginnt mit den theoretischen Grundlagen, wobei Graphentheorie als Modell für Kausalität und Konsequenzen verwendet wird. Darauf folgt eine detaillierte Analyse des menschlichen Gehirns als Zustandsübergangsmaschine, mit besonderem Fokus darauf, wie neurologische Prozesse zu Konsequenzbewusstseins-Defiziten führen können. Dann werden natürliche Systeme — insbesondere die Sonne, die Gravitation und die materiale Ordnung des Bodens — als konkrete Zeugen der Konsequenz untersucht. Die Arbeit analysiert sodann die fundamentale Asymmetrie zwischen natürlichen und menschlichen Systemen, um schließlich mit praktischen und theoretischen Implikationen für menschliches Verhalten und Entwicklung abzuschließen.
 
-\section{Theoretische Grundlagen: Knoten, Kanten und Kausalität}
+\section{Grundlagen: Knoten, Kanten und Kausalität}
 
 \subsection{Graphentheoretisches Modell der Wirklichkeit}
 
@@ -266,9 +278,9 @@ Zur Veranschaulichung der theoretischen Grundlagen dieser Arbeit und zur bessere
 
 \subsection{Graphentheoretische Struktur von Kausalität und Konsequenzen}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{plot_1_graph_knoten_kanten.pdf}
+\includegraphics[width=0.7\textwidth]{plot_1_graph_knoten_kanten.pdf}
 \caption{Graphentheoretisches Modell der Handlungskonsequenzen mit Knoten als diskrete Zustände und Kanten als kausale Übergänge.}
 \label{fig:graph_knoten_kanten}
 \end{figure}
@@ -294,7 +306,7 @@ Das rechte Diagramm zeigt, dass verschiedene Hirnregionen bei dieser Konsequenzv
 
 \subsection{Multiplikative Struktur der Selbstblockade}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.95\textwidth]{plot_3_blockade_multiplikativ.pdf}
 \caption{Selbstblockade wächst multiplikativ mit der Anzahl missverstandener Konsequenzketten, nicht linear.}
@@ -341,9 +353,9 @@ Das tragische an dieser Visualisierung ist nicht, was sie zeigt, sondern was Men
 
 \subsection{Konsequenzverzögerung als Mechanismus des Bewusstseinsversagens}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{plot_6_konsequenzverzögerung.pdf}
+\includegraphics[width=0.95\textwidth]{plot_6_konsequenzverzögerung.pdf}
 \caption{Zeitverzögerte Konsequenzen führen zu unvollständigem Bewusstsein und ermöglichen Selbstblockade.}
 \label{fig:konsequenzverzögerung}
 \end{figure}
