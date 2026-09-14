@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **264 Wissenschaften** von Stephan Epp
+> **265 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -413,6 +413,7 @@
 | r0-classes *(Drive)* | Basisreproduktionszahl R₀ — formale Klassifikation epidemiologischer Ausbreitungsklassen; SIR/SEIR-Modelle, Schwellenwertanalyse und Interventionsschwellen |
 | wiederherstellung *(Drive)* | Resilienz der Erde — Lyapunov-Stabilität, Subgraph Algorithmus; trophische Kaskaden, Ozonschicht, Mangroven; 8 Plots |
 | dgraph | Depression als Graph-Modellierung des Gehirns: Eine formale Analyse der Negierung von Lebensmöglichkeiten |
+| inksqn | Bewusstsein von Konsequenzen: Knoten, Kanten und die Rolle des menschlichen Gehirns in der Wahrnehmung natürlicher Ordnungssysteme |
 
 ---
 
