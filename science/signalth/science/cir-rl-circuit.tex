@@ -9,11 +9,11 @@
 ]
   % Draw the circuit: voltage source -> R -> L -> back
   % Nodes
-  \node (A) at (0,0) {};
-  \node (B) at (0,3) {};
-  \node (C) at (4,3) {};
-  \node (D) at (7,3) {};
-  \node (E) at (7,0) {};
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (0,3);
+  \coordinate (C) at (4,3);
+  \coordinate (D) at (7,3);
+  \coordinate (E) at (7,0);
 
   % Voltage source: draw from B (top) to A (bottom) without invert
   % => + at B (FROM-node, top), v-arrow points toward A (downward)
@@ -24,11 +24,8 @@
   \draw (B) to[R, l=$R$, v=$U_R$] (C);
   \draw (C) to[L, l=$L$, v=$U_L$] (D);
 
-  % Right wire down
-  \draw (D) -- (E);
-
-  % Bottom wire back
-  \draw (E) -- (A);
+  % Return path: right side down, then along the bottom back to the source
+  \draw (D) -- (E) -- (A);
 
 \end{tikzpicture}
 \end{document}

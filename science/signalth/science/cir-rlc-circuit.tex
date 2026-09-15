@@ -9,12 +9,12 @@
 ]
   % RLC series circuit: voltage source -> R -> L -> C -> back
   % Nodes
-  \node (A) at (0,0) {};
-  \node (B) at (0,3) {};
-  \node (C) at (3,3) {};
-  \node (D) at (6,3) {};
-  \node (E) at (9,3) {};
-  \node (F) at (9,0) {};
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (0,3);
+  \coordinate (C) at (3,3);
+  \coordinate (D) at (6,3);
+  \coordinate (E) at (9,3);
+  \coordinate (F) at (9,0);
 
   % Voltage source: draw from B (top) to A (bottom) without invert
   % => + at B (FROM-node, top), v-arrow points toward A (downward)
@@ -26,11 +26,8 @@
   \draw (C) to[L, l=$L$, v=$U_L$] (D);
   \draw (D) to[C, l=$C$, v=$U_C$] (E);
 
-  % Right wire down
-  \draw (E) -- (F);
-
-  % Bottom wire back
-  \draw (F) -- (A);
+  % Return path: right side down, then along the bottom back to the source
+  \draw (E) -- (F) -- (A);
 
 \end{tikzpicture}
 \end{document}
