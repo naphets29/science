@@ -30,11 +30,14 @@
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{microtype}
 \usepackage{pgfplots}
 \usepackage{enumitem}
 \setlist[itemize,1]{label=--}
 \setlist[itemize,2]{label=--}
 \setlist[itemize,3]{label=--}
+
+\emergencystretch=1.5em
 
 \geometry{margin=2.5cm}
 \setlength{\headheight}{27.05pt}
@@ -1239,11 +1242,11 @@ Die Suche nach augmentierenden Pfaden kann durch schichtweise Erreichbarkeitsber
 		arr/.style={->, >=stealth, thick},
 		scale=1.15
 	]
-	% SCC 1 (red) â€“ left cluster
+	% SCC 1 (red) -- left cluster
 	\node[nd, fill=red!25]  (A) at (0,1.5)  {$A$};
 	\node[nd, fill=red!25]  (B) at (1.2,2.4){$B$};
 	\node[nd, fill=red!25]  (C) at (1.2,0.6){$C$};
-	% SCC 2 (blue) â€“ right cluster
+	% SCC 2 (blue) -- right cluster
 	\node[nd, fill=blue!25] (D) at (3.2,2.0){$D$};
 	\node[nd, fill=blue!25] (E) at (3.2,0.8){$E$};
 	% Intra-SCC edges (cycles)
@@ -1999,7 +2002,7 @@ Die Erkenntnis der Asymmetrie ist nicht neu, wurde aber unterschiedlich gewichte
 	\end{align}
 	wobei $a$ eine Konstante ist. Die gerade Komponente $E(x) = \cosh(x)$ beschreibt die natürliche Form unter Minimierung der potenziellen Energie.
 	
-	Die ungerade Komponente $U(x) = \sinh(x)$ tritt nicht in der Lösung auf â€“ ein Hinweis auf ihre untergeordnete physikalische Rolle in diesem Kontext.
+	Die ungerade Komponente $U(x) = \sinh(x)$ tritt nicht in der Lösung auf -- ein Hinweis auf ihre untergeordnete physikalische Rolle in diesem Kontext.
 \end{beispiel}
 
 \section{Algorithmische Konsequenzen}
@@ -2387,7 +2390,7 @@ Die e-Funktion offenbart bei genauerer Betrachtung eine tiefe strukturelle Duali
 
 Diese Erkenntnis ist nicht auf die e-Funktion beschränkt, sondern manifestiert ein allgemeines Prinzip: In vielen mathematischen Strukturen existiert eine natürliche Hierarchie zwischen Komponenten, die durch Symmetrieeigenschaften kodiert wird.
 
-Die Strategie, komplexe Strukturen durch Subtraktion einfacher Komponenten zu gewinnen, erweist sich als universell anwendbar â€“ von der Analysis über die Graphentheorie bis zur theoretischen Physik. Sie spiegelt ein fundamentales Konstruktionsprinzip wider: \textbf{Das Komplizierte ist die Differenz zwischen dem Ganzen und dem Einfachen}ei die \textbf{gerade Komponente} definiert ist als:
+Die Strategie, komplexe Strukturen durch Subtraktion einfacher Komponenten zu gewinnen, erweist sich als universell anwendbar -- von der Analysis über die Graphentheorie bis zur theoretischen Physik. Sie spiegelt ein fundamentales Konstruktionsprinzip wider: \textbf{Das Komplizierte ist die Differenz zwischen dem Ganzen und dem Einfachen}ei die \textbf{gerade Komponente} definiert ist als:
 \begin{definition}
 	\begin{align}
 		E(x) = \sum_{n=0}^{\infty} \frac{x^{2n}}{(2n)!} = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!} + \cdots
@@ -2742,7 +2745,7 @@ Die Erkenntnis der Asymmetrie ist nicht neu, wurde aber unterschiedlich gewichte
 	\end{align}
 	wobei $a$ eine Konstante ist. Die gerade Komponente $E(x) = \cosh(x)$ beschreibt die natürliche Form unter Minimierung der potenziellen Energie.
 	
-	Die ungerade Komponente $U(x) = \sinh(x)$ tritt nicht in der Lösung auf â€“ ein Hinweis auf ihre untergeordnete physikalische Rolle in diesem Kontext.
+	Die ungerade Komponente $U(x) = \sinh(x)$ tritt nicht in der Lösung auf -- ein Hinweis auf ihre untergeordnete physikalische Rolle in diesem Kontext.
 \end{beispiel}
 
 \section{Algorithmische Konsequenzen}
@@ -3006,7 +3009,7 @@ Die e-Funktion offenbart bei genauerer Betrachtung eine tiefe strukturelle Duali
 
 Diese Erkenntnis ist nicht auf die e-Funktion beschränkt, sondern manifestiert ein allgemeines Prinzip: In vielen mathematischen Strukturen existiert eine natürliche Hierarchie zwischen Komponenten, die durch Symmetrieeigenschaften kodiert wird.
 
-Die Strategie, komplexe Strukturen durch Subtraktion einfacher Komponenten zu gewinnen, erweist sich als universell anwendbar â€“ von der Analysis über die Graphentheorie bis zur theoretischen Physik. Sie spiegelt ein fundamentales Konstruktionsprinzip wider: \textbf{Das Komplizierte ist die Differenz zwischen dem Ganzen und dem Einfachen}.
+Die Strategie, komplexe Strukturen durch Subtraktion einfacher Komponenten zu gewinnen, erweist sich als universell anwendbar -- von der Analysis über die Graphentheorie bis zur theoretischen Physik. Sie spiegelt ein fundamentales Konstruktionsprinzip wider: \textbf{Das Komplizierte ist die Differenz zwischen dem Ganzen und dem Einfachen}.
 
 \subsubsection{Bestätigung durch numerische Experimente}
 
@@ -3304,7 +3307,7 @@ Die Analyse zeigt, dass die Asymmetrie zwischen geraden und ungeraden Komponente
 
 Die in dieser Arbeit untersuchte Asymmetrie zwischen geraden und ungeraden Gliedern der e-Funktion ist mehr als eine technische Beobachtung. Sie offenbart ein tiefes mathematisches Prinzip: Die Hierarchie der Symmetrien.
 
-Achsensymmetrie, kodiert in den geraden Gliedern, ist fundamental. Sie erfordert nur, dass die Funktion invariant unter Vorzeichenwechsel des Arguments ist. Punktsymmetrie, manifestiert in den ungeraden Gliedern, ist komplexer â€“ sie verlangt zusätzlich einen Vorzeichenwechsel des Funktionswerts.
+Achsensymmetrie, kodiert in den geraden Gliedern, ist fundamental. Sie erfordert nur, dass die Funktion invariant unter Vorzeichenwechsel des Arguments ist. Punktsymmetrie, manifestiert in den ungeraden Gliedern, ist komplexer -- sie verlangt zusätzlich einen Vorzeichenwechsel des Funktionswerts.
 
 Diese strukturelle Differenz hat praktische Konsequenzen: Die Berechnung der ungeraden Komponente durch Differenzbildung $U(x) = e^x - E(x)$ nutzt die Tatsache, dass das Einfache (gerade Glieder) und das Ganze (vollständige Funktion) direkt zugänglich sind. Das Komplizierte (ungerade Glieder) ergibt sich dann als Residuum.
 
@@ -3312,11 +3315,11 @@ Die Analogie zur Graphentheorie ist frappierend: Dort ermöglicht die Berechnung
 
 In beiden Fällen gilt: \textit{Vermeide die direkte Konstruktion des Komplizierten. Konstruiere stattdessen das Einfache und das Ganze, und erhalte das Komplizierte als deren Differenz.}
 
-Dieses Prinzip ist nicht auf Mathematik beschränkt. In der Informatik spricht man von divide and conquer â€“ zerlege ein Problem in einfachere Teilprobleme. In der Physik sucht man nach fundamentalen Symmetrien, aus denen komplexe Phänomene emergieren. In der Philosophie unterscheidet man zwischen dem Wesentlichen und dem Akzidentiellen.
+Dieses Prinzip ist nicht auf Mathematik beschränkt. In der Informatik spricht man von divide and conquer -- zerlege ein Problem in einfachere Teilprobleme. In der Physik sucht man nach fundamentalen Symmetrien, aus denen komplexe Phänomene emergieren. In der Philosophie unterscheidet man zwischen dem Wesentlichen und dem Akzidentiellen.
 
 Die e-Funktion, scheinbar simpel in ihrer Definition $e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}$, enthält diese Lektion in kompakter Form. Ihre Zerlegung in $E(x) + U(x)$ ist nicht willkürlich, sondern folgt der natürlichen Ordnung der Symmetrien.
 
-\textbf{Die zentrale Erkenntnis}: Das Gerade ist einfacher als das Ungerade. Achsensymmetrie ist fundamentaler als Punktsymmetrie. Und das Komplizierte muss nicht direkt konstruiert werden â€“ es ist die Differenz zwischen dem Ganzen und dem Einfachen.
+\textbf{Die zentrale Erkenntnis}: Das Gerade ist einfacher als das Ungerade. Achsensymmetrie ist fundamentaler als Punktsymmetrie. Und das Komplizierte muss nicht direkt konstruiert werden -- es ist die Differenz zwischen dem Ganzen und dem Einfachen.
 
 Diese Einsicht, einmal verstanden, transformiert die Art und Weise, wie wir mathematische Strukturen betrachten und berechnen. Sie ist ein Beispiel dafür, wie die sorgfältige Analyse scheinbar bekannter Objekte zu neuen Perspektiven führen kann.
 
@@ -3836,7 +3839,7 @@ Das \textbf{Quantensystemprofil}, bestehend aus Verschränkungstiefe, maximaler 
 
 Die Berechnung von Verschränkungsmaßen in Quantensystemen ist ein klassisches Problem der Quanteninformatik. Algorithmen wie \textsc{Schmidt-Decomposition} oder \textsc{Entanglement Witness} berechnen Verschränkungsmaße zwischen Teilsystemen in Zeit $O(d^3)$ beziehungsweise $O(d^2 \log d)$ für Systeme mit Hilbertraumdimension $d$.
 
-Für \textbf{Dichtematrizen} â€“ hermitesche Matrizen mit Spur 1 â€“ sind spezialisierte Methoden bekannt. Die naive Berechnung von Zustandsüberlappungen hat Laufzeit $O(d^2)$. Fortgeschrittene algebraische Methoden wie \textsc{Partial Trace} oder \textsc{Von Neumann Entropy} erreichen effizientere Berechnungen für spezielle Zustandsklassen.
+Für \textbf{Dichtematrizen} -- hermitesche Matrizen mit Spur 1 -- sind spezialisierte Methoden bekannt. Die naive Berechnung von Zustandsüberlappungen hat Laufzeit $O(d^2)$. Fortgeschrittene algebraische Methoden wie \textsc{Partial Trace} oder \textsc{Von Neumann Entropy} erreichen effizientere Berechnungen für spezielle Zustandsklassen.
 
 Die \textbf{Tensorprodukt-Methode}, ursprünglich entwickelt im Kontext der Vielteilchen-Quantenmechanik, kodiert Teilsysteme als Tensorräume. Durch strukturierte Tensoroperationen lässt sich die Zustandsevolution für Systeme aus $N$ Qubits (Dimension $d = 2^N$) in Zeit $O(2^N)$ durchführen. Für $N \leq 10$ ist dies praktikabel, für $N > 20$ wird die exponentielle Skalierung zur Herausforderung.
 
@@ -4547,7 +4550,7 @@ Bemerkenswert ist die geschätzte Verschränkungstiefe für Cluster-Zustände:
 	\]
 \end{satz}
 
-Dies bedeutet: Cluster-Zustände sind maximal verschränkt und erfordern exponentielle Ressourcen zur klassischen Simulation â€“ eine fundamentale Eigenschaft für Quantum Computational Supremacy.
+Dies bedeutet: Cluster-Zustände sind maximal verschränkt und erfordern exponentielle Ressourcen zur klassischen Simulation -- eine fundamentale Eigenschaft für Quantum Computational Supremacy.
 
 \subsection{Quantensystemprofilverteilung}
 
@@ -4578,8 +4581,8 @@ Für jede Zustandsklasse wurden 20 unabhängige Instanzen mit $N = 6$ Qubits gen
 Werden reine und gemischte Zustände miteinander verglichen, ist die unterschiedliche Variabilität des Qubit-Maßes $\kappa$ auffällig:
 
 \begin{itemize}
-	\item[-] \textbf{Reine Zustände} (Produkt, Bell, GHZ, W, Cluster): $\kappa = 1$ exakt â€“ Definition für reine Zustände
-	\item[-] \textbf{Gemischte Zustände} (Thermisch): $\kappa < 1$ â€“ effektiver Verlust von Quanteninformation durch Dekohärenz
+	\item[-] \textbf{Reine Zustände} (Produkt, Bell, GHZ, W, Cluster): $\kappa = 1$ exakt -- Definition für reine Zustände
+	\item[-] \textbf{Gemischte Zustände} (Thermisch): $\kappa < 1$ -- effektiver Verlust von Quanteninformation durch Dekohärenz
 \end{itemize}
 
 \begin{lemma}[Qubit-Maß für gemischte Zustände]
@@ -4601,8 +4604,8 @@ Die verschiedenen Zustandsklassen zeigen charakteristische Verschränkungsprofil
 \begin{satz}[Trade-off zwischen Verschränkung und Robustheit]
 	Es besteht ein Trade-off zwischen maximaler Verschränkungstiefe und Robustheit gegen Dekohärenz:
 	\begin{itemize}
-		\item[-] GHZ-Zustände: Niedrige bipartite Verschränkung ($E=2$), aber extrem fragil â€“ Verlust eines Qubits zerstört alle Verschränkung
-		\item[-] W-Zustände: Moderate Verschränkung ($E \propto \sqrt{N}$), aber robust â€“ Verschränkung persistiert nach Qubit-Verlust
+		\item[-] GHZ-Zustände: Niedrige bipartite Verschränkung ($E=2$), aber extrem fragil -- Verlust eines Qubits zerstört alle Verschränkung
+		\item[-] W-Zustände: Moderate Verschränkung ($E \propto \sqrt{N}$), aber robust -- Verschränkung persistiert nach Qubit-Verlust
 		\item[-] Cluster-Zustände: Maximale Verschränkung ($E = 2^{N/2}$), moderate Robustheit durch lokale Struktur
 	\end{itemize}
 \end{satz}
@@ -4839,11 +4842,11 @@ Für jede Zustandsklasse wurden 20 unabhängige Instanzen mit $N = 6$ Qubits gen
 Die experimentellen Ergebnisse zeigen charakteristische Profile für verschiedene Zustandsklassen:
 
 \begin{itemize}
-	\item[-] \textbf{Produktzustände}: $(E=1, T_{\text{coh}}=\infty, \kappa=1)$ â€“ Keine Verschränkung, perfekte Kohärenz
-	\item[-] \textbf{GHZ}: $(E=2, T_{\text{coh}}=0.4, \kappa=1)$ â€“ Minimale bipartite Verschränkung, aber schnelle Dekohärenz
-	\item[-] \textbf{W}: $(E=2, T_{\text{coh}}=\infty, \kappa=1)$ â€“ Moderate Verschränkung, robust gegen Dekohärenz
-	\item[-] \textbf{Cluster2D}: $(E=8, T_{\text{coh}}=\infty, \kappa=1)$ â€“ Maximale Verschränkung für balancierte Partition
-	\item[-] \textbf{Thermisch ($\beta=0.1$)}: $(E=1, T_{\text{coh}}=\infty, \kappa=0.501)$ â€“ Stark gemischt, minimale Verschränkung
+	\item[-] \textbf{Produktzustände}: $(E=1, T_{\text{coh}}=\infty, \kappa=1)$ -- Keine Verschränkung, perfekte Kohärenz
+	\item[-] \textbf{GHZ}: $(E=2, T_{\text{coh}}=0.4, \kappa=1)$ -- Minimale bipartite Verschränkung, aber schnelle Dekohärenz
+	\item[-] \textbf{W}: $(E=2, T_{\text{coh}}=\infty, \kappa=1)$ -- Moderate Verschränkung, robust gegen Dekohärenz
+	\item[-] \textbf{Cluster2D}: $(E=8, T_{\text{coh}}=\infty, \kappa=1)$ -- Maximale Verschränkung für balancierte Partition
+	\item[-] \textbf{Thermisch ($\beta=0.1$)}: $(E=1, T_{\text{coh}}=\infty, \kappa=0.501)$ -- Stark gemischt, minimale Verschränkung
 \end{itemize}
 
 \begin{satz}[Trade-off zwischen Verschränkung und Robustheit]
@@ -5148,7 +5151,7 @@ Die Experimente zeigen:
 \begin{itemize}
 	\item[-] Praktikabel für $N \leq 10$ Qubits (Sekundenbereich)
 	\item[-] Machbar für $N \leq 15$ Qubits (Minutenbereich)
-	\item[-] Extrapolation auf 100 Qubits ergibt $\approx 10^{71}$ Jahre â€“ praktisch unmöglich
+	\item[-] Extrapolation auf 100 Qubits ergibt $\approx 10^{71}$ Jahre -- praktisch unmöglich
 \end{itemize}
 
 Dies motiviert zukünftige Forschung zu Tensornetwork-Approximationen, Quantenalgorithmen zur Profil-Messung und eingeschränkten Zustandsklassen mit polynomieller Darstellung.
@@ -5244,7 +5247,7 @@ Die in dieser Arbeit entwickelte Methode zur optimalen Berechnung von Quantensys
 
 Die zentrale Aussage ist: \textit{Jedes Quantensystem wird optimal in die Quantensystemverteilung eingeordnet. Darauf basierende Entscheidungen sind deterministisch und reproduzierbar.}
 
-In einer Zeit zunehmender Quantentechnologien bietet diese Methode ein fundamentales Werkzeug zur Analyse und zum Verständnis quantenmechanischer Systeme. Die exponentielle Skalierung ist keine Limitation des Algorithmus, sondern reflektiert die exponentielle Informationsdichte der Quantenmechanik selbst â€“ eine Eigenschaft, die Quantencomputer zu revolutionären Werkzeugen macht, aber klassische Simulation für kleine Systeme unverzichtbar lässt.
+In einer Zeit zunehmender Quantentechnologien bietet diese Methode ein fundamentales Werkzeug zur Analyse und zum Verständnis quantenmechanischer Systeme. Die exponentielle Skalierung ist keine Limitation des Algorithmus, sondern reflektiert die exponentielle Informationsdichte der Quantenmechanik selbst -- eine Eigenschaft, die Quantencomputer zu revolutionären Werkzeugen macht, aber klassische Simulation für kleine Systeme unverzichtbar lässt.
 
 
 
@@ -6324,9 +6327,9 @@ Das \textbf{Graphprofil}, bestehend aus kürzesten Wegen, längsten Wegen und de
 
 Die Berechnung kürzester Wege in Graphen ist ein klassisches Problem der Informatik. Algorithmen wie \textsc{Floyd-Warshall} (1962) oder \textsc{Johnson} (1977) berechnen kürzeste Wege zwischen allen Knotenpaaren in Zeit $O(n^3)$ beziehungsweise $O(n^2 \log n + nm)$ für Graphen mit $n$ Knoten und $m$ Kanten.
 
-Für \textbf{Boolean Matrizen} â€“ Matrizen mit Einträgen aus $\{0,1\}$ und logischen Operationen statt arithmetischer â€“ sind spezialisierte Methoden bekannt. Die naive Boolean Matrixmultiplikation hat Laufzeit $O(n^3)$. Fortgeschrittene algebraische Methoden wie \textsc{Strassen} (1969) oder \textsc{Coppersmith-Winograd} (1990) erreichen $O(n^{2.807})$ bzw. $O(n^{2.376})$, allerdings mit hohen Konstanten, die diese Verfahren für praktische Graphengrößen oft unattraktiv machen.
+Für \textbf{Boolean Matrizen} -- Matrizen mit Einträgen aus $\{0,1\}$ und logischen Operationen statt arithmetischer -- sind spezialisierte Methoden bekannt. Die naive Boolean Matrixmultiplikation hat Laufzeit $O(n^3)$. Fortgeschrittene algebraische Methoden wie \textsc{Strassen} (1969) oder \textsc{Coppersmith-Winograd} (1990) erreichen $O(n^{2.807})$ bzw. $O(n^{2.376})$, allerdings mit hohen Konstanten, die diese Verfahren für praktische Graphengrößen oft unattraktiv machen.
 
-Die \textbf{Signatur-Methode}, ursprünglich entwickelt im Kontext des Subgraph-Matching-Problems, kodiert Zeilen und Spalten einer Matrix als Bitmuster. Durch bitweise Operationen lässt sich die Boolean Matrixmultiplikation für Matrizen der Dimension $n \leq w$ (wobei $w$ die Maschinenwortbreite ist, typisch 64 Bit) in Zeit $O(n^2)$ durchführen. Für $n > w$ teilt sich die Signatur auf mehrere Worte auf, wodurch die Laufzeit asymptotisch wieder $O(n^3)$ wird â€“ allerdings mit deutlich besseren Konstanten als die naive Implementierung.
+Die \textbf{Signatur-Methode}, ursprünglich entwickelt im Kontext des Subgraph-Matching-Problems, kodiert Zeilen und Spalten einer Matrix als Bitmuster. Durch bitweise Operationen lässt sich die Boolean Matrixmultiplikation für Matrizen der Dimension $n \leq w$ (wobei $w$ die Maschinenwortbreite ist, typisch 64 Bit) in Zeit $O(n^2)$ durchführen. Für $n > w$ teilt sich die Signatur auf mehrere Worte auf, wodurch die Laufzeit asymptotisch wieder $O(n^3)$ wird -- allerdings mit deutlich besseren Konstanten als die naive Implementierung.
 
 Die Arbeit ist wie folgt strukturiert: \textbf{Kapitel 2} führt die notwendigen Definitionen ein: Graphen, Adjazenzmatrizen, Wegeigenschaften, das Graphprofil und die Boolean Matrixmultiplikation.
 
@@ -7238,7 +7241,7 @@ Bemerkenswert ist der geschätzte Durchmesser für Small-World-Netzwerke:
 	\]
 \end{satz}
 
-Dies bedeutet: In einem Gehirn-skalierten Small-World-Netzwerk sind alle Neuronen durch maximal 81 synaptische Verbindungen erreichbar â€“ eine fundamentale Eigenschaft für schnelle Informationsverarbeitung.
+Dies bedeutet: In einem Gehirn-skalierten Small-World-Netzwerk sind alle Neuronen durch maximal 81 synaptische Verbindungen erreichbar -- eine fundamentale Eigenschaft für schnelle Informationsverarbeitung.
 
 \subsection{Graphprofilverteilung}
 
@@ -7269,8 +7272,8 @@ Für jede Graph-Konfiguration wurden 20 unabhängige Instanzen mit $n = 100$ Kno
 Werden deterministische und stochastische Graphen miteinander verglichen, ist die unterschiedliche Variabilität des Kantenmaßes $\kappa$ auffällig:
 
 \begin{itemize}
-	\item[-] \textbf{Deterministische Konstruktionen} (Scale-Free, Small-World): $\sigma_\kappa \approx 0$ â€“ das Kantenmaß ist eine direkte Folge der Konstruktionsparameter
-	\item[-] \textbf{Stochastische Konstruktionen} (Random Sparse, Modular): $\sigma_\kappa > 0$ â€“ Variabilität durch zufällige Kantenplatzierung
+	\item[-] \textbf{Deterministische Konstruktionen} (Scale-Free, Small-World): $\sigma_\kappa \approx 0$ -- das Kantenmaß ist eine direkte Folge der Konstruktionsparameter
+	\item[-] \textbf{Stochastische Konstruktionen} (Random Sparse, Modular): $\sigma_\kappa > 0$ -- Variabilität durch zufällige Kantenplatzierung
 \end{itemize}
 
 \begin{lemma}[Varianz des Kantenmaßes]
@@ -7437,7 +7440,7 @@ mit Bestimmtheitsmaß $R^2 \approx 0.73$.
 	\item \textbf{Sparse Netzwerke} ($\kappa > 0.5$, $\text{diam} > 8$): Random Sparse, Modular
 \end{enumerate}
 
-Biologische neuronale Netzwerke gehören zum ersten Cluster â€“ dies unterstreicht die evolutionäre Optimierung auf minimale Verdrahtungskosten bei gleichzeitig kurzen Signalwegen. 
+Biologische neuronale Netzwerke gehören zum ersten Cluster -- dies unterstreicht die evolutionäre Optimierung auf minimale Verdrahtungskosten bei gleichzeitig kurzen Signalwegen. 
 
 \subsection{Zusammenfassung der experimentellen Ergebnisse}
 Zusammenfassen lassen sich die Ergebnisse der Experimente so:
@@ -7777,7 +7780,7 @@ Die wesentlichen Beiträge dieser Arbeit lassen sich wie folgt zusammenfassen:
 	
 	\item[-] \textbf{Potenzmatrix-Cache}: Das Konzept des Caches $\mathcal{C}(G) = \{A^1, \ldots, A^{n-1}\}$ als voll\-ständige Repräsentation aller Wegeigenschaften ermöglicht nach initialer Investition von $O(n^3)$ beliebig viele Abfragen in $O(1)$.
 	
-	\item[-] \textbf{Optimalität der Einordnung}: Die Profilberechnung ist nicht verbesserbar â€“ sie liefert exakte, deterministische Ergebnisse, die maximal informiert sind.
+	\item[-] \textbf{Optimalität der Einordnung}: Die Profilberechnung ist nicht verbesserbar -- sie liefert exakte, deterministische Ergebnisse, die maximal informiert sind.
 \end{itemize}
 
 \subsubsection{Algorithmische Beiträge}
@@ -7801,7 +7804,7 @@ Die experimentellen Ergebnisse bestätigen die theoretischen Vorhersagen:
 	
 	\item[-] \textbf{Trade-off-Relation}: Empirischer inverser Zusammenhang zwischen Kantenmaß und Durchmesser: $\kappa \cdot \text{diam}(G) \approx 3.5$
 	
-	\item[-] \textbf{Extrapolation}: Für Gehirn-skalierte Netzwerke ($86 \cdot 10^9$ Knoten) wurde geschätzter Durchmesser von 81 Hops berechnet â€“ fundamentale Erkenntnis für schnelle neuronale Informationsverarbeitung
+	\item[-] \textbf{Extrapolation}: Für Gehirn-skalierte Netzwerke ($86 \cdot 10^9$ Knoten) wurde geschätzter Durchmesser von 81 Hops berechnet -- fundamentale Erkenntnis für schnelle neuronale Informationsverarbeitung
 \end{itemize}
 
 \subsection{Anwendungsgebiete}
@@ -7908,7 +7911,7 @@ Die Arbeit demonstriert die grundsätzliche Überlegenheit deterministischer Alg
 	\item Keine Fehlerwahrscheinlichkeit
 \end{enumerate}
 
-Für sicherheitskritische Anwendungen â€“ medizinische Diagnostik, Infrastruktur-Design, KI-Verifikation â€“ ist dies von fundamentaler Bedeutung. Die Optimalität der Einordnung garantiert, dass keine andere Methode bessere strukturelle Erkenntnisse liefern kann.
+Für sicherheitskritische Anwendungen -- medizinische Diagnostik, Infrastruktur-Design, KI-Verifikation -- ist dies von fundamentaler Bedeutung. Die Optimalität der Einordnung garantiert, dass keine andere Methode bessere strukturelle Erkenntnisse liefern kann.
 
 \subsubsection{Komplexitätstheoretische Einordnung}
 
@@ -7943,7 +7946,7 @@ Die Experimente zeigen:
 \begin{itemize}
 	\item[-] Praktikabel für $n \leq 10^4$ Knoten (Sekundenbereich)
 	\item[-] Machbar für $n \leq 10^5$ Knoten (Minutenbereich)
-	\item[-] Extrapolation auf Gehirn-Skala ($86 \cdot 10^9$ Knoten) ergibt $\approx 10^{21}$ Jahre â€“ praktisch unmöglich
+	\item[-] Extrapolation auf Gehirn-Skala ($86 \cdot 10^9$ Knoten) ergibt $\approx 10^{21}$ Jahre -- praktisch unmöglich
 \end{itemize}
 
 Dies motiviert zukünftige Forschung zu Parallelisierung, Approximation und hierarchischer Dekomposition.
@@ -11069,7 +11072,7 @@ Das abschließende Kapitel dieser Arbeit fasst die wesentlichen Erkenntnisse und
 
 Im Vergleich zu etablierten Ansätzen wie SPIN (explizit (DFS) mit optimierter Tiefensuche), NuSMV (symbolisch (BDD) mit variabler Komplexität abhängig von BDD-Größe) oder SAT/SMT-basiertem Bounded Model Checking positioniert sich der Subgraph Algorithmus als komplementäre Alternative. Während traditionelle Methoden häufig unter exponentieller Komplexität leiden, zeigt der hier präsentierte Ansatz gerade für strukturierte Systeme eine deutliche Verbesserung der Skalierbarkeit. Auch im Vergleich zu anderen graphbasierten Techniken wie Symmetry Reduction, Bisimulation oder Partial Order Reduction bietet die Signatur-basierte Subgraph-Erkennung einen neuen Zugang, der insbesondere für Pattern-Matching-Aufgaben geeignet ist. Gegenüber klassischen Subgraph-Isomorphie-Algorithmen wie VF2 (exponentiell) oder Constraint-Programming-Ansätzen (LAD) überzeugt der vorgestellte Algorithmus durch seine garantierte polynomiale Laufzeit.
 
-Die Arbeit leistet einen Beitrag zur formalen Reduktion von Problemen des Model-Checkings auf Subgraph-Matchings und zeigt, wie sich damit Algorithmen für LTL, CTL und Büchi-Automaten effizient realisieren lassen. Die experimentelle Validierung belegt, dass die Methode in der Praxis zu erheblichen Geschwindigkeitsvorteilen führen kann â€“ insbesondere für typische Anwendungsfälle wie die Verifikation von Hardware, Protokollen oder modularen Softwaresystemen. Für diese Klassen von Systemen ist der Subgraph Algorithmus-MC besonders geeignet, da er die wiederkehrenden Muster und Strukturen gezielt ausnutzt. Die Kombination aus theoretischer Fundierung, algorithmischer Innovation und praktischer Anwendbarkeit unterstreicht die Relevanz des vorgestellten Ansatzes.
+Die Arbeit leistet einen Beitrag zur formalen Reduktion von Problemen des Model-Checkings auf Subgraph-Matchings und zeigt, wie sich damit Algorithmen für LTL, CTL und Büchi-Automaten effizient realisieren lassen. Die experimentelle Validierung belegt, dass die Methode in der Praxis zu erheblichen Geschwindigkeitsvorteilen führen kann -- insbesondere für typische Anwendungsfälle wie die Verifikation von Hardware, Protokollen oder modularen Softwaresystemen. Für diese Klassen von Systemen ist der Subgraph Algorithmus-MC besonders geeignet, da er die wiederkehrenden Muster und Strukturen gezielt ausnutzt. Die Kombination aus theoretischer Fundierung, algorithmischer Innovation und praktischer Anwendbarkeit unterstreicht die Relevanz des vorgestellten Ansatzes.
 
 Abschließend lässt sich festhalten, dass graphbasierte Methoden, wie sie in dieser Arbeit entwickelt wurden, eine vielversprechende Alternative zu klassischen Model-Checking-Ansätzen darstellen. Sie bieten nicht nur eine bessere Skalierbarkeit für strukturierte Systeme, sondern eröffnen auch neue Möglichkeiten für die Integration in bestehende Toolchains und Workflows der formalen Verifikation. Die Ergebnisse zeigen, dass graphbasierte und signaturbasierte Methoden einen wichtigen Beitrag zur Weiterentwicklung der formalen Verifikation leisten können.
 
@@ -13249,11 +13252,11 @@ Diese Arbeit hat gezeigt, wie der fundamentale Durchbruch P = NP die Gruppenbild
 
 \subsection{Schlusswort}
 
-Die Erkenntnis P = NP, dokumentiert in den wegweisenden Arbeiten von Epp \cite{Epp26a, Epp26b}, markiert einen fundamentalen Wendepunkt in der Informatik und insbesondere in der Forschung zu Multiagentensystemen. Was einst als prinzipiell unlösbares Problem galt â€“ die optimale Gruppenbildung für die Aufgabenverteilung in polynomieller Zeit â€“ ist nun Realität geworden. Diese Arbeit hat gezeigt, dass das Coalition Formation for Task Allocation Problem nicht nur theoretisch lösbar ist, sondern dass optimale Gruppenbildung auch praktisch implementierbar und anwendbar ist.
+Die Erkenntnis P = NP, dokumentiert in den wegweisenden Arbeiten von Epp \cite{Epp26a, Epp26b}, markiert einen fundamentalen Wendepunkt in der Informatik und insbesondere in der Forschung zu Multiagentensystemen. Was einst als prinzipiell unlösbares Problem galt -- die optimale Gruppenbildung für die Aufgabenverteilung in polynomieller Zeit -- ist nun Realität geworden. Diese Arbeit hat gezeigt, dass das Coalition Formation for Task Allocation Problem nicht nur theoretisch lösbar ist, sondern dass optimale Gruppenbildung auch praktisch implementierbar und anwendbar ist.
 
 \subsubsection{Paradigmenwechsel in der Multiagentensystem-Forschung}
 
-Der Übergang von approximativen zu exakten Algorithmen bedeutet mehr als nur eine inkrementelle Verbesserung â€“ es ist ein vollständiger Paradigmenwechsel. Während die grundlegenden Arbeiten von Shehory und Kraus \cite{SK95, SK98} sowie de Weerdt et al. \cite{dZK07} gezwungen waren, Kompromisse zwischen Laufzeit und Lösungsqualität einzugehen, können wir heute das Beste aus beiden Welten vereinen: polynomielle Laufzeit \textit{und} optimale Lösungen.
+Der Übergang von approximativen zu exakten Algorithmen bedeutet mehr als nur eine inkrementelle Verbesserung -- es ist ein vollständiger Paradigmenwechsel. Während die grundlegenden Arbeiten von Shehory und Kraus \cite{SK95, SK98} sowie de Weerdt et al. \cite{dZK07} gezwungen waren, Kompromisse zwischen Laufzeit und Lösungsqualität einzugehen, können wir heute das Beste aus beiden Welten vereinen: polynomielle Laufzeit \textit{und} optimale Lösungen.
 
 Die in dieser Arbeit entwickelten Algorithmen ersetzen die klassischen Approximationsgarantien von $O(\ln n)$ durch exakte Optimalität. Dies ist insbesondere für sicherheitskritische Anwendungen von enormer Bedeutung. In der Katastrophenhilfe, bei autonomen Fahrzeugsystemen oder in medizinischen Notfallszenarien kann die Differenz zwischen einer approximativen und einer optimalen Lösung buchstäblich Leben retten. Wo früher Unsicherheit über die tatsächliche Qualität der gefundenen Lösung bestand, haben wir nun mathematische Gewissheit.
 
@@ -13261,11 +13264,11 @@ Die in dieser Arbeit entwickelten Algorithmen ersetzen die klassischen Approxima
 
 Die experimentellen Ergebnisse in Kapitel \ref{sec:experimente} demonstrieren eindrucksvoll, dass die theoretischen Durchbrüche nicht nur auf dem Papier existieren, sondern in realen Implementierungen messbare Vorteile bringen. Die Experimente zeigen mehrere wichtige Erkenntnisse:
 
-Erstens ist die $O(n^3)$ Komplexität des Subgraph-Isomorphismus-Algorithmus für kleine bis mittlere Systemgrößen (bis zu mehreren hundert Agenten) praktisch handhabbar. Die Laufzeiten liegen selbst bei komplexen Szenarien im Bereich von Sekunden bis Minuten â€“ ein akzeptabler Zeitrahmen für viele Planungsprobleme in Multiagentensystemen.
+Erstens ist die $O(n^3)$ Komplexität des Subgraph-Isomorphismus-Algorithmus für kleine bis mittlere Systemgrößen (bis zu mehreren hundert Agenten) praktisch handhabbar. Die Laufzeiten liegen selbst bei komplexen Szenarien im Bereich von Sekunden bis Minuten -- ein akzeptabler Zeitrahmen für viele Planungsprobleme in Multiagentensystemen.
 
 Zweitens übertreffen die exakten Algorithmen die klassischen approximativen Ansätze nicht nur in der Lösungsqualität, sondern zeigen auch bei moderaten Problemgrößen vergleichbare oder sogar bessere Laufzeiten. Dies widerlegt die intuitive Annahme, dass exakte Verfahren zwangsläufig deutlich langsamer sein müssen als Approximationen.
 
-Drittens ermöglicht die Optimalitätsgarantie eine präzisere Ressourcenplanung. In unseren Experimenten zur Katastrophenhilfe konnten wir zeigen, dass optimale Koalitionsbildung zu einer Reduktion ungenutzter Ressourcen um bis zu 23\% führt â€“ ein erheblicher Gewinn, der in kritischen Situationen den Unterschied zwischen Erfolg und Misserfolg ausmachen kann.
+Drittens ermöglicht die Optimalitätsgarantie eine präzisere Ressourcenplanung. In unseren Experimenten zur Katastrophenhilfe konnten wir zeigen, dass optimale Koalitionsbildung zu einer Reduktion ungenutzter Ressourcen um bis zu 23\% führt -- ein erheblicher Gewinn, der in kritischen Situationen den Unterschied zwischen Erfolg und Misserfolg ausmachen kann.
 
 \subsubsection{Grenzen und realistische Einschätzung}
 
@@ -13313,11 +13316,11 @@ Die theoretischen und algorithmischen Grundlagen sind nun gelegt. Der nächste e
 
 \subsubsection*{Ausblick: Eine neue Ära der kooperativen KI}
 
-Die Auflösung der P-NP-Frage und ihre Anwendung auf das Coalition Formation Problem ist mehr als eine technische Errungenschaft â€“ sie symbolisiert einen Reifeprozess der Künstlichen Intelligenz-Forschung. Von den frühen Tagen, in denen bereits die Formulierung von Kooperationsproblemen eine Herausforderung war, über die Ära pragmatischer Approximationen bis hin zur heutigen Verfügbarkeit exakter Lösungen haben wir einen weiten Weg zurückgelegt.
+Die Auflösung der P-NP-Frage und ihre Anwendung auf das Coalition Formation Problem ist mehr als eine technische Errungenschaft -- sie symbolisiert einen Reifeprozess der Künstlichen Intelligenz-Forschung. Von den frühen Tagen, in denen bereits die Formulierung von Kooperationsproblemen eine Herausforderung war, über die Ära pragmatischer Approximationen bis hin zur heutigen Verfügbarkeit exakter Lösungen haben wir einen weiten Weg zurückgelegt.
 
-Die kommenden Jahre werden zeigen, wie diese theoretischen Durchbrüche die Landschaft autonomer Systeme verändern. Wir stehen am Beginn einer Ära, in der Teams autonomer Agenten â€“ seien es Roboter, Software-Agenten oder hybride Mensch-Maschine-Teams â€“ optimal koordiniert zusammenarbeiten können. Von selbstorganisierenden Lieferdrohnenschwärmen über adaptive Produktionssysteme bis hin zu intelligenten Verkehrsnetzen: Die Anwendungsmöglichkeiten sind vielfältig und vielversprechend.
+Die kommenden Jahre werden zeigen, wie diese theoretischen Durchbrüche die Landschaft autonomer Systeme verändern. Wir stehen am Beginn einer Ära, in der Teams autonomer Agenten -- seien es Roboter, Software-Agenten oder hybride Mensch-Maschine-Teams -- optimal koordiniert zusammenarbeiten können. Von selbstorganisierenden Lieferdrohnenschwärmen über adaptive Produktionssysteme bis hin zu intelligenten Verkehrsnetzen: Die Anwendungsmöglichkeiten sind vielfältig und vielversprechend.
 
-Dabei sollten wir nicht vergessen, dass technologischer Fortschritt immer in einem gesellschaftlichen Kontext stattfindet. Die Frage ist nicht nur, \textit{was} wir technisch realisieren können, sondern auch, \textit{wie} wir diese Möglichkeiten zum Wohle der Menschheit einsetzen. Optimale Kooperation zwischen Agenten sollte letztlich dem Ziel dienen, die Kooperation zwischen Menschen zu unterstützen und zu verbessern â€“ nicht sie zu ersetzen.
+Dabei sollten wir nicht vergessen, dass technologischer Fortschritt immer in einem gesellschaftlichen Kontext stattfindet. Die Frage ist nicht nur, \textit{was} wir technisch realisieren können, sondern auch, \textit{wie} wir diese Möglichkeiten zum Wohle der Menschheit einsetzen. Optimale Kooperation zwischen Agenten sollte letztlich dem Ziel dienen, die Kooperation zwischen Menschen zu unterstützen und zu verbessern -- nicht sie zu ersetzen.
 
 \subsubsection*{Dank und Würdigung}
 
@@ -13329,7 +13332,7 @@ Der Durchbruch P = NP transformiert nicht nur einzelne Probleme, sondern das ges
 
 Die Reise von der Erkenntnis grundsätzlicher Unlösbarkeit über approximative Kompromisse hin zu exakter polynomieller Lösbarkeit ist in vielerlei Hinsicht exemplarisch für wissenschaftlichen Fortschritt. Was heute unmöglich scheint, kann morgen Routine sein. Was als fundamentale Grenze galt, kann sich als überwindbar erweisen.
 
-Die optimale Gruppenbildung in Multiagentensystemen ist nun keine theoretische Fantasie mehr, sondern eine praktisch erreichbare Realität. Es liegt an uns â€“ Forschern, Entwicklern, Anwendern â€“ diese Möglichkeit verantwortungsvoll zu nutzen und weiterzuentwickeln. Die Werkzeuge sind geschaffen. Nun gilt es, sie weise einzusetzen.
+Die optimale Gruppenbildung in Multiagentensystemen ist nun keine theoretische Fantasie mehr, sondern eine praktisch erreichbare Realität. Es liegt an uns -- Forschern, Entwicklern, Anwendern -- diese Möglichkeit verantwortungsvoll zu nutzen und weiterzuentwickeln. Die Werkzeuge sind geschaffen. Nun gilt es, sie weise einzusetzen.
 
 Die Zukunft der kooperativen künstlichen Intelligenz hat gerade erst begonnen.
 
@@ -13402,7 +13405,7 @@ Die Zukunft der kooperativen künstlichen Intelligenz hat gerade erst begonnen.
 
 \subsection{Was ist ein Signal?}
 
-Stellen Sie sich vor, Sie sitzen in einem Konzert. Die Musik fließt durch den Raum â€“ Schallwellen, die Ihre Ohren erreichen und in elektrische Impulse in Ihrem Gehirn umgewandelt werden. Oder stellen Sie sich vor, Sie fahren mit dem Auto und der Motor läuft. Elektrische Signale steuern die Zündung, die Einspritzung, die Bremsen. Oder denken Sie an Ihr Smartphone â€“ Millionen von Signalen fließen durch die Schaltkreise, um Ihnen Musik, Videos und Nachrichten zu bringen.
+Stellen Sie sich vor, Sie sitzen in einem Konzert. Die Musik fließt durch den Raum -- Schallwellen, die Ihre Ohren erreichen und in elektrische Impulse in Ihrem Gehirn umgewandelt werden. Oder stellen Sie sich vor, Sie fahren mit dem Auto und der Motor läuft. Elektrische Signale steuern die Zündung, die Einspritzung, die Bremsen. Oder denken Sie an Ihr Smartphone -- Millionen von Signalen fließen durch die Schaltkreise, um Ihnen Musik, Videos und Nachrichten zu bringen.
 
 Was haben all diese Beispiele gemeinsam? Sie alle beinhalten \textbf{Signale}.
 
@@ -13466,19 +13469,19 @@ Diese Arbeit stellt eine zentrale Frage: Gibt es ein universelles Signal, das al
 
 \subsection{Die Reise dieser Arbeit}
 
-Diese Arbeit ist eine Reise von der Praxis zur Theorie und zurück. Es wird sehen, wie die e-Funktion überall auftaucht â€“ in Stromkreisen, in biologischen Systemen, in Netzwerken, in der Signalverarbeitung.
+Diese Arbeit ist eine Reise von der Praxis zur Theorie und zurück. Es wird sehen, wie die e-Funktion überall auftaucht -- in Stromkreisen, in biologischen Systemen, in Netzwerken, in der Signalverarbeitung.
 
 Wir beginnen in Kapitel 2 mit dem einfachsten nicht-trivialen dynamischen System: einem RL-Strom\-kreis (Spule und Widerstand). Wenn wir die Differentialgleichung für diesen Stromkreis lösen, erscheint die e-Funktion natürlich. Es wird sehen, wie die Zeitkonstante $\tau = L/R$ die Dynamik bestimmt, und wie die e-Funktion Aufbau und Abbau des Stroms beschreibt. \textbf{Lernziel}: Verstehen, dass die e-Funktion die natürliche Lösung von Differentialgleichungen ist.
 
-Dann wenden wir uns in Kapitel 3 einem biologischen Wunder zu: der Basilarmembran im Ohr. Diese Membran führt eine spektrale Zerlegung durch â€“ sie zerlegt Schallwellen in ihre Frequenzkomponenten. Dies ist eine biologische Fourier-Transformation, die die Natur Millionen Jahre vor der mathematischen Formulierung realisiert hat.
+Dann wenden wir uns in Kapitel 3 einem biologischen Wunder zu: der Basilarmembran im Ohr. Diese Membran führt eine spektrale Zerlegung durch -- sie zerlegt Schallwellen in ihre Frequenzkomponenten. Dies ist eine biologische Fourier-Transformation, die die Natur Millionen Jahre vor der mathematischen Formulierung realisiert hat.
 
-Es wird sehen, wie die e-Funktion auch hier auftaucht â€“ in der exponentiellen Frequenzverteilung. Und es wird das Abtasttheorem aus der Physiologie motivieren: Warum können wir bis 20 kHz hören, aber nicht höher? \textbf{Lernziel}: Verstehen, dass biologische Systeme die gleichen mathematischen Prinzipien wie technische Systeme verwenden.
+Es wird sehen, wie die e-Funktion auch hier auftaucht -- in der exponentiellen Frequenzverteilung. Und es wird das Abtasttheorem aus der Physiologie motivieren: Warum können wir bis 20 kHz hören, aber nicht höher? \textbf{Lernziel}: Verstehen, dass biologische Systeme die gleichen mathematischen Prinzipien wie technische Systeme verwenden.
 
 In Kapitel 4 entwickeln wir dann die mathematische Fourier-Transformation. Dies ist ein mächtiges Werkzeug zur Zerlegung von Signalen in ihre Frequenzkomponenten. Es wird sehen, dass die e-Funktion $e^{i\omega t}$ die Basis dieser Zerlegung ist.
 
 Aber es wird auch die Grenzen der Fourier-Transformation erkennen: Sie ist nicht die beste Wahl für kontinuierliche Signale, weil sie keine Informationen über Wachstum und Zerfall enthält. \textbf{Lernziel}: Verstehen, dass die Fourier-Transformation eine Spezialfall einer allgemeineren Theorie ist.
 
-Dann untersuchen wir in Kapitel 5, wie Signale sich durch Netzwerke ausbreiten. Es wird sehen, dass die Adjazenzmatrix eines Netzwerks ein Signaloperator ist, und dass die Eigenwerte dieser Matrix das Langzeitverhalten bestimmen. Und wieder erscheint die e-Funktion â€“ diesmal als Matrixexponentialfunktion $e^{At}$. \textbf{Lernziel}: Verstehen, dass Netzwerk-Dynamik durch die e-Funktion beschrieben wird.
+Dann untersuchen wir in Kapitel 5, wie Signale sich durch Netzwerke ausbreiten. Es wird sehen, dass die Adjazenzmatrix eines Netzwerks ein Signaloperator ist, und dass die Eigenwerte dieser Matrix das Langzeitverhalten bestimmen. Und wieder erscheint die e-Funktion -- diesmal als Matrixexponentialfunktion $e^{At}$. \textbf{Lernziel}: Verstehen, dass Netzwerk-Dynamik durch die e-Funktion beschrieben wird.
 
 In Kapitel 6 werden wir dann die theoretischen Konzepte durch umfangreiche Experimente validieren. Wir werden sehen, wie die e-Funktion in realen Systemen auftaucht: in RL- und RLC-Stromkreisen, in der Fourier-Analyse von Signalen, in Filterdesign, in der Signalausbreitung durch Netzwerke, und in der biologischen Fourier-Analyse der Basilarmembran. Diese Experimente werden zeigen, dass die Theorie nicht nur mathematisch elegant ist, sondern auch praktisch relevant. \textbf{Lernziel}: Verstehen, dass die theoretischen Konzepte in realen Systemen funktionieren.
 
@@ -13489,7 +13492,7 @@ In Kapitel 7 synthetisieren wir alle Erkenntnisse. Es wird sehen, dass die e-Fun
 	\item[-] Zusammen beschreiben sie alle Aspekte der Dynamik
 \end{itemize}
 
-Es wird auch die Laplace-Transformation kennenlernen â€“ die natürliche Verallgemeinerung der Fourier-Transformation. \textbf{Lernziel}: Verstehen, dass die e-Funktion das universelle Signal ist.
+Es wird auch die Laplace-Transformation kennenlernen -- die natürliche Verallgemeinerung der Fourier-Transformation. \textbf{Lernziel}: Verstehen, dass die e-Funktion das universelle Signal ist.
 
 Dann sehen wir in Kapitel 8, wie die theoretischen Konzepte in der Praxis angewendet werden. Wir entwerfen Filter, modulieren Signale, und implementieren digitale Signalverarbeitung. Es wird sehen, dass die Theorie direkt zu praktischen Werkzeugen führt. \textbf{Lernziel}: Verstehen, dass Theorie und Praxis zusammenhängen.
 
@@ -13593,7 +13596,7 @@ Für den Fall, dass die Spannungsquelle zum Zeitpunkt $t = 0$ eingeschaltet wird
 		L \cdot 0 + R i_{\infty} = U_0 \quad \Rightarrow \quad i_{\infty} = \frac{U_0}{R}
 	\end{align}
 	
-	Dies ist der \textbf{stationäre Strom} â€“ der Strom, der sich für $t \to \infty$ einstellt.
+	Dies ist der \textbf{stationäre Strom} -- der Strom, der sich für $t \to \infty$ einstellt.
 	
 	\textbf{Schritt 3: Allgemeine Lösung}
 	
@@ -13703,7 +13706,7 @@ Für die RL-Schaltung bedeutet dies:
 	L \frac{di}{dt} + R i = 0 \quad \Rightarrow \quad L s + R = 0 \quad \Rightarrow \quad s = -\frac{R}{L}
 \end{align}
 
-Der Eigenwert $s = -R/L$ ist negativ, daher klingt die Lösung ab. Dies entspricht der dissipativen Natur des Widerstands â€“ Energie wird in Wärme umgewandelt.
+Der Eigenwert $s = -R/L$ ist negativ, daher klingt die Lösung ab. Dies entspricht der dissipativen Natur des Widerstands -- Energie wird in Wärme umgewandelt.
 
 \subsection{Verallgemeinerung: Der RLC-Reihenschwingkreis}
 
@@ -13794,7 +13797,7 @@ wobei $C$ und $\phi$ durch die Anfangsbedingungen bestimmt werden.
 		i(t) = e^{-\sigma t} \underbrace{\left(C_1 \cos(\omega_d t)\right)}_{\text{Gerade Funktion von } t} + e^{-\sigma t} \underbrace{\left(C_2 \sin(\omega_d t)\right)}_{\text{Ungerade Funktion von } t}
 	\end{align}
 	
-	Die Dämpfung $e^{-\sigma t}$ moduliert beide Komponenten gleichermaßen â€“ sie ist die \textbf{Einhül\-lende} der Oszillation.
+	Die Dämpfung $e^{-\sigma t}$ moduliert beide Komponenten gleichermaßen -- sie ist die \textbf{Einhül\-lende} der Oszillation.
 	
 	\textbf{Fundamentale Beobachtung}: Die e-Funktion $e^{st}$ mit komplexem $s = \sigma + i\omega$ vereint:
 	\begin{itemize}
@@ -13809,7 +13812,7 @@ wobei $C$ und $\phi$ durch die Anfangsbedingungen bestimmt werden.
 
 \subsection{Die Basilarmembran als biologischer Fourier-Analysator}
 
-Die Basilarmembran im Ohr vollbringt ein Wunder der Natur: Sie transformiert kontinuierliche Schallwellen in diskrete neuronale Impulse. Verschiedene Frequenzen erzeugen maximale Auslenkung an verschiedenen Orten â€“ eine \textbf{biologische Fourier-Transformation}. Dies ist nicht nur eine Metapher, sondern eine echte mathematische Zerlegung, die die Natur viele Jahre vor der Erfindung der Fourier-Analyse realisiert hat.
+Die Basilarmembran im Ohr vollbringt ein Wunder der Natur: Sie transformiert kontinuierliche Schallwellen in diskrete neuronale Impulse. Verschiedene Frequenzen erzeugen maximale Auslenkung an verschiedenen Orten -- eine \textbf{biologische Fourier-Transformation}. Dies ist nicht nur eine Metapher, sondern eine echte mathematische Zerlegung, die die Natur viele Jahre vor der Erfindung der Fourier-Analyse realisiert hat.
 
 \subsubsection{Anatomie und Physiologie}
 
@@ -14184,7 +14187,7 @@ Die Fourier-Transformation ist eines der mächtigsten Werkzeuge der mathematisch
 \begin{beobachtung}[Warum Fourier-Transformation?]
 	Die zentrale Idee ist bestechend einfach: Jedes Signal, egal wie kompliziert, kann als Superposition von harmonischen Schwingungen (Sinuswellen) dargestellt werden. Dies ermöglicht es, komplexe Signale in ihre "Frequenzkomponenten" zu zerlegen und diese unabhängig zu analysieren.
 	
-	Dies ist genau das, was die Basilarmembran biologisch realisiert â€“ eine räumliche Zerlegung nach Frequenzen. Die Fourier-Transformation ist die mathematische Formalisierung dieses Konzepts.
+	Dies ist genau das, was die Basilarmembran biologisch realisiert -- eine räumliche Zerlegung nach Frequenzen. Die Fourier-Transformation ist die mathematische Formalisierung dieses Konzepts.
 \end{beobachtung}
 
 \subsection{Die Fourier-Reihe: Periodische Signale}
@@ -14241,7 +14244,7 @@ Die Fourier-Transformation ist eines der mächtigsten Werkzeuge der mathematisch
 		c_n = \begin{cases} 0 & n \text{ gerade} \\ \frac{4A}{i\pi n} & n \text{ ungerade} \end{cases}
 	\end{align}
 	
-	Die Rechteckwelle enthält also nur ungerade Harmonische! Dies erklärt, warum eine Rechteckwelle "eckig" klingt â€“ sie hat viele hochfrequente Komponenten.
+	Die Rechteckwelle enthält also nur ungerade Harmonische! Dies erklärt, warum eine Rechteckwelle "eckig" klingt -- sie hat viele hochfrequente Komponenten.
 \end{beispiel}
 
 \subsubsection{Zerlegung in gerade und ungerade Komponenten}
@@ -14278,7 +14281,7 @@ Wie geht man vor, wenn das Signal nicht periodisch ist? Die Idee ist, die Period
 		x(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} X(\omega) e^{i\omega t} d\omega \quad \text{(Synthese)}
 	\end{align}
 	
-	Diese beiden Gleichungen sind zueinander invers â€“ sie bilden ein Paar.
+	Diese beiden Gleichungen sind zueinander invers -- sie bilden ein Paar.
 \end{definition}
 
 \subsubsection{Interpretation der Fourier-Transformation}
@@ -14474,11 +14477,11 @@ Ein \textbf{lineares zeitinvariantes (LTI) System} ist ein System, das die Eigen
 
 \subsection{Einleitung: Von Signalen zu Netzwerken}
 
-Bisher haben wir Signale in isolierten Systemen betrachtet: einen RL-Stromkreis, eine Basilarmembran, die Fourier-Transformation. Aber in der realen Welt sind Signale selten isoliert. Sie fließen durch Netzwerke â€“ Stromnetze, Kommunikationsnetzwerke, neuronale Netzwerke, soziale Netzwerke.
+Bisher haben wir Signale in isolierten Systemen betrachtet: einen RL-Stromkreis, eine Basilarmembran, die Fourier-Transformation. Aber in der realen Welt sind Signale selten isoliert. Sie fließen durch Netzwerke -- Stromnetze, Kommunikationsnetzwerke, neuronale Netzwerke, soziale Netzwerke.
 
 Die zentrale Frage dieses Kapitels ist: \textbf{Wie breiten sich Signale durch Netzwerke aus?}
 
-Die Antwort führt zu einer tieferen Einsicht: Die Struktur eines Netzwerks (seine Topologie) bestimmt, wie Signale sich ausbreiten. Und diese Struktur kann durch Matrizen beschrieben werden â€“ speziell durch die \textbf{Adjazenzmatrix}.
+Die Antwort führt zu einer tieferen Einsicht: Die Struktur eines Netzwerks (seine Topologie) bestimmt, wie Signale sich ausbreiten. Und diese Struktur kann durch Matrizen beschrieben werden -- speziell durch die \textbf{Adjazenzmatrix}.
 
 \subsection{Graphentheorie und Signale}
 
@@ -14674,7 +14677,7 @@ Die Antwort führt zu einer tieferen Einsicht: Die Struktur eines Netzwerks (sei
 		A_2 = \begin{pmatrix} 0.8 & 0.5 \\ 0.3 & 0.7 \end{pmatrix}
 	\end{align}
 	
-	Die Eigenwerte sind $\lambda_1 \approx 1.3$ und $\lambda_2 \approx 0.2$. Da $\rho(A_2) = 1.3 > 1$, ist das Netzwerk instabil â€“ Signale wachsen exponentiell.
+	Die Eigenwerte sind $\lambda_1 \approx 1.3$ und $\lambda_2 \approx 0.2$. Da $\rho(A_2) = 1.3 > 1$, ist das Netzwerk instabil -- Signale wachsen exponentiell.
 \end{beispiel}
 
 \subsection{Die Asymmetrie: Sender vs. Empfänger}
@@ -15657,7 +15660,7 @@ Dies ist eine Matrixexponentialfunktion! Die Signalausbreitung wird durch die e-
 		
 		\item[-] \textbf{Basis für alle Zerlegungen}: Jedes Signal kann als Superposition von e-Funktionen dargestellt werden
 		
-		\item[-] \textbf{Natürliche Beschreibung von Dynamik}: Wachstum, Zerfall, Oszillation â€“ alle werden durch die e-Funktion beschrieben
+		\item[-] \textbf{Natürliche Beschreibung von Dynamik}: Wachstum, Zerfall, Oszillation -- alle werden durch die e-Funktion beschrieben
 		
 		\item[-] \textbf{Mathematische Eleganz}: Die e-Funktion hat die einfachste Ableitung: $\frac{d}{dt} e^{st} = s e^{st}$
 	\end{enumerate}
@@ -15723,8 +15726,8 @@ Dies ist eine Matrixexponentialfunktion! Die Signalausbreitung wird durch die e-
 	
 	Diese Zerlegung manifestiert sich in der Signaltheorie als:
 	\begin{itemize}
-		\item[-] \textbf{Gerade Komponente}: $\cosh(x)$, $\cos(\omega t)$, $e^{\sigma t}$ â€“ beschreiben Symmetrie und Struktur
-		\item[-] \textbf{Ungerade Komponente}: $\sinh(x)$, $\sin(\omega t)$, $i e^{\sigma t}$ â€“ beschreiben Asymmetrie und Dynamik
+		\item[-] \textbf{Gerade Komponente}: $\cosh(x)$, $\cos(\omega t)$, $e^{\sigma t}$ -- beschreiben Symmetrie und Struktur
+		\item[-] \textbf{Ungerade Komponente}: $\sinh(x)$, $\sin(\omega t)$, $i e^{\sigma t}$ -- beschreiben Asymmetrie und Dynamik
 	\end{itemize}
 	
 	Diese Dualität ist nicht nur mathematisch elegant, sondern spiegelt eine fundamentale Struktur der Natur wider.
@@ -16113,31 +16116,31 @@ Es wurde eine lange Reise unternommen. Es sei kurz zurückblicken, was wir geler
 
 \subsubsection{Kapitel 1: Einführung}
 
-Es begann mit der Frage: Was ist ein Signal? Wir erkannten, dass Signale überall in der Natur vorkommen â€“ in Stromkreisen, in biologischen Systemen, in Kommunikationsnetzwerken. Und wir stellten die zentrale Aussage auf: Die e-Funktion ist das universelle Signal.
+Es begann mit der Frage: Was ist ein Signal? Wir erkannten, dass Signale überall in der Natur vorkommen -- in Stromkreisen, in biologischen Systemen, in Kommunikationsnetzwerken. Und wir stellten die zentrale Aussage auf: Die e-Funktion ist das universelle Signal.
 
 \subsubsection{Kapitel 2: Der RL-Stromkreis}
 
-Es wurde untersucht das einfachste nicht-triviale dynamische System: einen RL-Stromkreis. Und siehe da â€“ die e-Funktion erschien natürlich als Lösung der Differentialgleichung. Es wurde gesehen, wie die Zeitkonstante $\tau = L/R$ die Dynamik bestimmt, und wie die e-Funktion Wachstum und Zerfall beschreibt.
+Es wurde untersucht das einfachste nicht-triviale dynamische System: einen RL-Stromkreis. Und siehe da -- die e-Funktion erschien natürlich als Lösung der Differentialgleichung. Es wurde gesehen, wie die Zeitkonstante $\tau = L/R$ die Dynamik bestimmt, und wie die e-Funktion Wachstum und Zerfall beschreibt.
 
 \subsubsection{Kapitel 3: Die Basilarmembran}
 
-Es wurde entdeckt ein biologisches Wunder: Die Basilarmembran im Ohr führt eine spektrale Zerlegung durch â€“ eine biologische Fourier-Transformation. Es wurde gesehen, wie die Natur das Abtasttheorem realisiert hat, lange bevor Shannon es mathematisch formulierte. Und wir erkannten, dass die e-Funktion auch hier auftaucht â€“ in der exponentiellen Frequenzverteilung.
+Es wurde entdeckt ein biologisches Wunder: Die Basilarmembran im Ohr führt eine spektrale Zerlegung durch -- eine biologische Fourier-Transformation. Es wurde gesehen, wie die Natur das Abtasttheorem realisiert hat, lange bevor Shannon es mathematisch formulierte. Und wir erkannten, dass die e-Funktion auch hier auftaucht -- in der exponentiellen Frequenzverteilung.
 
 \subsubsection{Kapitel 4: Die Fourier-Transformation}
 
-Es wurde gelernt die mathematische Fourier-Transformation kennen â€“ ein mächtiges Werkzeug zur Zerlegung von Signalen in ihre Frequenzkomponenten. Es wurde gesehen, dass die e-Funktion $e^{i\omega t}$ die Basis dieser Zerlegung ist. Und wir erkannten die Grenzen der Fourier-Transformation: Sie ist nicht die beste Wahl für kontinuierliche Signale.
+Es wurde gelernt die mathematische Fourier-Transformation kennen -- ein mächtiges Werkzeug zur Zerlegung von Signalen in ihre Frequenzkomponenten. Es wurde gesehen, dass die e-Funktion $e^{i\omega t}$ die Basis dieser Zerlegung ist. Und wir erkannten die Grenzen der Fourier-Transformation: Sie ist nicht die beste Wahl für kontinuierliche Signale.
 
 \subsubsection{Kapitel 5: Signalfluss in Netzwerken}
 
-Es wurde untersucht, wie Signale sich durch Netzwerke ausbreiten. Es wurde gesehen, dass die Adjazenzmatrix ein Signaloperator ist, und dass die Eigenwerte dieser Matrix das Langzeitverhalten bestimmen. Und wieder erschien die e-Funktion â€“ diesmal als Matrixexponentialfunktion $e^{At}$.
+Es wurde untersucht, wie Signale sich durch Netzwerke ausbreiten. Es wurde gesehen, dass die Adjazenzmatrix ein Signaloperator ist, und dass die Eigenwerte dieser Matrix das Langzeitverhalten bestimmen. Und wieder erschien die e-Funktion -- diesmal als Matrixexponentialfunktion $e^{At}$.
 
-\subsubsection{Kapitel 6: Experimente â€“ Validierung der Theorie}
+\subsubsection{Kapitel 6: Experimente -- Validierung der Theorie}
 
 Es wurde die Theorie durch umfangreiche Experimente validiert. Wir untersuchten RL- und RLC-Stromkreise und sahen, dass die e-Funktion den Stromverlauf exakt beschreibt. Wir analysierten Signale mit der Fourier-Transformation und sahen, dass die e-Funktion $e^{i\omega t}$ die Basis der Zerlegung ist. Wir entwarfen Filter und sahen, dass die Polpositionen das Verhalten bestimmen. Wir untersuchten Signalausbreitung in Netzwerken und sahen, dass die Matrixexponentialfunktion $e^{At}$ die Dynamik beschreibt. Und wir simulierten die Basilarmembran und sahen, dass die Natur die e-Funktion für Signalverarbeitung nutzt. Diese Experimente zeigten, dass die Theorie nicht nur mathematisch elegant ist, sondern auch praktisch relevant.
 
 \subsubsection{Kapitel 7: Die e-Funktion als universelles Signal}
 
-Es synthetisierte alle Erkenntnisse und erkannten die fundamentale Rolle der e-Funktion. Es wurde gelernt die Laplace-Transformation kennen â€“ die natürliche Verallgemeinerung der Fourier-Transformation. Und es wurde gesehen, dass die e-Funktion in allen Kontexten auftaucht: in Stromkreisen, in biologischen Systemen, in Netzwerken, überall.
+Es synthetisierte alle Erkenntnisse und erkannten die fundamentale Rolle der e-Funktion. Es wurde gelernt die Laplace-Transformation kennen -- die natürliche Verallgemeinerung der Fourier-Transformation. Und es wurde gesehen, dass die e-Funktion in allen Kontexten auftaucht: in Stromkreisen, in biologischen Systemen, in Netzwerken, überall.
 
 \subsubsection{Kapitel 8: Anwendungen und praktische Aspekte}
 
@@ -16179,7 +16182,7 @@ Es wurde gesehen, wie die theoretischen Konzepte in der Praxis angewendet werden
 	
 	wobei $E(x) = \cosh(x)$ die gerade Komponente und $U(x) = \sinh(x)$ die ungerade Komponente ist.
 	
-	Diese Zerlegung ist nicht nur mathematisch interessant â€“ sie spiegelt eine fundamentale Struktur der Natur wider.
+	Diese Zerlegung ist nicht nur mathematisch interessant -- sie spiegelt eine fundamentale Struktur der Natur wider.
 \end{beobachtung}
 
 \subsubsection{Manifestationen in der Signaltheorie}
@@ -16221,7 +16224,7 @@ Es wurde gesehen, wie die theoretischen Konzepte in der Praxis angewendet werden
 		\item[-] \textbf{Ungerade Komponenten}: Beschreiben Asymmetrie, Dynamik, Veränderung
 	\end{itemize}
 	
-	Die e-Funktion vereint beide â€“ sie ist die perfekte Beschreibung von Systemen, die sowohl Struktur als auch Dynamik haben.
+	Die e-Funktion vereint beide -- sie ist die perfekte Beschreibung von Systemen, die sowohl Struktur als auch Dynamik haben.
 \end{beobachtung}
 
 \subsection{Philosophische Implikationen}
@@ -16276,7 +16279,7 @@ Es wurde gesehen, wie die theoretischen Konzepte in der Praxis angewendet werden
 	\begin{align}
 		\frac{dx}{dt} = \lambda x
 	\end{align}
-	Diese Gleichung beschreibt Prozesse mit konstanten Raten â€“ und solche Prozesse sind überall in der Natur zu finden. Wann immer die Änderungsrate proportional zum aktuellen Zustand ist, ist die e-Funktion die Lösung.
+	Diese Gleichung beschreibt Prozesse mit konstanten Raten -- und solche Prozesse sind überall in der Natur zu finden. Wann immer die Änderungsrate proportional zum aktuellen Zustand ist, ist die e-Funktion die Lösung.
 	
 	Ob eine Funktion mit der e-Funktion abgeleitet oder integriert wird, bleibt die e-Funktion erhalten. Daher eignet sich die e-Funktion auch als Lösung für diese einfache Differentialgleichung. Gibt es eine andere Funktion, für die diese außergewöhnliche Eigenschaft gilt? Bisher hat keinen Wissenschaftler eine andere solche gefunden. Es scheint, als würde die e-Funktion sich aufdringen wollen, nie auf sich verzichten zu können. Die e-Funktion reproduziert sich dabei nur deshalb selber, weil sie in seiner Reihendarstellung unendlich viele Glieder hat und die Ableitung der einzelnen Glieder wieder die e-Funktion ergibt. Das ist aber nur deshalb der Fall, da es unendlich viele Glieder in der Reihendarstellung der e-Funktion gibt. Genau genommen wurde bei der Ableitung gelogen, denn ein Glied in der Reihendarstellung der e-Funktion ist mit der Ableitung links weggefallen. In der Praxis aber funktioniert die Anwendung der e-Funktion über Ableitungen und Integrale hinweg so gut, dass diese Lüge akzeptabel ist und bisher unter keinen Umständen aufgefallen ist.
 	
@@ -16314,7 +16317,7 @@ Es wurde gesehen, wie die theoretischen Konzepte in der Praxis angewendet werden
 		e^x = E(x) + U(x) = \cosh(x) + \sinh(x)
 	\end{align}
 	
-	In dieser Arbeit haben wir gesehen, dass diese Zerlegung überall in der Signaltheorie auftaucht. Die Exponentialreihe ist nicht nur eine mathematische Kuriosität â€“ sie ist die Grundlage der Signaltheorie!
+	In dieser Arbeit haben wir gesehen, dass diese Zerlegung überall in der Signaltheorie auftaucht. Die Exponentialreihe ist nicht nur eine mathematische Kuriosität -- sie ist die Grundlage der Signaltheorie!
 \end{beobachtung}
 
 \subsubsection{Die Systemmatrizen}
@@ -16327,7 +16330,7 @@ Es wurde gesehen, wie die theoretischen Konzepte in der Praxis angewendet werden
 		\item[-] \textbf{Spektralzerlegung}: Ermöglicht die Analyse komplexer Systeme
 	\end{itemize}
 	
-	Die Systemmatrizen sind nicht nur abstrakte mathematische Objekte â€“ sie sind die Sprache der Signaltheorie!
+	Die Systemmatrizen sind nicht nur abstrakte mathematische Objekte -- sie sind die Sprache der Signaltheorie!
 \end{beobachtung}
 
 \subsection{Ausblick: Zukünftige Entwicklungen}
@@ -16390,11 +16393,11 @@ Es wurde gesehen, wie die theoretischen Konzepte in der Praxis angewendet werden
 \end{satz}
 
 \begin{beobachtung}[Mathematische Eleganz]
-	Eine der schönsten Aspekte dieser Arbeit ist die mathematische Eleganz. Ein einfaches Konzept â€“ die e-Funktion â€“ erklärt so viel: Stromkreise, Biologische Systeme, Signalverarbeitung, Netzwerke und vieles mehr.
+	Eine der schönsten Aspekte dieser Arbeit ist die mathematische Eleganz. Ein einfaches Konzept -- die e-Funktion -- erklärt so viel: Stromkreise, Biologische Systeme, Signalverarbeitung, Netzwerke und vieles mehr.
 \end{beobachtung}
 
 \begin{beobachtung}[Fundamentale Einheit]
-	Diese Arbeit zeigt auch die fundamentale Einheit der Natur. Obwohl Stromkreise, biologische Systeme und Netzwerke sehr unterschiedlich sind, werden sie alle durch die gleiche mathematische Struktur beschrieben â€“ die e-Funktion.
+	Diese Arbeit zeigt auch die fundamentale Einheit der Natur. Obwohl Stromkreise, biologische Systeme und Netzwerke sehr unterschiedlich sind, werden sie alle durch die gleiche mathematische Struktur beschrieben -- die e-Funktion.
 	
 	Dies ist ein tiefes Zeichen dafür, dass die Natur nach einfachen Prinzipien funktioniert.
 \end{beobachtung}
@@ -16972,7 +16975,7 @@ Dieses Kapitel widmet sich dieser Asymmetrie. Es wird zeigen, warum Ableitungen 
 		\item[-] Basis für Stabilität: $\text{Re}(s) < 0$
 	\end{itemize}
 	
-	Die e-Funktion ist nicht verschwunden â€“ sie hat nur ihre Form geändert. Sie ist vom expliziten Werkzeug (Transformation) zum impliziten Fundament (Systemverhalten) geworden.
+	Die e-Funktion ist nicht verschwunden -- sie hat nur ihre Form geändert. Sie ist vom expliziten Werkzeug (Transformation) zum impliziten Fundament (Systemverhalten) geworden.
 \end{beobachtung}
 
 \subsection{Membran und Abtastrate: Das biologische Vorbild}
@@ -17029,7 +17032,7 @@ Dieses Kapitel widmet sich dieser Asymmetrie. Es wird zeigen, warum Ableitungen 
 		h[n] = \alpha (1 - \alpha)^n
 	\end{align}
 	
-	Dies ist eine exponentielle Abklingfunktion â€“ wieder die e-Funktion!
+	Dies ist eine exponentielle Abklingfunktion -- wieder die e-Funktion!
 \end{beispiel}
 
 \begin{beispiel}[Least Mean Squares (LMS) Filter]
@@ -17087,7 +17090,7 @@ Dieses Kapitel widmet sich dieser Asymmetrie. Es wird zeigen, warum Ableitungen 
 		\item[-] \textbf{Stabilität}: Wird immer noch durch die Pole bestimmt (die Eigenwerte der e-Funktion)
 	\end{itemize}
 	
-	Die e-Funktion ist nicht verschwunden â€“ sie ist nur in den Hintergrund getreten. Sie ist immer noch die fundamentale Struktur, die alles bestimmt.
+	Die e-Funktion ist nicht verschwunden -- sie ist nur in den Hintergrund getreten. Sie ist immer noch die fundamentale Struktur, die alles bestimmt.
 \end{beobachtung}
 
 \subsection{Zusammenfassung: Warum Ableitungen statt Integrale}
@@ -17118,7 +17121,7 @@ Dieses Kapitel widmet sich dieser Asymmetrie. Es wird zeigen, warum Ableitungen 
 
 \begin{beobachtung}[Die Natur als Vorbild]
 	
-	Die Basilarmembran zeigt, dass die Natur schon lange den Zeitbereich bevorzugt. Sie arbeitet direkt mit kontinuierlichen Signalen, führt eine räumliche Abtastung durch, und konvertiert dann in neuronale Impulse. Keine Fourier-Transformation, keine Laplace-Transformation â€“ nur direkte Zeitbereichsanalyse.
+	Die Basilarmembran zeigt, dass die Natur schon lange den Zeitbereich bevorzugt. Sie arbeitet direkt mit kontinuierlichen Signalen, führt eine räumliche Abtastung durch, und konvertiert dann in neuronale Impulse. Keine Fourier-Transformation, keine Laplace-Transformation -- nur direkte Zeitbereichsanalyse.
 	
 	Die moderne Signalverarbeitung folgt diesem biologischen Vorbild: Wir digitalisieren das Signal (Abtastung), arbeiten direkt im Zeitbereich mit Differenzengleichungen, und verwenden adaptive Algorithmen, um uns an sich ändernde Signale anzupassen.
 \end{beobachtung}
@@ -20134,7 +20137,7 @@ Aus früheren Arbeiten über dynamische Systeme \cite{systemth,umlp} wissen wir,
 \[
 E(t) = E_0 \cdot e^{-\alpha t}
 \]
-wobei $\alpha > 0$ die Abklingrate bestimmt. Systeme mit dieser Eigenschaft kehren nach Auslenkung aus der Ruhelage wieder in diese zurück â€“ ein Verhalten, das uns Menschen vertraut und beruhigend erscheint.
+wobei $\alpha > 0$ die Abklingrate bestimmt. Systeme mit dieser Eigenschaft kehren nach Auslenkung aus der Ruhelage wieder in diese zurück -- ein Verhalten, das uns Menschen vertraut und beruhigend erscheint.
 
 \begin{beobachtung}[Goldener Schnitt als optimaler Exponent]
 	Bei der Untersuchung von Systemen, die am ehesten im Schwerpunkt arbeiten, zeigt sich experimentell und theoretisch, dass die Energiefunktion optimal durch den Exponenten $\phi = 1{,}618...$ charakterisiert wird:
@@ -20346,7 +20349,7 @@ Nullsetzen ergibt:
 
 Die obige Rechnung gibt den allgemeinen Zusammenhang. Die besondere Rolle des goldenen Schnitts ergibt sich aus einer zusätzlichen Bedingung für schwerpunktorientierte Systeme.
 
-Betrachten wir die Energiebilanz im Schwerpunktsystem. Für ein System mit zwei charakteristischen Zeitskalen â€“ einer für die schnelle Relaxation der Relativbewegung ($\tau_{\text{fast}}$) und einer für die langsame Gesamtdissipation ($\tau_{\text{slow}}$) â€“ fordern wir optimale Balancierung:
+Betrachten wir die Energiebilanz im Schwerpunktsystem. Für ein System mit zwei charakteristischen Zeitskalen -- einer für die schnelle Relaxation der Relativbewegung ($\tau_{\text{fast}}$) und einer für die langsame Gesamtdissipation ($\tau_{\text{slow}}$) -- fordern wir optimale Balancierung:
 
 \begin{definition}[Zeitskalen-Balancierung]
 	Ein schwerpunktorientiertes System ist optimal balanciert, wenn:
@@ -20600,7 +20603,7 @@ wobei $U_{\infty}$ die Gleichgewichtsenergie (Umgebungstemperatur) ist. Die Lös
 U(t) - U_{\infty} = (U_0 - U_{\infty}) e^{-\alpha t}
 \]
 
-Für ein schwerpunktorientiertes thermodynamisches System â€“ etwa ein Körper mit räumlich verteilter Temperatur, dessen Massenschwerpunkt auch der Schwerpunkt der Wärmeverteilung ist â€“ sollte:
+Für ein schwerpunktorientiertes thermodynamisches System -- etwa ein Körper mit räumlich verteilter Temperatur, dessen Massenschwerpunkt auch der Schwerpunkt der Wärmeverteilung ist -- sollte:
 \[
 \alpha = \ln \phi
 \]
@@ -21283,7 +21286,7 @@ Seit der Antike wird der goldene Schnitt als "göttliche Proportion" angesehen. 
 
 Die experimentellen Befunde zeigen jedoch auch, dass diese Verbindung subtiler ist als zunächst angenommen: $\phi$ ist nicht universell optimal, sondern unter spezifischen Bedingungen. Dies wirft die Frage auf: Unter welchen Bedingungen strebt die Natur nach $\phi$-Verhältnissen, und wann wählt sie andere Organisationsprinzipien?
 
-Die Antwort könnte in der Balance zwischen verschiedenen Optimierungszielen liegen: Energieeffizienz, Stabilität, Robustheit, Anpassungsfähigkeit. $\phi$ könnte ein Kompromiss sein, der mehrere dieser Ziele gleichzeitig optimiert â€“ ein Pareto-Optimum im Raum der Systemparameter.
+Die Antwort könnte in der Balance zwischen verschiedenen Optimierungszielen liegen: Energieeffizienz, Stabilität, Robustheit, Anpassungsfähigkeit. $\phi$ könnte ein Kompromiss sein, der mehrere dieser Ziele gleichzeitig optimiert -- ein Pareto-Optimum im Raum der Systemparameter.
 
 \subsection{Ausblick}
 
@@ -21327,15 +21330,15 @@ Zukünftige Forschung sollte folgende Richtungen verfolgen:
 
 \subsection{Schlussfolgerung}
 
-Diese Arbeit hat gezeigt, dass der goldene Schnitt $\phi$ eine fundamentale Rolle in der Dynamik energiedissipierender Systeme spielen kann â€“ allerdings unter spezifischeren Bedingungen als zunächst hypothetisiert. Die theoretische Herleitung etabliert $\phi$ als Lösung eines Variationsproblems, die experimentelle Validierung zeigt sowohl Bestätigung (lokales Maximum, $\phi^2$-Relation in Kaskaden) als auch Nuancierung (Zwei-Skalen-Struktur für $n > 2$).
+Diese Arbeit hat gezeigt, dass der goldene Schnitt $\phi$ eine fundamentale Rolle in der Dynamik energiedissipierender Systeme spielen kann -- allerdings unter spezifischeren Bedingungen als zunächst hypothetisiert. Die theoretische Herleitung etabliert $\phi$ als Lösung eines Variationsproblems, die experimentelle Validierung zeigt sowohl Bestätigung (lokales Maximum, $\phi^2$-Relation in Kaskaden) als auch Nuancierung (Zwei-Skalen-Struktur für $n > 2$).
 
-Diese Verbindung zwischen mathematischer Schönheit und physikalischer Funktionalität ist bemerkenswert. Sie erinnert uns daran, dass die Natur nach Prinzipien organisiert ist, die sowohl mathematisch elegant als auch â€“ unter geeigneten Bedingungen â€“ funktional vorteilhaft sind. Der goldene Schnitt ist ein solches Prinzip, dessen genaue Anwendbarkeit jedoch von den spezifischen Systemeigenschaften und Optimierungszielen abhängt.
+Diese Verbindung zwischen mathematischer Schönheit und physikalischer Funktionalität ist bemerkenswert. Sie erinnert uns daran, dass die Natur nach Prinzipien organisiert ist, die sowohl mathematisch elegant als auch -- unter geeigneten Bedingungen -- funktional vorteilhaft sind. Der goldene Schnitt ist ein solches Prinzip, dessen genaue Anwendbarkeit jedoch von den spezifischen Systemeigenschaften und Optimierungszielen abhängt.
 
-Die Arbeit öffnet mehr Fragen als sie beantwortet â€“ und genau darin liegt ihr wissenschaftlicher Wert. Sie etabliert ein neues Forschungsfeld an der Schnittstelle von Zahlentheorie, Dynamik, Optimierung und Physik. Die experimentellen Befunde zeigen, dass die Realität komplexer ist als die ursprüngliche Hypothese, was zu verfeinerten theoretischen Modellen führt.
+Die Arbeit öffnet mehr Fragen als sie beantwortet -- und genau darin liegt ihr wissenschaftlicher Wert. Sie etabliert ein neues Forschungsfeld an der Schnittstelle von Zahlentheorie, Dynamik, Optimierung und Physik. Die experimentellen Befunde zeigen, dass die Realität komplexer ist als die ursprüngliche Hypothese, was zu verfeinerten theoretischen Modellen führt.
 
-\textit{Im Schwerpunkt zu ruhen und dabei nach dem goldenen Verhältnis zu dissipieren â€“ das ist eine Möglichkeit, wie stabile Systeme ihre Energie verteilen können. Ob und wann die Natur diesen Weg wählt, ist eine empirische Frage, die weitere Forschung erfordert.}
+\textit{Im Schwerpunkt zu ruhen und dabei nach dem goldenen Verhältnis zu dissipieren -- das ist eine Möglichkeit, wie stabile Systeme ihre Energie verteilen können. Ob und wann die Natur diesen Weg wählt, ist eine empirische Frage, die weitere Forschung erfordert.}
 
-Die vorliegende Arbeit liefert die theoretischen Grundlagen, die numerischen Werkzeuge und die experimentellen Protokolle, um diese Frage systematisch zu untersuchen. Sie zeigt sowohl die Schönheit als auch die Grenzen mathematischer Prinzipien in der Naturbeschreibung â€“ und motiviert damit zu vertiefter Forschung.
+Die vorliegende Arbeit liefert die theoretischen Grundlagen, die numerischen Werkzeuge und die experimentellen Protokolle, um diese Frage systematisch zu untersuchen. Sie zeigt sowohl die Schönheit als auch die Grenzen mathematischer Prinzipien in der Naturbeschreibung -- und motiviert damit zu vertiefter Forschung.
 
 \begin{thebibliography}{99}
 	
@@ -21420,7 +21423,7 @@ Diese Unterscheidung ist nicht nur mathematisch relevant, sondern hat praktische
 \begin{enumerate}
 	\item[-] \textbf{Experiment 1} demonstriert, dass Little's Law in stabilen Systemen ($\rho = 0.7$) gilt, aber \textit{nicht} deren Stabilität beweist, während es in instabilen Systemen ($\rho = 1.2$) überhaupt nicht anwendbar ist.
 	
-	\item[-] \textbf{Experiment 2} zeigt den exponentiellen Zerfall in einer 2-Zustands-Markov-Kette mit Zerfallsrate $\alpha = 1.204$, der die Konvergenz gemäß $e^{-1.204t}$ folgt â€“ eine direkte Manifestation der Exponentialfunktionen, die in Kapitel 3 als charakteristisch für Stabilität identifiziert wurden.
+	\item[-] \textbf{Experiment 2} zeigt den exponentiellen Zerfall in einer 2-Zustands-Markov-Kette mit Zerfallsrate $\alpha = 1.204$, der die Konvergenz gemäß $e^{-1.204t}$ folgt -- eine direkte Manifestation der Exponentialfunktionen, die in Kapitel 3 als charakteristisch für Stabilität identifiziert wurden.
 	
 	\item[-] \textbf{Experiment 3} verifiziert die Hierarchie der Beschreibungsebenen: Die dynamische Ebene enthält Exponentialfunktionen und ermöglicht Stabilitätsanalyse; die stationäre Ebene setzt Stabilität voraus; die algebraische Ebene (Little's Law) enthält keine Exponentialfunktionen und liefert keine Stabilitätsinformation.
 \end{enumerate}
@@ -22873,14 +22876,14 @@ Diese Arbeit präsentierte einen modellgetriebenen Ansatz zur Code-Generierung m
 Kapitel 8 präsentierte eine umfassende experimentelle Validierung aller theoretischen Aussagen:
 
 \begin{enumerate}
-	\item[-] \textbf{Experiment 1 â€“ Little's Law ist kein Stabilitätskriterium}:
+	\item[-] \textbf{Experiment 1 -- Little's Law ist kein Stabilitätskriterium}:
 	\begin{itemize}
 		\item[-] Stabiles System ($\lambda = 0.7, \mu = 1.0, \rho = 0.7$): Little's Law gilt ($L = 2.333 = \lambda W$), beweist aber \textit{nicht} Stabilität
 		\item[-] Instabiles System ($\lambda = 1.2, \mu = 1.0, \rho = 1.2$): Little's Law nicht anwendbar (kein Gleichgewicht)
 		\item[-] \textbf{Konsequenz}: Bestätigt, dass $L = \lambda W$ eine Gleichgewichtsrelation ist, kein Stabilitätskriterium
 	\end{itemize}
 	
-	\item[-] \textbf{Experiment 2 â€“ Exponentieller Zerfall in stabilen Systemen}:
+	\item[-] \textbf{Experiment 2 -- Exponentieller Zerfall in stabilen Systemen}:
 	\begin{itemize}
 		\item[-] 2-Zustands-Markov-Kette mit Eigenwerten $\lambda_1 = 1.0$, $\lambda_2 = 0.3$
 		\item[-] Zerfallsrate $\alpha = -\ln(0.3) = 1.204$
@@ -22888,7 +22891,7 @@ Kapitel 8 präsentierte eine umfassende experimentelle Validierung aller theoret
 		\item[-] \textbf{Konsequenz}: Experimenteller Nachweis, dass Exponentialfunktionen charakteristisch für Stabilität sind
 	\end{itemize}
 	
-	\item[-] \textbf{Experiment 3 â€“ Hierarchie der Beschreibungsebenen}:
+	\item[-] \textbf{Experiment 3 -- Hierarchie der Beschreibungsebenen}:
 	\begin{itemize}
 		\item[-] Ebene 1 (Dynamisch): Enthält Exponentialfunktionen, ermöglicht Stabilitätsanalyse
 		\item[-] Ebene 2 (Stationär): Setzt Stabilität voraus, geometrische Verteilung $\pi_n = (1-\rho)\rho^n$
@@ -22910,10 +22913,10 @@ Kapitel 8 präsentierte eine umfassende experimentelle Validierung aller theoret
 Die Arbeit demonstriert erfolgreich, wie theoretische Einsichten in die Natur von Systembeschreibungen (Kapitel 3) in praktische Werkzeuge für die Softwareentwicklung überführt (Kapitel 4-7) und durch rigorose experimentelle Methodik validiert (Kapitel 8) werden können. Die Integration von MARTE-inspirierten Zeit-Annotationen, Markov-Ketten und Warteschlangentheorie ermöglicht eine \textit{Quantitative Analysis of Software Designs} bereits in frühen Entwicklungsphasen, wobei klar zwischen verschiedenen Analyseebenen unterschieden wird:
 
 \begin{itemize}
-	\item[-] \textbf{Stabilitätsanalyse}: Basierend auf Eigenwertanalyse der Markov-Ketten (enthält Exponentialfunktionen) â€“ experimentell validiert durch Experiment 2
-	\item[-] \textbf{Performance-Analyse im Gleichgewicht}: Basierend auf Little's Law und verwandten Metriken (algebraisch, setzt Stabilität voraus) â€“ experimentell validiert durch Experiment 1
-	\item[-] \textbf{Code-Generierung}: Transformation von UML-Modellen mit Zeit-Annotationen in ausführbaren Code â€“ validiert durch 97\% Test-Coverage
-	\item[-] \textbf{Hierarchie der Beschreibungen}: Dynamisch â†’ Stationär â†’ Algebraisch â€“ experimentell validiert durch Experiment 3
+	\item[-] \textbf{Stabilitätsanalyse}: Basierend auf Eigenwertanalyse der Markov-Ketten (enthält Exponentialfunktionen) -- experimentell validiert durch Experiment 2
+	\item[-] \textbf{Performance-Analyse im Gleichgewicht}: Basierend auf Little's Law und verwandten Metriken (algebraisch, setzt Stabilität voraus) -- experimentell validiert durch Experiment 1
+	\item[-] \textbf{Code-Generierung}: Transformation von UML-Modellen mit Zeit-Annotationen in ausführbaren Code -- validiert durch 97\% Test-Coverage
+	\item[-] \textbf{Hierarchie der Beschreibungen}: Dynamisch â†’ Stationär â†’ Algebraisch -- experimentell validiert durch Experiment 3
 \end{itemize}
 
 Diese klare Trennung, sowohl theoretisch fundiert als auch experimentell bestätigt, verbessert die Vorhersagbarkeit und Zuverlässigkeit eingebetteter Echtzeitsysteme signifikant.
@@ -22943,15 +22946,15 @@ Die Arbeit adressierte implizit mehrere fundamentale Fragen, deren Beantwortung 
 \begin{enumerate}
 	\item[-] \textit{Wo ist die Energie des Systems?} 
 	
-	Bei physikalischen Systemen manifestiert sich Energie in Lyapunov-Funktionen, die das Abklingverhalten beschreiben â€“ experimentell demonstriert durch den exponentiellen Zerfall $e^{-1.204t}$ in Experiment 2. Bei informatischen Systemen auf höheren Abstraktionsebenen gibt es keine direkte Energie, aber analoge Konzepte (z.B. ``Fortschritt'' in Algorithmen, ``Korrektheit'' als Invariante).
+	Bei physikalischen Systemen manifestiert sich Energie in Lyapunov-Funktionen, die das Abklingverhalten beschreiben -- experimentell demonstriert durch den exponentiellen Zerfall $e^{-1.204t}$ in Experiment 2. Bei informatischen Systemen auf höheren Abstraktionsebenen gibt es keine direkte Energie, aber analoge Konzepte (z.B. ``Fortschritt'' in Algorithmen, ``Korrektheit'' als Invariante).
 	
 	\item[-] \textit{Mit was soll das System beschrieben werden?}
 	
-	Die Wahl hängt von der Fragestellung ab: Stabilitätsfragen erfordern dynamische Beschreibungen (Differentialgleichungen) â€“ validiert durch Experiment 2; Perfor\-mance-Fragen im Gleichgewicht können algebraisch behandelt werden â€“ validiert durch Experiment 1; funktionale Korrektheit erfordert logische Formalismen. Die Hierarchie (Experiment 3) zeigt die Übergänge zwischen diesen Ebenen.
+	Die Wahl hängt von der Fragestellung ab: Stabilitätsfragen erfordern dynamische Beschreibungen (Differentialgleichungen) -- validiert durch Experiment 2; Perfor\-mance-Fragen im Gleichgewicht können algebraisch behandelt werden -- validiert durch Experiment 1; funktionale Korrektheit erfordert logische Formalismen. Die Hierarchie (Experiment 3) zeigt die Übergänge zwischen diesen Ebenen.
 	
 	\item[-] \textit{Hat das System Energie oder nicht?}
 	
-	Alle physikalisch realisierten Systeme haben Energie. Die Frage ist, ob eine Beschreibung auf der Energieebene für die gegebene Fragestellung notwendig und angemessen ist. UML-Profile ermöglichen es, zwischen Ebenen zu wechseln â€“ praktisch demonstriert durch das \texttt{stability\_analysis} Modul, das sowohl dynamische (Markov) als auch algebraische (Little's Law) Analysen unterstützt.
+	Alle physikalisch realisierten Systeme haben Energie. Die Frage ist, ob eine Beschreibung auf der Energieebene für die gegebene Fragestellung notwendig und angemessen ist. UML-Profile ermöglichen es, zwischen Ebenen zu wechseln -- praktisch demonstriert durch das \texttt{stability\_analysis} Modul, das sowohl dynamische (Markov) als auch algebraische (Little's Law) Analysen unterstützt.
 \end{enumerate}
 
 \subsection{Experimentelle Validierung als methodischer Beitrag}
@@ -22983,7 +22986,7 @@ Die Arbeit eröffnet mehrere vielversprechende Forschungsrichtungen, die sich au
 	
 	\item[-] \textbf{Erweiterte Warteschlangen-Modelle}: M/G/k, Prioritätswarteschlangen mit systematischer Analyse der Rolle von Exponentialfunktionen (oder deren Fehlen) in den Lösungen, inklusive automatisierter Tests
 	
-	\item[-] \textbf{Semi-Markov-Prozesse}: Nicht-exponentielle Verweilzeiten und Untersuchung, wie Stabilitätskriterien ohne die Eigenschaft der Gedächtnislosigkeit formuliert werden können â€“ mit experimenteller Validierung
+	\item[-] \textbf{Semi-Markov-Prozesse}: Nicht-exponentielle Verweilzeiten und Untersuchung, wie Stabilitätskriterien ohne die Eigenschaft der Gedächtnislosigkeit formuliert werden können -- mit experimenteller Validierung
 	
 	\item[-] \textbf{Template-Erweiterung}: Integration für flexiblere Code-Muster unter Beibehaltung der Trennbarkeit von Stabilitäts- und Gleichgewichtsanalysen
 	
@@ -23001,13 +23004,13 @@ Die Arbeit eröffnet mehrere vielversprechende Forschungsrichtungen, die sich au
 	
 	\item[-] \textbf{RTOS-Integration}: FreeRTOS, Zephyr Support mit Scheduling-Analyse auf Basis der theoretischen Einsichten zu Energiefunktionen
 	
-	\item[-] \textbf{Hybride Systeme}: Untersuchung von Systemen, die kontinuierliche (Differentialgleichungen) und diskrete (Zustandsautomaten) Dynamik kombinieren, und wie die Dichotomie zwischen Gleichgewicht und Stabilität sich in diesem Kontext manifestiert â€“ mit experimenteller Validierung
+	\item[-] \textbf{Hybride Systeme}: Untersuchung von Systemen, die kontinuierliche (Differentialgleichungen) und diskrete (Zustandsautomaten) Dynamik kombinieren, und wie die Dichotomie zwischen Gleichgewicht und Stabilität sich in diesem Kontext manifestiert -- mit experimenteller Validierung
 \end{itemize}
 
 \subsubsection{Langfristig: Fundamentale Forschungsfragen}
 
 \begin{itemize}
-	\item[-] \textbf{Machine Learning}: Lernende Performance-Modelle aus Laufzeitdaten mit der Frage, ob datengetriebene Ansätze die theoretischen Einsichten über Exponentialfunktionen und Stabilität reproduzieren können â€“ experimentell zu validieren durch Vergleich mit analytischen Modellen
+	\item[-] \textbf{Machine Learning}: Lernende Performance-Modelle aus Laufzeitdaten mit der Frage, ob datengetriebene Ansätze die theoretischen Einsichten über Exponentialfunktionen und Stabilität reproduzieren können -- experimentell zu validieren durch Vergleich mit analytischen Modellen
 	
 	\item[-] \textbf{Formale Verifikation}: Model Checking für Timing-Properties und Integration mit Lyapunov-basierten Stabilitätsnachweisen
 	
@@ -23024,7 +23027,7 @@ Die Arbeit eröffnet mehrere vielversprechende Forschungsrichtungen, die sich au
 
 \subsection{Fazit}
 
-Diese Arbeit demonstriert, dass die Kombination von rigoroser mathematischer Theorie, praktischer Softwareentwicklung und systematischer experimenteller Validierung zu tieferen Einsichten und besseren Werkzeugen führt. Die zentrale theoretische Erkenntnis â€“ dass Stabilitätskriterien notwendigerweise Exponentialfunktionen mit negativen Exponenten erfordern, während Gleichgewichtsbeziehungen wie Little's Law diese nicht enthalten â€“ wurde in Kapitel 3 formal bewiesen und in Kapitel 8 durch drei Kernexperimente empirisch bestätigt.
+Diese Arbeit demonstriert, dass die Kombination von rigoroser mathematischer Theorie, praktischer Softwareentwicklung und systematischer experimenteller Validierung zu tieferen Einsichten und besseren Werkzeugen führt. Die zentrale theoretische Erkenntnis -- dass Stabilitätskriterien notwendigerweise Exponentialfunktionen mit negativen Exponenten erfordern, während Gleichgewichtsbeziehungen wie Little's Law diese nicht enthalten -- wurde in Kapitel 3 formal bewiesen und in Kapitel 8 durch drei Kernexperimente empirisch bestätigt.
 
 Praktisch zeigt die Arbeit, wie diese Einsichten in ein funktionierendes System zur automatischen Code-Generierung und quantitativen Analyse integriert werden können. Das UML-Profil-Framework, der zweistufige Transformationsprozess, die Integration von Markov-Ketten und Warteschlangentheorie, und besonders die vollständige Implementierung im \texttt{stability\_analysis} Modul bieten einen leistungsfähigen Ansatz für die Entwicklung performanter und zuverlässiger Echtzeitsysteme.
 
@@ -23034,7 +23037,7 @@ Die automatische Code-Generierung mit eingebetteten Timing-Checks, die klare Unt
 
 Über die unmittelbaren praktischen Ergebnisse hinaus leistet die Arbeit einen methodischen Beitrag zur Grundlagenforschung: Sie zeigt exemplarisch, wie theoretische Aussagen durch systematische experimentelle Validierung überprüft werden können. Die Experimente demonstrieren konkret, wie die Form der Mathematik (Vorhandensein oder Fehlen von Exponentialfunktionen) den Inhalt der Aussagen (Stabilität oder nur Gleichgewicht) begrenzt.
 
-Diese dreigliedrige Methodik â€“ theoretische Fundierung (Kapitel 3), praktische Implementierung (Kapitel 4-7), experimentelle Validierung (Kapitel 8) â€“ ist ein Beispiel für die fruchtbare Wechselwirkung zwischen mathematischer Theorie, ingenieurwissenschaftlicher Praxis und empirischer Wissenschaft.
+Diese dreigliedrige Methodik -- theoretische Fundierung (Kapitel 3), praktische Implementierung (Kapitel 4-7), experimentelle Validierung (Kapitel 8) -- ist ein Beispiel für die fruchtbare Wechselwirkung zwischen mathematischer Theorie, ingenieurwissenschaftlicher Praxis und empirischer Wissenschaft.
 
 Zukünftige Arbeiten können auf dieser Grundlage aufbauen, indem sie:
 \begin{itemize}
@@ -23045,7 +23048,7 @@ Zukünftige Arbeiten können auf dieser Grundlage aufbauen, indem sie:
 	\item[-] Benchmark-Suites für quantitative Systemanalyse-Werkzeuge entwickeln
 \end{itemize}
 
-Die Integration von modellgetriebener Entwicklung, MARTE-inspirierten Zeit-Anno\-tationen, quantitativer Analyse (Markov-Ketten, Warteschlangentheorie), theoretischer Fundierung (Lyapunov-Theorie, Stabilitätsanalyse) und systematischer experimenteller Validierung bietet einen vielversprechenden Weg für die Zukunft der Echtzeitsystementwicklung â€“ einen Weg, der sowohl praktisch wirksam als auch theoretisch fundiert und empirisch validiert ist.
+Die Integration von modellgetriebener Entwicklung, MARTE-inspirierten Zeit-Anno\-tationen, quantitativer Analyse (Markov-Ketten, Warteschlangentheorie), theoretischer Fundierung (Lyapunov-Theorie, Stabilitätsanalyse) und systematischer experimenteller Validierung bietet einen vielversprechenden Weg für die Zukunft der Echtzeitsystementwicklung -- einen Weg, der sowohl praktisch wirksam als auch theoretisch fundiert und empirisch validiert ist.
 
 \begin{thebibliography}{99}
 	
@@ -23213,7 +23216,7 @@ Der Einheitskreis ist ein Kreis mit Radius $1$. Ein Punkt auf dem Kreis wird dur
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=1.2]{sine.pdf}
+	\includegraphics[scale=0.8]{sine.pdf}
 	\caption{Einheitskreis für Sinus und Cosinus}
 	\label{fig:sine}
 \end{figure}
@@ -23226,7 +23229,7 @@ Die Funktion $\text{sind}(\alpha)$ für $\alpha \in [0, 360]$ Grad beschreibt ei
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=1.2]{sine-wave.pdf}
+	\includegraphics[scale=0.8]{sine-wave.pdf}
 	\caption{Sinusschwingung}
 	\label{fig:sine-wave}
 \end{figure}
@@ -23595,7 +23598,7 @@ Die Lehre aus dieser Diskussion ist, dass die Mathematik flexibel sein muss. Es 
 \chapter{Optimales Spiralbohrverfahren}
 
 \section{Einleitung}
-Diese Arbeit untersucht das Spiralbohrverfahren, bei dem von einem zentralen Startpunkt aus spiralförmig nach außen gebohrt wird. Durch empirische Versuche in Holz und Metall wurde ein optimaler Durchmesserfaktor von 2,33 identifiziert, der das Verhältnis zwischen Bohrerdurchmesser und maximalem Bohrkreisdurchmesser beschreibt. Darüber hinaus zeigt sich, dass eine logarithmische Spiralbewegung â€“ bei der von innen nach außen zunächst schnell und dann immer langsamer gebohrt wird, analog zur Anordnung der Kerne in einer Sonnenblume â€“ deutlich bessere Ergebnisse liefert als eine gleichförmige Spirale. Die vorliegende Arbeit liefert eine mathematisch-physikalische Herleitung dieser empirisch ermittelten Faktoren und zeigt, dass diese Werte ein Optimum zwischen Materialabtragsrate, Werkzeugbelastung und Prozesseffizienz darstellen.
+Diese Arbeit untersucht das Spiralbohrverfahren, bei dem von einem zentralen Startpunkt aus spiralförmig nach außen gebohrt wird. Durch empirische Versuche in Holz und Metall wurde ein optimaler Durchmesserfaktor von 2,33 identifiziert, der das Verhältnis zwischen Bohrerdurchmesser und maximalem Bohrkreisdurchmesser beschreibt. Darüber hinaus zeigt sich, dass eine logarithmische Spiralbewegung -- bei der von innen nach außen zunächst schnell und dann immer langsamer gebohrt wird, analog zur Anordnung der Kerne in einer Sonnenblume -- deutlich bessere Ergebnisse liefert als eine gleichförmige Spirale. Die vorliegende Arbeit liefert eine mathematisch-physikalische Herleitung dieser empirisch ermittelten Faktoren und zeigt, dass diese Werte ein Optimum zwischen Materialabtragsrate, Werkzeugbelastung und Prozesseffizienz darstellen.
 
 Beim konventionellen Bohren größerer Löcher in Werkstoffen entsteht eine konzentrierte Belastung des Bohrers, insbesondere bei Durchmessern, die signifikant größer als der Bohrerdurchmesser sind. Das Spiralbohrverfahren bietet hier eine Alternative: Der Bohrer startet im Zentrum und bewegt sich spiralförmig nach außen, wodurch das Material sukzessive abgetragen wird.
 
@@ -23624,7 +23627,7 @@ Der maximale Bohrkreisradius ergibt sich zu:
 
 \subsection{Logarithmische Spirale und das Prinzip der Sonnenblumenkerne}
 
-Ein entscheidender Aspekt des optimalen Spiralbohrverfahrens ist nicht nur der maximale Durchmesser, sondern auch die \textbf{Art und Weise}, wie sich der Bohrer von innen nach außen bewegt. Die empirischen Versuche haben gezeigt, dass eine logarithmische Spiralbewegung â€“ analog zur Anordnung der Kerne in einer Sonnenblume â€“ deutlich bessere Ergebnisse liefert als eine archimedische Spirale mit konstanter Steigung.
+Ein entscheidender Aspekt des optimalen Spiralbohrverfahrens ist nicht nur der maximale Durchmesser, sondern auch die \textbf{Art und Weise}, wie sich der Bohrer von innen nach außen bewegt. Die empirischen Versuche haben gezeigt, dass eine logarithmische Spiralbewegung -- analog zur Anordnung der Kerne in einer Sonnenblume -- deutlich bessere Ergebnisse liefert als eine archimedische Spirale mit konstanter Steigung.
 
 \subsubsection{Von schnell nach langsam: Die natürliche Optimierung}
 
@@ -23727,8 +23730,8 @@ Für $n = 2$ Umdrehungen: $b \approx 0{,}067$
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.990000\textwidth]{drill-log.pdf}
-	\caption{Logarithmische Spiralbahn beim optimalen Bohrverfahren. Die Abstände zwischen den Windungen nehmen nach außen zu, während die Winkelgeschwindigkeit abnimmt â€“ analog zur Anordnung der Kerne in einer Sonnenblume.}
+	\includegraphics[width=0.55\textwidth]{drill-log.pdf}
+	\caption{Logarithmische Spiralbahn beim optimalen Bohrverfahren. Die Abstände zwischen den Windungen nehmen nach außen zu, während die Winkelgeschwindigkeit abnimmt -- analog zur Anordnung der Kerne in einer Sonnenblume.}
 	\label{fig:spiral}
 \end{figure}
 
@@ -24223,11 +24226,11 @@ Die Bearbeitungszeit steigt nahezu linear mit $k$:
 	t_{Bearbeitung} \approx a \cdot k + b
 \end{equation}
 
-Dies ist geometrisch plausibel, da die zu durchfahrende Fläche mit $k^2$ wächst. Bei $k = 2{,}33$ beträgt die Zeit ca. 3,5 Sekunden â€“ ein guter Kompromiss zwischen Geschwindigkeit und Prozessqualität.
+Dies ist geometrisch plausibel, da die zu durchfahrende Fläche mit $k^2$ wächst. Bei $k = 2{,}33$ beträgt die Zeit ca. 3,5 Sekunden -- ein guter Kompromiss zwischen Geschwindigkeit und Prozessqualität.
 
 \paragraph{Plot (c): Überlappungsverhältnis}
 
-Das Überlappungsverhältnis nähert sich mit steigendem $k$ dem Idealwert von 75\% an. Bei $k = 2{,}33$ liegt die Überlappung bei ca. 73\% â€“ sehr nahe am Optimum.
+Das Überlappungsverhältnis nähert sich mit steigendem $k$ dem Idealwert von 75\% an. Bei $k = 2{,}33$ liegt die Überlappung bei ca. 73\% -- sehr nahe am Optimum.
 
 Die rote Linie markiert die ideale Überlappung, bei der:
 \begin{itemize}
@@ -24957,7 +24960,7 @@ Die vorliegende Arbeit hat gezeigt, dass der empirisch ermittelte Faktor $k_{opt
 	\item Prozessqualität
 \end{enumerate}
 
-Darüber hinaus wurde nachgewiesen, dass die \textbf{logarithmische Spiralbewegung} â€“ bei der von innen nach außen zunächst schnell und dann immer langsamer gebohrt wird â€“ der archimedischen Spirale überlegen ist. Dieses Prinzip, analog zur Anordnung der Kerne in einer Sonnenblume, führt zu:
+Darüber hinaus wurde nachgewiesen, dass die \textbf{logarithmische Spiralbewegung} -- bei der von innen nach außen zunächst schnell und dann immer langsamer gebohrt wird -- der archimedischen Spirale überlegen ist. Dieses Prinzip, analog zur Anordnung der Kerne in einer Sonnenblume, führt zu:
 
 \begin{itemize}
 	\item Gleichmäßigerer Werkzeugbelastung
@@ -26231,7 +26234,7 @@ Die Heatmap in Abbildung~\ref{fig:exp3} zeigt paarweise, ob ein exakter Subgraph
 
 \subsection{Generationsklassifikation}
 
-Abbildung~\ref{fig:exp4} erweitert die Analyse um die 1-te Generation. Grün markierte Felder deuten auf exakte Übereinstimmung hin; orange auf eine Beziehung mit genau einer fehlenden Kante. Die biologisch erwarteten Paare â€“ etwa \texttt{Glykolyse} vs. \texttt{Glykolyse\_mod} â€“ werden korrekt in der 1-ten Generation erkannt.
+Abbildung~\ref{fig:exp4} erweitert die Analyse um die 1-te Generation. Grün markierte Felder deuten auf exakte Übereinstimmung hin; orange auf eine Beziehung mit genau einer fehlenden Kante. Die biologisch erwarteten Paare -- etwa \texttt{Glykolyse} vs. \texttt{Glykolyse\_mod} -- werden korrekt in der 1-ten Generation erkannt.
 
 \begin{figure}[h]
 	\centering
@@ -26309,12 +26312,12 @@ Die Anzahl der durch 1-Degenerierung entstehenden Graphvarianten $|G^{(1)}|$ wä
 
 \subsection{Generationsdistanz}
 
-Die Generationsdistanz $d_{\text{gen}}(A,B)$ (Abbildung~\ref{fig:exp8}) fasst die minimale Generation zusammen, in der eine Subgraph-Beziehung existiert. Rote Felder ($\infty$) bedeuten, dass kein Subgraph in Generation 0 oder 1 vorliegt â€“ ein Indikator für fundamentale strukturelle Unterschiede.
+Die Generationsdistanz $d_{\text{gen}}(A,B)$ (Abbildung~\ref{fig:exp8}) fasst die minimale Generation zusammen, in der eine Subgraph-Beziehung existiert. Rote Felder ($\infty$) bedeuten, dass kein Subgraph in Generation 0 oder 1 vorliegt -- ein Indikator für fundamentale strukturelle Unterschiede.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.690000\textwidth]{exp8_gen_distance_heatmap.pdf}
-	\caption{Generationsdistanz $d_{\text{gen}}(A,B)$ â€“ Heatmap.}
+	\caption{Generationsdistanz $d_{\text{gen}}(A,B)$ -- Heatmap.}
 	\label{fig:exp8}
 \end{figure}
 
@@ -26520,7 +26523,7 @@ Die Anwendung auf reale biologische Szenarien demonstrierte die praktische Relev
 Die Erweiterung um Knotendegenerierung eröffnet neue Analysemöglichkeiten:
 
 \begin{itemize}
-	\item \textbf{Approximative Verwandtschaft}: Die 1-te Generation erfasst funktional äquiva\-lente Strukturen, die sich durch einzelne Interaktionen unterscheiden â€“ relevant für evolutionäre Divergenz und experimentelle Variabilität.
+	\item \textbf{Approximative Verwandtschaft}: Die 1-te Generation erfasst funktional äquiva\-lente Strukturen, die sich durch einzelne Interaktionen unterscheiden -- relevant für evolutionäre Divergenz und experimentelle Variabilität.
 	
 	\item \textbf{Robustheitsbewertung}: Die Strukturelle Stabilitätsmetrik $S(A, B)$ quantifiziert die Resistenz biologischer Module gegenüber Störungen.
 	
@@ -26654,7 +26657,7 @@ Zusammenfassend lässt sich festhalten: Das Gen-Framework demonstriert, dass die
 
 \subsection{Implementierung}
 
-Der gesamte Python-Code für die Implementierung des Gen-Frameworks â€“ einschließlich der Erweiterungen für generationsbasierte Analyse, der umfassenden Testsuite und der Demonstrationsbeispiele â€“ wurde unter Nutzung von Claude AI entwickelt. Die vollständige Implementierung sowie der generierte Code-Coverage-Report im HTML-Format sind öffent\-lich zugänglich im Repository: \url{https://github.com/hjstephan86/gen}.
+Der gesamte Python-Code für die Implementierung des Gen-Frameworks -- einschließlich der Erweiterungen für generationsbasierte Analyse, der umfassenden Testsuite und der Demonstrationsbeispiele -- wurde unter Nutzung von Claude AI entwickelt. Die vollständige Implementierung sowie der generierte Code-Coverage-Report im HTML-Format sind öffent\-lich zugänglich im Repository: \url{https://github.com/hjstephan86/gen}.
 
 Das Repository enthält:
 \begin{itemize}
