@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB)](https://www.python.org/)
 [![Tests](https://img.shields.io/badge/Tests-239%20passed-4c1)](tests/)
 [![Test Coverage](https://img.shields.io/badge/Test%20Coverage-98.05%25-brightgreen)](doc/coverage/index.html)
-[![scicov](https://img.shields.io/badge/scicov-10%25-ff69b4)](doc/coverage/index.html)
+[![scicov](https://img.shields.io/badge/scicov-10-ff69b4)](doc/coverage/index.html)
 
 A Python module for formal economic system analysis. The implementation combines
 uncertainty, resonance windows, stability, market dynamics, entropy, harmonic
@@ -66,9 +66,6 @@ python src/ecos/02_local_economy_panel.py
 python src/ecos/03_global_economy_network.py
 python src/ecos/04_monte_carlo_robustness.py
 ```
-
-See [src/ecos/EXPERIMENTS.md](src/ecos/EXPERIMENTS.md) for the experiment
-questions and output descriptions.
 
 ## Tests and Coverage
 

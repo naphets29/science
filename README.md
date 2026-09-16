@@ -4,6 +4,8 @@
 
 ---
 
+> Der scicov gibt an, mit welcher Überdeckung das Python Modul mit einer wissenschaftlichen Arbeit oder wissenschaftlichen Arbeiten überdeckt wird. Ein scicov-Wert von 10 bedeutet ganze Übereinstimmung. Weniger als 0 ist nicht möglich.
+
 ## Inhaltsverzeichnis
 
 | # | Hauptkategorie | Unterkategorien (erweitert) |

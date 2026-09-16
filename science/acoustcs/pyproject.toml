@@ -52,6 +52,7 @@ source = ["acoustcs"]
 omit = [
     "*/tests/*",
     "*/test_*.py",
+    "*/experiments.py",
 ]
 branch = true
 

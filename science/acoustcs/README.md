@@ -1,80 +1,16 @@
 # Acoustics Hearing
 
-[![Python](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Coverage](https://img.shields.io/badge/coverage-87.31%25-brightgreen)](doc/coverage)
-![scicov](https://img.shields.io/badge/scicov-10-ff69b4)
+
+[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB)](https://www.python.org/)
+[![Tests](https://img.shields.io/badge/Tests-120%20passed-4c1)](tests/)
+[![Test Coverage](https://img.shields.io/badge/Test%20Coverage-87.31%25-brightgreen)](doc/coverage/index.html)
+[![scicov](https://img.shields.io/badge/scicov-10-ff69b4)](doc/coverage/index.html)
 
 Biologisch inspiriertes Modell fuer auditive Raumorientierung, feline
 Hoerphysiologie, Cochlea-Filterung und digitale A/D-Wandlung. Die
 Implementierung begleitet die wissenschaftliche Arbeit
-`science/acoustcs/science/acoustcs.tex` und bildet insbesondere die Inhalte
-aus den Kapiteln 8, 9 und 10 numerisch ab.
-
-## Inhalt der Arbeit
-
-### Kapitel 8: Auditive Raumorientierung
-
-Das Modell beschreibt Schall als zeitlich praezises Orientierungsmedium und
-quantifiziert die wichtigsten binauralen Hinweisreize:
-
-- Interaurale Zeitdifferenz (ITD) nach dem Woodworth-Schlosberg-Modell
-- Interauraler Pegelunterschied (ILD) mit Frequenzabhaengigkeit
-- Just Noticeable Difference (JND) fuer ITD
-- Fisher-Information und Cramer-Rao-Schranke fuer die
-	Lokalisierungsgenauigkeit
-- raumbezogene Shannon-Entropie bei Hoerverlust
-- bilaterale Asymmetrie und Front-Back-Verwechslung
-
-Die verwendete Schallgeschwindigkeit betraegt standardmaessig `343 m/s`.
-
-$$
-\mathrm{ITD}(\theta) = \frac{r_{\mathrm{head}}}{c}\sin(\theta).
-$$
-
-### Kapitel 9: Felines Gehoer
-
-`FelineAuditory` stellt physiologische Parameter fuer Katze, Hund und Mensch
-bereit und berechnet daraus vergleichbare Kennwerte:
-
-- Hoerbereiche: Katze `55 Hz` bis `77 kHz`, Hund `100 Hz` bis `45 kHz`,
-	Mensch `20 Hz` bis `20 kHz`
-- Frequenzbandbreite und Oktavumfang
-- cochleaere Laenge und Greenwood-Skalierung
-- kritische Bandbreite und Q-Faktor
-- cochleaere Verstaerkung
-- Refraktaerperiode, Phasenlocking und zeitliche Aufloesung
-- ITD-Maximum und Lokalisierungsgenauigkeit mit fixiertem oder beweglichem Ohr
-- Shannon-Kapazitaet und vergleichender Ueberlegenheitsindex
-
-Die Tonotopie bildet Frequenz logarithmisch auf die Position entlang der
-Cochlea ab: hohe Frequenzen liegen basal, niedrige Frequenzen apikal.
-
-### Kapitel 10: Cochlea-Modell und A/D-Wandlung
-
-Die Cochlea wird als ortsabhaengiges mechanisches System modelliert. Die
-Basilarmembran verwendet ortsabhaengige Masse, Steifigkeit und Daempfung:
-
-$$
-m(x)\,w_{tt} + c(x)\,w_t + k(x)\,w
-= p_{\mathrm{in}}(x,t) - p_{\mathrm{out}}(x,t).
-$$
-
-Enthalten sind:
-
-- Greenwood-Tonotopie und inverse Positionsabbildung
-- mechanische Impedanz und Admittanz
-- Resonanzfrequenzen und Qualitaetsfaktor
-- OHC-Verstaerkung und IHC-Sigmoidantwort
-- Gammatone-nahe Butterworth-Bandpassfilter
-- logarithmisch angeordnete Cochlea-Filterbank
-- Cochleagramm als logarithmische Zeit-Frequenz-Darstellung
-- Sample-and-Hold und Quantisierung
-- Quantisierungsfehler und SNR
-- optionale Sigma-Delta-Modulation mit Dezimationsfilter
-
-Die Standardimplementierung verwendet `96 kHz`, `24 Bit` und `128`
-Filterkanaele. Die Filterbank liefert ein Array der Form
-`(Kanaele, Samples)`.
+`science/acoustcs/science/acoustcs.tex` und bildet die wesentlichen Inhalte
+aus den Kapiteln meiner wissenschaftlichen Arbeit ab.
 
 ## Projektstruktur
 
@@ -142,7 +78,7 @@ print(f"Quantisierungs-SNR: {converter.quantization_snr():.2f} dB")
 
 ## Wissenschaftlicher Kontext
 
-Die Kapitel 8 bis 10 verbinden psychoakustische Raumhinweise, vergleichende
+Die Kapitel meiner wissenschaftlichen Arbeit verbinden psychoakustische Raumhinweise, vergleichende
 Hoerphysiologie und ein mechanisch motiviertes Cochlea-Modell. Das Python-
 Paket ist als reproduzierbare numerische Begleitung gedacht: Die Formeln aus
 der Arbeit werden parametrisiert, simuliert und durch Tests auf Randfaelle,

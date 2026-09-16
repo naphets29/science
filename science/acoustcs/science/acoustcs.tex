@@ -2186,7 +2186,7 @@ R_{\mathrm{leak},n} \cdot C_n = \frac{1}{2\pi f(x_n)}
 wobei $x_n = n \cdot \Delta x$ die diskrete Position ist und $\Delta x = L/N$ 
 der Abstand zwischen Filterzellen.
 
-\subsection{Digitale A/D-Wandlung mit biologischer Frequenzbandzerlegung}
+\subsection{A/D-Wandlung: Biologische Frequenzbandzerlegung}
 
 \subsubsection{Sampling und Quantisierung}
 
@@ -2329,9 +2329,9 @@ integrierter Cochla-Filterbank:
   % Kanalverzweigung nach der Cochlea-Filterbank
   \coordinate (fb_branch) at ($(analog_fb.east)!0.5!(sample_hold.west)$);
   \draw[->] ($(analog_fb.east)+(0.4,0)$) -- ++(0.8,0) coordinate (branchA);
-  \node[branch, anchor=west] at ($(branchA)+(0.7,0.9)$) {$n=1$};
-  \node[branch, anchor=west] at ($(branchA)+(0.7,0.0)$) {$n=\ldots$};
-  \node[branch, anchor=west] at ($(branchA)+(0.7,-0.9)$) {$n=N$};
+  \node[branch, anchor=west] at ($(branchA)+(0.7,3.3)$) {$n=1$};
+  \node[branch, anchor=west] at ($(branchA)+(0.7,2.4)$) {$n=\ldots$};
+  \node[branch, anchor=west] at ($(branchA)+(0.7,1.5)$) {$n=N$};
 \end{tikzpicture}
 \end{center}
 \label{fig:cochlea_ad_converter}
@@ -2343,8 +2343,9 @@ integrierter Cochla-Filterbank:
 Die Sample-and-Hold-Stufe muss mit hoher Bandbreite arbeiten. Das Schaltbild 
 zeigt die Implementierung:
 
+\begin{figure}[H]
 \begin{center}
-\begin{circuitikz}
+\begin{circuitikz}[scale=0.9]
   % Eingang
   \draw (0,0) node[left] {$y_n(t)$} coordinate (in);
 
@@ -2373,6 +2374,9 @@ zeigt die Implementierung:
   \draw (clk) -- (1.4,0.9) -- (1.4,0);
 \end{circuitikz}
 \end{center}
+\caption{Schaltbild der Sample-and-Hold-Stufe.}
+\label{fig:schaltbild-sample-hold-stufe}
+\end{figure}
 
 Während des Abtast-Moments (wenn $\phi_s$ high ist) wird der Schalter geschlossen 
 und der Hold-Kondensator $C_{\mathrm{hold}}$ wird auf die aktuelle Eingangsspannung 
@@ -2384,8 +2388,9 @@ Ausgangspuffer-Stufe isoliert den Kondensator von der nachfolgenden Elektronik.
 Für höhere Auflösung kann eine Sigma-Delta-Modulation (\(\Sigma\Delta\)-M) 
 verwendet werden. Das Schaltbild zeigt einen Einzel-Bit-Sigma-Delta-Modulator:
 
+\begin{figure}[H]
 \begin{center}
-\begin{circuitikz}
+\begin{circuitikz}[scale=0.9]
   % Eingang
   \draw (0,0) node [label=left:$y_n(t)$] (in) {};
   
@@ -2414,9 +2419,12 @@ verwendet werden. Das Schaltbild zeigt einen Einzel-Bit-Sigma-Delta-Modulator:
   \draw (comp.east) -- (5.5,0.5) to (5.5,1.5) to (0.5,1.5) to (0.5,-0.5);
   
   % Takt-Signal
-  \draw (4.5,-1.5) node [label=above:$f_s$] (clk) {};
+  % \draw (4.5,-1.5) node [label=above:$f_s$] (clk) {};
 \end{circuitikz}
 \end{center}
+\caption{Blockschaltbild eines Sigma-Delta-Modulators.}
+\label{fig:sigma-delta-modulator}
+\end{figure}
 
 Der Sigma-Delta-Modulator quantisiert stark (1 Bit), nutzt aber die Überabtastung 
 (Oversampling) und Rückkopplung, um die Quantisierungsleistung in den hochfrequenten 
@@ -2430,7 +2438,7 @@ hohe effektive Auflösung erreicht:
 
 wobei $M = f_s / f_{s,\text{out}}$ der Überabtastungsfaktor ist.
 
-\subsection{Formal nachgewiesene Eigenschaften der cochleären A/D-Wandlung}
+\subsection{Nachgewiesene Eigenschaften der cochleären A/D-Wandlung}
 
 \subsubsection{Frequenzauflösungs-Satz}
 
@@ -2580,7 +2588,7 @@ minute ist:
 Dies entspricht einer Datenrate von etwa 860\,kB/s, was für moderne 
 Speichersysteme völlig machbar ist.
 
-\subsection{Zusammenfassung und Vergleich mit klassischen A/D-Wandlern}
+\subsection{Vergleich mit klassischen A/D-Wandlern}
 
 Die cochleäre A/D-Wandlung unterscheidet sich von klassischen linearen Konzepten 
 durch:
@@ -2606,6 +2614,96 @@ durch:
 
 Diese Eigenschaften machen die cochleäre A/D-Wandlung besonders wertvoll für 
 Anwendungen wie Spracherkennung, Musik-Verarbeitung und Hörhilfen-Technologie.
+
+
+% ============================================================
+\section{Experimentelle Auswertung}
+\label{sec:experimentelle_auswertung}
+% ============================================================
+Dieses Kapitel beschreibt die Experimente aus
+\texttt{src/acoustcs/experiments.py}. Das Skript verbindet die Module für
+Hörvergleich, Raumlokalisierung, Cochlea-Mechanik, Filterbank und A/D-Wandlung.
+Unter \texttt{src/acoustcs/results/experiment\_results.json} sind die Ergebnisse abgelegt; der zugehörige
+mehrseitige Bericht befindet sich in \texttt{src/acoustcs/results/experiment\_results.pdf}.
+
+\subsection{Versuchsaufbau und Parameter}
+Als Eingangssignal für die Filterbank und den A/D-Wandler wurde ein 250 ms
+beziehungsweise 100 ms langes Signal mit 48 kHz Abtastrate verwendet. Das
+Filterbanksignal besteht aus einer 800-Hz-Komponente mit Amplitude 0,7 und
+einer 4-kHz-Komponente mit Amplitude 0,35. Die Filterbank wurde mit 16
+logarithmisch verteilten Kanälen zwischen 100 Hz und 12 kHz berechnet.
+Für die A/D-Wandlung wurden $V_{\max}=5$ V und 16 Bit verwendet; zusätzlich
+wurde eine Sigma-Delta-Variante mit dem Überabtastungsfaktor 8 berechnet.
+
+Für die mechanische Cochlea-Auswertung wurde die Antwort an der Position
+$x=17{,}5$ mm über 180 logarithmisch verteilte Frequenzpunkte zwischen 100 Hz
+und etwa 15,8 kHz bestimmt. Die Raumlokalisierung wurde für eine Katze und
+Azimute zwischen $-90^\circ$ und $90^\circ$ ausgewertet. Ein Hörverlust von
+40 dB diente als kontrollierte Störung der ITD-Diskrimination.
+
+\subsection{Numerische Ergebnisse}
+Die wichtigsten Kennwerte sind in Tabelle~\ref{tab:python_experimente}
+zusammengefasst.
+
+\begin{table}[H]
+\centering
+\caption{Ausgewählte Ergebnisse der numerischen Experimente.}
+\label{tab:python_experimente}
+\begin{tabular}{lll}
+\toprule
+Experiment & Kennwert & Ergebnis \\
+\midrule
+Hörvergleich & Obere Grenzfrequenz Katze & $77\,000$ Hz \\
+Hörvergleich & Geometrischer Überlegenheitsindex Katze/Hund & $1{,}91$ \\
+Raumlokalisierung & Maximale ITD der Katze & $145{,}77\,\mu$s \\
+Raumlokalisierung & ITD-JND, normal / 40 dB Hörverlust & $1{,}20 / 4{,}80\,\mu$s \\
+Cochlea & Resonanz bei 17,5 mm & $605{,}4$ Hz \\
+Cochlea & ERB bei 4 kHz & $456{,}7$ Hz \\
+Filterbank & Position der Frequenz 4 kHz & $8{,}03$ mm \\
+A/D-Wandlung & Geschätztes Quantisierungs-SNR & $90{,}83$ dB \\
+A/D-Wandlung & Datenrate bei 16 Bit und 48 kHz & $0{,}77$ Mbit/s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Die ITD folgt im untersuchten Azimutbereich der erwarteten antisymmetrischen
+Sinusabhängigkeit. Für die Katze ergibt sich bei seitlichem Schalleinfall eine
+maximale Zeitdifferenz von rund 146~$\mu$s. Der modellierte Hörverlust
+vervierfacht die ITD-JND von 1,20 auf 4,80~$\mu$s. Die ILD bleibt bei 500 Hz
+mit rund 0,011 dB nahezu vernachlässigbar, steigt im Modell aber auf 7,82 dB
+bei 16 kHz. Damit reproduziert das vereinfachte Modell qualitativ die
+Aufgabenteilung zwischen ITD bei tiefen und ILD bei hohen Frequenzen.
+
+Die cochleäre Antwort besitzt bei 17,5 mm eine Resonanz nahe 605 Hz. Die
+berechnete ERB von 456,7 Hz bei 4 kHz beschreibt die im Modell angenommene
+Frequenzauflösung. Das Cochleagramm zeigt die zeitliche Energieverteilung der
+16 Filterkanäle; die Lage der 4-kHz-Komponente wird über die Greenwood-artige
+Abbildung auf 8,03 mm übertragen. Die A/D-Simulation erreicht bei 16 Bit ein
+theoretisch erwartbares hohes Quantisierungs-SNR; zugleich steigt die Datenrate
+bei 48 kHz auf 0,77 Mbit/s.
+
+\subsection{Interpretation und Grenzen}
+Die Experimente bestätigen, dass die fünf Python-Teilmodelle über gemeinsame
+Größen wie Frequenz, Zeitauflösung und cochleäre Position miteinander verbunden
+werden können. Sie liefern eine reproduzierbare Referenzrechnung für die in
+Kapitel 9 formulierten biologischen Annahmen. Der PDF-Bericht stellt zusätzlich
+die ITD-Kurve, die ILD-Frequenzabhängigkeit, die Basilarmembranantwort und das
+Cochleagramm grafisch dar.
+
+Die Werte sind jedoch keine unabhängigen physiologischen Messungen. Insbesondere
+sind die Fisher-Information und die daraus abgeleitete Lokalisierungsgenauigkeit
+im Implementierungsmodell dimensionsmäßig nur als relative Modellgröße zu lesen.
+Auch der verwendete Filterbankausgang hängt von Einschwingvorgängen, Kanalzahl
+und Bandbreitenparametrisierung ab. Die Ergebnisse belegen daher die numerische
+Ausführbarkeit und die qualitative Kopplung der Modelle, nicht die empirische
+Gültigkeit jeder einzelnen physiologischen Zahl. Für eine Validierung wären
+kalibrierte Audiosignale, Messdaten von HRTFs und speziesbezogene Hörversuche
+erforderlich.
+
+Die JSON-Datei ist für eine nachträgliche statistische Auswertung vorgesehen.
+Sie enthält neben den Kennwerten auch die Zeitachsen, Frequenzachsen,
+Filterbankausgänge und Antwortarrays. Damit können Abbildungen oder alternative
+Zusammenfassungen erzeugt werden, ohne die Simulation erneut auszuführen.
 
 % ============================================================
 \section{Ausblick}
@@ -3179,6 +3277,7 @@ Empfängermodelle --- bietet eine belastbare Perspektive für die Akustikforschu
 kommenden Jahre und Jahrzehnte. Der entscheidende nächste Schritt besteht darin,
 Symmetrie nicht nur als geometrische Eigenschaft, sondern als überprüfbare Beziehung
 zwischen Raum, Technik und Wahrnehmung zu behandeln.
+
 
 % ============================================================
 % LITERATUR
