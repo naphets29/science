@@ -160,7 +160,7 @@
 |---|---|
 | sun | Atmosphärische Brechung des Sonnenlichts — mathematische Herleitung der schichtweisen Refraktion, 34' am Horizont |
 | color *(Drive)* | Farbwahrnehmung — molekulare Photophysik konjugierter π-Systeme (Lykopin, Chlorophyll, Hämoglobin); trichromatische Transduktion durch S-/M-/L-Zapfen; formale Herleitung des CIE Tristimulus-Integrals |
-| acoustcs | Harmonische Ausbreitung akustischer Signale in symmetrischen Hörräumen |
+| acoustcs/src | Harmonische Ausbreitung akustischer Signale in symmetrischen Hörräumen |
 | akustik *(Drive)* | Harmonische Strukturen in Akustik und Musiktheorie — graphentheoretische Formalisierung, Fourieranalyse, Goldener Schnitt φ; Konsonanztheorie nach Helmholtz/Plomp-Levelt; Sabine-Formel der Raumakustik |
 | lightd | Lichtgeschwindigkeit in verschiedenen Medien - Formale Analyse der Abweichungen und Verteilungen |
 
@@ -478,7 +478,7 @@
 
 | Repository | Beschreibung |
 |---|---|
-| ecos | Band der Arbeiten zur Wirtschaft |
+| ecos/src | Band der Arbeiten zur Wirtschaft |
 | sysstate | Zustandsklassen dynamischer Systeme — Endlichkeit des Zustandsvektors und wirtschaftliche Implikationen |
 | uncrtecos | Wirtschaftssysteme unter Unsicherheit: Zeithorizont-Degradation und Kundenvorhersagbarkeit |
 | leco *(Drive)* | Dezentrale Wirtschaftszellen: Formale Analyse optimaler Entkopplung und systemischer Resilienz in modularen Wirtschaftsarchitekturen |
