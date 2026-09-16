@@ -65,6 +65,10 @@ source = ["ecos"]
 omit = [
     "*/tests/*",
     "*/test_*.py",
+    "*/01_simple_resonance_sweep.py",
+    "*/02_local_economy_panel.py",
+    "*/03_global_economy_network.py",
+    "*/04_monte_carlo_robustness.py",
 ]
 branch = true
 

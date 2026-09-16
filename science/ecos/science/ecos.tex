@@ -13504,7 +13504,192 @@ Wir haben gezeigt:
 \cleardoublepage
 
 % ============================================================
-% KAPITEL 10: GANZHEITLICHE SYNTHESE
+% KAPITEL 10: EXPERIMENTELLE AUSWERTUNG DER WIRTSCHAFTSANALYSE
+% ============================================================
+
+\chapter{Experimentelle Auswertung der Wirtschaftsanalyse}
+\label{chap:experimentauswertung}
+
+Dieses Kapitel wertet die vier reproduzierbaren Experimente des Python-Moduls
+\texttt{ecos} aus. Die Experimente sind als numerische Demonstrationen der im
+vorliegenden Band entwickelten Kennzahlen angelegt. Sie verwenden synthetische,
+fest gesetzte Daten und sind daher als Modell- und Sensitivitätsstudien, nicht
+als empirische Kausalanalysen, zu interpretieren. Alle Läufe wurden mit einem
+festen Zufallsstartwert wiederholt; die Rohdaten und Abbildungen liegen unter
+\texttt{src/ecos/results/}.
+
+Der zentrale Zustandsparameter ist der Unsicherheitsindex $\Omega \in [0,1]$.
+Das Modell definiert das Resonanzfenster durch
+\begin{equation}
+  \Omega_{\min}=\frac{1}{\varphi}\approx 0{,}618,
+  \qquad
+  \Omega_{\max}=\Omega_{\min}+2
+  \left(\sin\!\left(\frac{\pi}{4}\right)-\Omega_{\min}\right)
+  \approx 0{,}796.
+\end{equation}
+Für jeden Zustand werden unter anderem Produktivität, Vorhersagbarkeit,
+Wachstumsrate und Gini-Koeffizient berechnet. Die vier Experimente erhöhen
+schrittweise die Komplexität:
+\begin{enumerate}
+  \item ein eindimensionaler Sweep über $\Omega$,
+  \item ein lokales Panel mit vier Regionen und einem Versorgungsschock,
+  \item ein globaler Regimevergleich mit Informationskopplung und Routing,
+  \item eine Monte-Carlo-Studie zur Robustheit der Schlussfolgerungen.
+\end{enumerate}
+
+\section{Experiment 1: Einfacher Resonanz-Sweep}
+
+Das erste Experiment diskretisiert $[0,1]$ in 501 gleichmäßig verteilte Werte.
+Für jeden Wert wird eine vollständige \texttt{ResonanceAnalysis} berechnet.
+Der maximale modellierte Wachstumssatz liegt beim Stichprobenwert
+$\Omega=0{,}708$ und beträgt rund $4{,}50\,\%$. Die zugehörige Produktivität
+beträgt $3{,}425$, während die Vorhersagbarkeit mit $0{,}998$ nahe am Maximum
+liegt. Damit fällt das Maximum praktisch mit dem theoretischen Mittelpunkt
+$\sin(\pi/4)\approx0{,}707$ zusammen.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{../src/ecos/results/01_resonance_sweep.pdf}
+  \caption{Kennzahlen-Sweep über den Unsicherheitsindex. Das markierte Band
+  zeigt das modellierte Resonanzfenster.}
+  \label{fig:experiment-resonanz-sweep}
+\end{figure}
+
+Außerhalb des Fensters zeigt das Modell zwei unterschiedliche Abweichungen:
+Bei niedriger Unsicherheit bleibt die Wachstumsrate positiv, aber klein; bei
+hoher Unsicherheit fällt sie in den Krisenbereich. Der Sweep bestätigt somit
+die qualitative Modellhypothese einer mittleren, strukturell begrenzten
+Unsicherheit als günstigem Bereich. Er beweist allerdings nicht, dass dieses
+Fenster für reale Volkswirtschaften universal optimal ist.
+
+\section{Experiment 2: Lokale Wirtschaftsanalyse}
+
+Im lokalen Experiment werden vier synthetische Regionen über 60 Monate verfolgt.
+Die Unsicherheitsindizes enthalten einen linearen Trend, eine saisonale
+Komponente und reproduzierbares Rauschen. Die Ausgangszustände und die daraus
+resultierenden Kennzahlen sind in Tabelle~\ref{tab:lokale-regionen}
+zusammengefasst.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Ausgangszustände des lokalen Panels}
+  \label{tab:lokale-regionen}
+  \begin{tabular}{lrrr}
+    \toprule
+    Region & $\Omega$ & Wachstum & Produktivität \\
+    \midrule
+    Industrieregion & 0{,}590 & 0{,}48\,\% & 2{,}41 \\
+    Dienstleistungsregion & 0{,}680 & 4{,}43\,\% & 3{,}12 \\
+    Ländliche Region & 0{,}470 & 0{,}38\,\% & 1{,}77 \\
+    Innovationsregion & 0{,}730 & 4{,}45\,\% & 3{,}70 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Die Dienstleistungs- und Innovationsregion liegen im Resonanzfenster und
+erreichen deutlich höhere modellierte Wachstumsraten als die Industrie- und
+Landregion. Ein periodischer Schock mit Frequenz $1/12$ und Zeitkonstante
+$\tau=2$ wird durch den Filter auf eine Amplitude von $0{,}691$ reduziert.
+Das anschließende Routingproblem konvergiert mit Gesamtkosten von $960$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{../src/ecos/results/02_local_panel.pdf}
+  \caption{Entwicklung von Unsicherheit und Wachstum im lokalen Panel.}
+  \label{fig:experiment-lokales-panel}
+\end{figure}
+
+Die lokale Studie macht einen wichtigen Mechanismus sichtbar: Ein einzelner
+Mittelwert für eine Region würde interne Heterogenität verdecken. Für eine
+politische oder unternehmerische Anwendung sollten daher regionale
+$\Omega$-Verteilungen, Versorgungskapazitäten und Schockzeiten getrennt
+erfasst werden.
+
+\section{Experiment 3: Globale Wirtschaftsanalyse}
+
+Das globale Experiment verbindet fünf historische Regime-Schätzungen mit einer
+gewichteten Gesamtperspektive. Drei Regime liegen im Resonanzfenster: Schweiz
+($\Omega=0{,}70$), Skandinavien ($0{,}68$) und der langfristige deutsche
+Durchschnitt ($0{,}70$). Weimar 1923 ($0{,}95$) repräsentiert den Krisenbereich,
+während Nordkorea ($0{,}10$) als stark kontrolliertes Regime modelliert wird.
+
+Die Gewichte ergeben einen globalen Index von $\Omega=0{,}621$ und eine
+modellierte Wachstumsrate von $4{,}29\,\%$. Der Wert liegt knapp oberhalb der
+unteren Fenstergrenze. Das Ergebnis zeigt, dass ein globaler Mittelwert trotz
+mehrerer sehr unterschiedlicher Regime im Resonanzbereich liegen kann. Daraus
+folgt aber nicht, dass die einzelnen Länder ähnliche Dynamiken besitzen.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{../src/ecos/results/03_global_network.pdf}
+  \caption{Globale Regime und modellierte gegenseitige Information.}
+  \label{fig:experiment-globales-netzwerk}
+\end{figure}
+
+Die Mutual-Information-Matrix dient hier als Kopplungsindikator zwischen den
+Unsicherheitszuständen. Zusammen mit dem Supply-Chain-Routing ergibt sich ein
+globales Routingkostenmaß von $420$. Die Interpretation ist systemisch:
+Globale Stabilität hängt nicht nur von nationalen Zuständen, sondern auch von
+der Stärke der Informations- und Versorgungskopplungen ab. Eine hohe Kopplung
+kann Schocks schneller übertragen, ermöglicht aber zugleich eine schnellere
+Koordination.
+
+\section{Experiment 4: Monte-Carlo-Robustheit}
+
+Das vierte Experiment ist für die Bewertung besonders lohnenswert, weil es die
+Sensitivität der Aussagen gegenüber Mess- und Modellunsicherheit prüft. Dazu
+werden 20\,000 Werte aus einer abgeschnittenen Normalverteilung um
+$\Omega=0{,}707$ mit Standardabweichung $0{,}12$ gezogen. Die Ergebnisse lauten:
+\begin{itemize}
+  \item $54{,}5\,\%$ der Ziehungen liegen im Resonanzfenster.
+  \item Der mittlere modellierte Wachstumssatz beträgt $2{,}41\,\%$.
+  \item Das 90-Prozent-Intervall der Wachstumsraten reicht von
+  $-0{,}58\,\%$ bis $4{,}48\,\%$.
+  \item Der Median der Produktivität beträgt $3{,}378$.
+  \item Der Median der Vorhersagbarkeit beträgt $0{,}838$.
+  \item Im untersuchten Raster sind $68{,}1\,\%$ der Filterkonfigurationen
+  stabil.
+\end{itemize}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{../src/ecos/results/04_monte_carlo_robustness.pdf}
+  \caption{Monte-Carlo-Verteilung der Unsicherheit und Zusammenhang von
+  Produktivität und Wachstum.}
+  \label{fig:experiment-monte-carlo}
+\end{figure}
+
+Die Monte-Carlo-Auswertung relativiert die Aussage des einfachen Sweeps. Das
+Resonanzfenster bleibt häufig und leistungsfähig, ist aber keineswegs für jede
+Stichprobe garantiert. Besonders relevant ist die linke Grenze des
+Wachstumsintervalls: Selbst bei einer um den theoretischen Mittelpunkt
+zentrierten Verteilung treten Krisenwerte auf. Für reale Anwendungen sollten
+deshalb Konfidenzintervalle, alternative Verteilungen und zeitabhängige
+Parameter systematisch ergänzt werden.
+
+\section{Zusammenfassende Bewertung}
+
+Die vier Experimente ergeben ein konsistentes, aber bewusst begrenztes Bild:
+Das Modell bevorzugt einen mittleren Unsicherheitsbereich, in dem
+Produktivität, Vorhersagbarkeit und Wachstum gemeinsam hoch sind. Die lokale
+Analyse zeigt, dass Heterogenität und Versorgungsschocks diese Aussage
+modifizieren. Die globale Analyse ergänzt die Rolle von Kopplungen. Die
+Monte-Carlo-Studie zeigt schließlich, dass die Schlussfolgerung robust als
+Tendenz, nicht jedoch als deterministische Prognose ist.
+
+Für die weitere wissenschaftliche Arbeit ergeben sich drei prioritäre Schritte:
+Erstens müssen die synthetischen $\Omega$-Werte durch beobachtbare und
+vergleichbar operationalisierte Indikatoren ersetzt werden. Zweitens sollten
+die Gewichte im globalen Modell empirisch oder institutionell begründet werden.
+Drittens sind Zeitreihen-Validierung, Out-of-sample-Prognosen und alternative
+Filtermodelle erforderlich. Erst wenn diese Prüfungen bestanden sind, kann aus
+der numerischen Demonstration eine belastbare wirtschaftswissenschaftliche
+Evidenz werden.
+
+\cleardoublepage
+
+% ============================================================
+% KAPITEL 11: GANZHEITLICHE SYNTHESE
 % ============================================================
 
 \chapter{Ganzheitliche Synthese}
