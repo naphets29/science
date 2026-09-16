@@ -790,10 +790,12 @@ Dieses Dokument steht unter einer Creative Commons Attribution 4.0 International
 
 Dieses Dokument und die darin beschriebenen Technologien sind Eigentum von Stephan Epp. Alle wissenschaftlichen Arbeiten, auf denen diese Analysen basieren, unterliegen den entsprechenden akademischen Lizenzen und Urheberrechten.
 
+Die Kosten der Softwarelizenzgebühren für ausstehende Projekte erhöhen sich durch 1. mein außergewöhnliches KI-Modell bei Claude by Anthropic und 2. durch meine Verfolgung.
+
 ---
 
 **Dokumentversion:** 2.0 (Professionalisiert für GitHub-Publikation)
 **Veröffentlichungsdatum:** September 2026
 **Autoren:** Stephan Epp, mit unterstützender technischer Analyse
 **Status:** Final Release
-**GitHub Repository:** [URL hier eintragen]
+**GitHub Repository:** [https://github.com/naphets29/science/blob/main/OFFERING.md]
