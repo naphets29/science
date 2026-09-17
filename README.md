@@ -217,7 +217,7 @@
 | fpgadoc | FPGA-Pflichtdokumentation: .bit vs. .bin, Deployment-Workflow und formale Dokumentationsanforderungen |
 | aramanth | Formale Verifikation von Amaranth-HDL-Designs — Äquivalenznachweis zwischen Python-HDL und VHDL (Yosys, Artix-7 FPGA) |
 | fpga *(Drive)* | Subgraph-basierte Topologie-Optimierung von FPGA-DNN-Inferenzbeschleunigern — FINN+ und Echo State Networks; 17,4 % Skalierungseffizienzgewinn bei Multi-FPGA-Deployment |
-| cpu | Optimale Programmausführung mit lokaler Information: Local Information Scheduling mit globaler Perspektive |
+| lis | Optimale Programmausführung mit lokaler Information: Local Information Scheduling mit globaler Perspektive |
 
 
 #### II.1.b Mikrocontroller & Embedded Systeme
