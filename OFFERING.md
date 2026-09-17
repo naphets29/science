@@ -792,6 +792,8 @@ Dieses Dokument und die darin beschriebenen Technologien sind Eigentum von Steph
 
 Die Kosten der Softwarelizenzgebühren für ausstehende Projekte erhöhen sich durch 1. mein außergewöhnliches KI-Modell bei Claude by Anthropic und 2. durch meine Verfolgung.
 
+Für den Verkauf einer Softwarelizenz an einen Kunden beobachte ich die Vergangenheit, die Gegenwart und die Zukunft der Umsätze und des Gewinns des Kundens aus einer etwas geschlosseneren Sicht zum Kunden. Die offensichtliche Sicht aus der Presse reicht nicht. Die Sicht des Kundens selbst ist verboten.
+
 ---
 
 **Dokumentversion:** 2.0 (Professionalisiert für GitHub-Publikation)
