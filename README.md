@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **266 Wissenschaften** von Stephan Epp
+> **267 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -308,7 +308,7 @@
 | solwindw | Transparente Photovoltaik-Verglasung (BIPV) — Dioden-in-Glas-Matrix für solare Energiegewinnung durch Fenster; 40 % Gebäudenergieverbrauchsreduktion |
 | schrauben | Unterwasser-Schraubenwände als Flussstromkraftwerke — modellierte Rotordynamik, Verschmutzungsgradmodell, automatische Schiffspassagen-Steuerung |
 | bmp | Halbleiter, der Schlüssel zum Leben: Mathematische Grundlegung der Digitalen Informationsverarbeitung |
-
+| drehenergie | Drehenergie: Die induktive Verstärkung von Rotationsbewegungen vom atomaren Kern zur makroskopischen Energiegewinnung |
 ---
 
 ### II.4 Fahrzeugtechnik & Maschinenbau
