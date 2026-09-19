@@ -1,7 +1,8 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
+\usepackage[german]{babel}
+\usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -15,6 +16,7 @@
 \usepackage{enumitem}
 \usepackage{rotating}
 \usepackage{longtable}
+\usepackage{rotating}
 
 \emergencystretch=4em
 
@@ -103,7 +105,7 @@ Die numerische lineare Algebra befasst sich mit der effizienten Berechnung funda
 Diese Arbeit präsentiert eine radikale neue Perspektive: Statt die Matrix zu ihren Fixpunkten zu treiben, können wir die Matrix \emph{proaktiv transformieren}, um diese Fixpunkte unmittelbar oder sehr schnell zu erreichen. Die zentrale Idee ist die \emph{Hybrid Rotation-Diagonal Congruence Method (HRC)}, die zwei komplementäre Transformationen alternierend anwendet:
 
 \begin{enumerate}
-	\item \textbf{Spaltenrotation (aus Subgraph-Algorithmus)}: Zyklische Permutation von Spalten zur Erkennung struktureller Isomorphismen und zur Normalisierung der Spaltenordnung.
+	\item \textbf{Spaltenrotation (aus Subgraph Algorithmus)}: Zyklische Permutation von Spalten zur Erkennung struktureller Isomorphismen und zur Normalisierung der Spaltenordnung.
 	\item \textbf{Diagonale Zeilenpermutation (aus Diagonale-Kongruenz)}: Optimale Reordering von Zeilen, um die Diagonale als Attraktor zu maximieren und algebraische Information zu konzentrieren.
 \end{enumerate}
 
@@ -194,7 +196,7 @@ Die Arbeit ist wie folgt gegliedert:
 	Diese codiert die Spaltenstruktur eindeutig als Integer.
 \end{definition}
 
-\subsection{Recap: Spaltenrotation (aus Subgraph-Algorithmus)}
+\subsection{Recap: Spaltenrotation (aus Subgraph Algorithmus)}
 
 Aus der subgraph.tex Arbeit erinnern wir uns:
 
@@ -278,7 +280,7 @@ Wir entwickeln nun die Hybrid Rotation-Diagonal Congruence Methode systematisch.
 
 Um die "beste" Rotation auszuwählen, benötigen wir ein Funktional $\Phi$. Mehrere Kandidaten sind möglich:
 
-\begin{definition}[Funktionale für optimale Spaltenrotation]
+\begin{definition}[Funktionale für optimale Spaltenrotation] Definition für die Auswahl der besten Rotation:
 	\begin{enumerate}
 		\item \textbf{Diagonal-Konzentrierungs-Funktional:}
 		\[
@@ -704,7 +706,7 @@ Offensichtlich: Dominiert durch die Matrix-Speicherung. Permutationsmatrizen kö
 
 \subsection{Vergleich mit klassischen Methoden}
 
-\begin{table}[H]
+\begin{sidewaystable}
 \centering
 \caption{Vergleich der Zeitkomplexität verschiedener Methoden}
 \label{tab:complexity_comparison}
@@ -723,7 +725,7 @@ HRC + QR & $O(n^3 + n^3 \cdot K_{\text{QR}}')$ & $O(n^2)$ & Sehr schnell ($K_{\t
 HRC + Jacobi & $O(n^3 + n^3 \cdot K_{\text{Jacobi}}')$ & $O(n^2)$ & Sehr schnell ($K_{\text{Jacobi}}' \ll K_{\text{Jacobi}}$) \\
 \hline
 \end{tabular}
-\end{table}
+\end{sidewaystable}
 
 \section{Numerische Stabilität und Fehleranalyse}
 
@@ -1184,7 +1186,7 @@ Trotz der umfassenden Theorie bleiben einige Fragen offen:
 Die vorliegende Arbeit baut auf den bahnbrechenden Ideen aus zwei vorherigen Arbeiten auf:
 
 \begin{itemize}
-	\item Der \emph{Subgraph-Algorithmus} (subgraph.tex) lieferte die Inspiration für Spaltenrotation und Signatur-Funktionale
+	\item Der \emph{Subgraph Algorithmus} (subgraph.tex) lieferte die Inspiration für Spaltenrotation und Signatur-Funktionale
 	\item Die \emph{Diagonale Zeilenkongruenz} (diama.tex) prägte das Konzept des Attraktors und der Zeilenpermutation
 \end{itemize}
 
@@ -1298,10 +1300,10 @@ Y. Notay. Convergence analysis of perturbed two-grid and multigrid methods. \tex
 M. Benzi, G.\,H. Golub und J. Liesen. Numerical solution of saddle point problems. \textit{Acta Numerica}, 14:1--137, 2005.
 
 \bibitem{Epp2026Sub}
-S. Epp. Der Subgraph Algorithmus. \textit{Unveröffentlichte Arbeit}, Januar 2026.
+S. Epp. Der Subgraph Algorithmus. \url{https://github.com/naphets29/subgraph}, 2026.
 
 \bibitem{Epp2026Diag}
-S. Epp. Diagonale Zeilenkongruenzen in Matrizen. \textit{Unveröffentlichte Arbeit}, September 2026.
+S. Epp. Diagonale Zeilenkongruenzen in Matrizen: Eine algebraische Methode zur Lösung von Problemen der linearen Algebra. \url{https://github.com/naphets29/science}, 2026.
 
 \end{thebibliography}
 
