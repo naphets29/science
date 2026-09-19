@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **267 Wissenschaften** von Stephan Epp
+> **268 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -38,6 +38,7 @@
 | jacobi *(Drive)* | Die Jacobi-Matrix als universale Ersetzung des Gradienten — formale Untersuchung der Äquivalenz und Verallgemeinerung |
 | matrgraph | Äquivalenz durch Sicht: Graphische Deduktion und die fundamentale Überflüssigkeit der Matrix in algebraischen Beweisen |
 | systemth | Asymmetrische Matrixmultiplikation für dynamische Systeme — Boolean-Algebra bis zur kontinuierlichen Systemtheorie |
+| diama | Diagonale Zeilenkongruenzen in Matrizen: Eine algebraische Methode zur Lösung von Problemen der linearen Algebra |
 
 #### I.1.b Analysis, Geometrie & Topologie
 
