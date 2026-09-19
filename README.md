@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **268 Wissenschaften** von Stephan Epp
+> **269 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -39,6 +39,7 @@
 | matrgraph | Äquivalenz durch Sicht: Graphische Deduktion und die fundamentale Überflüssigkeit der Matrix in algebraischen Beweisen |
 | systemth | Asymmetrische Matrixmultiplikation für dynamische Systeme — Boolean-Algebra bis zur kontinuierlichen Systemtheorie |
 | diama | Diagonale Zeilenkongruenzen in Matrizen: Eine algebraische Methode zur Lösung von Problemen der linearen Algebra |
+| rotdiama | Hybride Rotation-Diagonale-Kongruenz-Methode: Alternierende Spaltenrotation und Zeilenpermutation für effiziente lineare Algebra |
 
 #### I.1.b Analysis, Geometrie & Topologie
 
