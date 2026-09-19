@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **270 Wissenschaften** von Stephan Epp
+> **271 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -40,6 +40,7 @@
 | systemth | Asymmetrische Matrixmultiplikation für dynamische Systeme — Boolean-Algebra bis zur kontinuierlichen Systemtheorie |
 | diama | Diagonale Zeilenkongruenzen in Matrizen: Eine algebraische Methode zur Lösung von Problemen der linearen Algebra |
 | rotdiama | Hybride Rotation-Diagonale-Kongruenz-Methode: Alternierende Spaltenrotation und Zeilenpermutation für effiziente lineare Algebra |
+| mlm | Formale Theorie der Multiplikationslängen-Methode: Gestaffelte Matrix-Transformationen, Stabilitätsanalyse und Elektrotechnisch-Wirtschaftliche Dualität|
 
 #### I.1.b Analysis, Geometrie & Topologie
 
