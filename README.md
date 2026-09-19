@@ -1,6 +1,6 @@
 # Wissenschaften
 
-> **269 Wissenschaften** von Stephan Epp
+> **270 Wissenschaften** von Stephan Epp
 
 ---
 
@@ -39,7 +39,7 @@
 | matrgraph | Äquivalenz durch Sicht: Graphische Deduktion und die fundamentale Überflüssigkeit der Matrix in algebraischen Beweisen |
 | systemth | Asymmetrische Matrixmultiplikation für dynamische Systeme — Boolean-Algebra bis zur kontinuierlichen Systemtheorie |
 | diama | Diagonale Zeilenkongruenzen in Matrizen: Eine algebraische Methode zur Lösung von Problemen der linearen Algebra |
-| rotdiama | Hybride Rotation-Diagonale-Kongruenz-Methode: Alternierende Spaltenrotation und Zeilenpermutation für effiziente lineare Algebra |
+| rotdiama | Hybride Rotation-Diagonale-Kongruenz-Methode: Alternierende Spaltenrotation und Zeilenpermutation für effiziente lineare Algebra |
 
 #### I.1.b Analysis, Geometrie & Topologie
 
@@ -490,6 +490,7 @@
 | riskallockg | Flexible Risikozuweisung in der Kommanditgesellschaft: Formale Modellierung dynamischer Risikoallokation |
 | tidalecos | Ebbe und Flut als Unsicherheitsstruktur: Formale Ökonomie der Handlungsfreiheit im Tausch unter notwendiger Ungewissheit |
 | eco | Die zwei Hauptkräfte der Wirtschaft: Vollständige formale und mathematische Theorie anthropogener und natürlicher Periodizität |
+| rotdiamadec | Multiplikationslängen-Methode für Wirtschaftsanalyse: Formale Theorie der gestuften Matrix-Transformationen mit Anwendungen auf dezentralisierte Wirtschaftssysteme unter struktureller Unsicherheit
 
 ---
 
